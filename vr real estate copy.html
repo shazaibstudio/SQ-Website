@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VR Real Estate | SQ Interactive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+  <ul>
+    <a href="homepage.html"><img src="images/no background.png" alt="SQ Logo" class="nav-logo"></a>
+    <li><a class="active" href="homepage.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="vr real estate.html">VR Real Estate</a></li>
+    <li><a href="ai interior design.html">AI Interior Design</a></li>
+    <li><a href="360 content.html">360° Content Creation</a></li>
+    <li><a href="vfx.html">VFX & Storytelling</a></li>
+    <li><a href="It systems.html">IT Systems</a></li>
+    <li><a href="vr experiances.html">VR Experiences</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+   <header class="fullscreen-video-header">
+  <video autoplay muted loop playsinline class="fullscreen-bg-video">
+    <source src="videos/realestate.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="fullscreen-overlay">
+     <img src="images/no background.png" alt="SQ Interactive Logo" class="logo" />
+    <h1>VR Real Estate</h1>
+    <p>Transforming property showcases with cutting-edge virtual tours and immersive experiences.</p>
+    
+  </div>
+</header>
+
+  <!-- Media and Info Section -->
+  <div class="container">
+    <!-- Left: Media -->
+    <div class="media-section">
+      <div class="main-display" id="mainDisplay">
+        <iframe
+          src="https://play.unity.com/webgl-builds/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds"
+          width="100%"
+          height="600"
+          frameborder="0"
+          allowfullscreen
+          title="Interactive VR Room Demo"
+          style="border: none; border-radius: 12px;">
+        </iframe>
+      </div>
+      <div class="thumb-strip">
+        <img src="images/vr realestate.png" alt="vr realestate" onclick="showMedia('img', 'images/vr realestate.png')">
+        <img src="images/vr realeatate.jpg" alt="vr realeatate" onclick="showMedia('img', 'images/vr realeatate.jpg')">
+        <img src="images/r2.jpg" alt="r2" onclick="showMedia('img', 'images/r2.jpg')">
+        <img src="images/vr real estate 4.png" alt="vr real estate" onclick="showMedia('img', 'images/vr real estate 4.png')">
+        <img src="images/vr realestate 3.jpg" alt="vr realestate" onclick="showMedia('img', 'images/vr realestate 3.jpg')">
+      </div>
+    </div>
+
+  <!-- Right: Info -->
+  <div class="info-section">
+    <h1>VR Real Estate Walkthrough</h1>
+    <img src="images/vr realestate.png" alt="SQ Interactive Logo" class="title-image">
+
+    <div class="game-description">
+      We turn 2D architectural floor plans into fully immersive 3D virtual homes using **Unity and ProBuilder.  
+      <br><br>
+      Every home is built from the ground up — walls, dimensions, and structure are accurately modeled, then styled with realistic furniture, textures, and lighting.  
+      <br><br>
+      Clients can walk through their dream home in VR before it’s even built. This helps interior designers, architects, and real estate agents communicate vision, close deals faster, and reduce revisions.
+    </div>
+
+    <div class="meta-info">
+      <p><strong>BUILT WITH:</strong> <span>Unity + ProBuilder</span></p>
+      <p><strong>PLATFORMS:</strong> <span>Meta Quest, WebXR, PCVR</span></p>
+      <p><strong>PIPELINE:</strong> <span>Floor Plan → ProBuilder → Interior Design → VR Deployment</span></p>
+      <p><strong>SUITABLE FOR:</strong> <span>Real Estate Agents, Builders, Interior Designers</span></p>
+    </div>
+
+    <div class="tags">
+      <div class="tag">VR</div>
+      <div class="tag">Real Estate</div>
+      <div class="tag">ProBuilder</div>
+      <div class="tag">Unity</div>
+      <div class="tag">Interior Design</div>
+    </div>
+  </div>
+</div>
+
+
+  <section class="services">
+    <h2>Why Choose VR Real Estate?</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>High-Definition Virtual Tours</h3>
+        <p>Bring properties to life with realistic, interactive walkthroughs.</p>
+        <a href="vr real estate.html" class="service-btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <h3>Immersive 3D Environments</h3>
+        <p>Allow potential buyers to explore every corner of a property from their own device.</p>
+        <a href="vr real estate.html" class="service-btn">Learn More</a>
+      </div>
+      <div class="service-card">
+        <h3>Scalable, Customizable Solutions</h3>
+        <p>From single apartments to entire commercial buildings, we provide tailored VR solutions.</p>
+        <a href="vr real estate.html" class="service-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <h2>Get In Touch</h2>
+  <p>Email us at <a href="mailto:sqinterractive@hotmail.com">sqinterractive@hotmail.com</a></p>
+  <p>OR: <a href="mailto:admin@sqinteractive.com">admin@sqinteractive.com</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank">@SQInteractive</a></p>
+  <p>Phone: <a href="tel:+923009452153">+92 300 9452153</a></p>
+</section>
+
+<!-- Unified Footer -->
+<footer class="footer">
+  <div class="footer-icons">
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a" target="_blank" aria-label="LinkedIn">
+      <img src="images/linkedin.png" alt="LinkedIn Icon" />
+    </a>
+    <a href="https://www.instagram.com/sqinteractive" target="_blank" aria-label="Instagram">
+      <img src="images/instagram.png" alt="Instagram Icon" />
+    </a>
+    <a href="mailto:admin@sqinteractive.com" aria-label="Email">
+      <img src="images/email.png" alt="Email Icon" />
+    </a>
+    <a href="tel:+923009452153" aria-label="Phone">
+      <img src="images/telephone.png" alt="Phone Icon" />
+    </a>
+    <a href="https://learn.unity.com/u/659e3067edbc2a165e74468c" target="_blank" aria-label="Unity">
+      <img src="images/unity.png" alt="Unity Icon" />
+    </a>
+  </div>
+  <p class="footer-text">&copy; 2025 SQ Interactive. All rights reserved. • <a href="shazaib-qaiser.pdf" download>Download CV</a></p>
+</footer>
+
+
+  <!-- Media Swap Script -->
+  <script>
+    function showMedia(type, src) {
+      const display = document.getElementById("mainDisplay");
+      display.innerHTML = ''; // Clear current content
+
+      if (type === 'img') {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Media Preview";
+        display.appendChild(img);
+      } else if (type === 'video') {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        video.alt = "Video Preview";
+        display.appendChild(video);
+      }
+    }
+  </script>
+
+</body>
+</html>
