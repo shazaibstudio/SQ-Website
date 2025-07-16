@@ -243,6 +243,130 @@ li a:hover {
   border-radius: 50px;
 }
 
+
+
+
+
+/* ===== Safe Mobile Responsiveness Fixes ===== */
+@media (max-width: 768px) {
+  /* General Layout */
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  /* Navbar Fixes */
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #222;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 60px 15px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    margin: 20px auto 30px;
+    padding: 0 10px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .cta-button {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  /* About Section */
+  .about {
+    padding: 60px 10px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .image-row img {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  /* Services Section */
+  .services {
+    padding: 60px 10px;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+
+  .service-card .service-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
 /* ===== Founder Section ===== */
 .founder {
   padding: 80px 20px;
@@ -431,6 +555,96 @@ li a:hover {
 .footer-text a:hover {
   color: #fff;
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  /* ===== Founder Section ===== */
+  .founder {
+    padding: 50px 15px;
+  }
+
+  .founder h2 {
+    font-size: 1.8rem;
+  }
+
+  .founder p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* ===== Contact Section ===== */
+  .contact {
+    padding: 50px 15px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  /* Contact Form Section */
+  .contact-form-section {
+    padding: 40px 10px;
+  }
+
+  .contact-form-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-form {
+    padding: 25px 20px;
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  /* ===== Footer Section ===== */
+  .site-footer {
+    padding: 30px 15px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-icons {
+    gap: 16px;
+  }
+
+  .footer-icons a img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+    padding: 0 10px;
+  }
+}
+
+
+
+
+
+
 
 
 /* ===== Media Queries ===== */
@@ -793,6 +1007,110 @@ body {
   font-size: 1.4rem;
   max-width: 800px;
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Carousel */
+  .carousel-caption {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  button {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  /* Steam-like Container */
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .media-section,
+  .info-section {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .main-display {
+    height: 220px;
+  }
+
+  .thumb-strip img {
+    height: 60px;
+  }
+
+  .info-section {
+    padding: 15px;
+  }
+
+  .info-section h1 {
+    font-size: 20px;
+  }
+
+  .game-description {
+    font-size: 13px;
+  }
+
+  .meta-info p {
+    font-size: 12px;
+  }
+
+  .fullscreen-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .fullscreen-overlay p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .title-image {
+    max-height: 100px;
+  }
+
+  /* Fullscreen video adjustment for mobile */
+  .fullscreen-video-header {
+    height: 60vh;
+  }
+
+  .fullscreen-bg-video {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+
+
+
+
+
+
 /* === ABOUT PAGE STYLES === */
 
 .about-hero {
@@ -1034,5 +1352,103 @@ body {
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* Hero Video Section */
+  .about-hero {
+    height: 70vh;
+  }
+
+  .about-hero .fullscreen-overlay {
+    height: 70vh;
+    padding: 0 10px;
+  }
+
+  .about-hero .fullscreen-overlay h1 {
+    font-size: 2rem;
+  }
+
+  /* Founder Section */
+  .founder-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .founder-bio {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Timeline */
+  .timeline li {
+    padding: 20px;
+  }
+
+  .timeline li::before {
+    left: 10px;
+    top: 10px;
+    font-size: 0.75rem;
+  }
+
+  .timeline ul::before {
+    left: 10px;
+  }
+
+  /* Mission & Vision */
+  .mission-vision .mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-box h3 {
+    font-size: 1.8rem;
+  }
+
+  /* Values */
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Quote Section */
+  .founder-quote blockquote {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .founder-quote cite {
+    font-size: 0.9rem;
+  }
+
+  /* Side Panel Layout */
+  .about-container {
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .side-panel {
+    padding: 20px;
+  }
+
+  .side-panel h2 {
+    font-size: 1.3rem;
+  }
+
+  .info-tag {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .main-content {
+    flex: 1 1 100%;
   }
 }
