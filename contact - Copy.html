@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact SQ Interactive — Get proposals, demos, and custom VR or AI design solutions." />
+  <meta name="keywords" content="SQ Interactive, Contact, AI Interior Design, VR Real Estate, Unity 3D" />
+  <meta name="author" content="SQ Interactive" />
+  <title>Contact | SQ Interactive</title>
+
+  <!-- Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+
+  <!-- ✅ Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // replace with your Analytics ID
+  </script>
+
+  <!-- ✅ Hotjar Heatmap -->
+  <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background:#121212; color:#f5f5f5; }
+    h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
+    .gold { color:#d4af37; }
+    .glass { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px); }
+    .btn-gold { background: linear-gradient(90deg, #d4af37, #b8860b); color: #121212; }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full z-50 border-b border-[#ffffff0d]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/no-background.png" alt="SQ Logo" class="h-10 w-auto">
+          <div class="text-lg font-semibold">SQ <span class="gold">Interactive</span></div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-gray-200 hover:text-white">Home</a>
+
+          <div class="relative" id="services-desktop">
+            <button id="services-btn" class="flex items-center gap-2 text-gray-200 hover:text-white">
+              Services
+              <i data-feather="chevron-down" class="w-4 h-4 text-yellow-400"></i>
+            </button>
+            <div id="services-popup" class="absolute right-0 mt-3 w-56 bg-[#0f1114] border border-[#ffffff12] rounded-lg shadow-lg p-2 hidden">
+              <a href="services.html" class="block px-4 py-2 text-gray-200 hover:text-white">All Services</a>
+              <a href="vr real estate.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Real Estate</a>
+              <a href="ai interior design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI Interior Design</a>
+              <a href="interractive pc .html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive PC Models</a>
+              <a href="360 content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° Tours & Videos</a>
+              <a href="vr staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Showroom Showcase Staging</a>
+              <a href="interractive walkthroughs.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive Phone Walkthroughs</a>
+              <a href="Furniture Scanning.html" class="block px-4 py-2 text-gray-200 hover:text-white">Furniture Scanning & VR Staging</a>
+            </div>
+          </div>
+
+          <a href="portfolio.html" class="text-gray-200 hover:text-white">Portfolio</a>
+          <a href="about.html" class="text-gray-200 hover:text-white">About</a>
+          <a href="contact.html" class="text-gray-200 hover:text-white">Contact</a>
+
+          <!-- Language Toggle -->
+          <div class="flex items-center gap-3">
+            <button onclick="window.location.href='contact.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
+            <button onclick="window.location.href='contact-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center gap-2">
+          <button id="menu-toggle" class="p-2 rounded bg-white/6 text-white">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0b0c0d] border-t border-[#ffffff0a]">
+      <div class="px-5 py-4">
+        <a href="index.html" class="block py-2 text-gray-200">Home</a>
+        <button id="mobile-services-toggle" class="w-full text-left py-2 text-gray-200 flex justify-between items-center">
+          Services <i data-feather="chevron-down" class="w-4 h-4"></i>
+        </button>
+        <div id="mobile-services" class="hidden pl-4 mt-1">
+          <a href="services.html" class="block py-2 text-gray-300">All Services</a>
+          <a href="vr real estate.html" class="block py-2 text-gray-300">VR Real Estate</a>
+          <a href="ai interior design.html" class="block py-2 text-gray-300">AI Interior Design</a>
+          <a href="interractive pc .html" class="block py-2 text-gray-300">Interactive PC Models</a>
+          <a href="360 content.html" class="block py-2 text-gray-300">360° Tours & Videos</a>
+          <a href="vr staging.html" class="block py-2 text-gray-300">VR Showroom Showcase Staging</a>
+          <a href="interractive walkthroughs.html" class="block py-2 text-gray-300">Interactive Phone Walkthroughs</a>
+          <a href="Furniture Scanning.html" class="block py-2 text-gray-300">Furniture Scanning & VR Staging</a>
+        </div>
+        <a href="portfolio.html" class="block py-2 text-gray-200">Portfolio</a>
+        <a href="about.html" class="block py-2 text-gray-200">About</a>
+        <a href="contact.html" class="block py-2 text-gray-200">Contact</a>
+      </div>
+      <!-- Mobile Language Toggle -->
+      <div class="mt-3 flex gap-2">
+        <button onclick="window.location.href='contact.html'" class="px-3 py-1 rounded bg-white/10 text-white">EN</button>
+        <button onclick="window.location.href='contact-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">UR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- HERO SECTION -->
+<section class="relative h-screen flex items-center justify-center text-center">
+  <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+    <source src="videos/189046-884476411_small.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-[#121212]"></div>
+
+  <div class="relative z-10 max-w-3xl px-4" data-aos="fade-up">
+    <h1 class="text-5xl font-bold mb-6">Get in Touch</h1>
+    <p class="text-lg mb-8 opacity-80">Redefining Reality — Work with the pioneers of immersive design.</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="py-20 bg-[#121212] relative z-10">
+  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+    <div data-aos="fade-right">
+      <h2 class="text-3xl font-bold mb-6 gold">Contact SQ Interactive</h2>
+      <p class="text-gray-400 mb-6">Let’s talk about your project — whether you need VR visualization, AI-powered design, or immersive 3D content, we’re ready to collaborate.</p>
+      <p>Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
+      <p>Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
+    </div>
+
+   <form action="https://formsubmit.co/admin@sqinteractive.com" method="POST" class="space-y-3">
+
+  <!-- Hidden setup fields -->
+  <input type="hidden" name="_subject" value="New SQ Interactive Website Inquiry">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://www.sqinteractive.com/thank-you.html">
+  <input type="hidden" name="_autoresponse" value="Thank you for contacting SQ Interactive! Our team will reply within 24 hours.">
+
+  <!-- Visible user fields -->
+  <input type="text" name="name" placeholder="Your name" class="w-full mb-3 p-3 rounded bg-[#0d0e10] border border-[#ffffff08]" required>
+  <input type="email" name="email" placeholder="Email" class="w-full mb-3 p-3 rounded bg-[#0d0e10] border border-[#ffffff08]" required>
+  <input type="text" name="project" placeholder="Project / Property" class="w-full mb-3 p-3 rounded bg-[#0d0e10] border border-[#ffffff08]">
+  <textarea name="message" placeholder="Short message" class="w-full mb-3 p-3 rounded bg-[#0d0e10] border border-[#ffffff08]" rows="4"></textarea>
+
+  <div class="flex gap-3">
+    <button type="submit" class="btn-gold px-4 py-2 rounded font-semibold">Send</button>
+    <a href="mailto:admin@sqinteractive.com" class="px-4 py-2 rounded border border-[#ffffff10]">Request Demo</a>
+  </div>
+</form>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 py-10 relative z-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <img src="images/no-background.png" class="h-12 mb-4" alt="Logo">
+        <p class="text-sm">SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, design, and high-end media experiences.</p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-4">Contact</h3>
+        <p>Email: <a href="mailto:sqinterractive@hotmail.com" class="text-yellow-400 hover:underline">sqinterractive@hotmail.com</a></p>
+        <p>OR: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
+        <p>Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-8">&copy; 2025 SQ Interactive. All rights reserved.</div>
+  </footer>
+
+<script>
+AOS.init({ duration:700, once:true });
+feather.replace();
+
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle && menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+    // Mobile services
+    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+    const mobileServices = document.getElementById('mobile-services');
+    mobileServicesToggle && mobileServicesToggle.addEventListener('click', ()=> mobileServices.classList.toggle('hidden'));
+
+    // Desktop services popup (open/close)
+    const servicesBtn = document.getElementById('services-btn');
+    const servicesPopup = document.getElementById('services-popup');
+    if (servicesBtn) {
+      servicesBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        servicesPopup.classList.toggle('hidden');
+      });
+      // close when clicking outside
+      document.addEventListener('click', (e)=>{
+        if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) servicesPopup.classList.add('hidden');
+      });
+    }
+
+    // language quick toggle (desktop small)
+    document.getElementById('lang-btn')?.addEventListener('click', ()=> {
+      alert('Language toggle clicked — wire to actual language switch if needed.');
+    });
+
+// ✅ Handle form submission
+document.getElementById("sqForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    project: form.project.value,
+    message: form.message.value
+  };
+  
+  // Temporary: EmailJS (free & reliable form handler)
+  await fetch("https://formsubmit.co/ajax/admin@sqinteractive.com", {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  
+  document.getElementById("formMsg").classList.remove("hidden");
+  form.reset();
+});
+</script>
+
+</body>
+</html>

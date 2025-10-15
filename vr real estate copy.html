@@ -3,175 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VR Real Estate | SQ Interactive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <title>About | SQ Interactive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family:'Plus Jakarta Sans',sans-serif; background:#121212; color:#f5f5f5; }
+    h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
+    .gold { color:#d4af37; }
+    .card { background:#1e1e1e; border:1px solid rgba(212,175,55,0.2); border-radius:1rem; padding:2rem; transition:.3s; }
+    .card:hover { border-color:#d4af37; transform:translateY(-4px); box-shadow:0 0 20px rgba(212,175,55,0.3); }
+    .hero-overlay { background:linear-gradient(180deg,rgba(0,0,0,0.7) 0%,#121212 100%); }
+    blockquote { font-size:1.8rem; font-style:italic; color:#d4af37; line-height:1.4; }
+    cite { display:block; margin-top:.5rem; font-size:1rem; color:#bbb; }
+  </style>
 </head>
 <body>
-
   <!-- Navigation -->
-  <nav class="main-nav">
-  <ul>
-    <a href="homepage.html"><img src="images/no background.png" alt="SQ Logo" class="nav-logo"></a>
-    <li><a class="active" href="homepage.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="vr real estate.html">VR Real Estate</a></li>
-    <li><a href="ai interior design.html">AI Interior Design</a></li>
-    <li><a href="360 content.html">360° Content Creation</a></li>
-    <li><a href="vfx.html">VFX & Storytelling</a></li>
-    <li><a href="It systems.html">IT Systems</a></li>
-    <li><a href="vr experiances.html">VR Experiences</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <nav class="fixed w-full z-40 bg-[#1E1E1E]/80 backdrop-blur border-b border-yellow-600/30">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between h-20 items-center">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="images/no background.png" class="h-10">
+        <span class="text-xl font-bold">SQ<span class="gold">Interactive</span></span>
+      </a>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <ul class="flex space-x-8">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li class="relative group">
+            <button id="services-toggle" class="hover:text-yellow-400 flex items-center">Services ▾</button>
+            <ul id="services-menu" class="absolute hidden bg-[#1E1E1E] rounded-lg shadow-lg mt-2 py-2 w-48">
+              <li><a href="vr real estate.html" class="block px-4 py-2 hover:text-yellow-400">VR Real Estate</a></li>
+              <li><a href="ai interior design.html" class="block px-4 py-2 hover:text-yellow-400">AI Interior Design</a></li>
+              <li><a href="360 content.html" class="block px-4 py-2 hover:text-yellow-400">360° Content</a></li>
+              <li><a href="vr experiences.html" class="block px-4 py-2 hover:text-yellow-400">VR Experiences</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio.html" class="hover:text-yellow-400">Portfolio</a></li>
+          <li><a href="about.html" class="text-yellow-400">About</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <div class="flex space-x-2">
+          <button class="px-3 py-1 rounded-full bg-white/10 text-white hover:bg-white/20 transition">EN</button>
+          <button class="px-3 py-1 rounded-full bg-white/10 text-white hover:bg-white/20 transition">UR</button>
+        </div>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-white"><i data-feather="menu"></i></button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#1E1E1E] px-6 py-4">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="services.html" class="block py-2">Services</a>
+      <a href="portfolio.html" class="block py-2">Portfolio</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="contact.html" class="block py-2">Contact</a>
+    </div>
   </nav>
 
-   <header class="fullscreen-video-header">
-  <video autoplay muted loop playsinline class="fullscreen-bg-video">
-    <source src="videos/realestate.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <div class="fullscreen-overlay">
-     <img src="images/no background.png" alt="SQ Interactive Logo" class="logo" />
-    <h1>VR Real Estate</h1>
-    <p>Transforming property showcases with cutting-edge virtual tours and immersive experiences.</p>
-    
-  </div>
-</header>
-
-  <!-- Media and Info Section -->
-  <div class="container">
-    <!-- Left: Media -->
-    <div class="media-section">
-      <div class="main-display" id="mainDisplay">
-        <iframe
-          src="https://play.unity.com/webgl-builds/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds"
-          width="100%"
-          height="600"
-          frameborder="0"
-          allowfullscreen
-          title="Interactive VR Room Demo"
-          style="border: none; border-radius: 12px;">
-        </iframe>
-      </div>
-      <div class="thumb-strip">
-        <img src="images/vr realestate.png" alt="vr realestate" onclick="showMedia('img', 'images/vr realestate.png')">
-        <img src="images/vr realeatate.jpg" alt="vr realeatate" onclick="showMedia('img', 'images/vr realeatate.jpg')">
-        <img src="images/r2.jpg" alt="r2" onclick="showMedia('img', 'images/r2.jpg')">
-        <img src="images/vr real estate 4.png" alt="vr real estate" onclick="showMedia('img', 'images/vr real estate 4.png')">
-        <img src="images/vr realestate 3.jpg" alt="vr realestate" onclick="showMedia('img', 'images/vr realestate 3.jpg')">
-      </div>
+  <!-- Hero with Founder -->
+  <section class="relative h-screen flex items-center text-center">
+    <img src="images/pic.jpg" alt="Founder" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative z-10 w-full px-6 flex flex-col items-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">About <span class="gold">SQ Interactive</span></h1>
+      <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8">Innovating the future of immersive media through VR, AI, and multimedia storytelling.</p>
+      <blockquote class="max-w-3xl mx-auto" data-aos="zoom-in">“I built my dream from the ground up — with nothing but belief, vision, and fire in my heart.”</blockquote>
+      <cite>- Shazaib Qaiser, Founder</cite>
     </div>
+  </section>
 
-  <!-- Right: Info -->
-  <div class="info-section">
-    <h1>VR Real Estate Walkthrough</h1>
-    <img src="images/vr realestate.png" alt="SQ Interactive Logo" class="title-image">
-
-    <div class="game-description">
-      We turn 2D architectural floor plans into fully immersive 3D virtual homes using **Unity and ProBuilder.  
-      <br><br>
-      Every home is built from the ground up — walls, dimensions, and structure are accurately modeled, then styled with realistic furniture, textures, and lighting.  
-      <br><br>
-      Clients can walk through their dream home in VR before it’s even built. This helps interior designers, architects, and real estate agents communicate vision, close deals faster, and reduce revisions.
+  <!-- Our Story -->
+  <section class="py-20 max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+    <p class="text-gray-300 leading-relaxed max-w-4xl mx-auto">Founded in 2025 by <strong>Shazaib Qaiser</strong> in Lahore, Pakistan, SQ Interactive started with a vision to merge cutting-edge VR and AI with creative storytelling. Today, we pioneer immersive experiences that redefine real estate, design, and high-end media.</p>
+    <div class="flex justify-center space-x-4 mt-8">
+      <span class="px-5 py-2 rounded-full bg-yellow-400 text-black font-semibold">Founded: 2025</span>
+      <span class="px-5 py-2 rounded-full bg-yellow-400 text-black font-semibold">Location: Lahore, PK</span>
     </div>
+  </section>
 
-    <div class="meta-info">
-      <p><strong>BUILT WITH:</strong> <span>Unity + ProBuilder</span></p>
-      <p><strong>PLATFORMS:</strong> <span>Meta Quest, WebXR, PCVR</span></p>
-      <p><strong>PIPELINE:</strong> <span>Floor Plan → ProBuilder → Interior Design → VR Deployment</span></p>
-      <p><strong>SUITABLE FOR:</strong> <span>Real Estate Agents, Builders, Interior Designers</span></p>
-    </div>
-
-    <div class="tags">
-      <div class="tag">VR</div>
-      <div class="tag">Real Estate</div>
-      <div class="tag">ProBuilder</div>
-      <div class="tag">Unity</div>
-      <div class="tag">Interior Design</div>
-    </div>
-  </div>
-</div>
-
-
-  <section class="services">
-    <h2>Why Choose VR Real Estate?</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>High-Definition Virtual Tours</h3>
-        <p>Bring properties to life with realistic, interactive walkthroughs.</p>
-        <a href="vr real estate.html" class="service-btn">Learn More</a>
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-[#1E1E1E]">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+      <div class="card" data-aos="fade-right">
+        <h3 class="text-2xl font-bold mb-2 gold">Our Mission</h3>
+        <p>To empower industries through immersive media that transforms imagination into reality.</p>
       </div>
-      <div class="service-card">
-        <h3>Immersive 3D Environments</h3>
-        <p>Allow potential buyers to explore every corner of a property from their own device.</p>
-        <a href="vr real estate.html" class="service-btn">Learn More</a>
-      </div>
-      <div class="service-card">
-        <h3>Scalable, Customizable Solutions</h3>
-        <p>From single apartments to entire commercial buildings, we provide tailored VR solutions.</p>
-        <a href="vr real estate.html" class="service-btn">Learn More</a>
+      <div class="card" data-aos="fade-left">
+        <h3 class="text-2xl font-bold mb-2 gold">Our Vision</h3>
+        <p>To lead the global market in VR and AI-driven experiences, shaping how people interact with digital spaces.</p>
       </div>
     </div>
   </section>
 
+  <!-- Roadmap -->
+  <section class="py-20 relative">
+    <div class="absolute inset-0 bg-[url('images/NeuroSpace VR Preview.png')] bg-cover bg-fixed opacity-10"></div>
+    <div class="relative max-w-6xl mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-10 text-center">Roadmap & Goals</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card"><h4 class="gold">2025</h4><p>Launch immersive VR real estate showcase & AI design consulting.</p></div>
+        <div class="card"><h4 class="gold">2026</h4><p>Global client expansion & large-scale XR projects.</p></div>
+        <div class="card"><h4 class="gold">2027+</h4><p>Full-service XR agency & proprietary VR hardware.</p></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SWOT -->
+  <section class="py-20 max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+    <div class="card" data-aos="fade-up"><h3 class="gold mb-2">Strengths</h3><p>Innovative VR+AI integration, premium branding.</p></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="100"><h3 class="gold mb-2">Weaknesses</h3><p>Hardware R&D risk, early traction challenges.</p></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="200"><h3 class="gold mb-2">Opportunities</h3><p>Global VR/AR demand, design-tech evolution.</p></div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300"><h3 class="gold mb-2">Threats</h3><p>Big tech competition, R&D costs, rapid innovation cycles.</p></div>
+  </section>
 
-<!-- Contact Section -->
-<section class="contact" id="contact">
-  <h2>Get In Touch</h2>
-  <p>Email us at <a href="mailto:sqinterractive@hotmail.com">sqinterractive@hotmail.com</a></p>
-  <p>OR: <a href="mailto:admin@sqinteractive.com">admin@sqinteractive.com</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank">@SQInteractive</a></p>
-  <p>Phone: <a href="tel:+923009452153">+92 300 9452153</a></p>
-</section>
+  <!-- Final Quote -->
+  <section class="py-24 bg-gradient-to-r from-black via-[#1E1E1E] to-black text-center">
+    <blockquote data-aos="zoom-in">“This isn’t just a startup. This is my legacy. And it’s just getting started.”</blockquote>
+    <cite>- Shazaib Qaiser</cite>
+  </section>
 
-<!-- Unified Footer -->
-<footer class="footer">
-  <div class="footer-icons">
-    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a" target="_blank" aria-label="LinkedIn">
-      <img src="images/linkedin.png" alt="LinkedIn Icon" />
-    </a>
-    <a href="https://www.instagram.com/sqinteractive" target="_blank" aria-label="Instagram">
-      <img src="images/instagram.png" alt="Instagram Icon" />
-    </a>
-    <a href="mailto:admin@sqinteractive.com" aria-label="Email">
-      <img src="images/email.png" alt="Email Icon" />
-    </a>
-    <a href="tel:+923009452153" aria-label="Phone">
-      <img src="images/telephone.png" alt="Phone Icon" />
-    </a>
-    <a href="https://learn.unity.com/u/659e3067edbc2a165e74468c" target="_blank" aria-label="Unity">
-      <img src="images/unity.png" alt="Unity Icon" />
-    </a>
-  </div>
-  <p class="footer-text">&copy; 2025 SQ Interactive. All rights reserved. • <a href="shazaib-qaiser.pdf" download>Download CV</a></p>
-</footer>
+  <!-- Footer -->
+  <footer class="bg-[#1E1E1E] border-t border-gray-800 py-12">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <img src="images/no background.png" class="h-12 mb-4" alt="Logo">
+        <p class="text-sm text-gray-400">SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, design, and high-end media experiences.</p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="services.html" class="hover:text-yellow-400">Services</a></li>
+          <li><a href="portfolio.html" class="hover:text-yellow-400">Portfolio</a></li>
+          <li><a href="about.html" class="hover:text-yellow-400">About</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-4">Contact</h3>
+        <p>Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
+        <p>Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
+      </div>
+    </div>
+    <div class="flex justify-center space-x-6 mt-8">
+      <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a" target="_blank"><img src="images/linkedin.png" class="h-6"></a>
+      <a href="https://www.instagram.com/sqinteractive" target="_blank"><img src="images/instagram.png" class="h-6"></a>
+      <a href="mailto:admin@sqinteractive.com"><img src="images/email.png" class="h-6"></a>
+      <a href="tel:+923009452153"><img src="images/telephone.png" class="h-6"></a>
+      <a href="https://learn.unity.com/u/659e3067edbc2a165e74468c" target="_blank"><img src="images/unity.png" class="h-6"></a>
+    </div>
+    <p class="text-center text-gray-500 text-sm mt-6">&copy; 2025 SQ Interactive. All rights reserved. • <a href="Shazaib Qaiser CV MAL.pdf" download class="underline hover:text-yellow-400">Download CV</a></p>
+  </footer>
 
-
-  <!-- Media Swap Script -->
+  <!-- Scripts -->
   <script>
-    function showMedia(type, src) {
-      const display = document.getElementById("mainDisplay");
-      display.innerHTML = ''; // Clear current content
-
-      if (type === 'img') {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Media Preview";
-        display.appendChild(img);
-      } else if (type === 'video') {
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.autoplay = true;
-        video.alt = "Video Preview";
-        display.appendChild(video);
+    AOS.init();
+    feather.replace();
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+    const servicesToggle = document.getElementById("services-toggle");
+    const servicesMenu = document.getElementById("services-menu");
+    servicesToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      servicesMenu.classList.toggle("hidden");
+    });
+    document.addEventListener("click", (e) => {
+      if (!servicesToggle.contains(e.target) && !servicesMenu.contains(e.target)) {
+        servicesMenu.classList.add("hidden");
       }
-    }
+    });
   </script>
-
 </body>
 </html>

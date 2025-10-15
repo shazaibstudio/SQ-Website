@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQ Interactive | Immersive VR & AI Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background:#121212; color:#f5f5f5; }
+    h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
+    .gold { color:#d4af37; }
+    .demo-btn {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+      background: linear-gradient(135deg,#d4af37 0%,#f1c40f 100%);
+      box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+      animation: pulse 5s infinite;
+    }
+    .demo-btn:hover { box-shadow:0 0 20px rgba(212,175,55,0.5); transform:translateY(-3px); }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .before-after { position:relative; height:24rem; overflow:hidden; border-radius:1rem; }
+    .before-after img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .slider-handle { position:absolute; width:4px; height:100%; background:#d4af37; left:50%; cursor:ew-resize; }
+    .slider-handle:after { content:''; position:absolute; width:32px; height:32px; border-radius:50%; background:#d4af37; top:50%; left:50%; transform:translate(-50%,-50%); }
+    .label { position:absolute; top:10px; padding:4px 10px; background:rgba(0,0,0,0.6); color:#f5f5f5; font-size:0.875rem; border-radius:6px; }
+    .label.left { left:10px; }
+    .label.right { right:10px; }
+
+    /* Steam-style background */
+    .steam-bg {
+      background-image: url('images/steam-bg.jpg'); /* Add your own image here */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      z-index: 0;
+    }
+    .steam-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(18,18,18,0.95));
+      backdrop-filter: blur(4px);
+      z-index: -1;
+    }
+
+  </style>
+
+<!-- 🔥 Analytics & Heatmaps -->
+
+<!-- ✅ Google Analytics (live ID: G-GYP19H93BR) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GYP19H93BR');
+</script>
+
+<!-- ✅ Hotjar / Contentsquare Integration -->
+<script>
+  (function (c, s, q, u, a, r, e) {
+      c.hj = c.hj || function(){(c.hj.q = c.hj.q || []).push(arguments)};
+      c._hjSettings = { hjid: 6545315 }; /* your site’s unique Hotjar ID */
+      r = s.getElementsByTagName('head')[0];
+      e = s.createElement('script');
+      e.async = true;
+      e.src = q + c._hjSettings.hjid + u;
+      r.appendChild(e);
+  })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js');
+</script>
+
+<!-- ✅ Contentsquare Tag -->
+<script src="https://t.contentsquare.net/uxa/c97b2acc48ee8.js" async></script>
+
+
+</head>
+<body>
+<!-- Demo Button -->
+<button 
+    onclick="window.location.href='contact.html'" 
+    class="demo-btn px-6 py-3 rounded-full text-white font-semibold flex items-center transition">
+    <i data-feather="play" class="mr-2"></i> ڈیمو کی درخواست کریں
+</button>
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full z-50 border-b border-[#ffffff0d]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/no-background.png" alt="SQ Logo" class="h-10 w-auto">
+          <div class="text-lg font-semibold">SQ <span class="gold">Interactive</span></div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-gray-200 hover:text-white">ہوم</a>
+
+          <div class="relative" id="services-desktop">
+            <button id="services-btn" class="flex items-center gap-2 text-gray-200 hover:text-white">
+              سروسز
+              <i data-feather="chevron-down" class="w-4 h-4 text-yellow-400"></i>
+            </button>
+            <div id="services-popup" class="absolute right-0 mt-3 w-56 bg-[#0f1114] border border-[#ffffff12] rounded-lg shadow-lg p-2 hidden">
+              <a href="services.html" class="block px-4 py-2 text-gray-200 hover:text-white">تمام سروسز</a>
+              <a href="vr real estate.html" class="block px-4 py-2 text-gray-200 hover:text-white">وی آر ریئل اسٹیٹ</a>
+              <a href="ai interior design.html" class="block px-4 py-2 text-gray-200 hover:text-white">اے آئی انٹیریئر ڈیزائن</a>
+              <a href="interractive pc .html" class="block px-4 py-2 text-gray-200 hover:text-white">انٹرایکٹو پی سی ماڈلز</a>
+              <a href="360 content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° ٹورز اور ویڈیوز</a>
+              <a href="vr staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">وی آر شو روم اسٹینجنگ</a>
+              <a href="interractive walkthroughs.html" class="block px-4 py-2 text-gray-200 hover:text-white">انٹرایکٹو فون واک تھروز</a>
+              <a href="Furniture Scanning.html" class="block px-4 py-2 text-gray-200 hover:text-white">فرنیچر اسکیننگ و وی آر اسٹینجنگ</a>
+            </div>
+          </div>
+
+          <a href="portfolio.html" class="text-gray-200 hover:text-white">پورٹ فولیو</a>
+          <a href="about.html" class="text-gray-200 hover:text-white">کے بارے میں</a>
+          <a href="contact-ur.html" class="text-gray-200 hover:text-white">رابطہ</a>
+          <!-- Language Toggle -->
+          <div class="flex items-center gap-3">
+            <button onclick="window.location.href='contact.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
+            <button onclick="window.location.href='contact-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center gap-2">
+          <button id="menu-toggle" class="p-2 rounded bg-white/6 text-white">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+<!-- Mobile Menu (Urdu Version) -->
+<div id="mobile-menu" class="hidden md:hidden bg-[#0b0c0d] border-t border-[#ffffff0a]">
+  <div class="px-5 py-4">
+    <a href="index-ur.html" class="block py-2 text-gray-200">ہوم</a>
+    <button id="mobile-services-toggle" class="w-full text-left py-2 text-gray-200 flex justify-between items-center">
+      سروسز <i data-feather="chevron-down" class="w-4 h-4"></i>
+    </button>
+    <div id="mobile-services" class="hidden pl-4 mt-1">
+      <a href="services-ur.html" class="block py-2 text-gray-300">تمام سروسز</a>
+      <a href="vr real estate-ur.html" class="block py-2 text-gray-300">وی آر رئیل اسٹیٹ</a>
+      <a href="ai interior design-ur.html" class="block py-2 text-gray-300">اے آئی انٹیریئر ڈیزائن</a>
+      <a href="interractive pc -ur.html" class="block py-2 text-gray-300">انٹرایکٹو پی سی ماڈلز</a>
+      <a href="360 content-ur.html" class="block py-2 text-gray-300">360° ٹورز اور ویڈیوز</a>
+      <a href="vr staging-ur.html" class="block py-2 text-gray-300">وی آر شو روم شوکیس اسٹینجنگ</a>
+      <a href="interractive walkthroughs-ur.html" class="block py-2 text-gray-300">انٹرایکٹو فون واک تھروز</a>
+      <a href="Furniture Scanning-ur.html" class="block py-2 text-gray-300">فرنیچر اسکیننگ اور وی آر اسٹینجنگ</a>
+    </div>
+    <a href="portfolio-ur.html" class="block py-2 text-gray-200">پورٹ فولیو</a>
+    <a href="about-ur.html" class="block py-2 text-gray-200">ہمارے بارے میں</a>
+    <a href="contact-ur.html" class="block py-2 text-gray-200">رابطہ کریں</a>
+
+       <!-- Mobile Language Toggle -->
+      <div class="mt-3 flex gap-2">
+        <button onclick="window.location.href='index.html'" class="px-3 py-1 rounded bg-white/10 text-white">EN</button>
+        <button onclick="window.location.href='index-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">UR</button>
+      </div>
+  </div>
+</div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero with Video -->
+  <section class="relative h-screen flex items-center justify-center text-center">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="videos/home.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/60 z-0"></div>
+    <div class="relative z-10 px-4" data-aos="fade-up">
+      <img src="images/no-background.png" class="mx-auto mb-6 w-32">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">جہاں وژن حقیقت بن جاتا ہے</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200">VR، AI، اور کہانی سنانے کے ذریعے تخیل اور حقیقت کے درمیان لائن کو دھندلا کرنا۔</p>
+      <div class="flex justify-center space-x-4">
+        <a href="services.html" class="bg-yellow-400 text-black font-semibold py-3 px-8 rounded-full hover:scale-105 transition">حل دریافت کریں</a>
+        <a href="portfolio.html" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:scale-105 transition">پورٹ فولیو دیکھیں</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+     <section class="steam-bg py-24 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+      <h2 class="text-4xl font-bold text-yellow-400 mb-6">ہمارا مشن</h2>
+      <p class="mb-10 text-gray-300">SQ Interactive میں، ہم انقلاب کرتے ہیں کہ لوگ کس طرح ڈیجیٹل اسپیسز کے ساتھ تعامل کرتے ہیں، VR، AI، اور ملٹی میڈیا اسٹوری ٹیلنگ کو ضم کر کے طاقتور عمیق تجربات تخلیق کرتے ہیں</p>
+      <div class="flex gap-4 overflow-x-auto justify-center">
+        <img src="images/360 sam.jpeg" class="w-48 rounded shadow">
+        <img src="images/NeuroSpace VR Preview.png" class="w-48 rounded shadow">
+        <img src="images/ai agent job seeker.png" class="w-48 rounded shadow">
+        <img src="images/jpj.png" class="w-48 rounded shadow">
+        <img src="images/ai interior design.png" class="w-48 rounded shadow">
+      </div>
+      <h3 class="mt-6 text-lg text-gray-400">لاہور، پاکستان میں قائم ہوا</h3>
+    </div>
+  </section>
+
+  <!-- Quick Demo Highlight -->
+  <section class="py-20 bg-[#121212]">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">ہمارا تازہ ترین پروجیکٹ</h2>
+      <p class="text-lg mb-10 max-w-2xl mx-auto text-gray-400">VR میں مکمل طور پر چلنے کے قابل فلور پلانز سے بنے ہمارے 2 کنال کے گھر کو دریافت کریں</p>
+      <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/2IQI5v6wLCw" title="Quick Demo" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After -->
+    <section class="steam-bg py-24 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+      <h2 class="text-4xl font-bold mb-4">تبدیلی کے نتائج</h2>
+      <p class="text-lg mb-10">دیکھیں کہ ہمارے VR اور AI سلوشنز رئیل اسٹیٹ کے تجربات کو کیسے بلند کرتے ہیں.</p>
+      <p class="text-lg mb-10">(منتقل کرنے کے لیے پیلے رنگ کے نقطے کو سلائیڈ کریں)</p>
+      <div class="before-after shadow-xl mx-auto max-w-4xl">
+        <img src="images/after.png" class="before-image">
+        <img src="images/before.png" class="after-image" style="width:50%;">
+        <div class="label left">پہلے</div>
+        <div class="label right">بعد</div>
+        <div class="slider-handle"></div>
+    
+      </div>
+    </div>
+  </section>
+
+<!-- WebGL -->
+<section class="py-20 bg-[#2C2C2C] text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-6">ہماری ٹیکنالوجی کا تجربہ کریں</h2>
+    <p class="text-lg opacity-80 mb-12">ذیل میں ہمارے WebGL سے چلنے والے پراپرٹی ویور کے ساتھ تعامل کریں</p>
+    <div class="bg-black/40 rounded-xl p-10">
+      <div class="aspect-video bg-gray-800 flex items-center justify-center rounded-lg">
+        <div class="p-8">
+          <i data-feather="maximize-2" class="w-16 h-16 mx-auto text-yellow-400 mb-4"></i>
+          <h3 class="text-2xl font-bold mb-2">WebGL پراپرٹی ویور</h3>
+          <p class="mb-6 opacity-80">ہمارا انٹرایکٹو 3D پراپرٹی ویژولائزیشن ٹول لانچ کرنے کے لیے نیچے کلک کریں</p>
+          <button 
+            onclick="window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank')" 
+            class="bg-yellow-400 text-black font-semibold py-3 px-8 rounded-full hover:scale-105 transition">
+            ویور لانچ کریں
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Services Grid -->
+    <section class="steam-bg py-24 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-yellow-400 mb-12">ہماری بنیادی خدمات</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 360 Tours -->
+        <div class="p-6 rounded-xl shadow-lg bg-[#1E1E1E]" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-3">360° ٹورز اور ڈرون ویڈیو</h3>
+          <img src="images/360 sam.jpeg" class="rounded mb-3">
+          <p class="text-gray-400 mb-4">ڈرون شاٹس، ہاٹ سپاٹ اور بیان کے ساتھ عمیق 360° پراپرٹی ٹور</p>
+          <p class="text-sm text-gray-400">PKR 50k – 100k • 1–2 weeks</p>
+          <a href="360 content.html" class="text-yellow-400 hover:underline">مزید جانیں →</a>
+        </div>
+
+        <!-- WebGL -->
+        <div class="p-6 rounded-xl shadow-lg bg-[#1E1E1E]" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-3">انٹرایکٹو WebGL واک تھرو</h3>
+          <img src="images/NeuroSpace VR Preview.png" class="rounded mb-3">
+          <p class="text-gray-400 mb-4">برانڈڈ UI اور تجزیات کے ساتھ ڈیسک ٹاپ اور موبائل کے لیے مکمل 3D واک تھرو.</p>
+          <p class="text-sm text-gray-400">PKR 140k – 200k • 2–3 weeks</p>
+          <a href="vr real estate.html" class="text-yellow-400 hover:underline">مزید جانیں →</a>
+        </div>
+
+        <!-- VR Staging -->
+        <div class="p-6 rounded-xl shadow-lg bg-[#1E1E1E]" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-3">VR سٹیجنگ اور فرنیچر</h3>
+          <img src="images/ai interior design.png" class="rounded mb-3">
+          <p class="text-gray-400 mb-4">خالی کمروں کو حقیقت پسندانہ VR/AR فرنیچر کے ساتھ اسٹائل والے اندرونی حصے میں تبدیل کریں</p>
+          <p class="text-sm text-gray-400">PKR 150k – 300k • 2–4 weeks</p>
+          <a href="ai interior design.html" class="text-yellow-400 hover:underline">مزید جانیں →</a>
+        </div>
+
+        <!-- AI Redesigns -->
+        <div class="p-6 rounded-xl shadow-lg bg-[#1E1E1E]" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-3">AI داخلہ دوبارہ ڈیزائن کرتا ہے</h3>
+          <img src="images/ai agent job seeker.png" class="rounded mb-3">
+          <p class="text-gray-400 mb-4">متعدد AI سے تیار کردہ اسٹائلز کے ساتھ خالی جگہوں کا فوری طور پر دوبارہ تصور کریں.</p>
+          <p class="text-sm text-gray-400">PKR 30k – 75k • چند دن</p>
+          <a href="ai interior design.html" class="text-yellow-400 hover:underline">مزید جانیں →</a>
+        </div>
+
+        <!-- VR/EXE Builds -->
+        <div class="p-6 rounded-xl shadow-lg bg-[#1E1E1E]" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-3">VR اور EXE بناتا ہے</h3>
+          <img src="images/jpj.png" class="rounded mb-3">
+          <p class="text-gray-400 mb-4">نمائشوں اور پریمیم خریداروں کے لیے آف لائن EXE ایپس اور VR ہیڈ سیٹ.</p>
+          <p class="text-sm text-gray-400">PKR 250k – 800k • 3-6 ہفتے</p>
+          <a href="vr experiences.html" class="text-yellow-400 hover:underline">مزید جانیں →</a>
+        </div>
+
+              <!-- VR Showroom Showcase -->
+<div class="p-6 rounded-xl shadow-lg bg-[#1E1E1E] hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up">
+  <h3 class="text-xl font-bold mb-3 text-yellow-400">وی آر شو روم شوکیس</h3>
+  <img src="images/ai interior design.png" class="rounded-lg mb-4 shadow-md border border-yellow-500/20">
+  <p class="text-gray-300 mb-3">
+    مکمل طور پر انٹرایکٹو VR شو رومز جو حقیقی دنیا کے ماڈلز سے بنائے گئے ہیں - جو خریداروں کو پراپرٹیز یا فرنیچر کو تلاش کرنے کی اجازت دیتا ہے۔ 
+    زندگی جیسا 3D ماحول۔ گاہکوں کو متاثر کرنے اور ڈویلپرز، ڈیزائنرز اور ایجنسیوں کے لیے مصروفیت بڑھانے کے لیے ڈیزائن کیا گیا ہے.
+  </p>
+  <p class="text-sm text-gray-400 mb-4 italic">PKR 150,000 - 300,000 فی پروجیکٹ سے شروع</p>
+  <a href="services.html" 
+     class="inline-block text-yellow-400 hover:text-yellow-300 font-semibold transition">
+     مزید جانیں →
+  </a>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+   
+     <section class="steam-bg py-24 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+    <div class="max-w-5xl mx-auto text-center px-6 bg-black/50 rounded-2xl p-12" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">ہمارے ساتھ کام کرنے کے لیے تیار ہیں؟</h2>
+      <p class="text-lg text-gray-300 mb-8">یہ دیکھنے کے لیے مشاورت کا شیڈول بنائیں کہ ہم کس طرح آپ کے وژن کو عمیق حقیقت میں بدل سکتے ہیں</p>
+      <a href="contact.html" class="bg-yellow-400 text-black font-semibold py-3 px-8 rounded-full hover:scale-105 transition">مشاورت کی درخواست کریں</a>
+    </div>
+  </section>
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-10 relative z-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <div>
+      <img src="images/no-background.png" class="h-12 mb-4" alt="Logo">
+      <p class="text-sm">SQ انٹرایکٹو کرافٹس عمیق VR، AI، اور ملٹی میڈیا سلوشنز کے لیے رئیل اسٹیٹ، ڈیزائن، اور اعلیٰ درجے کے میڈیا کے تجربات</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-4">فوری لنکس</h3>
+      <ul class="space-y-2">
+        <li><a href="index.html" class="hover:text-white">ہوم پیج</a></li>
+        <li><a href="services.html" class="hover:text-white">فراہم کردہ خدمات</a></li>
+        <li><a href="portfolio.html" class="hover:text-white">پورٹ فولیو</a></li>
+        <li><a href="contact.html" class="hover:text-white">رابطہ کریں</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-4">رابطہ کریں</h3>
+      <p>ای میل:<a href="mailto:sqinterractive@hotmail.com" class="text-yellow-400 hover:underline">sqinterractive@hotmail.com</a></p>
+      <p>یا: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
+      <p>انسٹاگرام: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
+      <p>فون: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">  +92 300 9452153</a></p>
+    </div>
+  </div>
+  <div class="text-center text-gray-500 text-sm mt-8">&copy; 2025 SQ انٹرایکٹو۔ جملہ حقوق محفوظ ہیں.</div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script>
+    AOS.init({ duration:700, once:true });
+    feather.replace();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle && menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+    // Mobile services
+    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+    const mobileServices = document.getElementById('mobile-services');
+    mobileServicesToggle && mobileServicesToggle.addEventListener('click', ()=> mobileServices.classList.toggle('hidden'));
+
+    // Desktop services popup (open/close)
+    const servicesBtn = document.getElementById('services-btn');
+    const servicesPopup = document.getElementById('services-popup');
+    if (servicesBtn) {
+      servicesBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        servicesPopup.classList.toggle('hidden');
+      });
+      // close when clicking outside
+      document.addEventListener('click', (e)=>{
+        if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) servicesPopup.classList.add('hidden');
+      });
+    }
+
+    // language quick toggle (desktop small)
+    document.getElementById('lang-btn')?.addEventListener('click', ()=> {
+      alert('Language toggle clicked — wire to actual language switch if needed.');
+    });
+
+    
+
+
+    // Before/After Slider
+    const slider=document.querySelector('.before-after'),
+          after=document.querySelector('.after-image'),
+          handle=document.querySelector('.slider-handle');
+    let drag=false;
+    handle.addEventListener('mousedown',()=>drag=true);
+    document.addEventListener('mouseup',()=>drag=false);
+    document.addEventListener('mousemove',e=>{
+      if(!drag)return;
+      const r=slider.getBoundingClientRect(),pos=e.clientX-r.left;
+      const perc=Math.max(0,Math.min(100,(pos/r.width)*100));
+      after.style.width=`${perc}%`; handle.style.left=`${perc}%`;
+    });
+  </script>
+</body>
+</html>
