@@ -158,69 +158,168 @@
     </div>
   </section>
 
-  <!-- Filters -->
-  <section class="py-12 bg-[#121212] text-center">
-    <div class="flex justify-center flex-wrap gap-4">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="residential">Residential</button>
-      <button class="filter-btn" data-filter="commercial">Commercial</button>
-      <button class="filter-btn" data-filter="360">360 Tours</button>
-      <button class="filter-btn" data-filter="vr">VR Builds</button>
+<!-- Filters -->
+<section class="py-12 bg-[#121212] text-center">
+  <div class="flex justify-center flex-wrap gap-4">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="residential">Residential</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+    <button class="filter-btn" data-filter="360">360 Tours</button>
+    <button class="filter-btn" data-filter="vr">VR Builds</button>
+    <button class="filter-btn" data-filter="ai">AI Projects</button>
+    <button class="filter-btn" data-filter="photogrammetry">3D Scans</button>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="py-20 bg-[#121212]" id="portfolio">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Portfolio Grid -->
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3" id="portfolio-grid">
+
+      <!-- 1: Luxury Villa -->
+      <div class="portfolio-card group residential" data-category="residential">
+        <img src="images/after.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="Luxury Villa Walkthrough">
+        <div class="portfolio-overlay">
+          <h3>Luxury Villa Walkthrough</h3>
+          <p>High-end PC walkthrough of a premium villa in DHA with a cherry tree centerpiece.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/after.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="https://www.youtube.com/watch?v=2IQI5v6wLCw&t=2s" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: 1 Kanal Villa -->
+      <div class="portfolio-card group residential" data-category="residential">
+        <img src="images/2kanal.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="1 Kanal Villa">
+        <div class="portfolio-overlay">
+          <h3>1 Kanal Villa</h3>
+          <p>Elegant 1 Kanal villa visualization — designed for mobile with lighting & interior flow.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/2kanal_full.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="#" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Matlock Galani -->
+      <div class="portfolio-card group 360" data-category="360">
+        <img src="images/matlock.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="Matlock Galani 360° Tour">
+        <div class="portfolio-overlay">
+          <h3>Matlock Galani 360° Tour</h3>
+          <p>Interactive 360° video captured with Insta360 X3 for immersive property experience.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/matlock.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="https://youtu.be/tTfrOWW8lW4?si=AC40hyr6r_kXw3xp" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: AI Interior Design -->
+      <div class="portfolio-card group ai" data-category="ai">
+        <img src="images/ai interior design.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="AI Interior Design">
+        <div class="portfolio-overlay">
+          <h3>AI-Powered Interior Design</h3>
+          <p>AI-assisted system that suggests layouts and decor in real time.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/ai interior design.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="#" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: VR Room -->
+      <div class="portfolio-card group vr" data-category="vr">
+        <img src="images/NeuroSpace VR Preview.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="VR Room">
+        <div class="portfolio-overlay">
+          <h3>VR Room Experience</h3>
+          <p>Interactive VR environment built in Unity with real-time physics.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/NeuroSpace VR Preview.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="#" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: VR-AI Assistant -->
+      <div class="portfolio-card group ai vr" data-category="ai">
+        <img src="images/coming soon.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="VR-AI Assistant">
+        <div class="portfolio-overlay">
+          <h3>VR-AI Interior Assistant</h3>
+          <p>Flagship product — AI-powered assistant for immersive design visualization.</p>
+          <div class="flex justify-center mt-3">
+            <button onclick="openImageModal('images/coming soon.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: Insta360 Walkthrough -->
+      <div class="portfolio-card group 360" data-category="360">
+        <img src="images/360 sam.jpeg" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="Insta360 Walkthrough">
+        <div class="portfolio-overlay">
+          <h3>Insta360 Walkthrough</h3>
+          <p>Interactive 360° picture tour of a house floor — captured with Insta360 and edited for web.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/insta360_walkthrough.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="#" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8: Photogrammetry Sofa -->
+      <div class="portfolio-card group photogrammetry" data-category="photogrammetry">
+        <img src="images/sofa.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="3D Sofa Scan">
+        <div class="portfolio-overlay">
+          <h3>Photogrammetry 3D Scan — Sofa</h3>
+          <p>High-accuracy 3D scan optimized for VR furniture visualization.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/sofa.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="#" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9: Photogrammetry Elephant -->
+      <div class="portfolio-card group photogrammetry" data-category="photogrammetry">
+        <img src="images/elephant scan.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="3D Elephant Scan">
+        <div class="portfolio-overlay">
+          <h3>Photogrammetry 3D Scan — Elephant</h3>
+          <p>Detailed 3D scan of an elephant statue using mobile photogrammetry for VR.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/elephant scan.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="https://youtube.com/shorts/IMGKXPBQigg?si=9P4trvntx72yYjhN" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10: FYP -->
+      <div class="portfolio-card group vr" data-category="vr">
+        <img src="images/fyp.png" class="w-full h-64 object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" alt="VR Adventures FYP">
+        <div class="portfolio-overlay">
+          <h3>VR Adventures for the Disabled (FYP)</h3>
+          <p>360° adventure experiences designed for physically challenged users.</p>
+          <div class="flex flex-col sm:flex-row gap-2 mt-3">
+            <button onclick="openImageModal('images/fyp.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">View Project</button>
+            <a href="https://youtu.be/NUcPEprluX8?si=zuyoySIiOCQ-aeoB" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition text-center">▶ Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Portfolio Grid -->
-  <section class="py-20 bg-[#121212]">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8" id="portfolio-grid">
-      <!-- Example Card -->
-
-      <div class="portfolio-card group residential" data-aos="fade-up">
-  <img src="images/after.png" class="w-full h-64 object-cover transition group-hover:scale-110" />
-  <div class="portfolio-overlay">
-    <h3>Luxury Villa Walkthrough</h3>
-    <p>High-end WebGL walkthrough of a premium villa in DHA.</p>
-    <button class="open-lightbox bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold"
-            data-image="images/after.png">
-      View Project
-    </button>
+<!-- Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+  <div class="relative max-w-4xl mx-auto p-4">
+    <img id="modalImage" src="" class="rounded-lg max-h-[80vh] w-auto mx-auto shadow-lg" alt="Project Preview">
+    <button onclick="closeImageModal()" class="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-red-700 transition">✕ Close</button>
   </div>
 </div>
 
 
-      <div class="portfolio-card group residential" data-aos="fade-up">
-        <img src="images/fyp.png" class="w-full h-64 object-cover transition group-hover:scale-110" />
-        <div class="portfolio-overlay">
-          <h3>Luxury Villa Walkthrough</h3>
-          <p>High-end WebGL walkthrough of a premium villa in DHA.</p>
-          <a href="images/fyp.png" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">View Project</a>
-        </div>
-      </div>
-      <div class="portfolio-card group commercial" data-aos="fade-up">
-        <img src="images/portfolio2.jpg" class="w-full h-64 object-cover transition group-hover:scale-110" />
-        <div class="portfolio-overlay">
-          <h3>Office Tower VR</h3>
-          <p>Immersive VR build showcasing commercial spaces for investors.</p>
-          <a href="images/360 tour.jpg" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">View Project</a>
-        </div>
-      </div>
-      <div class="portfolio-card group 360" data-aos="fade-up">
-        <img src="images/360 sam.jpeg" class="w-full h-64 object-cover transition group-hover:scale-110" />
-        <div class="portfolio-overlay">
-          <h3>360° Apartment Tour</h3>
-          <p>Interactive 360° photography tour with embedded hotspots.</p>
-          <a href="images/360 sam.jpeg" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">View Project</a>
-        </div>
-      </div>
-      <div class="portfolio-card group vr" data-aos="fade-up">
-        <img src="images/NeuroSpace VR Preview.png" class="w-full h-64 object-cover transition group-hover:scale-110" />
-        <div class="portfolio-overlay">
-          <h3>Expo VR Showcase</h3>
-          <p>VR headset experience for a real estate exhibition booth.</p>
-          <a href="#" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">View Project</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
     <!-- Testimonials -->
   <section class="py-20 bg-[#1E1E1E]">
@@ -288,91 +387,106 @@
   </div>
   <div class="text-center text-gray-500 text-sm mt-8">&copy; 2025 SQ Interactive. All rights reserved.</div>
 </footer>
+<!-- Scripts -->
+<script>
+  // ✅ Initialize animations & icons
+  AOS.init({ duration: 700, once: true });
+  feather.replace();
 
-  <!-- Scripts -->
-  <script>
-      AOS.init({ duration:700, once:true });
-    feather.replace();
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle && menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-
-    // Mobile services
-    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-    const mobileServices = document.getElementById('mobile-services');
-    mobileServicesToggle && mobileServicesToggle.addEventListener('click', ()=> mobileServices.classList.toggle('hidden'));
-
-    // Desktop services popup (open/close)
-    const servicesBtn = document.getElementById('services-btn');
-    const servicesPopup = document.getElementById('services-popup');
-    if (servicesBtn) {
-      servicesBtn.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        servicesPopup.classList.toggle('hidden');
-      });
-      // close when clicking outside
-      document.addEventListener('click', (e)=>{
-        if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) servicesPopup.classList.add('hidden');
-      });
-    }
-
-    // language quick toggle (desktop small)
-    document.getElementById('lang-btn')?.addEventListener('click', ()=> {
-      alert('Language toggle clicked — wire to actual language switch if needed.');
+  // ✅ Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-
-
-
-    AOS.init();
-    feather.replace();
-    document.getElementById('menu-toggle').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('hidden'));
-
-    // Filtering
-    const filterBtns=document.querySelectorAll('.filter-btn');
-    const items=document.querySelectorAll('#portfolio-grid .portfolio-card');
-    filterBtns.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        filterBtns.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter=btn.getAttribute('data-filter');
-        items.forEach(item=>{
-          if(filter==='all' || item.classList.contains(filter)){
-            item.style.display='block';
-          }else{
-            item.style.display='none';
-          }
-        });
-      });
-    });
-
-    // Lightbox functionality
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-image");
-const lightboxClose = document.getElementById("lightbox-close");
-
-document.querySelectorAll(".open-lightbox").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const imgSrc = btn.getAttribute("data-image");
-    lightboxImg.src = imgSrc;
-    lightbox.classList.remove("hidden");
-  });
-});
-
-lightboxClose.addEventListener("click", () => {
-  lightbox.classList.add("hidden");
-  lightboxImg.src = "";
-});
-
-// Close on background click
-lightbox.addEventListener("click", e => {
-  if (e.target === lightbox) {
-    lightbox.classList.add("hidden");
-    lightboxImg.src = "";
   }
-});
 
-  </script>
+  // ✅ Mobile "Services" dropdown
+  const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+  const mobileServices = document.getElementById('mobile-services');
+  if (mobileServicesToggle && mobileServices) {
+    mobileServicesToggle.addEventListener('click', () => {
+      mobileServices.classList.toggle('hidden');
+    });
+  }
+
+  // ✅ Desktop "Services" popup open/close
+  const servicesBtn = document.getElementById('services-btn');
+  const servicesPopup = document.getElementById('services-popup');
+  if (servicesBtn && servicesPopup) {
+    servicesBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      servicesPopup.classList.toggle('hidden');
+    });
+    document.addEventListener('click', (e) => {
+      if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) {
+        servicesPopup.classList.add('hidden');
+      }
+    });
+  }
+
+  // ✅ Language toggle placeholder
+  const langBtn = document.getElementById('lang-btn');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      alert('Language toggle clicked — integrate real language switch later.');
+    });
+  }
+
+  // ✅ Portfolio filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('#portfolio-grid .portfolio-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      portfolioItems.forEach(item => {
+        if (filter === 'all' || item.classList.contains(filter)) {
+          item.style.display = 'block';
+          item.classList.add('fade-in');
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // ✅ Image Modal (for "View Project" buttons)
+  function openImageModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    if (modal && modalImg) {
+      modalImg.src = imageSrc;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    if (modal && modalImg) {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      modalImg.src = '';
+    }
+  }
+
+  // ✅ Optional: close modal when clicking background
+  const imageModal = document.getElementById('imageModal');
+  if (imageModal) {
+    imageModal.addEventListener('click', (e) => {
+      if (e.target === imageModal) closeImageModal();
+    });
+  }
+
+  // Expose modal functions globally (for inline button onclick)
+  window.openImageModal = openImageModal;
+  window.closeImageModal = closeImageModal;
+</script>
+
 </body>
 </html>
