@@ -1,104 +1,129 @@
+<!-- ✅ FINAL CLEAN VERSION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI-Powered Interior Design by SQ Interactive — immersive VR design tools powered by Unity and AI." />
-  <meta name="keywords" content="AI interior design, VR architecture, Unity 3D, SQ Interactive, virtual design" />
+  <meta name="description" content="AI and VR Interiors by SQ Interactive — next-gen immersive design powered by Unity and AI." />
+  <meta name="keywords" content="AI interior design, VR architecture, Unity 3D, SQ Interactive, virtual design, VR staging" />
   <meta name="author" content="SQ Interactive" />
-  <title>AI AND VR Interiors (Coming Soon) | SQ Interactive</title>
+  <title>AI & VR Interiors (Coming Soon) | SQ Interactive</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind & Libraries -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="images/favicon.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/feather-icons"></script>
 
+  <!-- Styles -->
   <style>
-
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background:#121212; color:#f5f5f5; }
+    body { font-family:'Plus Jakarta Sans',sans-serif; background:#121212; color:#f5f5f5; scroll-behavior:smooth; }
     h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
     .gold { color:#d4af37; }
     .demo-btn {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-      background: linear-gradient(135deg,#d4af37 0%,#f1c40f 100%);
-      box-shadow: 0 4px 15px rgba(212,175,55,0.3);
-      animation: pulse 5s infinite;
-
-    body { background-color: #121212; color: white; scroll-behavior: smooth; }
-    .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.6), #121212); }
-    .demo-btn { background: linear-gradient(90deg, #d4af37, #b8860b); }
-    .demo-btn:hover { transform: scale(1.05); transition: 0.3s; opacity: 0.9; }
+      position:fixed; bottom:2rem; right:2rem; z-index:999;
+      background:linear-gradient(135deg,#d4af37 0%,#f1c40f 100%);
+      color:white; font-weight:600; border-radius:9999px;
+      padding:0.75rem 1.5rem; display:flex; align-items:center;
+      transition:all 0.3s ease;
+      box-shadow:0 4px 15px rgba(212,175,55,0.3);
+      animation:pulse 5s infinite;
+    }
+    .demo-btn:hover { transform:scale(1.05); opacity:0.9; }
+    .hero-overlay { background:linear-gradient(to bottom,rgba(0,0,0,0.6),#121212); }
     .steam-card {
-      background: radial-gradient(circle at top left, #2C2C2C, #1a1a1a);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.4s ease;
+      background:radial-gradient(circle at top left,#2C2C2C,#1a1a1a);
+      border:1px solid rgba(255,255,255,0.1);
+      transition:all 0.4s ease;
     }
     .steam-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
-      border-color: rgba(255,215,0,0.3);
+      transform:scale(1.05);
+      box-shadow:0 0 30px rgba(255,215,0,0.1);
+      border-color:rgba(255,215,0,0.3);
     }
-    /* Steam-style background */
     .steam-bg {
-      background-image: url('images/steam-bg.jpg'); /* Add your own image here */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      position: relative;
-      z-index: 0;
+      background:url('images/steam-bg.jpg') center/cover fixed;
+      position:relative; z-index:0;
     }
     .steam-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(18,18,18,0.95));
-      backdrop-filter: blur(4px);
-      z-index: -1;
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(to bottom right,rgba(0,0,0,0.7),rgba(18,18,18,0.95));
+      backdrop-filter:blur(4px); z-index:-1;
     }
+
+  /* Fix content alignment and overflow issues on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  nav, section, footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix mobile nav layout */
+  #mobile-menu a, #mobile-menu button {
+    display: block;
+    width: 100%;
+  }
+
+  /* Adjust hero padding on mobile */
+  @media (max-width: 768px) {
+    .pt-32 {
+      padding-top: 8rem;
+    }
+    .hero-text {
+      text-align: center;
+    }
+    .flex-row {
+      flex-direction: column;
+    }
+    .demo-btn {
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+
   </style>
 
-<!-- 🔥 Analytics & Heatmaps -->
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date()); gtag('config','G-GYP19H93BR');
+  </script>
 
-<!-- ✅ Google Analytics (live ID: G-GYP19H93BR) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GYP19H93BR');
-</script>
-
-<!-- ✅ Hotjar / Contentsquare Integration -->
-<script>
-  (function (c, s, q, u, a, r, e) {
-      c.hj = c.hj || function(){(c.hj.q = c.hj.q || []).push(arguments)};
-      c._hjSettings = { hjid: 6545315 }; /* your site’s unique Hotjar ID */
-      r = s.getElementsByTagName('head')[0];
-      e = s.createElement('script');
-      e.async = true;
-      e.src = q + c._hjSettings.hjid + u;
-      r.appendChild(e);
-  })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js');
-</script>
-
-<!-- ✅ Contentsquare Tag -->
-<script src="https://t.contentsquare.net/uxa/c97b2acc48ee8.js" async></script>
-
-
-
+  <script>
+    (function(c,s,q,u,a,r,e){
+      c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
+      c._hjSettings={hjid:6545315};
+      r=s.getElementsByTagName('head')[0];
+      e=s.createElement('script'); e.async=true;
+      e.src=q+c._hjSettings.hjid+u; r.appendChild(e);
+    })(window,document,'https://static.hj.contentsquare.net/c/csq-','.js');
+  </script>
+  <script src="https://t.contentsquare.net/uxa/c97b2acc48ee8.js" async></script>
 </head>
-<!-- Demo Button -->
-<button 
-    onclick="window.location.href='contact.html'" 
-    class="demo-btn px-6 py-3 rounded-full text-white font-semibold flex items-center transition">
-    <i data-feather="play" class="mr-2"></i> Request Demo
+
+<body>
+
+<!-- ✅ Request Demo Button -->
+<button onclick="window.location.href='contact.html'" class="demo-btn">
+  <i data-feather="play" class="mr-2"></i> Request Demo
 </button>
-      
-</button>
+
 <!-- NAV -->
 <nav class="fixed w-full z-50 bg-[#00000040] backdrop-blur-sm border-b border-[#ffffff0d]">
   <div class="max-w-7xl mx-auto px-5 md:px-8">
@@ -183,119 +208,230 @@
   </div>
 </nav>
 
+
+<!-- ✅ VR REAL ESTATE SERVICE PAGE CONTENT -->
+<section class="pt-32 pb-20 bg-[#121212] text-gray-200">
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center text-center">
-    <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-      <source src="videos/home.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay absolute inset-0"></div>
-
-    <div class="relative z-10 max-w-3xl px-4" data-aos="fade-up">
-      <h1 class="text-5xl font-bold mb-6">AI-Powered VR Interiors (Coming Soon)</h1>
-      <p class="text-lg mb-8 opacity-80">Revolutionize your spaces with our intelligent design engine — turning your vision into photorealistic reality.</p>
-    </div>
-  </section>
-
-  <!-- Steam-Style Showcase with Background -->
-  <section class="steam-bg py-24 text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
-    <div class="relative max-w-6xl mx-auto px-6" data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-10 text-yellow-400">AI Design Showcase</h2>
-      <p class="text-lg opacity-80 mb-16">Discover how AI transforms empty spaces into inspiring digital interiors.</p>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="steam-card rounded-2xl p-6">
-          <img src="images/in house/image (12).png" alt="AI Interior 1" class="rounded-xl mb-4">
-          <h3 class="text-xl font-semibold mb-2">Modern Apartment</h3>
-          <p class="text-gray-400 text-sm">AI-styled interior for luxury apartments with minimal lighting.</p>
-        </div>
-        <div class="steam-card rounded-2xl p-6">
-          <img src="images/in house/2025-07-17_23-48-23_3167.png" alt="AI Interior 2" class="rounded-xl mb-4">
-          <h3 class="text-xl font-semibold mb-2">Contemporary Workspace</h3>
-          <p class="text-gray-400 text-sm">Generated office layouts optimized for space and creativity.</p>
-        </div>
-        <div class="steam-card rounded-2xl p-6">
-          <img src="images/in house/image (14).png" alt="AI Interior 3" class="rounded-xl mb-4">
-          <h3 class="text-xl font-semibold mb-2">Cozy Living Space</h3>
-          <p class="text-gray-400 text-sm">Warm tones and lighting, crafted by AI preferences.</p>
-        </div>
+  <div class="relative max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+    <div data-aos="fade-right" class="flex-1">
+      <h1 class="text-4xl md:text-5xl font-semibold mb-6 leading-tight text-white">
+        Immersive <span class="gold">VR Real Estate</span> Experiences
+      </h1>
+      <p class="text-lg text-gray-400 leading-relaxed">
+        SQ Interactive transforms property showcases into immersive virtual experiences — 
+        allowing clients, buyers, and investors to walk through spaces in 3D before they are built.
+        We combine <span class="text-yellow-400">real-time rendering</span>, 
+        <span class="text-yellow-400">VR interactivity</span>, and cinematic design to create a lasting impression.
+      </p>
+      <div class="mt-6 flex gap-4">
+        <a href="contact.html" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
+          Request Demo
+        </a>
+        <a href="portfolio.html" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition">
+          View Portfolio
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- AI Interior Design System Showcase -->
-  <section class="bg-[#1B1D23] text-gray-200 py-20">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start" data-aos="fade-up">
+    
 
-      <!-- Left: Images -->
-      <div>
-        <div class="rounded-xl overflow-hidden border border-gray-700 shadow-lg mb-4">
-          <img src="images/coming soon.png" alt="AI Interior Design System" class="w-full">
-        </div>
-        <div class="flex space-x-3">
-          <img src="images/coming soon.png" alt="Preview 1" class="w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
-          <img src="images/coming soon.png" alt="Preview 2" class="w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
-          <img src="images/coming soon.png" alt="Preview 3" class="w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
-          <img src="images/coming soon.png" alt="Preview 4" class="w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
-        </div>
-      </div>
+    <div data-aos="fade-left" class="flex-1 relative">
+      <img src="images/NeuroSpace VR Preview.png" alt="VR Real Estate Showcase" class="rounded-2xl shadow-lg border border-[#ffffff10]" />
+    </div>
+  </div>
+</section>
 
-      <!-- Right: Details -->
-      <div>
-        <h2 class="text-3xl font-bold text-white mb-6">AI Interior Design System (Full VR Styling)</h2>
-        <p class="text-gray-300 mb-4 leading-relaxed">
-          Experience the future of spatial design with our AI-powered interior transformation system, built entirely in 3D.
+
+
+
+<!-- Steam-Style VR Real Estate Showcase -->
+<section class="steam-bg py-24 text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-6" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-10 text-yellow-400">VR Real Estate Showcase</h2>
+    <p class="text-lg opacity-80 mb-16">
+      Explore how SQ Interactive transforms architectural concepts into fully explorable VR worlds for property marketing and development visualization.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="steam-card rounded-2xl p-6">
+        <img src="images/after.png" alt="Luxury Villa VR" class="rounded-xl mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-semibold mb-2">Luxury Villa Walkthrough</h3>
+        <p class="text-gray-400 text-sm">
+          A high-end PCVR walkthrough of a premium villa, complete with day-night lighting and cinematic camera paths.
         </p>
-        <p class="text-gray-400 mb-4 leading-relaxed">
-          Users can dynamically change wall materials, lighting, layouts, and furniture styles — all in real time. 
-          The AI analyzes spatial context and user prompts to generate personalized interiors instantly.
+      </div>
+      <div class="steam-card rounded-2xl p-6">
+        <img src="images/NeuroSpace VR Preview.png" alt="Virtual Room Tour" class="rounded-xl mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-semibold mb-2">Virtual Room Tour</h3>
+        <p class="text-gray-400 text-sm">
+          Immersive room-scale environment created for real estate showrooms and interactive sales presentations.
         </p>
-        <p class="text-gray-400 mb-6 leading-relaxed">
-          Built for VR using Unity + C#, this system integrates AI-driven presets and interactions for the Meta Quest 3, enabling immersive hands-on interior design.
+      </div>
+      <div class="steam-card rounded-2xl p-6">
+        <img src="images/house build.png" alt="VR Property Visualization" class="rounded-xl mb-4 w-full h-60 object-cover">
+        <h3 class="text-xl font-semibold mb-2">Property Visualization</h3>
+        <p class="text-gray-400 text-sm">
+          3D-realistic environments designed in Unity, enabling buyers to walk through and explore every detail of your project.
         </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="space-y-2 text-sm text-gray-400 mb-6">
-          <p><strong class="text-white">ENGINE:</strong> Unity 2023 LTS + XR Toolkit</p>
-          <p><strong class="text-white">PLATFORM:</strong> PCVR Demo, Meta Quest 3 (In Progress)</p>
-          <p><strong class="text-white">AI FEATURES:</strong> Wall & Floor Materials, Lighting, Layout Optimization</p>
-          <p><strong class="text-white">TECH STACK:</strong> Unity, GPT-4 API, AI Material Generator</p>
-        </div>
 
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">AI Interior Design</span>
-          <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">Dynamic Lighting</span>
-          <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">VR Styling</span>
-          <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">Unity + Quest 3</span>
+
+
+<!-- Service Explanation -->
+<section class="py-20 bg-[#0b0c0d]">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-right">
+      <h2 class="text-3xl font-semibold text-white mb-6">Why Virtual Real Estate?</h2>
+      <p class="text-gray-400 mb-4">
+        Traditional property visuals limit imagination. With our VR walkthroughs, 
+        potential buyers can explore every corner — experiencing the atmosphere, lighting, and layout as if they were standing inside.
+      </p>
+      <p class="text-gray-400 mb-4">
+        From <span class="text-yellow-400">luxury villas</span> to <span class="text-yellow-400">high-rise apartments</span>, 
+        our team uses Unreal Engine and Unity to develop ultra-realistic environments optimized for desktop, VR headsets, and web.
+      </p>
+      <ul class="text-gray-300 space-y-3 mt-4">
+        <li>✔ Real-time 3D visualization</li>
+        <li>✔ Works on Oculus, Quest, and PC</li>
+        <li>✔ Interactive lighting & design toggles</li>
+        <li>✔ 360° and cinematic camera flythroughs</li>
+        <li>✔ Ideal for real estate listings, exhibitions, and client pitches</li>
+      </ul>
+    </div>
+
+    <div data-aos="fade-left">
+      <img src="images/house build.png" alt="VR Walkthrough Demo" class="rounded-2xl shadow-xl border border-[#ffffff12]" />
+    </div>
+  </div>
+</section>
+
+
+<!-- VR Development System Showcase -->
+<section class="bg-[#1B1D23] text-gray-200 py-20">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start" data-aos="fade-up">
+
+<!-- Left: Images -->
+<div>
+  <!-- Main Display Image -->
+  <div class="rounded-xl overflow-hidden border border-gray-700 shadow-lg mb-4">
+    <img id="mainPreview" src="images/vr realestate.png" alt="VR Real Estate Experience" class="w-full transition-opacity duration-300">
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="flex space-x-3">
+    <img src="images/before.png" alt="Preview 1" class="thumbnail w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
+    <img src="images/house build.png" alt="Preview 2" class="thumbnail w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
+    <img src="images/after.png" alt="Preview 3" class="thumbnail w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
+    <img src="images/vr-preview4.png" alt="Preview 4" class="thumbnail w-1/5 rounded-md border border-gray-700 hover:border-yellow-400 transition cursor-pointer">
+  </div>
+</div>
+
+
+    <!-- Right: Details -->
+    <div>
+      <h2 class="text-3xl font-bold text-white mb-6">Full VR Property Experience System</h2>
+      <p class="text-gray-300 mb-4 leading-relaxed">
+        Our VR Real Estate system enables clients to step into properties before they’re constructed — visualizing
+        layouts, lighting, textures, and scale with complete freedom of movement.
+      </p>
+      <p class="text-gray-400 mb-4 leading-relaxed">
+        Built using **Unity 3D and Unreal Engine**, these immersive experiences help real estate developers and
+        agencies close deals faster by giving buyers a realistic sense of presence.
+      </p>
+      <p class="text-gray-400 mb-6 leading-relaxed">
+        Each project includes environment design, lighting simulation, and interactive navigation systems for VR headsets and PC demos.
+      </p>
+
+      <div class="space-y-2 text-sm text-gray-400 mb-6">
+        <p><strong class="text-white">ENGINE:</strong> Unity 2023 LTS / Unreal Engine 5</p>
+        <p><strong class="text-white">PLATFORM:</strong> PCVR, Oculus Quest, WebGL Demos</p>
+        <p><strong class="text-white">FEATURES:</strong> Real-Time Lighting, Cinematic Cameras, Interactive Navigation</p>
+        <p><strong class="text-white">TECH STACK:</strong> Unity, C#, Unreal Blueprints, HDRP</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">VR Real Estate</span>
+        <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">3D Walkthrough</span>
+        <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">Unity + Unreal</span>
+        <span class="bg-[#243447] text-blue-300 px-3 py-1 rounded-full text-sm">PC & Headset</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Case Study / Example -->
+<section class="py-20 bg-[#121212]">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-semibold text-white mb-6">Example Project — Luxury Villa Walkthrough</h2>
+    <p class="text-gray-400 max-w-3xl mx-auto mb-10">
+      Developed using Unity, this interactive walkthrough allows users to explore a 2-kanal luxury villa in DHA 
+      — complete with a cherry tree centerpiece and ambient lighting controls. 
+      The model runs smoothly on PC and can be viewed through Oculus for full immersion.
+    </p>
+
+    <!-- Example Card -->
+    <div class="portfolio-card group residential mx-auto max-w-lg relative" data-aos="fade-up">
+      <img src="images/after.png" class="w-full h-64 object-cover rounded-xl border border-[#ffffff12]" />
+      <div class="portfolio-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition">
+        <h3 class="text-xl font-semibold mb-2">Luxury Villa Walkthrough</h3>
+        <p class="text-sm mb-4 text-gray-300 px-4">Interactive PC and VR-ready model built for client demos and listings.</p>
+        <div class="flex space-x-2">
+          <button onclick="openModal('images/after.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">View Project</button>
+          <a href="https://www.youtube.com/watch?v=2IQI5v6wLCw&t=2s" target="_blank"
+             class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition">▶ Watch on YouTube</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WebGL Experience -->
-  <section class="py-20 bg-[#2C2C2C] text-white">
-    <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-6">Experience Our Technology</h2>
-      <p class="text-lg opacity-80 mb-12">Interact with our WebGL-powered property viewer</p>
-      <div class="bg-black/40 rounded-xl p-10">
-        <div class="aspect-w-16 aspect-h-9 bg-gray-800 flex items-center justify-center rounded-lg">
-          <div class="p-8">
-            <i data-feather="maximize-2" class="w-16 h-16 mx-auto text-yellow-400 mb-4"></i>
-            <h3 class="text-2xl font-bold mb-2">WebGL Property Viewer</h3>
-            <p class="mb-6 opacity-80">Click below to launch our interactive 3D property visualization tool</p>
-            <button 
-              onclick="window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank')" 
-              class="bg-yellow-400 text-black font-semibold py-3 px-8 rounded-full hover:scale-105 transition">
-              Launch Viewer
-            </button>
-          </div>
-        </div>
+
+<!-- Process Section -->
+<section class="py-20 bg-[#0b0c0d]">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-semibold text-white mb-10">Our Process</h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-2 gold">1. Consultation</h3>
+        <p class="text-gray-400 text-sm">
+          We discuss your project scope, collect references, blueprints, and goals for the VR experience.
+        </p>
+      </div>
+      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold mb-2 gold">2. 3D Modeling</h3>
+        <p class="text-gray-400 text-sm">
+          Our 3D team builds the property with accurate scale, realistic materials, and architectural precision.
+        </p>
+      </div>
+      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold mb-2 gold">3. VR Integration</h3>
+        <p class="text-gray-400 text-sm">
+          The model is imported into Unity or Unreal for lighting, interactivity, and user navigation setup.
+        </p>
+      </div>
+      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold mb-2 gold">4. Delivery</h3>
+        <p class="text-gray-400 text-sm">
+          We deliver optimized VR builds for PC, headset, or WebGL, ready for marketing or client presentations.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 py-10 relative z-20">
+
+
+
+
+<!-- ✅ Footer -->
+<footer class="bg-gray-900 text-gray-300 py-10">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
     <div>
       <img src="images/no-background.png" class="h-12 mb-4" alt="Logo">
@@ -304,10 +440,10 @@
     <div>
       <h3 class="text-white font-semibold mb-4">Quick Links</h3>
       <ul class="space-y-2">
-        <li><a href="#" class="hover:text-white">Home</a></li>
-        <li><a href="#" class="hover:text-white">Services</a></li>
-        <li><a href="#" class="hover:text-white">Portfolio</a></li>
-        <li><a href="#" class="hover:text-white">Contact</a></li>
+        <li><a href="index.html" class="hover:text-white">Home</a></li>
+        <li><a href="services.html" class="hover:text-white">Services</a></li>
+        <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
       </ul>
     </div>
     <div>
@@ -321,81 +457,55 @@
   <div class="text-center text-gray-500 text-sm mt-8">&copy; 2025 SQ Interactive. All rights reserved.</div>
 </footer>
 
+<script>
+  // ✅ Initialize AOS and Feather icons
+  AOS.init({ duration: 700, once: true });
+  feather.replace();
 
+  // ✅ Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-  <!-- Scripts -->
-  <script>
-    AOS.init({ duration:700, once:true });
-    feather.replace();
+  // ✅ Mobile Services dropdown
+  const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+  const mobileServices = document.getElementById('mobile-services');
+  mobileServicesToggle?.addEventListener('click', () => mobileServices.classList.toggle('hidden'));
 
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle && menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-
-    // Mobile services
-    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-    const mobileServices = document.getElementById('mobile-services');
-    mobileServicesToggle && mobileServicesToggle.addEventListener('click', ()=> mobileServices.classList.toggle('hidden'));
-
-    // Desktop services popup (open/close)
-    const servicesBtn = document.getElementById('services-btn');
-    const servicesPopup = document.getElementById('services-popup');
-    if (servicesBtn) {
-      servicesBtn.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        servicesPopup.classList.toggle('hidden');
-      });
-      // close when clicking outside
-      document.addEventListener('click', (e)=>{
-        if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) servicesPopup.classList.add('hidden');
-      });
-    }
-
-    // language quick toggle (desktop small)
-    document.getElementById('lang-btn')?.addEventListener('click', ()=> {
-      alert('Language toggle clicked — wire to actual language switch if needed.');
+  // ✅ Desktop services popup
+  const servicesBtn = document.getElementById('services-btn');
+  const servicesPopup = document.getElementById('services-popup');
+  if (servicesBtn && servicesPopup) {
+    servicesBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      servicesPopup.classList.toggle('hidden');
     });
-
-
-
-    AOS.init();
-    feather.replace();
-    document.getElementById('menu-toggle').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('hidden'));
-
-       <!-- Media Swap Script -->
- 
-    function showMedia(type, src) {
-      const display = document.getElementById("mainDisplay");
-      display.innerHTML = ''; // Clear current content
-
-      if (type === 'img') {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Media Preview";
-        display.appendChild(img);
-      } else if (type === 'video') {
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.autoplay = true;
-        video.alt = "Video Preview";
-        display.appendChild(video);
+    document.addEventListener('click', (e) => {
+      if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) {
+        servicesPopup.classList.add('hidden');
       }
-    }
+    });
+  }
+
+  // ✅ Inline Thumbnail Image Switcher
+  const mainPreview = document.getElementById('mainPreview');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      // Fade out old image
+      mainPreview.classList.add('opacity-0');
+      setTimeout(() => {
+        // Swap source and fade in new image
+        mainPreview.src = thumb.src;
+        mainPreview.classList.remove('opacity-0');
+      }, 200);
+    });
+  });
+</script>
 
 
 
-
-
-
-  </script>
-</body>
-</html>
-
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 </html>
