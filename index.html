@@ -50,6 +50,16 @@
       z-index: -1;
     }
 
+    <style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
   </style>
 
 <!-- 🔥 Analytics & Heatmaps -->
@@ -190,21 +200,33 @@
     </div>
   </section>
 
-  <!-- Mission -->
-     <section class="steam-bg py-24 text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
-      <h2 class="text-4xl font-bold text-yellow-400 mb-6">Our Mission</h2>
-      <p class="mb-10 text-gray-300">At SQ Interactive, we revolutionize how people interact with digital spaces, merging VR, AI, and multimedia storytelling to create powerful immersive experiences.</p>
-      <div class="flex gap-4 overflow-x-auto justify-center">
-        <img src="images/360 sam.jpeg" class="w-48 rounded shadow">
-        <img src="images/NeuroSpace VR Preview.png" class="w-48 rounded shadow">
-        <img src="images/after.png" class="w-48 rounded shadow">
-        <img src="images/builds.png" class="w-48 rounded shadow">
-        <img src="images/ai interior design.png" class="w-48 rounded shadow">
-      </div>
-      <h3 class="mt-6 text-lg text-gray-400">Founded in Lahore, Pakistan</h3>
+ <!-- Mission -->
+<section class="steam-bg py-24 text-center relative overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-6">Our Mission</h2>
+    <p class="mb-10 text-gray-300 leading-relaxed">
+      At <span class="text-yellow-400 font-semibold">SQ Interactive</span>, we redefine how people explore and interact with
+      digital real estate — creating fully immersive VR environments that allow users to walk through, design, and
+      experience properties before they’re even built.
+    </p>
+
+    <!-- Scrollable gallery -->
+    <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory justify-start md:justify-center">
+      <img src="images/360 sam.jpeg" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
+      <img src="images/NeuroSpace VR Preview.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
+      <img src="images/after.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
+      <img src="images/builds.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
+      <img src="images/ai interior design.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
     </div>
-  </section>
+
+    <h3 class="mt-8 text-lg text-gray-400">Founded in Lahore, Pakistan</h3>
+  </div>
+</section>
+
+
 
   <!-- Quick Demo Highlight -->
   <section class="py-20 bg-[#121212]">
