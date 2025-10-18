@@ -50,7 +50,17 @@
       z-index: -1;
     }
 
-  </style>
+    <style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+
 
 <!-- 🔥 Analytics & Heatmaps -->
 
@@ -364,8 +374,7 @@
   <div class="text-center text-gray-500 text-sm mt-8">&copy; 2025 SQ انٹرایکٹو۔ جملہ حقوق محفوظ ہیں.</div>
 </footer>
 
-
-  <!-- Scripts -->
+ <!-- Scripts -->
   <script>
     AOS.init({ duration:700, once:true });
     feather.replace();
@@ -403,18 +412,33 @@
 
 
     // Before/After Slider
-    const slider=document.querySelector('.before-after'),
-          after=document.querySelector('.after-image'),
-          handle=document.querySelector('.slider-handle');
-    let drag=false;
-    handle.addEventListener('mousedown',()=>drag=true);
-    document.addEventListener('mouseup',()=>drag=false);
-    document.addEventListener('mousemove',e=>{
-      if(!drag)return;
-      const r=slider.getBoundingClientRect(),pos=e.clientX-r.left;
-      const perc=Math.max(0,Math.min(100,(pos/r.width)*100));
-      after.style.width=`${perc}%`; handle.style.left=`${perc}%`;
-    });
+const container = document.querySelector('.before-after');
+  const afterWrapper = container.querySelector('.after-wrapper');
+  const slider = container.querySelector('.slider-handle');
+
+  let isDown = false;
+
+  function moveSlider(x) {
+    const rect = container.getBoundingClientRect();
+    let offsetX = x - rect.left;
+    if (offsetX < 0) offsetX = 0;
+    if (offsetX > rect.width) offsetX = rect.width;
+    const percent = (offsetX / rect.width) * 100;
+    afterWrapper.style.width = `${percent}%`;
+    slider.style.left = `${percent}%`;
+  }
+
+  // Desktop
+  slider.addEventListener('mousedown', () => isDown = true);
+  window.addEventListener('mouseup', () => isDown = false);
+  window.addEventListener('mousemove', e => { if (isDown) moveSlider(e.clientX); });
+
+  // Mobile (Touch)
+  slider.addEventListener('touchstart', () => isDown = true);
+  window.addEventListener('touchend', () => isDown = false);
+  window.addEventListener('touchmove', e => {
+    if (isDown && e.touches[0]) moveSlider(e.touches[0].clientX);
+  });
   </script>
 </body>
 </html>
