@@ -217,22 +217,26 @@
     </div>
   </section>
 
-  <!-- Before/After -->
-    <section class="steam-bg py-24 text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
-      <h2 class="text-4xl font-bold mb-4">Transformative Results</h2>
-      <p class="text-lg mb-10">See how our VR and AI solutions elevate real estate experiences.</p>
-      <p class="text-lg mb-10">(slide the yellow dot to move)</p>
-      <div class="before-after shadow-xl mx-auto max-w-4xl">
-        <img src="images/after.png" class="before-image">
-        <img src="images/before.png" class="after-image" style="width:50%;">
-        <div class="label left">Before</div>
-        <div class="label right">After</div>
-        <div class="slider-handle"></div>
-    
-      </div>
+<!-- Before/After -->
+<section class="steam-bg py-24 text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+
+  <h2 class="text-4xl font-bold mb-4">Transformative Results</h2>
+  <p class="text-lg mb-10">See how our VR solutions elevate real estate experiences.</p>
+  <p class="text-lg mb-10">(Slide the yellow dot to move)</p>
+
+  <div class="before-after relative shadow-xl mx-auto max-w-4xl overflow-hidden rounded-xl">
+    <img src="images/after.png" class="before-image absolute inset-0 w-full h-full object-cover">
+    <div class="after-wrapper absolute inset-0 overflow-hidden" style="width:50%;">
+      <img src="images/before.png" class="after-image w-full h-full object-cover">
     </div>
-  </section>
+    <div class="label left absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded">Before</div>
+    <div class="label right absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded">After</div>
+    <div class="slider-handle absolute top-0 bottom-0 w-1 bg-yellow-400 cursor-pointer" style="left:50%;">
+      <div class="dot absolute top-1/2 -translate-y-1/2 -left-2 w-4 h-4 bg-yellow-400 rounded-full border-2 border-white shadow-lg"></div>
+    </div>
+  </div>
+</section>
 
 <!-- WebGL -->
 <section class="py-20 bg-[#2C2C2C] text-white">
@@ -409,18 +413,33 @@
 
 
     // Before/After Slider
-    const slider=document.querySelector('.before-after'),
-          after=document.querySelector('.after-image'),
-          handle=document.querySelector('.slider-handle');
-    let drag=false;
-    handle.addEventListener('mousedown',()=>drag=true);
-    document.addEventListener('mouseup',()=>drag=false);
-    document.addEventListener('mousemove',e=>{
-      if(!drag)return;
-      const r=slider.getBoundingClientRect(),pos=e.clientX-r.left;
-      const perc=Math.max(0,Math.min(100,(pos/r.width)*100));
-      after.style.width=`${perc}%`; handle.style.left=`${perc}%`;
-    });
+const container = document.querySelector('.before-after');
+  const afterWrapper = container.querySelector('.after-wrapper');
+  const slider = container.querySelector('.slider-handle');
+
+  let isDown = false;
+
+  function moveSlider(x) {
+    const rect = container.getBoundingClientRect();
+    let offsetX = x - rect.left;
+    if (offsetX < 0) offsetX = 0;
+    if (offsetX > rect.width) offsetX = rect.width;
+    const percent = (offsetX / rect.width) * 100;
+    afterWrapper.style.width = `${percent}%`;
+    slider.style.left = `${percent}%`;
+  }
+
+  // Desktop
+  slider.addEventListener('mousedown', () => isDown = true);
+  window.addEventListener('mouseup', () => isDown = false);
+  window.addEventListener('mousemove', e => { if (isDown) moveSlider(e.clientX); });
+
+  // Mobile (Touch)
+  slider.addEventListener('touchstart', () => isDown = true);
+  window.addEventListener('touchend', () => isDown = false);
+  window.addEventListener('touchmove', e => {
+    if (isDown && e.touches[0]) moveSlider(e.touches[0].clientX);
+  });
   </script>
 </body>
 </html>
