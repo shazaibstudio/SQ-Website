@@ -92,12 +92,10 @@
 
 </head>
 <body>
-<!-- Demo Button -->
-<button 
-    onclick="window.location.href='contact.html'" 
-    class="demo-btn px-6 py-3 rounded-full text-white font-semibold flex items-center transition">
-    <i data-feather="play" class="mr-2"></i> Request Demo
-</button>
+ <!-- Demo Button -->
+  <button onclick="window.location.href='contact.html'" class="demo-btn px-5 py-3 rounded-full flex items-center gap-2">
+    <i data-feather="play" class="w-4 h-4"></i> Request Demo
+  </button>
 <!-- NAV -->
 <nav class="fixed w-full z-50 bg-[#00000040] backdrop-blur-sm border-b border-[#ffffff0d]">
   <div class="max-w-7xl mx-auto px-5 md:px-8">
@@ -110,7 +108,7 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="index.html" class="text-gray-200 hover:text-white">Home</a>
-        
+
         <!-- Services Dropdown -->
         <div class="relative" id="services-desktop">
           <button id="services-btn" class="flex items-center gap-2 text-gray-200 hover:text-white">
@@ -122,7 +120,7 @@
           <div id="services-popup" class="absolute right-0 mt-3 w-56 bg-[#0f1114] border border-[#ffffff12] rounded-lg shadow-lg p-2 hidden">
             <a href="services.html" class="block px-4 py-2 text-gray-200 hover:text-white">All Services</a>
             <a href="vr real estate.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Real Estate</a>
-            <a href="ai interior design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI AND VR Interiors (Coming Soon) </a>
+            <a href="ai interior design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI AND VR Interiors (Coming Soon)</a>
             <a href="interractive pc .html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive PC Models</a>
             <a href="360 content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° Tours & Videos </a>
             <a href="vr staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Showroom Showcase Staging </a>
@@ -138,8 +136,8 @@
 
         <!-- Language Toggle -->
         <div class="flex items-center gap-3">
-          <button onclick="window.location.href='index.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
-          <button onclick="window.location.href='index-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
+          <button onclick="window.location.href='vr staging.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
+          <button onclick="window.location.href='vr staging-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
         </div>
       </div>
 
@@ -175,28 +173,29 @@
 
       <!-- Mobile Language Toggle -->
       <div class="mt-3 flex gap-2">
-        <button onclick="window.location.href='index.html'" class="px-3 py-1 rounded bg-white/10 text-white">EN</button>
-        <button onclick="window.location.href='index-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">UR</button>
+        <button onclick="window.location.href='vr staging.html'" class="px-3 py-1 rounded bg-white/10 text-white">EN</button>
+        <button onclick="window.location.href='vr staging-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">UR</button>
       </div>
     </div>
   </div>
 </nav>
+<!-- ✅ FINAL SHOWROOM SCANNING & VR STAGING PAGE -->
+<section class="pt-32 pb-20 bg-[#121212] text-gray-200 overflow-hidden">
 
-<!-- ✅ SHOWROOM PORTFOLIO SCANNING & VR STAGING (MOBILE-OPTIMIZED) -->
-<section class="pt-28 pb-20 bg-[#121212] text-gray-200">
-  <!-- Hero Section -->
-  <div class="relative max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-    <div data-aos="fade-right" class="flex-1 text-center md:text-left">
+  <!-- HERO SECTION -->
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+    <div data-aos="fade-right" class="flex-1">
       <h1 class="text-4xl md:text-5xl font-semibold mb-6 leading-tight text-white">
-        Showroom Portfolio <span class="gold">Scanning & VR Staging</span>
+        Elevate Your Brand with <span class="text-yellow-400">3D Scanning & VR Showrooms</span>
       </h1>
       <p class="text-lg text-gray-400 leading-relaxed">
-        Digitize your showroom with high-precision 3D scans and transform it into a virtual space accessible from anywhere.
-        SQ Interactive brings your physical portfolio into the digital realm for immersive client experiences.
+        SQ Interactive transforms your physical showroom into a <span class="text-yellow-400 font-medium">fully immersive virtual experience</span>. 
+        With high-precision <span class="text-yellow-400">3D scanning</span>, photogrammetry, and <span class="text-yellow-400">VR staging</span>, 
+        we help you showcase every product, every texture, and every design detail in cinematic realism.
       </p>
-      <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+      <div class="mt-6 flex gap-4">
         <a href="contact.html" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
-          Request Demo
+          Request a Demo
         </a>
         <a href="portfolio.html" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition">
           View Portfolio
@@ -204,124 +203,131 @@
       </div>
     </div>
 
-    <div data-aos="fade-left" class="flex-1">
-      <img src="images/showroom-scan.png" alt="Showroom VR Staging" class="rounded-2xl shadow-lg border border-[#ffffff10] w-full">
+    <div data-aos="fade-left" class="flex-1 relative">
+      <img src="images/elephant scan.png" alt="Showroom Scanning and VR Staging" class="rounded-2xl shadow-lg border border-[#ffffff10] object-cover w-full h-auto" />
     </div>
   </div>
 </section>
 
 
-<!-- Steam Showcase Section -->
-<section class="steam-bg py-20 text-center relative overflow-hidden">
-  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
-  <div class="relative max-w-6xl mx-auto px-6" data-aos="fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold mb-10 text-yellow-400">Digitize Your Showroom Experience</h2>
-    <p class="text-lg opacity-80 mb-14 max-w-3xl mx-auto">
-      We scan entire showrooms, product displays, and interior layouts to create interactive VR-ready spaces. 
-      Clients can browse, zoom, and interact with your portfolio from any device.
-    </p>
-
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <div class="steam-card rounded-2xl p-6">
-        <img src="images/scan-room.png" alt="Showroom Scan" class="rounded-xl mb-4 w-full h-56 object-cover">
-        <h3 class="text-xl font-semibold mb-2">3D Showroom Scanning</h3>
-        <p class="text-gray-400 text-sm">
-          Capture your entire physical space in ultra-high detail using 3D scanning and photogrammetry.
-        </p>
-      </div>
-      <div class="steam-card rounded-2xl p-6">
-        <img src="images/vr-stage.png" alt="VR Staging" class="rounded-xl mb-4 w-full h-56 object-cover">
-        <h3 class="text-xl font-semibold mb-2">VR Staging</h3>
-        <p class="text-gray-400 text-sm">
-          Digitally arrange products, furniture, and decor for virtual walkthroughs and interactive viewing.
-        </p>
-      </div>
-      <div class="steam-card rounded-2xl p-6">
-        <img src="images/virtual-tour.png" alt="Virtual Portfolio" class="rounded-xl mb-4 w-full h-56 object-cover">
-        <h3 class="text-xl font-semibold mb-2">Virtual Portfolio</h3>
-        <p class="text-gray-400 text-sm">
-          Create a permanent digital showroom — accessible online or in VR — to showcase your best collections.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Explanation Section -->
+<!-- WHY DIGITIZE YOUR SHOWROOM -->
 <section class="py-20 bg-[#0b0c0d]">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
     <div data-aos="fade-right">
-      <h2 class="text-3xl font-semibold text-white mb-6">Why Go Digital With Your Showroom?</h2>
+      <h2 class="text-3xl font-semibold text-yellow-400 mb-6">Why Go Digital With Your Showroom?</h2>
       <p class="text-gray-400 mb-4">
-        A 3D-scanned showroom allows you to reach global audiences, giving clients the ability to experience 
-        your space virtually with realistic lighting, materials, and spatial presence.
+        Step beyond static photography — our 3D showroom scans give your clients the power to explore, zoom, and interact 
+        with your portfolio in lifelike environments accessible from any device.
       </p>
       <p class="text-gray-400 mb-4">
-        We combine precision scanning with cinematic VR staging to make your digital portfolio 
-        look and feel like the real space — all accessible on web, desktop, or VR headsets.
+        Whether you’re a <span class="text-yellow-400">furniture brand</span>, <span class="text-yellow-400">interior designer</span>, or <span class="text-yellow-400">developer</span>, 
+        our VR staging adds dynamic lighting, material depth, and spatial presence that elevate client confidence and drive sales.
       </p>
       <ul class="text-gray-300 space-y-3 mt-4">
-        <li>✔ 1:1 Real-scale 3D showroom replication</li>
-        <li>✔ Interactive navigation and product hotspots</li>
-        <li>✔ Optimized for PC, mobile, and VR</li>
-        <li>✔ Ideal for design firms, developers, and furniture brands</li>
+        <li>✔ 1:1 scale 3D showroom replication</li>
+        <li>✔ Realistic lighting, textures, and reflections</li>
+        <li>✔ Interactive navigation with product hotspots</li>
+        <li>✔ Optimized for web, mobile, and VR headsets</li>
+        <li>✔ Ideal for product launches, exhibitions, and digital catalogs</li>
       </ul>
     </div>
 
     <div data-aos="fade-left">
-      <img src="images/showroom-view.png" alt="Digital Showroom Example" class="rounded-2xl shadow-xl border border-[#ffffff12] w-full" />
+      <img src="images/sofa.png" alt="Digital Showroom Example" class="rounded-2xl shadow-xl border border-[#ffffff12] object-cover w-full h-auto" />
     </div>
   </div>
 </section>
 
 
-<!-- Case Study / Example -->
-<section class="py-20 bg-[#121212] text-center">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-semibold text-white mb-6">Example Project — Digital Showroom Scan</h2>
-    <p class="text-gray-400 max-w-3xl mx-auto mb-10">
-      A real-world showroom captured using photogrammetry and converted into an interactive VR experience. 
-      Viewers can explore furniture setups, lighting arrangements, and decor placements virtually.
+<!-- PROJECT SHOWCASE / VIDEO -->
+<section class="relative bg-[#0b0b0b] text-gray-300 py-24 overflow-hidden">
+  <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-yellow-700 via-transparent to-black blur-3xl"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10 text-center" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-6">Showroom Scanning in Action</h2>
+    <p class="text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+      Watch how SQ Interactive converts physical spaces into immersive digital showrooms using 
+      <span class="text-yellow-400 font-semibold">photogrammetry</span>, <span class="text-yellow-400 font-semibold">VR staging</span>, and <span class="text-yellow-400 font-semibold">WebGL optimization</span>.
     </p>
 
-    <div class="portfolio-card group residential mx-auto max-w-lg relative" data-aos="fade-up">
-      <img src="images/showroom-scan.png" class="w-full h-64 object-cover rounded-xl border border-[#ffffff12]" />
-      <div class="portfolio-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <h3 class="text-xl font-semibold mb-2">Digital Showroom Experience</h3>
-        <p class="text-sm mb-4 text-gray-300 px-4">3D scanned and VR-staged showroom for immersive online presentations.</p>
-        <div class="flex space-x-2">
-          <button onclick="openModal('images/showroom-scan.png')" class="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">View Project</button>
-          <a href="https://www.youtube.com/" target="_blank"
-            class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-700 transition">▶ Watch on YouTube</a>
-        </div>
-      </div>
+    <!-- Video Embed -->
+    <div class="relative w-full max-w-4xl mx-auto mb-16 rounded-2xl overflow-hidden shadow-2xl" data-aos="zoom-in">
+      <iframe
+        class="w-full aspect-video rounded-2xl"
+        src="https://www.youtube.com/embed/IMGKXPBQigg"
+        title="Furniture Scanning & VR Staging Demo by SQ Interactive"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Optional Subtext -->
+    <p class="text-gray-500 text-sm max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+      Every frame is a blend of <span class="text-yellow-400">precision, depth,</span> and 
+      <span class="text-yellow-400">immersive realism</span> — built to redefine how clients experience your space.
+    </p>
+  </div>
+</section>
+
+  <!-- HOW IT WORKS -->
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-left" data-aos="fade-up" data-aos-delay="200">
+    <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
+      <h3 class="text-yellow-400 text-xl font-semibold mb-3">1. Scan & Capture</h3>
+      <p>We perform a full 3D capture of your physical showroom using professional-grade scanners and 360° imaging tools.</p>
+    </div>
+    <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
+      <h3 class="text-yellow-400 text-xl font-semibold mb-3">2. Rebuild in 3D</h3>
+      <p>Your space is reconstructed into a digital twin — complete with photoreal textures, lighting, and materials ready for VR rendering.</p>
+    </div>
+    <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
+      <h3 class="text-yellow-400 text-xl font-semibold mb-3">3. Stage & Launch</h3>
+      <p>We add products, decor, and effects for a cinematic VR showroom — hosted online for clients to explore anytime, anywhere.</p>
     </div>
   </div>
 </section>
 
 
-<!-- Process Section -->
-<section class="py-20 bg-[#0b0c0d]">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-semibold text-white mb-10">Our Process</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up">
-        <h3 class="text-xl font-semibold mb-2 gold">1. Capture</h3>
-        <p class="text-gray-400 text-sm">We 3D scan your entire showroom using professional photogrammetry tools.</p>
+<!-- FEATURES + VALUE -->
+<section class="py-24 steam-bg text-center overflow-hidden">
+  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10" data-aos="fade-up">
+
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-8">Your Showroom, Reinvented in VR</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+      Turn your physical space into a digital experience that sells itself. 
+      Engage international clients, showcase your collection virtually, and redefine how products are experienced — 
+      through <span class="text-yellow-400 font-medium">immersion, interactivity,</span> and <span class="text-yellow-400 font-medium">innovation</span>.
+    </p>
+
+    <!-- Features -->
+    <div class="grid md:grid-cols-3 gap-10 text-left text-gray-300 mb-16">
+      <div class="p-6 rounded-xl bg-[#1E1E1E]/70 backdrop-blur-lg shadow-lg hover:shadow-yellow-500/20 transition" data-aos="fade-right">
+        <h3 class="text-xl font-bold text-yellow-400 mb-3">3D Product Scanning</h3>
+        <p>Digitize furniture, appliances, and decor items with sub-millimeter accuracy and stunning texture fidelity.</p>
       </div>
-      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl font-semibold mb-2 gold">2. Clean & Optimize</h3>
-        <p class="text-gray-400 text-sm">Models are cleaned, light-mapped, and optimized for real-time performance.</p>
+      <div class="p-6 rounded-xl bg-[#1E1E1E]/70 backdrop-blur-lg shadow-lg hover:shadow-yellow-500/20 transition" data-aos="fade-up">
+        <h3 class="text-xl font-bold text-yellow-400 mb-3">Interactive VR Staging</h3>
+        <p>Rearrange, restyle, and re-light your showroom in real time — no need to rebuild your set physically.</p>
       </div>
-      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-xl font-semibold mb-2 gold">3. Stage in VR</h3>
-        <p class="text-gray-400 text-sm">Furniture, lighting, and decor are added for full virtual staging realism.</p>
+      <div class="p-6 rounded-xl bg-[#1E1E1E]/70 backdrop-blur-lg shadow-lg hover:shadow-yellow-500/20 transition" data-aos="fade-left">
+        <h3 class="text-xl font-bold text-yellow-400 mb-3">Global Accessibility</h3>
+        <p>Host your showroom on the web or VR platforms for clients to explore from anywhere — fully optimized for performance and clarity.</p>
       </div>
-      <div class="steam-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="text-xl font-semibold mb-2 gold">4. Deliver & Publish</h3>
-        <p class="text-gray-400 text-sm">The final digital showroom is delivered as a web or VR-ready experience.</p>
-      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="text-center mb-12" data-aos="zoom-in">
+      <p class="text-lg text-gray-400 mb-2">Estimated Project Range</p>
+      <h3 class="text-3xl font-bold text-yellow-400 mb-1">180,000 – 300,000 PKR</h3>
+      <p class="text-gray-500">Timeline: 3 – 5 Weeks</p>
+    </div>
+
+    <!-- CTA -->
+    <div data-aos="fade-up" class="mt-10">
+      <a href="contact.html" class="bg-yellow-400 text-black font-semibold py-4 px-10 rounded-full hover:scale-105 transition text-lg shadow-lg">
+        Schedule a VR Showroom Demo
+      </a>
     </div>
   </div>
 </section>
@@ -329,32 +335,42 @@
 
 
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 py-10 relative z-20">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-    <div>
-      <img src="images/no-background.png" class="h-12 mb-4" alt="Logo">
-      <p class="text-sm">SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, design, and high-end media experiences.</p>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#070708] text-gray-300 py-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <img src="images/no-background.png" class="h-12 mb-4" alt="SQ Interactive logo" loading="lazy">
+        <p class="text-sm text-gray-400">SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, interior design, and high-end media experiences.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-3">Contact</h4>
+        <p class="text-sm">Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
+        <p class="text-sm">Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
+        <p class="text-sm">Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
     </div>
-    <div>
-      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-white">Home</a></li>
-        <li><a href="#" class="hover:text-white">Services</a></li>
-        <li><a href="#" class="hover:text-white">Portfolio</a></li>
-        <li><a href="#" class="hover:text-white">Contact</a></li>
-      </ul>
+      <div class="flex justify-center gap-6 mt-3">
+      <a href="https://www.instagram.com/sqinteractive"><i data-feather="instagram"></i></a>
+      <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/"><i data-feather="linkedin"></i></a>
+      <a href="https://www.youtube.com/@SQINTERACTIVE"><i data-feather="youtube"></i></a>
     </div>
-    <div>
-      <h3 class="text-white font-semibold mb-4">Contact</h3>
-      <p>Email: <a href="mailto:sqinterractive@hotmail.com" class="text-yellow-400 hover:underline">sqinterractive@hotmail.com</a></p>
-      <p>OR: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
-      <p>Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
     </div>
-  </div>
-  <div class="text-center text-gray-500 text-sm mt-8">&copy; 2025 SQ Interactive. All rights reserved.</div>
-</footer>
+
+    <div class="text-center text-gray-500 text-sm mt-8">&copy; <span id="yr"></span> SQ Interactive. All rights reserved.</div>
+  </footer>
 
 
   <!-- Scripts -->
