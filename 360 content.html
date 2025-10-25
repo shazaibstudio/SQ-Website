@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>SQ Interactive |360 Content(EN)</title>
 
   <!-- Tailwind & AOS -->
@@ -19,6 +18,43 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; background:#121212; color:#f5f5f5; }
     h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
     .gold { color:#d4af37; }
+
+    @media (max-width: 768px) {
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  .max-w-7xl, .max-w-6xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Fix hero section image sizing */
+  .hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Ensure iframe section fits perfectly */
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  /* Prevent menu overflow */
+  #mobile-menu {
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+}
+
 
     /* Demo button fixed */
     .demo-btn {
@@ -43,6 +79,24 @@
     /* Hide scrollbar for aesthetic */
     .scrollbar-hide::-webkit-scrollbar { display: none; }
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .aspect-\[16\/9\] {
+    aspect-ratio: 16 / 9;
+  }
+}
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
   </style>
 
   <!-- Analytics & Hotjar (kept intact) -->
@@ -229,16 +283,7 @@
       and optimized for full mobile and VR viewing.
     </p>
 
-    <div class="relative w-full max-w-4xl mx-auto mb-16 rounded-2xl overflow-hidden shadow-2xl" data-aos="zoom-in">
-      <iframe
-        class="w-full aspect-video rounded-2xl"
-        src="https://www.youtube.com/embed/NUcPEprluX8"
-        title="SQ Interactive 360 Virtual Tour Demo"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
+
 </section>
 
 
@@ -261,10 +306,56 @@
     </div>
   </div>
 </section>
+<!-- INTERACTIVE 360° TOUR VIEWER -->
+<section class="py-24 bg-[#0b0b0b] text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-yellow-700 via-transparent to-black blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-6" data-aos="fade-up">
+      Explore Our 360° Virtual Experience
+    </h2>
+    <p class="text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      Step inside a fully interactive <span class="text-yellow-400 font-semibold">virtual walkthrough</span> built by SQ Interactive. 
+      Navigate real spaces, move between rooms, and experience a home tour as if you were truly there — all from your device.
+    </p>
+
+    <!-- 360° TOUR IFRAME + LOADER -->
+    <div class="relative w-full max-w-5xl mx-auto aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-[#ffffff12]" data-aos="zoom-in">
+
+      <!-- Loader -->
+      <div id="tour-loader" class="absolute inset-0 flex items-center justify-center bg-[#0b0b0b] z-20 transition-opacity duration-700">
+        <div class="w-10 h-10 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+
+      <!-- 360° Iframe -->
+      <iframe 
+        src="360-tour/index.html" 
+        title="SQ Interactive 360 Virtual Tour" 
+        class="w-full h-full rounded-2xl"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Fullscreen Button -->
+    <button 
+      onclick="document.querySelector('iframe[src*=\'360-tour\']').requestFullscreen()" 
+      class="mt-6 bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+      View in Full Screen
+    </button>
+
+    <!-- CTA -->
+    <div class="mt-10">
+      <a href="contact.html" class="bg-yellow-400 text-black font-semibold py-4 px-10 rounded-full hover:scale-105 transition text-lg shadow-lg">
+        Book Your Own 360° Tour
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <!-- FEATURES + VALUE -->
-<section class="py-24 steam-bg text-center overflow-hidden">
+<section class="py-24 steam-bg text-center overflow-hidden relative">
   <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
   <div class="max-w-7xl mx-auto px-6 relative z-10" data-aos="fade-up">
 
@@ -291,13 +382,12 @@
       </div>
     </div>
     
-<!-- Pricing -->
-<div class="text-center mb-12 px-4 sm:px-6 md:px-0" data-aos="zoom-in">
-  <p class="text-base sm:text-lg text-gray-400 mb-2">Estimated Project Range</p>
-  <h3 class="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1">35,000 – 70,000 PKR</h3>
-  <p class="text-sm sm:text-gray-500 text-gray-400">Timeline: 1 Week</p>
-</div>
-
+    <!-- Pricing -->
+    <div class="text-center mb-12 px-4 sm:px-6 md:px-0" data-aos="zoom-in">
+      <p class="text-base sm:text-lg text-gray-400 mb-2">Estimated Project Range</p>
+      <h3 class="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1">35,000 – 70,000 PKR</h3>
+      <p class="text-sm sm:text-gray-500 text-gray-400">Timeline: 1 Week</p>
+    </div>
 
     <!-- CTA -->
     <div data-aos="fade-up" class="mt-10">
@@ -309,43 +399,45 @@
 </section>
 
 
-
-
-  <!-- FOOTER -->
-  <footer class="bg-[#070708] text-gray-300 py-10 border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-      <div>
-        <img src="images/no-background.png" class="h-12 mb-4" alt="SQ Interactive logo" loading="lazy">
-        <p class="text-sm text-gray-400">SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, interior design, and high-end media experiences.</p>
-      </div>
-
-      <div>
-        <h4 class="text-white font-semibold mb-3">Quick Links</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="index.html" class="hover:text-white">Home</a></li>
-          <li><a href="services.html" class="hover:text-white">Services</a></li>
-          <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
-          <li><a href="about.html" class="hover:text-white">About</a></li>
-          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-white font-semibold mb-3">Contact</h4>
-        <p class="text-sm">Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
-        <p class="text-sm">Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
-        <p class="text-sm">Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
-        
-    </div>
-      <div class="flex justify-center gap-6 mt-3">
-      <a href="https://www.instagram.com/sqinteractive"><i data-feather="instagram"></i></a>
-      <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/"><i data-feather="linkedin"></i></a>
-      <a href="https://www.youtube.com/@SQINTERACTIVE"><i data-feather="youtube"></i></a>
-    </div>
+<!-- FOOTER -->
+<footer class="bg-[#070708] text-gray-300 py-12 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <div>
+      <img src="images/no-background.png" class="h-12 mb-4" alt="SQ Interactive logo" loading="lazy">
+      <p class="text-sm text-gray-400">
+        SQ Interactive crafts immersive VR and multimedia experiences for real estate, interior design, and luxury showcases.
+      </p>
     </div>
 
-    <div class="text-center text-gray-500 text-sm mt-8">&copy; <span id="yr"></span> SQ Interactive. All rights reserved.</div>
-  </footer>
+    <div>
+      <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="hover:text-white">Home</a></li>
+        <li><a href="services.html" class="hover:text-white">Services</a></li>
+        <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
+        <li><a href="about.html" class="hover:text-white">About</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-3">Contact</h4>
+      <p class="text-sm">Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
+      <p class="text-sm">Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a></p>
+      <p class="text-sm">Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a></p>
+    </div>
+  </div>
+
+  <div class="flex justify-center gap-6 mt-8">
+    <a href="https://www.instagram.com/sqinteractive"><i data-feather="instagram"></i></a>
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/"><i data-feather="linkedin"></i></a>
+    <a href="https://www.youtube.com/@SQINTERACTIVE"><i data-feather="youtube"></i></a>
+  </div>
+
+  <div class="text-center text-gray-500 text-sm mt-6">
+    &copy; <span id="yr"></span> SQ Interactive. All rights reserved.
+  </div>
+</footer>
 
 
   <!-- Scripts -->
@@ -447,7 +539,19 @@ async function translateText(text, targetLang) {
   });
   const data = await response.json();
   return data.data.translations[0].translatedText;
+
+  
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const iframe = document.querySelector('iframe[src*="360-tour"]');
+  const loader = document.getElementById('tour-loader');
+  if (iframe && loader) {
+    iframe.addEventListener('load', () => loader.style.display = 'none');
+  }
+});
+
+
 </script>
 
 </body>
