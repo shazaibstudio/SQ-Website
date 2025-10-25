@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-kitchen-entrance">
+        <li class="text">kitchen entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-room-1-entrance">
+        <li class="text">room 1 entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-room-1">
+        <li class="text">room 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-room-1-dressing-and-washroom">
+        <li class="text">room 1 dressing and washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-room-3-center">
+        <li class="text">room 3 center</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-room-3-dressing">
+        <li class="text">room 3 dressing</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-room-3-entrance">
+        <li class="text">room 3 entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-room-3-washroom">
+        <li class="text">room 3 washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-room-2-dressing-and-washroom">
+        <li class="text">room 2 dressing and washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-room-2-center">
+        <li class="text">room 2 center</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-room2entrance">
+        <li class="text">room2entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-gali3">
+        <li class="text">gali3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-upstairs-gali-start">
+        <li class="text">upstairs gali start</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-tv-lounge-back">
+        <li class="text">tv lounge back</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-tv-lounge-start">
+        <li class="text">tv lounge start</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-upstairs-foye">
+        <li class="text">upstairs foye</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-stairs-top-">
+        <li class="text">stairs top </li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-staies-center">
+        <li class="text">staies center</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-stairs-middle">
+        <li class="text">stairs middle</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-dining-2">
+        <li class="text">Dining 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="20-dining">
+        <li class="text">dining</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="21-guest-sitting-1">
+        <li class="text">guest sitting 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="22-guest-sitting">
+        <li class="text">guest sitting</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="23-stairs-start">
+        <li class="text">stairs start</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="24-foye">
+        <li class="text">foye</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="25-stairs-entrance">
+        <li class="text">stairs entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="26-stairs">
+        <li class="text">stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="27-garage">
+        <li class="text">garage</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="28-house-front">
+        <li class="text">House Front</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
