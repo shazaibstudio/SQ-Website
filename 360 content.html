@@ -287,25 +287,43 @@ html, body {
 </section>
 
 
-  <!-- HOW IT WORKS -->
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-left" data-aos="fade-up" data-aos-delay="200">
-    <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
-      <h3 class="text-yellow-400 text-xl font-semibold mb-3">1. Capture & Stitch</h3>
-      <p>We shoot every corner of your property using <span class="text-white">Insta360</span> gear 
-         and blend it into a seamless virtual walkthrough with perfect lighting and detail.</p>
-    </div>
-    <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
-      <h3 class="text-yellow-400 text-xl font-semibold mb-3">2. Design & Customize</h3>
-      <p>Hotspots, text labels, and smooth navigation paths are added to make exploration 
-         simple and visually engaging for clients.</p>
-    </div>
-    <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
-      <h3 class="text-yellow-400 text-xl font-semibold mb-3">3. Host & Share</h3>
-      <p>Your tour is hosted on fast, secure cloud servers — ready to share 
-         via custom links, websites, or embedded presentations.</p>
+<!-- HOW IT WORKS -->
+<section class="py-24 bg-[#0b0b0b] text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-yellow-700 via-transparent to-black blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-12" data-aos="fade-up">
+      How It Works
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10 text-left" data-aos="fade-up" data-aos-delay="200">
+      <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
+        <h3 class="text-yellow-400 text-xl font-semibold mb-3">1. Capture & Stitch</h3>
+        <p class="text-gray-300 leading-relaxed">
+          We capture every corner of your property using <span class="text-white font-medium">Insta360</span> cameras 
+          and blend the shots into a seamless virtual walkthrough with perfect lighting and depth.
+        </p>
+      </div>
+
+      <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
+        <h3 class="text-yellow-400 text-xl font-semibold mb-3">2. Design & Customize</h3>
+        <p class="text-gray-300 leading-relaxed">
+          We add interactive hotspots, navigation arrows, and dynamic info labels to make exploration smooth, 
+          immersive, and easy to use.
+        </p>
+      </div>
+
+      <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
+        <h3 class="text-yellow-400 text-xl font-semibold mb-3">3. Host & Share</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Your 360° tour is hosted on our secure servers — ready to share via custom links, your website, or 
+          embedded in marketing presentations.
+        </p>
+      </div>
     </div>
   </div>
 </section>
+
 <!-- INTERACTIVE 360° TOUR VIEWER -->
 <section class="py-24 bg-[#0b0b0b] text-center relative overflow-hidden">
   <div class="absolute inset-0 opacity-20 bg-gradient-to-b from-yellow-700 via-transparent to-black blur-3xl"></div>
@@ -315,13 +333,14 @@ html, body {
       Explore Our 360° Virtual Experience
     </h2>
     <p class="text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-      Step inside a fully interactive <span class="text-yellow-400 font-semibold">virtual walkthrough</span> built by SQ Interactive. 
-      Navigate real spaces, move between rooms, and experience a home tour as if you were truly there — all from your device.
+      Step inside a fully interactive <span class="text-yellow-400 font-semibold">virtual walkthrough</span> built by 
+      <span class="font-semibold text-white">SQ Interactive</span>. Navigate real spaces, move between rooms, 
+      and explore your environment — all from your device.
     </p>
 
     <!-- 360° TOUR IFRAME + LOADER -->
     <div class="relative w-full max-w-5xl mx-auto aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-[#ffffff12]" data-aos="zoom-in">
-
+      
       <!-- Loader -->
       <div id="tour-loader" class="absolute inset-0 flex items-center justify-center bg-[#0b0b0b] z-20 transition-opacity duration-700">
         <div class="w-10 h-10 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
@@ -329,17 +348,18 @@ html, body {
 
       <!-- 360° Iframe -->
       <iframe 
-        src="360-tour/index.html" 
+        src="SQ-Tours/index.html" 
         title="SQ Interactive 360 Virtual Tour" 
         class="w-full h-full rounded-2xl"
         allowfullscreen
         loading="lazy"
+        onload="document.getElementById('tour-loader').style.opacity='0'; setTimeout(()=>document.getElementById('tour-loader').remove(),600);"
       ></iframe>
     </div>
 
     <!-- Fullscreen Button -->
     <button 
-      onclick="document.querySelector('iframe[src*=\'360-tour\']').requestFullscreen()" 
+      onclick="document.querySelector('iframe[src*=\'SQ-Tours\']').requestFullscreen()" 
       class="mt-6 bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
       View in Full Screen
     </button>
@@ -352,6 +372,7 @@ html, body {
     </div>
   </div>
 </section>
+
 
 
 <!-- FEATURES + VALUE -->
