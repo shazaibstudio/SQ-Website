@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Shazaib Qaiser — UI/UX · Multimedia · VR</title>
+<meta name="theme-color" content="#05020a"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ========== VARIABLES & BASE ========== */
+:root{
+  --bg:#04020a;
+  --panel: rgba(255,255,255,0.03);
+  --muted:#94a6bf;
+  --blue:#4ee3ff;
+  --purple:#7a4bff;
+  --pink:#ff4bd6;
+  --accent: linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --maxw:1250px;
+  --easing: cubic-bezier(.2,.9,.3,1);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(122,75,255,0.04), transparent 6%),
+    radial-gradient(900px 480px at 90% 90%, rgba(79,227,255,0.03), transparent 6%),
+    var(--bg);
+  color:#e9f6ff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+/* ========== VISION-PRO NAV (floating pill) ========== */
+header.vp-nav {
+  position:fixed; top:20px; left:50%; transform:translateX(-50%); width:88%; max-width:1100px;
+  padding:12px 20px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(18px) saturate(140%); border-radius:56px; z-index:2000;
+  border:1px solid rgba(255,255,255,0.06); box-shadow: 0 12px 40px rgba(122,75,255,0.06);
+  display:flex; align-items:center; gap:18px; transition:transform .25s var(--easing),box-shadow .25s var(--easing);
+}
+.vp-nav:active{transform:translateX(-50%) scale(.996)}
+.vp-left{display:flex;align-items:center;gap:12px}
+.logo-round{
+  width:52px;height:52px;border-radius:12px;background:conic-gradient(from 200deg,var(--pink),var(--purple),var(--blue));
+  box-shadow:0 10px 30px rgba(122,75,255,0.12), inset 0 0 18px rgba(255,255,255,0.02);
+  display:flex;align-items:center;justify-content:center;font-weight:800;color:#03020a;font-size:15px;
+}
+.brand-line{display:flex;flex-direction:column;line-height:1}
+.brand-line .name{font-weight:800;color:#eaf6ff}
+.brand-line .role{font-size:12px;color:var(--muted)}
+nav.top{margin-left:auto;display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:700}
+nav.top a{padding:8px 12px;border-radius:12px;position:relative;transition:all .18s var(--easing)}
+nav.top a:hover{color:#fff; transform:translateY(-4px)}
+nav.top a::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-10px;width:0;height:3px;border-radius:3px;background:var(--pink);transition:width .22s var(--easing)}
+nav.top a.active::after, nav.top a:hover::after{width:70% ; background: linear-gradient(90deg,var(--blue),var(--purple),var(--pink))}
+
+/* mobile menu button */
+.menu-toggle{display:none;border:0;background:transparent;color:var(--muted);font-weight:800;border-radius:10px;padding:8px}
+
+/* ========== HERO ========== */
+.hero{
+  min-height:92vh; display:flex; align-items:center; justify-content:center; padding:140px 0 80px; position:relative; overflow:visible;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 520px;gap:38px;align-items:center;width:100%;max-width:var(--maxw);padding:0 24px}
+
+/* left panel */
+.panel-left{
+  position:relative; z-index:2;
+}
+.eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);color:var(--blue);font-weight:800;font-size:12px}
+.hero-title{font-size:56px;line-height:1.02;margin:18px 0 8px;font-weight:900;color:linear-gradient(90deg)}
+.hero-title strong{color:#ffffff;text-shadow:0 10px 40px rgba(122,75,255,0.08)}
+.hero-roles{color:var(--muted);font-size:16px;margin-top:6px}
+.hero-desc{color:var(--muted);font-size:16px;max-width:720px;margin-top:18px;line-height:1.6}
+.cta-row{display:flex;gap:14px;margin-top:20px;align-items:center}
+.btn-primary{
+  background: linear-gradient(90deg,var(--blue),var(--purple));
+  color:#050311;padding:12px 18px;border-radius:999px;border:0;font-weight:800;cursor:pointer;box-shadow:0 18px 50px rgba(122,75,255,0.12);
+  transition:transform .16s var(--easing);
+}
+.btn-primary:hover{transform:translateY(-5px);box-shadow:0 28px 80px rgba(122,75,255,0.18)}
+.btn-ghost{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+
+/* highlight chips */
+.chips{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.chip{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);color:var(--muted);font-weight:700}
+
+/* right visual card */
+.visual-card{
+  position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 40px 120px rgba(2,6,23,0.7); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  min-height:420px;
+}
+.visual-media{position:absolute;inset:0;overflow:hidden}
+.visual-media video, .visual-media img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.04) saturate(1.06)}
+.visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(3,2,7,0.45));display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:8px}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:var(--muted);font-weight:800}
+.vtitle{font-weight:900;color:#fff;font-size:18px}
+
+/* animated neon orb and floaters */
+.orb {position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(40px);mix-blend-mode:screen;opacity:0.95}
+.orb.o1{right:10%;top:6%;background:radial-gradient(circle, rgba(78,227,255,0.15), transparent 35%);}
+.orb.o2{left:6%;bottom:8%;background:radial-gradient(circle, rgba(122,75,255,0.12), transparent 30%);}
+.orb.o3{right:18%;bottom:16%;background:radial-gradient(circle, rgba(255,75,214,0.10), transparent 30%)}
+
+/* animated waves svg overlay */
+.waves{position:absolute;inset:auto 0 0 0;height:140px;pointer-events:none;mix-blend-mode:screen;opacity:0.9}
+
+/* ========== SECTIONS ========== */
+section{padding:80px 0; position:relative}
+.section-title{font-size:30px;margin:0 0 12px;color:#fff;font-weight:800}
+.lead{color:var(--muted);max-width:900px}
+
+/* Experience */
+.grid-2{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 16px 50px rgba(2,6,23,0.6)}
+.role{font-weight:800;color:#fff}
+.muted{color:var(--muted);font-size:13px}
+.bullets{color:var(--muted);line-height:1.6;margin-top:12px}
+
+/* PROJECTS */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.project{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);cursor:pointer;position:relative;transition:transform .24s var(--easing),box-shadow .24s var(--easing)}
+.project::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.2));opacity:0;transition:opacity .22s}
+.project img{width:100%;height:200px;object-fit:cover}
+.project .meta{padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))}
+.project h4{margin:0 0 6px;font-weight:800}
+.project p{margin:0;color:var(--muted);font-size:13px}
+.project:hover{transform:translateY(-10px);box-shadow:0 40px 120px rgba(122,75,255,0.12)}
+.project:hover::after{opacity:1}
+
+/* Project ribbon (animated) */
+.ribbon{position:absolute;top:12px;left:12px;background:linear-gradient(90deg,var(--blue),var(--pink));padding:6px 10px;border-radius:8px;color:#05030a;font-weight:800;font-size:12px;box-shadow:0 6px 20px rgba(122,75,255,0.12);transform:translateY(-4px);transition:transform .2s}
+.project:hover .ribbon{transform:translateY(0)}
+
+/* SKILLS - animated rings and chips */
+.skills-grid{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.skill-ring{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--blue) 0 0, rgba(255,255,255,0.03));position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+.skill-ring .label{position:absolute;bottom:8px;font-size:12px;color:var(--muted)}
+.skill-anim{position:absolute;inset:0;transform:rotate(-90deg)}
+
+/* contact CTA */
+.contact-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+
+/* footer */
+footer{padding:30px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* reveal & motion */
+.reveal{opacity:0;transform:translateY(18px);transition:all .8s var(--easing)}
+.reveal.visible{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:20px;padding:0 18px}
+  nav.top{display:none}
+  .project-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .project-grid{grid-template-columns:1fr}
+  .hero-title{font-size:28px}
+  header.vp-nav{left:12px;right:12px;transform:none;width:calc(100% - 24px)}
+  .logo-round{width:44px;height:44px}
+  .chip{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="vp-nav" role="banner" aria-label="Main navigation">
+  <div class="vp-left">
+    <div class="logo-round" aria-hidden="true">SQ</div>
+    <div class="brand-line">
+      <div class="name">Shazaib Qaiser</div>
+      <div class="role">UI/UX · Multimedia · VR</div>
+    </div>
+  </div>
+
+  <nav class="top" role="navigation" aria-label="Quick links">
+    <a href="#about" data-target="about">About</a>
+    <a href="#experience" data-target="experience">Experience</a>
+    <a href="#projects" data-target="projects">Projects</a>
+    <a href="#skills" data-target="skills">Skills</a>
+    <a href="#contact" data-target="contact">Contact</a>
+  </nav>
+
+  <button class="menu-toggle" aria-label="Open menu" title="Menu" onclick="toggleMobileMenu()">☰</button>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-grid container">
+
+    <!-- LEFT -->
+    <div class="panel-left">
+      <div class="eyebrow">SQ Interactive — Founder</div>
+      <h1 class="hero-title">Designing immersive experiences <strong>that feel like tomorrow.</strong></h1>
+      <div class="hero-roles">UI/UX · Multimedia · VR</div>
+      <p class="hero-desc">I craft cinematic VR environments, AI-driven design tools, and interactive multimedia experiences for real estate, interior design, and immersive storytelling. I combine design, code, and cinematic lighting to produce premium demos and products that convert.</p>
+
+      <div class="cta-row">
+        <button class="btn-primary" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Hire Me — Let's Talk</button>
+        <a class="btn-ghost" href="#projects">See Projects</a>
+      </div>
+
+      <div class="chips" style="margin-top:16px;">
+        <div class="chip">Unity · Unreal</div>
+        <div class="chip">AI-assisted workflows</div>
+        <div class="chip">360° & VR tours</div>
+      </div>
+
+      <!-- floating badges -->
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;">
+        <div class="chip" style="background:linear-gradient(90deg, rgba(78,227,255,0.06), rgba(122,75,255,0.04));border:1px solid rgba(78,227,255,0.08);color:#dff9ff">Flagship: VR-AI Assistant</div>
+        <div class="chip" style="background:linear-gradient(90deg, rgba(255,75,214,0.05), rgba(122,75,255,0.03));border:1px solid rgba(255,75,214,0.06);color:#ffdff8">APU — BSc (Hons)</div>
+      </div>
+    </div>
+
+    <!-- RIGHT VISUAL -->
+    <div class="visual-card" aria-hidden="true">
+      <div class="visual-media">
+        <!-- placeholder sample video: change later -->
+        <video autoplay muted loop playsinline src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"></video>
+      </div>
+
+      <div class="visual-overlay">
+        <div class="badge">Project Preview</div>
+        <div class="vtitle">Luxury Villa — Cinematic Walkthrough</div>
+      </div>
+
+      <!-- neon orbs -->
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+
+      <!-- animated gradient waves -->
+      <div class="waves" aria-hidden="true">
+        <svg class="wave" viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wg" x1="0" x2="1">
+              <stop offset="0" stop-color="#4ee3ff" stop-opacity="0.12"/>
+              <stop offset="0.5" stop-color="#7a4bff" stop-opacity="0.08"/>
+              <stop offset="1" stop-color="#ff4bd6" stop-opacity="0.06"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 60 C 220 20 440 100 720 70 C1000 40 1220 100 1440 60 L1440 150 L0 150 Z" fill="url(#wg)"/>
+        </svg>
+      </div>
+
+      <!-- particles canvas -->
+      <canvas class="particles" id="heroParticles" style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0.95"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="container">
+  <div class="reveal">
+    <h2 class="section-title">About</h2>
+    <p class="lead">I’m a UI/UX, Multimedia & VR Designer/Developer. I build immersive products — VR walkthroughs, AI interior assistants and interactive 360° experiences. My work blends user-centered design, cinematic visuals, and efficient engineering to create polished demos and products that sell.</p>
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section id="experience" style="background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);">
+  <div class="container">
+    <div class="reveal grid-2">
+      <div>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="panel" style="margin-top:12px">
+          <div class="role">Founder & Lead Designer/Developer — SQ Interactive</div>
+          <div class="muted">Lahore, Pakistan · 2024 – Present</div>
+          <div class="bullets">
+            • Founded SQ Interactive — delivered immersive VR experiences, interactive multimedia solutions, and modern UI/UX products.<br>
+            • Launched sqinteractive.com to showcase portfolio, VR demos, and interactive projects.<br>
+            • Designed a visa-management database UI that improved processing efficiency by ~30%.<br>
+            • Managed end-to-end product lifecycles: research, wireframes, prototyping, VR scene building, backend integration, and deployment.
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:14px">
+          <div class="role">UI/UX Designer & Multimedia Developer — Netsole</div>
+          <div class="muted">Lahore, Pakistan · 2023 – 2024</div>
+          <div class="bullets">
+            • Designed responsive interfaces for web & mobile with a focus on accessibility.<br>
+            • Produced motion graphics, interactive prototypes and multimedia assets for client pitches.<br>
+            • Collaborated with dev teams to ship pixel-accurate UI across platforms.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel contact-card">
+          <div>
+            <div style="font-weight:800">Contact</div>
+            <div style="color:var(--muted);margin-top:8px">Email: <a href="mailto:shazaibqaiser@hotmail.com" style="color:#fff">shazaibqaiser@hotmail.com</a></div>
+            <div style="color:var(--muted);margin-top:6px">Phone: +92 3009452153</div>
+            <div style="color:var(--muted);margin-top:6px">Location: Lahore, Pakistan</div>
+            <div style="color:var(--muted);margin-top:6px">Portfolio: <a href="https://sqinteractive.com" style="color:#fff">sqinteractive.com</a></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:14px">
+          <div style="font-weight:800">Education</div>
+          <div style="color:var(--muted);margin-top:8px;line-height:1.6">
+            BSc (Hons) Multimedia Technology — VR/AR Specialism, Asia Pacific University (APU), Kuala Lumpur — 2024<br>
+            O & A Levels — Roots IVY International School — 2020<br>
+            Middle School — Beaconhouse Newlands — 2015
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="lead">A curated selection of VR, 360°, and AI-driven projects. Click a card to open a demo preview (placeholders used).</p>
+    </div>
+
+    <div class="reveal">
+      <div class="project-grid">
+        <!-- 1 -->
+        <div class="project" onclick="openProjectModal(1)">
+          <div class="ribbon">Flagship</div>
+          <img src="https://picsum.photos/1200/800?random=321" alt="Luxury Villa">
+          <div class="meta">
+            <h4>Luxury Villa Walkthrough</h4>
+            <p>PC VR walkthrough with cinematic lighting and polished UX flow.</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="project" onclick="openProjectModal(2)">
+          <div class="ribbon">Visualization</div>
+          <img src="https://picsum.photos/1200/800?random=322" alt="1 Kanal Villa">
+          <div class="meta">
+            <h4>1 Kanal Villa Visualization</h4>
+            <p>Mobile-optimized interactive visualization focused on lighting & flow.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="project" onclick="openProjectModal(3)">
+          <div class="ribbon">360° Tour</div>
+          <img src="https://picsum.photos/1200/800?random=323" alt="Matlock Galani 360">
+          <div class="meta">
+            <h4>Matlock Galani 360° Tour</h4>
+            <p>Interactive 360° tour captured with Insta360 X3 for real estate presentation.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="project" onclick="openProjectModal(4)">
+          <div class="ribbon">AI</div>
+          <img src="https://picsum.photos/1200/800?random=324" alt="AI Interior">
+          <div class="meta">
+            <h4>AI Interior Design Assistant</h4>
+            <p>Realtime AI suggestions for layouts & decor with VR preview.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="project" onclick="openProjectModal(5)">
+          <div class="ribbon">VR</div>
+          <img src="https://picsum.photos/1200/800?random=325" alt="VR Room">
+          <div class="meta">
+            <h4>VR Room Experience</h4>
+            <p>Interactive Unity scene with physics-driven interactions & spatial audio.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="project" onclick="openProjectModal(6)">
+          <div class="ribbon">Tour</div>
+          <img src="https://picsum.photos/1200/800?random=326" alt="SQ Office">
+          <div class="meta">
+            <h4>SQ Office 360° Tour</h4>
+            <p>Hosted on Panoee — interactive office walkthrough for clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section id="skills" style="background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);">
+  <div class="container">
+    <div class="reveal" style="display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:1;min-width:320px">
+        <h2 class="section-title">Skills & Tools</h2>
+        <p class="lead">Cross-disciplinary stacks for UI/UX, multimedia, VR, and AI workflows. I use these daily to prototype, iterate, and ship immersive experiences.</p>
+
+        <!-- animated skill rings -->
+        <div style="display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;">
+          <div class="skill-ring" id="ring1"><svg class="skill-anim" viewBox="0 0 100 100"></svg><div style="font-weight:800">UI/UX</div><div class="label" style="color:var(--muted)">Figma · Prototyping</div></div>
+          <div class="skill-ring" id="ring2"><svg class="skill-anim" viewBox="0 0 100 100"></svg><div style="font-weight:800">VR</div><div class="label" style="color:var(--muted)">Unity · Unreal</div></div>
+          <div class="skill-ring" id="ring3"><svg class="skill-anim" viewBox="0 0 100 100"></svg><div style="font-weight:800">AI</div><div class="label" style="color:var(--muted)">ChatGPT · MidJourney</div></div>
+        </div>
+
+        <!-- chips -->
+        <div style="margin-top:18px" class="skills">
+          <div class="chip-skill">Figma</div>
+          <div class="chip-skill">Unity 3D</div>
+          <div class="chip-skill">Unreal Engine</div>
+          <div class="chip-skill">Blender</div>
+          <div class="chip-skill">Photoshop</div>
+          <div class="chip-skill">After Effects</div>
+          <div class="chip-skill">C#</div>
+          <div class="chip-skill">HTML • CSS • JS</div>
+          <div class="chip-skill">ChatGPT</div>
+          <div class="chip-skill">MidJourney</div>
+          <div class="chip-skill">RunwayML</div>
+          <div class="chip-skill">NVIDIA Omniverse</div>
+        </div>
+      </div>
+
+      <div style="width:320px;min-width:260px">
+        <div class="panel">
+          <div style="font-weight:800">Certifications</div>
+          <div style="color:var(--muted);margin-top:8px">
+            Junior Programmer Pathway — Unity Technologies (July 2025)<br>
+            VR Development Pathway — Unity Technologies (July 2025)
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:12px">
+          <div style="font-weight:800">Languages</div>
+          <div style="color:var(--muted);margin-top:8px">English (Fluent)<br>Urdu (Native)<br>Punjabi (Native)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal contact-cta">
+      <div class="left">
+        <h2 class="section-title">Let's work together</h2>
+        <p class="lead">I'm actively seeking UI/UX, Multimedia and VR opportunities. If you want a demo, proposal, or a tailored pitch—email me and I’ll prepare a custom walkthrough.</p>
+      </div>
+      <div class="right" style="display:flex;gap:12px;align-items:center;">
+        <a class="btn-primary" href="mailto:shazaibqaiser@hotmail.com">Email Me</a>
+        <a class="btn-ghost" href="https://sqinteractive.com" target="_blank">Visit Portfolio</a>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:20px">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div style="font-weight:800">Quick CV</div>
+        <div style="color:var(--muted)">BSc (Hons) Multimedia Tech — APU 2024 • Lahore, Pakistan • +92 3009452153</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-direction:column">
+      <div style="font-weight:800;color:var(--muted)">SQ Interactive</div>
+      <div style="color:var(--muted);font-size:13px">© 2025 • Designed & built by Shazaib Qaiser</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== PROJECT MODAL ========== -->
+<div id="modal" style="display:none;position:fixed;inset:0;z-index:3000;place-items:center;background:linear-gradient(180deg, rgba(3,6,12,0.8), rgba(3,6,12,0.96))">
+  <div style="width:94%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04)">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div id="modalTitle" style="font-weight:800;color:#fff"></div>
+      <div><button onclick="closeModal()" style="background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer">Close ✕</button></div>
+    </div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+      <div style="flex:1;min-width:320px">
+        <img id="modalImg" src="" alt="project" style="width:100%;height:420px;object-fit:cover;border-radius:8px">
+      </div>
+      <div style="flex:1;min-width:260px;color:var(--muted)">
+        <div id="modalDesc"></div>
+        <div style="margin-top:16px"><strong style="color:#fff">Tech:</strong> <div id="modalTech" style="margin-top:6px"></div></div>
+        <div style="margin-top:18px"><a id="modalDemo" href="#" target="_blank" style="display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--blue),var(--pink));color:#06040a;font-weight:800">Open Demo</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+/* Smooth reveal */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+},{threshold:0.12});
+reveals.forEach(r=>observer.observe(r));
+
+/* Nav active tracking */
+const navLinks = document.querySelectorAll('nav.top a');
+const sections = Array.from(navLinks).map(a => document.getElementById(a.getAttribute('href')?.substring(1) || a.dataset.target));
+function setActiveNav(){
+  let index = sections.findIndex(s => {
+    if(!s) return false;
+    const rect = s.getBoundingClientRect();
+    return rect.top <= window.innerHeight*0.35 && rect.bottom >= window.innerHeight*0.15;
+  });
+  navLinks.forEach((a,i)=> a.classList.toggle('active', i===index));
+}
+window.addEventListener('scroll', setActiveNav);
+window.addEventListener('load', setActiveNav);
+
+/* HERO PARTICLES (lightweight) */
+(function(){
+  const canvas = document.getElementById('heroParticles');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w=canvas.width = window.innerWidth;
+  let h=canvas.height = document.querySelector('.visual-card').offsetHeight;
+  let parts=[];
+  function init(){ parts=[]; let count=Math.max(12, Math.floor(w/160)); for(let i=0;i<count;i++){ parts.push({x:Math.random()*w,y:Math.random()*h,r:1+Math.random()*3,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,hue:Math.random()*360}) } }
+  function draw(){ ctx.clearRect(0,0,w,h); for(let p of parts){ p.x+=p.vx; p.y+=p.vy; if(p.x<0) p.x=w; if(p.x>w) p.x=0; if(p.y<0) p.y=h; if(p.y>h) p.y=0; const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*10); g.addColorStop(0,'rgba(78,227,255,0.14)'); g.addColorStop(0.5,'rgba(122,75,255,0.06)'); g.addColorStop(1,'rgba(255,75,214,0.01)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); } requestAnimationFrame(draw); }
+  window.addEventListener('resize', ()=>{ w=canvas.width=window.innerWidth; h=canvas.height=document.querySelector('.visual-card').offsetHeight; init(); });
+  init(); draw();
+})();
+
+/* Project modal data */
+const projects = {
+  1:{title:'Luxury Villa Walkthrough',img:'https://picsum.photos/1400/900?random=201',desc:'High-end PC walkthrough with cinematic lighting and polished UX flows.',tech:'Unity · Lighting · Photogrammetry',link:'#'},
+  2:{title:'1 Kanal Villa Visualization',img:'https://picsum.photos/1400/900?random=202',desc:'Mobile-optimized interactive visualization focused on lighting & interior flow.',tech:'Blender · Unity · Responsive Web Viewer',link:'#'},
+  3:{title:'Matlock Galani 360° Tour',img:'https://picsum.photos/1400/900?random=203',desc:'Interactive 360° tour created with Insta360 X3 and embedded for web presentation.',tech:'Insta360 · Video Stitching · Web Embeds',link:'#'},
+  4:{title:'AI Interior Design Assistant',img:'https://picsum.photos/1400/900?random=204',desc:'AI-powered assistant suggesting realtime layouts and decor options — integrates with VR previews for instant visualization.',tech:'ChatGPT · Custom ML · Unity Integration',link:'#'},
+  5:{title:'VR Room Experience',img:'https://picsum.photos/1400/900?random=205',desc:'Interactive Unity scene with real-time physics, object interactions, and immersive audio for realistic UX testing.',tech:'Unity · C# · Spatial Audio',link:'#'},
+  6:{title:'SQ Office 360° Tour',img:'https://picsum.photos/1400/900?random=206',desc:'Fully interactive office walkthrough hosted on Panoee to enhance remote client walkthroughs and demos.',tech:'Panoee · 360 Imaging · Web Integration',link:'#'}
+};
+function openProjectModal(id){ const d=projects[id]; if(!d) return; document.getElementById('modalTitle').innerText=d.title; document.getElementById('modalImg').src=d.img; document.getElementById('modalDesc').innerText=d.desc; document.getElementById('modalTech').innerText=d.tech; document.getElementById('modalDemo').href=d.link; document.getElementById('modal').style.display='grid'; }
+function closeModal(){ document.getElementById('modal').style.display='none'; }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+/* Skill rings animation (conic progress) */
+(function(){
+  function makeRing(svg, pct){
+    const ns='http://www.w3.org/2000/svg';
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    const circleBg=document.createElementNS(ns,'circle'); circleBg.setAttribute('cx',50); circleBg.setAttribute('cy',50); circleBg.setAttribute('r',40); circleBg.setAttribute('stroke','rgba(255,255,255,0.03)'); circleBg.setAttribute('stroke-width',10); circleBg.setAttribute('fill','none');
+    const circle=document.createElementNS(ns,'circle'); circle.setAttribute('cx',50); circle.setAttribute('cy',50); circle.setAttribute('r',40); circle.setAttribute('stroke','url(#g)'); circle.setAttribute('stroke-width',10); circle.setAttribute('fill','none'); circle.setAttribute('stroke-linecap','round'); circle.setAttribute('transform','rotate(-90 50 50)');
+    const defs=document.createElementNS(ns,'defs'); const lin=document.createElementNS(ns,'linearGradient'); lin.setAttribute('id','g'); lin.setAttribute('x1','0%'); lin.setAttribute('x2','100%'); const s1=document.createElementNS(ns,'stop'); s1.setAttribute('offset','0%'); s1.setAttribute('stop-color','var(--blue)'); const s2=document.createElementNS(ns,'stop'); s2.setAttribute('offset','50%'); s2.setAttribute('stop-color','var(--purple)'); const s3=document.createElementNS(ns,'stop'); s3.setAttribute('offset','100%'); s3.setAttribute('stop-color','var(--pink)'); lin.appendChild(s1); lin.appendChild(s2); lin.appendChild(s3); defs.appendChild(lin); svg.appendChild(defs); svg.appendChild(circleBg); svg.appendChild(circle);
+    const circumference=2*Math.PI*40; circle.style.strokeDasharray=circumference; circle.style.strokeDashoffset=circumference; // animate
+    setTimeout(()=>{ const offset = circumference*(1 - pct/100); circle.style.transition='stroke-dashoffset 1.2s var(--easing)'; circle.style.strokeDashoffset=offset; },120);
+  }
+  const svgs=document.querySelectorAll('.skill-anim');
+  if(svgs.length){
+    makeRing(svgs[0],92); makeRing(svgs[1],86); makeRing(svgs[2],78);
+  }
+})();
+
+/* Smooth nav scrolling behavior */
+document.querySelectorAll('nav.top a').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    const id=a.getAttribute('href').substring(1);
+    const el=document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
+/* Mobile menu placeholder */
+function toggleMobileMenu(){ alert('Mobile menu: use full nav on desktop. I can add a slide-in mobile menu if you want.'); }
+
+/* Accessibility: focus outlines */
+document.addEventListener('keydown', e=>{ if(e.key==='Tab') document.body.classList.add('show-focus'); });
+</script>
+</body>
+</html>
