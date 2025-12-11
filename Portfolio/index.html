@@ -4,44 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shazaib Qaiser | Portfolio</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
   .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
+  .fade-in.delay-1 { animation-delay: 0.3s; }
+  .fade-in.delay-2 { animation-delay: 0.6s; }
   @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-cream text-gray-900">
 
 <!-- Header -->
 <header class="bg-slate-700 text-white py-6 shadow-lg sticky top-0 z-50">
   <div class="container mx-auto flex justify-between items-center px-6">
-    <h1 class="text-2xl font-bold">Shazaib Qaiser</h1>
-    <nav>
-      <a href="#about" class="px-4 hover:text-yellow-300">About</a>
-      <a href="#experience" class="px-4 hover:text-yellow-300">Experience</a>
-      <a href="#projects" class="px-4 hover:text-yellow-300">Projects</a>
-      <a href="#skills" class="px-4 hover:text-yellow-300">Skills</a>
-      <a href="#contact" class="px-4 hover:text-yellow-300">Contact</a>
+    <h1 class="text-2xl font-bold text-gold">Shazaib Qaiser</h1>
+    <nav class="space-x-4 font-semibold">
+      <a href="#about" class="hover:text-yellow-300">About</a>
+      <a href="#experience" class="hover:text-yellow-300">Experience</a>
+      <a href="#projects" class="hover:text-yellow-300">Projects</a>
+      <a href="#skills" class="hover:text-yellow-300">Skills</a>
+      <a href="#contact" class="hover:text-yellow-300">Contact</a>
     </nav>
   </div>
 </header>
 
 <!-- Hero Section -->
-<section class="container mx-auto px-6 py-20 text-center">
-  <h2 class="text-4xl md:text-5xl font-bold mb-4 fade-in">UI/UX | Multimedia | VR Designer & Developer</h2>
-  <p class="text-lg md:text-xl fade-in delay-200">Creating immersive VR experiences, AI-powered design tools, and interactive multimedia solutions.</p>
+<section class="relative bg-gradient-to-r from-slate-700 to-slate-500 text-white py-32 text-center">
+  <h2 class="text-5xl md:text-6xl font-bold fade-in">UI/UX | Multimedia | VR Designer</h2>
+  <p class="text-xl mt-4 fade-in delay-1">Creating immersive VR experiences, AI-powered design tools, and interactive multimedia solutions.</p>
+  <a href="#contact" class="mt-8 inline-block bg-gold text-slate-800 font-semibold px-6 py-3 rounded shadow-lg hover:scale-105 transition transform fade-in delay-2">Hire Me</a>
 </section>
 
 <!-- About Section -->
-<section id="about" class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl fade-in">
-    <h3 class="text-3xl font-semibold mb-6">About Me</h3>
-    <p class="mb-4">Innovative UI/UX, Multimedia, and VR Designer/Developer with experience in immersive experiences, interactive 3D visualizations, and AI-powered design solutions. Skilled in project lifecycle management, client engagement, and cutting-edge technology implementation. Passionate about delivering high-quality, user-centered digital experiences.</p>
-    <ul class="list-disc list-inside">
+<section id="about" class="py-20 bg-cream">
+  <div class="container mx-auto max-w-4xl px-6 fade-in">
+    <h3 class="text-4xl font-bold mb-6 text-slate-700">About Me</h3>
+    <p class="mb-4 text-lg text-gray-800">Innovative UI/UX, Multimedia, and VR Designer/Developer with experience in immersive experiences, interactive 3D visualizations, and AI-powered design solutions. Skilled in project lifecycle management, client engagement, and cutting-edge technology implementation. Passionate about delivering high-quality, user-centered digital experiences.</p>
+    <ul class="list-disc list-inside text-gray-700">
       <li>Fluent in English, Native in Urdu and Punjabi</li>
       <li>Agile Project Coordination, MS Office Suite</li>
       <li>Bachelor of Science (Hons) in Multimedia Technology with VR/AR Specialism (APU, 2024)</li>
@@ -50,27 +51,25 @@
 </section>
 
 <!-- Experience Section -->
-<section id="experience" class="py-16 bg-gray-100">
-  <div class="container mx-auto px-6 max-w-5xl fade-in">
-    <h3 class="text-3xl font-semibold mb-8">Experience</h3>
-
+<section id="experience" class="py-20 bg-gradient-to-b from-cream to-white">
+  <div class="container mx-auto max-w-5xl px-6 fade-in">
+    <h3 class="text-4xl font-bold mb-10 text-slate-700">Experience</h3>
     <!-- SQ Interactive -->
-    <div class="mb-6">
-      <h4 class="text-xl font-bold">Founder & Lead Designer/Developer – SQ Interactive</h4>
-      <span class="text-sm text-gray-600">Lahore, Pakistan | 2024 – Present</span>
-      <ul class="list-disc list-inside mt-2">
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-2xl transition">
+      <h4 class="text-2xl font-semibold text-slate-800">Founder & Lead Designer/Developer – SQ Interactive</h4>
+      <span class="text-sm text-gray-500">Lahore, Pakistan | 2024 – Present</span>
+      <ul class="list-disc list-inside mt-4 text-gray-700">
         <li>Founded and led SQ Interactive, delivering immersive VR experiences, interactive multimedia solutions, and modern UI/UX designs.</li>
         <li>Developed and launched the official company website showcasing portfolio, VR environments, and multimedia projects.</li>
         <li>Designed a visa management database system with a user-centered interface, improving processing efficiency by 30%.</li>
         <li>Managed full project lifecycle: user research, wireframing, prototyping, UI/UX design, VR content creation, backend integration, and deployment.</li>
       </ul>
     </div>
-
     <!-- Netsole -->
-    <div class="mb-6">
-      <h4 class="text-xl font-bold">UI/UX Designer & Multimedia Developer – Netsole</h4>
-      <span class="text-sm text-gray-600">Lahore, Pakistan | 2023 – 2024</span>
-      <ul class="list-disc list-inside mt-2">
+    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition">
+      <h4 class="text-2xl font-semibold text-slate-800">UI/UX Designer & Multimedia Developer – Netsole</h4>
+      <span class="text-sm text-gray-500">Lahore, Pakistan | 2023 – 2024</span>
+      <ul class="list-disc list-inside mt-4 text-gray-700">
         <li>Created responsive UI/UX designs for web and mobile applications focusing on usability and accessibility.</li>
         <li>Produced multimedia assets including graphics, motion design, and interactive prototypes.</li>
         <li>Collaborated with developers to integrate UI designs into functional applications while maintaining design fidelity.</li>
@@ -80,93 +79,71 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="py-16 bg-white">
-  <div class="container mx-auto px-6 max-w-5xl fade-in">
-    <h3 class="text-3xl font-semibold mb-8">Selected Projects</h3>
+<section id="projects" class="py-20 bg-slate-50">
+  <div class="container mx-auto max-w-5xl px-6 fade-in">
+    <h3 class="text-4xl font-bold mb-10 text-slate-700">Selected Projects</h3>
     <div class="grid md:grid-cols-2 gap-8">
-
-      <!-- Project Card -->
-      <div class="bg-gray-50 shadow-lg rounded-lg p-6 hover:shadow-2xl transition duration-300">
-        <h4 class="text-xl font-bold mb-2">Luxury Villa Walkthrough</h4>
-        <p>High-end PC walkthrough emphasizing immersive lighting, centerpiece design, and user experience.</p>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+        <img src="images/luxury-villa.jpg" alt="Luxury Villa" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-slate-800 mb-2">Luxury Villa Walkthrough</h4>
+          <p class="text-gray-700">High-end PC walkthrough emphasizing immersive lighting, centerpiece design, and user experience.</p>
+        </div>
       </div>
-
-      <div class="bg-gray-50 shadow-lg rounded-lg p-6 hover:shadow-2xl transition duration-300">
-        <h4 class="text-xl font-bold mb-2">1 Kanal Villa Visualization</h4>
-        <p>Mobile-optimized interactive villa visualization highlighting lighting, interior flow, and realistic presentation.</p>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+        <img src="images/1kanal-villa.jpg" alt="1 Kanal Villa" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-slate-800 mb-2">1 Kanal Villa Visualization</h4>
+          <p class="text-gray-700">Mobile-optimized interactive villa visualization highlighting lighting, interior flow, and realistic presentation.</p>
+        </div>
       </div>
-
-      <div class="bg-gray-50 shadow-lg rounded-lg p-6 hover:shadow-2xl transition duration-300">
-        <h4 class="text-xl font-bold mb-2">Matlock Galani 360° Tour</h4>
-        <p>Interactive 360° property tour using Insta360 X3 for immersive real estate experiences.</p>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+        <img src="images/ai-interior.jpg" alt="AI Interior Design" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-slate-800 mb-2">AI Interior Design Assistant</h4>
+          <p class="text-gray-700">AI-powered tool providing real-time layout and decor suggestions to enhance user customization.</p>
+        </div>
       </div>
-
-      <div class="bg-gray-50 shadow-lg rounded-lg p-6 hover:shadow-2xl transition duration-300">
-        <h4 class="text-xl font-bold mb-2">AI Interior Design Assistant</h4>
-        <p>AI-powered tool providing real-time layout and decor suggestions to enhance user customization.</p>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+        <img src="images/vr-room.jpg" alt="VR Room" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-semibold text-slate-800 mb-2">VR Room Experience</h4>
+          <p class="text-gray-700">Interactive VR environment in Unity with real-time physics simulating realistic user interactions.</p>
+        </div>
       </div>
-
-      <div class="bg-gray-50 shadow-lg rounded-lg p-6 hover:shadow-2xl transition duration-300">
-        <h4 class="text-xl font-bold mb-2">VR Room Experience</h4>
-        <p>Interactive VR environment in Unity with real-time physics simulating realistic user interactions.</p>
-      </div>
-
-      <div class="bg-gray-50 shadow-lg rounded-lg p-6 hover:shadow-2xl transition duration-300">
-        <h4 class="text-xl font-bold mb-2">VR-AI Interior Assistant</h4>
-        <p>Flagship AI-powered VR assistant for immersive design visualization improving client engagement.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="py-16 bg-gray-100">
-  <div class="container mx-auto px-6 max-w-4xl fade-in">
-    <h3 class="text-3xl font-semibold mb-8">Skills</h3>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div>
-        <h4 class="font-bold mb-2">UI/UX Design</h4>
-        <p>Figma, Adobe XD, Sketch, Wireframing, Prototyping, User Research, Interaction Design</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Multimedia & Graphics</h4>
-        <p>Adobe Photoshop, Illustrator, After Effects, Premiere Pro, 3D Modeling (Blender, ProBuilder)</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">VR & Immersive Experiences</h4>
-        <p>Unity 3D, Unreal Engine, VR Environment Design, VR Content Creation</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">AI & Emerging Tools</h4>
-        <p>ChatGPT, MidJourney, DALL·E, RunwayML, NVIDIA Omniverse, AI-assisted design workflows</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Web & Development</h4>
-        <p>HTML5, CSS3, JavaScript, Database Design, Backend Integration, API Management</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Project Management</h4>
-        <p>Agile, Scrum, Jira, Trello, Client Communication, Cross-functional Collaboration, MS Office Suite</p>
-      </div>
+<section id="skills" class="py-20 bg-gradient-to-b from-slate-100 to-cream">
+  <div class="container mx-auto max-w-4xl px-6 fade-in">
+    <h3 class="text-4xl font-bold mb-10 text-slate-700">Skills</h3>
+    <div class="grid md:grid-cols-2 gap-8 text-gray-800">
+      <div><h4 class="font-semibold text-slate-800 mb-2">UI/UX Design</h4>Figma, Adobe XD, Sketch, Wireframing, Prototyping, User Research, Interaction Design</div>
+      <div><h4 class="font-semibold text-slate-800 mb-2">Multimedia & Graphics</h4>Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Blender, ProBuilder</div>
+      <div><h4 class="font-semibold text-slate-800 mb-2">VR & Immersive</h4>Unity 3D, Unreal Engine, VR Environment Design, VR Content Creation</div>
+      <div><h4 class="font-semibold text-slate-800 mb-2">AI & Emerging Tools</h4>ChatGPT, MidJourney, DALL·E, RunwayML, NVIDIA Omniverse, AI-assisted workflows</div>
+      <div><h4 class="font-semibold text-slate-800 mb-2">Web & Development</h4>HTML5, CSS3, JavaScript, Database Design, Backend Integration, API Management</div>
+      <div><h4 class="font-semibold text-slate-800 mb-2">Project Management</h4>Agile, Scrum, Jira, Trello, Client Communication, MS Office Suite</div>
     </div>
   </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-16 bg-white">
-  <div class="container mx-auto px-6 max-w-2xl fade-in">
-    <h3 class="text-3xl font-semibold mb-6">Contact Me</h3>
-    <p class="mb-4">Email: <a href="mailto:shazaibqaiser@hotmail.com" class="text-slate-700 hover:text-yellow-500">shazaibqaiser@hotmail.com</a></p>
+<section id="contact" class="py-20 bg-slate-700 text-white">
+  <div class="container mx-auto max-w-2xl px-6 fade-in">
+    <h3 class="text-4xl font-bold mb-6">Contact Me</h3>
+    <p class="mb-4">Email: <a href="mailto:shazaibqaiser@hotmail.com" class="text-gold hover:text-yellow-300">shazaibqaiser@hotmail.com</a></p>
     <p class="mb-4">Phone: +92 3009452153</p>
     <p class="mb-4">Location: Lahore, Pakistan</p>
-    <p class="mb-4">Portfolio: <a href="https://sqinteractive.com" class="text-slate-700 hover:text-yellow-500">sqinteractive.com</a></p>
+    <p class="mb-4">Portfolio: <a href="https://sqinteractive.com" class="text-gold hover:text-yellow-300">sqinteractive.com</a></p>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-slate-700 text-white py-6 text-center">
-  <p>&copy; 2025 Shazaib Qaiser | All Rights Reserved</p>
+<footer class="bg-slate-800 text-white py-6 text-center">
+  <p>&copy; 2025 Shazaib Qaiser | SQ Interactive</p>
 </footer>
 
 </body>
