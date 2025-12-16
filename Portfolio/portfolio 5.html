@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyberpunk Cosmic Portfolio — Purple Globe</title>
+
+<style>
+:root{
+  --bg:#02030a;
+  --neon:#aa00ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:var(--bg);overflow:hidden;font-family:Inter,system-ui;color:white}
+
+/* STAR BACKDROP */
+body:before{
+ content:"";
+ position:fixed;inset:0;
+ background:
+ radial-gradient(1px 1px at 20% 30%,#fff,transparent),
+ radial-gradient(1px 1px at 80% 70%,#fff,transparent),
+ radial-gradient(1px 1px at 50% 50%,#fff,transparent),
+ radial-gradient(1px 1px at 15% 80%,#fff,transparent);
+ opacity:.15;
+ z-index:-2;
+}
+
+/* CANVAS */
+canvas{position:fixed;inset:0;z-index:-1}
+
+/* HERO */
+.hero{height:100vh;display:grid;place-items:center;text-align:center}
+.hero h1{
+ font-size:clamp(3rem,7vw,6rem);
+ background:linear-gradient(90deg,#aa00ff,#ff2dfc,#7a5cff);
+ -webkit-background-clip:text;color:transparent;
+ text-shadow:0 0 40px rgba(170,0,255,.35)
+}
+
+/* CURSOR & TRAILS */
+body{cursor:none}
+
+.cursor,.trail-layer,.glow-trail{
+ position:fixed;
+ border-radius:50%;
+ pointer-events:none;
+ mix-blend-mode:screen;
+}
+
+.cursor{
+ width:10px;
+ height:10px;
+ background:var(--neon);
+ box-shadow:0 0 20px var(--neon),0 0 40px rgba(170,0,255,.5);
+ z-index:10;
+}
+
+.trail-layer{
+ width:32px;
+ height:32px;
+ border:1px solid var(--neon);
+ opacity:0.5;
+ z-index:9;
+ transition:transform 0.1s ease-out, opacity 0.2s;
+}
+
+/* Glow trail canvas overlay */
+.glow-trail{
+ background:radial-gradient(circle,rgba(170,0,255,0.6) 0%, rgba(170,0,255,0) 60%);
+ width:50px;
+ height:50px;
+ opacity:0.3;
+ z-index:8;
+ pointer-events:none;
+ transform:translate(-25px,-25px);
+}
+</style>
+</head>
+<body>
+
+<canvas id="cosmic"></canvas>
+<div class="cursor"></div>
+<div class="trail-layer" id="trail1"></div>
+<div class="trail-layer" id="trail2"></div>
+<div class="trail-layer" id="trail3"></div>
+<div class="glow-trail" id="glowTrail"></div>
+
+<section class="hero">
+  <h1>CYBER · COSMIC</h1>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+/* CURSOR + TRAILS + GLOW */
+const cursor=document.querySelector('.cursor');
+const trails=[
+  document.getElementById('trail1'),
+  document.getElementById('trail2'),
+  document.getElementById('trail3')
+];
+const glow=document.getElementById('glowTrail');
+
+let positions=[{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:0,y:0}];
+
+addEventListener('mousemove',e=>{
+  cursor.style.transform=`translate(${e.clientX-5}px,${e.clientY-5}px)`;
+  positions[0]={x:e.clientX-16, y:e.clientY-16};
+  positions[3]={x:e.clientX, y:e.clientY}; // glow
+});
+
+function animateCursor(){
+  trails.forEach((trail,i)=>{
+    if(i>0){
+      positions[i].x += (positions[i-1].x - positions[i].x)*0.2;
+      positions[i].y += (positions[i-1].y - positions[i].y)*0.2;
+    }
+    trail.style.transform=`translate(${positions[i].x}px,${positions[i].y}px)`;
+  });
+
+  // Glow trail lerp for smooth fading
+  positions[3].x += (positions[0].x - positions[3].x)*0.15;
+  positions[3].y += (positions[0].y - positions[3].y)*0.15;
+  glow.style.transform=`translate(${positions[3].x-25}px,${positions[3].y-25}px)`;
+
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+/* THREE.JS — PURPLE GLOBE */
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,100);
+camera.position.z=5;
+
+const renderer=new THREE.WebGLRenderer({canvas:cosmic,alpha:true,antialias:true});
+renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+
+const geometry=new THREE.IcosahedronGeometry(1.6,3);
+const material=new THREE.MeshStandardMaterial({
+ color:0xaa00ff,
+ emissive:0x550077,
+ emissiveIntensity:1,
+ metalness:.6,
+ roughness:.2,
+ wireframe:true
+});
+
+const globe=new THREE.Mesh(geometry,material);
+scene.add(globe);
+
+/* LIGHTING */
+scene.add(new THREE.PointLight(0xff2dfc,1.5).position.set(3,2,5));
+scene.add(new THREE.PointLight(0xaa00ff,2).position.set(-3,-2,5));
+
+let mx=0,my=0,tx=0,ty=0;
+addEventListener('mousemove',e=>{
+ mx=(e.clientX/innerWidth-.5)*2;
+ my=(e.clientY/innerHeight-.5)*2;
+});
+
+function animate(){
+ tx+=(mx-tx)*.08;
+ ty+=(my-ty)*.08;
+
+ globe.rotation.y+=0.003 + tx*0.04;
+ globe.rotation.x+=0.0015 + ty*0.04;
+ globe.position.x=tx*1.1;
+ globe.position.y=-ty*1.1;
+
+ renderer.render(scene,camera);
+ requestAnimationFrame(animate);
+}
+animate();
+
+addEventListener('resize',()=>{
+ camera.aspect=innerWidth/innerHeight;
+ camera.updateProjectionMatrix();
+ renderer.setSize(innerWidth,innerHeight);
+});
+</script>
+</body>
+</html>
