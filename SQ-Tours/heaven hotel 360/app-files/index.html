@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-heaven-hotel">
+        <li class="text">Heaven Hotel</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-walkway">
+        <li class="text">Walkway</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-enterance">
+        <li class="text">Enterance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-entrance-door">
+        <li class="text">Entrance Door</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-reception">
+        <li class="text">Reception</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-lobby-lift">
+        <li class="text">Lobby Lift</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-1st-floor-lift">
+        <li class="text">1st Floor Lift</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-2nd-floor-lift">
+        <li class="text">2nd Floor Lift</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-3rd-floor-lift">
+        <li class="text">3rd Floor Lift</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-cafe--restaurant">
+        <li class="text">Cafe &amp; Restaurant</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-resturant-2">
+        <li class="text">Resturant 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-lobby-stairs">
+        <li class="text">Lobby Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-lobby-stairs-1">
+        <li class="text">Lobby Stairs 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-lobby-stairs-2">
+        <li class="text">Lobby Stairs 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-1st-floor-stairs-1">
+        <li class="text">1st Floor Stairs 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-1st-floor-stairs">
+        <li class="text">1st Floor Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-2nd-floor-stairs">
+        <li class="text">2nd Floor Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-2nd-floor-stairs-1">
+        <li class="text">2nd Floor Stairs 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-3rd-floor-stairs">
+        <li class="text">3rd Floor Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-3rd-floor-stairs-1">
+        <li class="text">3rd Floor Stairs 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="20-roof-1-stairs">
+        <li class="text">Roof 1 Stairs</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="21-roof-1-stairs-1">
+        <li class="text">Roof 1 Stairs 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="22-roof-2-gym">
+        <li class="text">Roof 2 Gym</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="23-1st-floor-lobby">
+        <li class="text">1st Floor Lobby</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="24-bord-room-1">
+        <li class="text">Bord Room 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="25-bordroom-2">
+        <li class="text">BordRoom 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="26-1st-floor-rooms-1">
+        <li class="text">1st Floor rooms 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="27-1st-floor-rooms-2">
+        <li class="text">1st Floor Rooms 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="28-1st-floor-rooms-3">
+        <li class="text">1st Floor Rooms 3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="29-2nd-floor">
+        <li class="text">2nd Floor</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="30-2nd-floor-rooms">
+        <li class="text">2nd Floor Rooms</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="31-2nd-floor-rooms-1">
+        <li class="text">2nd Floor Rooms 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="32-2nd-floor-rooms-2">
+        <li class="text">2nd Floor Rooms 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="33-2nd-floor-rooms-3">
+        <li class="text">2nd Floor Rooms 3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="34-3rd-floor">
+        <li class="text">3rd Floor</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="35-3rd-floor-rooms">
+        <li class="text">3rd Floor Rooms</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="36-3rd-floor-rooms-1">
+        <li class="text">3rd Floor rooms 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="37-3rd-floor-rooms-2">
+        <li class="text">3rd Floor Rooms 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="38-3rd-floor-rooms-3">
+        <li class="text">3rd Floor Rooms 3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="39-deluxe-king">
+        <li class="text">Deluxe King</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="40-deluxe-room-window">
+        <li class="text">Deluxe Room Window</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="41-deluxe-king-washroom">
+        <li class="text">Deluxe King Washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="42-deluxe-twin">
+        <li class="text">Deluxe Twin</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="43-deluxe-twin-window">
+        <li class="text">Deluxe twin window</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="44-deluxe-twin-washroom">
+        <li class="text">Deluxe twin Washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="45-execuitive-king">
+        <li class="text">Execuitive King</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="46-execuitive-king-window">
+        <li class="text">Execuitive King Window</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="47-execuitive-king-washroom">
+        <li class="text">Execuitive King Washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="48-executive-premium-2">
+        <li class="text">Executive Premium 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="49-execuitive-premium-window-2">
+        <li class="text">Execuitive Premium Window 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="50-execuitive-premium-washroom-2">
+        <li class="text">Execuitive Premium Washroom 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="51-executive-premium">
+        <li class="text">Executive Premium</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="52-executive-window">
+        <li class="text">Executive window</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="53-executive-washroom">
+        <li class="text">Executive washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="54-standard-king">
+        <li class="text">Standard King</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="55-standard-king-window">
+        <li class="text">Standard King Window</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="56-standard-king-washroom">
+        <li class="text">Standard King Washroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="57-roof-1-entrance">
+        <li class="text">Roof 1 Entrance</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="58-roof-1-bar-and-bbq">
+        <li class="text">Roof 1 Bar and BBQ</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="59-roof-1">
+        <li class="text">Roof 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="60-roof-1-end">
+        <li class="text">Roof 1 End</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="61-roof-1-view">
+        <li class="text">Roof 1 View</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="62-roof-2-start">
+        <li class="text">Roof 2 Start</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="63-gym-1">
+        <li class="text">Gym 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="64-gym-2">
+        <li class="text">Gym 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="65-roof-2">
+        <li class="text">Roof 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="66-roof-2-view">
+        <li class="text">Roof 2 View</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
