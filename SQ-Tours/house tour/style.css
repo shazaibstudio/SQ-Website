@@ -1344,6 +1344,59 @@ body::after {
     drop-shadow(0 0 60px rgba(155,108,255,0.7));
 }
 
+
+#sq-brand {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  opacity: 0.92;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+  will-change: transform, opacity, filter;
+  pointer-events: none; /* keep container non-blocking */
+}
+
+/* Make the <a> clickable */
+#sq-brand a {
+  display: inline-block;
+  pointer-events: auto; /* allow clicks */
+}
+
+/* Logo image */
+#sq-brand img {
+  height: 80px;
+  width: auto;
+  filter:
+    drop-shadow(0 0 20px rgba(0,234,255,0.65))
+    drop-shadow(0 0 45px rgba(155,108,255,0.55));
+  animation: sqBrandGlow 6s ease-in-out infinite,
+             sqBrandFloat 4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+/* Hover effect for desktop */
+.no-touch #sq-brand img:hover {
+  opacity: 1;
+  transform: scale(1.1) translateY(-3px);
+  filter:
+    drop-shadow(0 0 25px rgba(0,234,255,0.85))
+    drop-shadow(0 0 60px rgba(155,108,255,0.7));
+}
+
+/* Mobile adjustments */
+.mobile #sq-brand {
+  bottom: 14px;
+  right: 14px;
+}
+
+.mobile #sq-brand img {
+  height: 56px;
+  animation: sqBrandGlow 6s ease-in-out infinite;
+}
+
+
+
+
 /* Mobile positioning & sizing */
 .mobile #sq-brand {
   bottom: 14px;
