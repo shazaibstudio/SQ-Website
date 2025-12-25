@@ -288,13 +288,15 @@
   </div>
 </section>
 
-<!-- TWO FULL-WIDTH TOURS (Option B) -->
+<!-- THREE FULL-WIDTH 360 TOURS -->
 <section class="py-12 bg-[#0b0b0b]">
   <div class="max-w-6xl mx-auto px-6">
 
-    <!-- OLD HOUSE TOUR (full-width block) -->
-    <div class="mb-12" data-aos="fade-up">
-      <h3 class="text-2xl font-semibold text-white mb-4">Old House Tour</h3>
+    <!-- OLD HOUSE TOUR -->
+    <div class="mb-16" data-aos="fade-up">
+      <h3 class="text-2xl font-semibold text-white mb-4">
+        Old House – 360° Virtual Tour
+      </h3>
 
       <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-[#ffffff12]">
 
@@ -315,17 +317,58 @@
       </div>
 
       <div class="text-center mt-6">
-        <button onclick="document.getElementById('house-tour').requestFullscreen()" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+        <button onclick="document.getElementById('house-tour').requestFullscreen()"
+          class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
           View Old House Tour in Full Screen
         </button>
       </div>
     </div>
 
-    <!-- NEW OFFICE TOUR (full-width block) -->
-    <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-2xl font-semibold text-white mb-4">New Office Tour</h3>
+    <!-- HEAVEN HOTEL TOUR -->
+    <div class="mb-16" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-2xl font-semibold text-white mb-4">
+        Heaven Hotel – 360° Virtual Tour
+      </h3>
 
       <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-[#ffffff12]">
+
+        <!-- Badge -->
+        <span class="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-semibold shadow-lg z-20">
+          SELF-HOSTED • CUSTOM UI
+        </span>
+
+        <!-- Loader -->
+        <div class="absolute inset-0 flex items-center justify-center bg-[#0b0b0b] z-20" id="hotel-loader">
+          <div class="w-10 h-10 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+
+        <!-- Iframe -->
+        <iframe
+          id="hotel-tour"
+          src="https://www.sqinteractive.com/SQ-Tours/heaven%20hotel%20360/app-files/index.html"
+          class="w-full h-full rounded-2xl"
+          allowfullscreen
+          loading="lazy"
+          onload="document.getElementById('hotel-loader').style.opacity='0'; setTimeout(()=>document.getElementById('hotel-loader').remove(),500);">
+        </iframe>
+      </div>
+
+      <div class="text-center mt-6">
+        <button onclick="document.getElementById('hotel-tour').requestFullscreen()"
+          class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+          View Heaven Hotel Tour in Full Screen
+        </button>
+      </div>
+    </div>
+
+    <!-- NEW OFFICE TOUR -->
+    <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-2xl font-semibold text-white mb-4">
+        New Office – 360° Virtual Tour
+      </h3>
+
+      <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-[#ffffff12]">
+
         <!-- Badge -->
         <span class="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-semibold shadow-lg animate-pulse z-20">
           NEW OFFICE TOUR
@@ -348,7 +391,8 @@
       </div>
 
       <div class="text-center mt-6">
-        <button onclick="document.getElementById('office-tour').requestFullscreen()" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+        <button onclick="document.getElementById('office-tour').requestFullscreen()"
+          class="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
           View Office Tour in Full Screen
         </button>
       </div>

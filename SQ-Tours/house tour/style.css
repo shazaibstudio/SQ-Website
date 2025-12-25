@@ -776,6 +776,220 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   transition: opacity 0.3s ease-in-out 0.4s;
 }
 
+
+/* ==============================
+   SQ INTERACTIVE – HOTSPOT ENHANCEMENTS
+   (Stable, World-Locked, Non-breaking)
+============================== */
+
+:root {
+  --sq-bg-dark: rgba(18, 22, 32, 0.88);
+  --sq-bg-glass: rgba(28, 34, 48, 0.78);
+  --sq-border-soft: rgba(255,255,255,0.08);
+  --sq-accent: #7a8cff;
+  --sq-glow-soft: rgba(122,140,255,0.25);
+  --sq-radius: 10px;
+  --sq-ease: cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- LINK HOTSPOTS (STABLE) ---------- */
+
+.link-hotspot {
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.14),
+      rgba(255,255,255,0.03)
+    );
+  backdrop-filter: blur(4px);
+  box-shadow:
+    0 0 0 1px var(--sq-border-soft),
+    0 12px 28px rgba(0,0,0,0.5);
+  opacity: 0.92;
+
+  /* IMPORTANT: no movement */
+  transform: translateZ(0);
+  will-change: opacity, box-shadow;
+
+  transition:
+    box-shadow 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.no-touch .link-hotspot:hover {
+  opacity: 1;
+  box-shadow:
+    0 0 0 1px var(--sq-accent),
+    0 0 14px var(--sq-glow-soft),
+    0 16px 36px rgba(0,0,0,0.65);
+}
+
+/* Architectural ring (anchors hotspot visually) */
+.link-hotspot::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  pointer-events: none;
+}
+
+/* ---------- TOOLTIP (CALM & GLASSY) ---------- */
+
+.link-hotspot-tooltip {
+  background: var(--sq-bg-glass);
+  backdrop-filter: blur(8px);
+  border-radius: var(--sq-radius);
+  border: 1px solid var(--sq-border-soft);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.5);
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+
+/* ---------- INFO HOTSPOT HEADER ---------- */
+
+.info-hotspot .info-hotspot-header {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(120,135,255,0.9),
+      rgba(70,80,145,0.9)
+    );
+  box-shadow:
+    0 0 0 1px var(--sq-border-soft),
+    0 14px 34px rgba(0,0,0,0.55);
+
+  transition:
+    width 0.35s var(--sq-ease),
+    border-radius 0.35s var(--sq-ease),
+    box-shadow 0.3s ease;
+}
+
+.desktop.no-touch
+.info-hotspot .info-hotspot-header:hover {
+  box-shadow:
+    0 0 0 1px var(--sq-accent),
+    0 0 18px var(--sq-glow-soft),
+    0 18px 44px rgba(0,0,0,0.65);
+}
+
+/* ---------- INFO TITLE ---------- */
+
+.info-hotspot-title {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- CLOSE BUTTON ---------- */
+
+.info-hotspot .info-hotspot-close-wrapper {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(55,65,95,0.95),
+      rgba(35,40,65,0.95)
+    );
+  box-shadow: inset 0 0 0 1px var(--sq-border-soft);
+}
+
+.info-hotspot .info-hotspot-close-wrapper:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(90,100,150,1),
+      rgba(60,70,120,1)
+    );
+}
+
+/* ---------- INFO TEXT PANEL ---------- */
+
+.info-hotspot .info-hotspot-text {
+  background: var(--sq-bg-dark);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--sq-border-soft);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.6);
+  border-bottom-left-radius: var(--sq-radius);
+  border-bottom-right-radius: var(--sq-radius);
+  line-height: 1.55em;
+}
+
+/* ---------- MODAL (MOBILE) ---------- */
+
+.info-hotspot-modal {
+  backdrop-filter: blur(6px);
+}
+
+.info-hotspot-modal
+.info-hotspot-header,
+.info-hotspot-modal
+.info-hotspot-text {
+  border-radius: var(--sq-radius);
+  border: 1px solid var(--sq-border-soft);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.65);
+}
+
+/* ---------- LINK HOTSPOTS: LOOPING SOFT PULSE (SAFE) ---------- */
+
+/* ---------- LINK HOTSPOTS ---------- */
+
+.link-hotspot {
+  position: relative;
+  border-radius: 50%;
+  transform: translateZ(0);
+  will-change: box-shadow, opacity;
+}
+
+/* Static inner ring (anchor) */
+.link-hotspot::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  pointer-events: none;
+}
+
+/* Looping outer pulse (opacity + glow only) */
+.link-hotspot::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--sq-accent);
+  pointer-events: none;
+
+  opacity: 0;
+  animation: sq-idle-pulse-bright 4.2s ease-in-out infinite;
+}
+
+/* Bright, calm pulse keyframes */
+@keyframes sq-idle-pulse-bright {
+  0% {
+    opacity: 0;
+    box-shadow: none;
+  }
+  25% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(122,140,255,0.35);
+  }
+  50% {
+    opacity: 0.25;
+    box-shadow: 0 0 16px rgba(122,140,255,0.45);
+  }
+  75% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(122,140,255,0.35);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
+
+
+
 /* View control buttons */
 
 .viewControlButton {
@@ -828,6 +1042,8 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+
+
 
 /* ==============================
    NEXT-LEVEL VISUAL UPGRADE
@@ -893,10 +1109,7 @@ body.view-control-buttons .viewControlButton {
   background: linear-gradient(90deg, rgba(0,234,255,0.25), transparent);
 }
 
-/* ---------- LINK HOTSPOT (GUIDANCE PULSE) ---------- */
-.link-hotspot {
-  animation: hotspotPulse 2.8s infinite ease-in-out;
-}
+
 
 @keyframes hotspotPulse {
   0%   { transform: scale(1); opacity: 0.85; }
@@ -909,11 +1122,7 @@ body.view-control-buttons .viewControlButton {
   box-shadow: 0 0 25px rgba(0,234,255,0.35);
 }
 
-/* ---------- INFO HOTSPOT (PREMIUM INTERACTION) ---------- */
-.info-hotspot .info-hotspot-header {
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1),
-              0 0 25px rgba(155,108,255,0.35);
-}
+
 
 .desktop.no-touch .info-hotspot .info-hotspot-header:hover {
   box-shadow: 0 0 30px rgba(155,108,255,0.7);
@@ -1043,24 +1252,7 @@ body.view-control-buttons .viewControlButton {
   opacity: 0.25;
 }
 
-/* ---------- HOTSPOT = LIVING OBJECT ---------- */
-.link-hotspot {
-  filter: drop-shadow(0 0 15px rgba(0,234,255,0.6));
-}
 
-.link-hotspot::after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,234,255,0.35);
-  animation: haloSpin 6s linear infinite;
-}
-
-@keyframes haloSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
 
 /* ---------- TOOLTIP = HOLOGRAM ---------- */
 .link-hotspot-tooltip {
@@ -1073,17 +1265,7 @@ body.view-control-buttons .viewControlButton {
     0 0 30px rgba(0,234,255,0.6);
 }
 
-/* ---------- INFO HOTSPOT = LUXURY PANEL ---------- */
-.info-hotspot .info-hotspot-header {
-  background:
-    linear-gradient(135deg, rgba(155,108,255,0.6), rgba(0,234,255,0.4));
-}
 
-.info-hotspot-text {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-    rgba(10,15,30,0.9);
-}
 
 /* ---------- MODAL = CINEMA MODE ---------- */
 .info-hotspot-modal {
@@ -1125,112 +1307,87 @@ body::after {
     );
   z-index: 9999;
 }
-
 /* =====================================
-   SQ INTERACTIVE – BRAND SIGNATURE
+   SQ INTERACTIVE – BRAND SIGNATURE ENHANCED
+   BOTTOM-RIGHT VERSION
 ===================================== */
 
 #sq-brand {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+  bottom: 20px;       /* back to bottom */
+  right: 20px;        /* back to right */
+  z-index: 10000;
   pointer-events: none;
-  opacity: 0.85;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0.92;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+  will-change: transform, opacity, filter;
 }
 
+/* Logo image with layered glow + subtle float */
 #sq-brand img {
-  height: 46px;
+  height: 80px; /* bigger presence */
   width: auto;
   filter:
-    drop-shadow(0 0 10px rgba(0,234,255,0.6))
-    drop-shadow(0 0 30px rgba(155,108,255,0.45));
+    drop-shadow(0 0 20px rgba(0,234,255,0.65))
+    drop-shadow(0 0 45px rgba(155,108,255,0.55));
+  animation: sqBrandGlow 6s ease-in-out infinite,
+             sqBrandFloat 4s ease-in-out infinite alternate;
+  transform-origin: center;
 }
 
-/* Hover polish (desktop only) */
+/* Desktop hover polish */
 .no-touch #sq-brand:hover {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.1) translateY(-3px);
+  filter:
+    drop-shadow(0 0 25px rgba(0,234,255,0.85))
+    drop-shadow(0 0 60px rgba(155,108,255,0.7));
 }
 
-/* Mobile positioning */
+/* Mobile positioning & sizing */
 .mobile #sq-brand {
   bottom: 14px;
   right: 14px;
 }
 
 .mobile #sq-brand img {
-  height: 38px;
+  height: 56px;
+  animation: sqBrandGlow 6s ease-in-out infinite;
 }
 
-/* Optional subtle glow pulse */
-@keyframes sqGlow {
-  0%   { filter: drop-shadow(0 0 10px rgba(0,234,255,0.5)); }
-  50%  { filter: drop-shadow(0 0 20px rgba(155,108,255,0.7)); }
-  100% { filter: drop-shadow(0 0 10px rgba(0,234,255,0.5)); }
+/* =======================
+   ANIMATIONS
+======================= */
+
+/* Layered glow pulse */
+@keyframes sqBrandGlow {
+  0% {
+    filter:
+      drop-shadow(0 0 20px rgba(0,234,255,0.65))
+      drop-shadow(0 0 45px rgba(155,108,255,0.55));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 30px rgba(0,234,255,0.8))
+      drop-shadow(0 0 65px rgba(155,108,255,0.65));
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 20px rgba(0,234,255,0.65))
+      drop-shadow(0 0 45px rgba(155,108,255,0.55));
+  }
 }
 
-#sq-brand img {
-  animation: sqGlow 6s ease-in-out infinite;
-}
-/* =====================================
-   PREMIUM LINK HOTSPOT ICON (CSS ONLY)
-===================================== */
-
-.link-hotspot-icon {
-  background: none !important;
-  position: relative;
-  border-radius: 50%;
-  backdrop-filter: blur(8px);
+/* Subtle floating animation */
+@keyframes sqBrandFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
 
-/* Main circular button */
-.link-hotspot-icon::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%,
-      rgba(255,255,255,0.35),
-      rgba(0,234,255,0.25),
-      rgba(20,25,45,0.9)
-    );
-  box-shadow:
-    inset 0 0 0 2px rgba(255,255,255,0.15),
-    0 0 25px rgba(0,234,255,0.6),
-    0 0 60px rgba(155,108,255,0.35);
-}
-
-/* Arrow icon */
-.link-hotspot-icon::after {
-  content: "➜";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  color: white;
-  text-shadow:
-    0 0 10px rgba(0,234,255,0.8),
-    0 0 20px rgba(155,108,255,0.6);
-  transform: translateX(2px);
-}
-
-/* Hover = portal activation */
-.no-touch .link-hotspot:hover .link-hotspot-icon {
-  transform: scale(1.2) rotate(5deg);
-}
-
-.no-touch .link-hotspot:hover .link-hotspot-icon::before {
-  box-shadow:
-    0 0 35px rgba(0,234,255,0.9),
-    0 0 80px rgba(155,108,255,0.6);
-}
-
-/* Mobile sizing */
-.mobile .link-hotspot-icon::after {
-  font-size: 30px;
+/* Optional: responsive scaling for small screens */
+@media (max-width: 480px) {
+  #sq-brand img {
+    height: 45px;
+  }
 }
