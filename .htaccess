@@ -1,0 +1,51 @@
+# SQ Interactive - URL Redirects and Error Handling
+
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect root and home to index.html
+RewriteRule ^$ index.html [L]
+RewriteRule ^home/?$ index.html [R=301,L]
+RewriteRule ^home\.html$ index.html [R=301,L]
+
+# Handle old file names with spaces (redirect to new hyphenated versions)
+RewriteRule ^vr%20real%20estate\.html$ vr-real-estate.html [R=301,L]
+RewriteRule ^ai%20interior%20design\.html$ ai-interior-design.html [R=301,L]
+RewriteRule ^360%20content\.html$ 360-content.html [R=301,L]
+RewriteRule ^interractive%20pc%20\.html$ interactive-pc.html [R=301,L]
+RewriteRule ^interractive%20walkthroughs\.html$ interactive-walkthroughs.html [R=301,L]
+RewriteRule ^vr%20staging\.html$ vr-staging.html [R=301,L]
+RewriteRule ^Furniture%20Scanning\.html$ furniture-scanning.html [R=301,L]
+
+# Custom 404 error page
+ErrorDocument 404 /404.html
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+
+# Cache control for better performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+# Compress files for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>

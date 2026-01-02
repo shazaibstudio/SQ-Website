@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | SQ Interactive</title>
+  
+  <!-- CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="theme-color" content="#d4af37">
+  
+  <!-- Auto redirect after 5 seconds -->
+  <meta http-equiv="refresh" content="5;url=index.html">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-black/40 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/no-background.png" alt="SQ Interactive Logo" class="h-10 w-auto">
+          <div class="text-lg font-semibold">SQ <span class="gold">Interactive</span></div>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-gray-200 hover:text-white">Home</a>
+          <a href="services.html" class="text-gray-200 hover:text-white">Services</a>
+          <a href="portfolio.html" class="text-gray-200 hover:text-white">Portfolio</a>
+          <a href="contact.html" class="text-gray-200 hover:text-white">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 404 Content -->
+  <div class="min-h-screen flex items-center justify-center px-6">
+    <div class="text-center max-w-2xl mx-auto">
+      <div class="mb-8">
+        <img src="images/no-background.png" alt="SQ Interactive" class="mx-auto h-20 mb-6 opacity-60">
+      </div>
+      
+      <h1 class="text-8xl md:text-9xl font-bold gold mb-4">404</h1>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Page Not Found</h2>
+      <p class="text-gray-400 mb-8 text-lg">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="index.html" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-semibold py-3 px-8 rounded-full hover:scale-105 transition">
+          Go Home
+        </a>
+        <a href="services.html" class="border border-yellow-400 text-yellow-400 font-semibold py-3 px-8 rounded-full hover:bg-yellow-400 hover:text-black transition">
+          View Services
+        </a>
+      </div>
+      
+      <p class="text-gray-500 text-sm mt-8">
+        Redirecting to homepage in <span id="countdown">5</span> seconds...
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace();
+    
+    // Countdown timer
+    let seconds = 5;
+    const countdownEl = document.getElementById('countdown');
+    
+    const timer = setInterval(() => {
+      seconds--;
+      if (countdownEl) countdownEl.textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = 'index.html';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

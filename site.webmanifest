@@ -1,11 +1,11 @@
 {
-  "name": "SQ Interactive",
+  "name": "SQ Interactive - VR & AI Real Estate Experiences",
   "short_name": "SQ Interactive",
-  "description": "Immersive VR Real Estate Tours, AI Interior Design, and 3D Experiences. Explore SQ Interactive's Cherry House project and cutting-edge design tools.",
+  "description": "Immersive VR, AI, and 3D real estate experiences by SQ Interactive",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#121212",
-  "theme_color": "#121212",
+  "theme_color": "#d4af37",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -38,5 +38,8 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en",
+  "scope": "/"
 }
