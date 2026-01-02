@@ -16,15 +16,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
 
-<!-- Favicons & PWA -->
+<!-- Favicons & PWA - Enhanced for Google Search -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon_48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon_192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon_512.png">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon_57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon_60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon_72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon_76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon_114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon_120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon_144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon_152.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon_180.png">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#d4af37">
+<meta name="msapplication-TileColor" content="#d4af37">
+<meta name="msapplication-TileImage" content="favicon_144.png">
+<meta name="msapplication-config" content="browserconfig.xml">
 
 <!-- SEO Meta -->
 <meta name="description" content="Transform your real estate vision into immersive reality with SQ Interactive. VR tours, AI interior design, and 3D experiences that sell properties faster.">
@@ -45,14 +58,20 @@
 <meta name="twitter:description" content="Transform your real estate vision into immersive reality with SQ Interactive.">
 <meta name="twitter:image" content="https://www.sqinteractive.com/images/no-background.png">
 
-<!-- Structured Data -->
+<!-- Structured Data - Enhanced for Google Search -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "SQ Interactive",
   "url": "https://www.sqinteractive.com",
-  "logo": "https://www.sqinteractive.com/favicon_192.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.sqinteractive.com/favicon_512.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://www.sqinteractive.com/favicon_512.png",
   "description": "Immersive VR, AI, and 3D real estate experiences",
   "founder": {
     "@type": "Person",
@@ -67,7 +86,12 @@
     "@type": "ContactPoint",
     "email": "admin@sqinteractive.com",
     "contactType": "customer service"
-  }
+  },
+  "sameAs": [
+    "https://www.instagram.com/sqinteractive",
+    "https://www.linkedin.com/company/sqinteractive",
+    "https://www.youtube.com/@SQINTERACTIVE"
+  ]
 }
 </script>
 
@@ -109,7 +133,6 @@ gtag('config', 'G-GYP19H93BR');
     position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
     background: linear-gradient(135deg,#d4af37 0%,#f1c40f 100%);
     box-shadow: 0 4px 15px rgba(212,175,55,0.3);
-    animation: pulse 5s infinite;
   }
   .demo-btn:hover { box-shadow:0 0 20px rgba(212,175,55,0.5); transform:translateY(-3px); }
   @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
@@ -150,15 +173,23 @@ gtag('config', 'G-GYP19H93BR');
 </head>
 <body>
   <!-- Live Chat Widget -->
-  <div id="chat-widget" class="fixed bottom-8 right-60 z-50 bg-yellow-400 text-black p-4 rounded-full shadow-lg cursor-pointer hover:scale-105 transition-all" onclick="toggleChat()">
-    <i data-feather="message-circle" class="w-6 h-6"></i>
+  <div id="chat-widget" class="fixed bottom-8 right-60 z-50 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-5 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
+    <div class="flex items-center gap-2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <span class="font-semibold">Live Chat</span>
+    </div>
   </div>
   
-  <div id="chat-box" class="fixed bottom-20 right-60 z-50 bg-white rounded-lg shadow-xl w-80 h-96 hidden">
+  <div id="chat-box" class="fixed bottom-24 right-60 z-50 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden">
     <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
       <h3 class="font-semibold">SQ Interactive Assistant</h3>
-      <button onclick="toggleChat()" class="text-black hover:text-gray-700">
-        <i data-feather="x" class="w-4 h-4"></i>
+      <button onclick="document.getElementById('chat-box').classList.toggle('hidden')" class="text-black hover:text-gray-700">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
@@ -166,18 +197,21 @@ gtag('config', 'G-GYP19H93BR');
         <div class="bg-yellow-100 p-3 rounded-lg mb-2">
           <p class="text-sm">👋 Hi! I'm your SQ Interactive assistant. I can help you with:</p>
           <div class="mt-2 text-xs">
-            <button onclick="sendQuickMessage('What services do you offer?')" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Services</button>
-            <button onclick="sendQuickMessage('What are your prices?')" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Pricing</button>
-            <button onclick="sendQuickMessage('How long does a project take?')" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Timeline</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>What services do you offer?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Services</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>What are your prices?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Pricing</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>How long does a project take?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>⏱️ Project timelines:<br>• 360° Tours: 1 week<br>• Interactive Walkthroughs: 2-3 weeks<br>• VR Real Estate: 4-6 weeks</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Timeline</button>
           </div>
         </div>
       </div>
     </div>
     <div class="p-4 border-t">
       <div class="flex gap-2">
-        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="handleChatKeypress(event)">
-        <button onclick="sendMessage()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
-          <i data-feather="send" class="w-4 h-4"></i>
+        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){const input=this;const message=input.value.trim();if(message){const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>'+message+'</div>';container.appendChild(div);input.value='';setTimeout(()=>{let response='I can help with VR services! 😊';const msg=message.toLowerCase();if(msg.includes('service')||msg.includes('offer'))response='🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR';else if(msg.includes('price')||msg.includes('cost'))response='💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)';else if(msg.includes('hello')||msg.includes('hi'))response='Hello! 👋 I\'m here to help with VR real estate solutions. Ask about services, pricing, or demos!';const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>'+response+'</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},500);}}">
+        <button onclick="const input=document.getElementById('chat-input');const message=input.value.trim();if(message){const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>'+message+'</div>';container.appendChild(div);input.value='';setTimeout(()=>{let response='I can help with VR services! 😊';const msg=message.toLowerCase();if(msg.includes('service')||msg.includes('offer'))response='🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR';else if(msg.includes('price')||msg.includes('cost'))response='💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)';else if(msg.includes('hello')||msg.includes('hi'))response='Hello! 👋 I\'m here to help with VR real estate solutions. Ask about services, pricing, or demos!';const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>'+response+'</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},500);}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+          </svg>
         </button>
       </div>
     </div>
@@ -185,7 +219,10 @@ gtag('config', 'G-GYP19H93BR');
 
   <!-- Demo Button -->
   <button onclick="window.location.href='contact.html'" class="demo-btn px-5 py-3 rounded-full flex items-center gap-2">
-    <i data-feather="play" class="w-4 h-4"></i> Request Demo
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="5,3 19,12 5,21 5,3"></polygon>
+    </svg>
+    Request Demo
   </button>
 
   <!-- NAV -->
@@ -597,7 +634,133 @@ gtag('config', 'G-GYP19H93BR');
   <script src="js/main.js" defer></script>
   
   <script>
-    // Enhanced Lead Management System
+    // Simple chat toggle function - defined first
+    function toggleChat() {
+      document.getElementById('chat-box').classList.toggle('hidden');
+    }
+    
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const message = input.value.trim();
+      if (message) {
+        addMessage(message, true);
+        input.value = '';
+        setTimeout(() => addMessage(getBotResponse(message)), 500);
+      }
+    }
+    
+    function addMessage(message, isUser = false) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = `mb-3 ${isUser ? 'text-right' : ''}`;
+      div.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm ${isUser ? 'bg-yellow-400 text-black' : 'bg-yellow-100 text-black'}">${message}</div>`;
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+    
+    function sendQuickMessage(message) {
+      addMessage(message, true);
+      setTimeout(() => addMessage(getBotResponse(message)), 300);
+    }
+    
+    function handleChatKeypress(event) {
+      if (event.key === 'Enter') sendMessage();
+    }
+    
+    function getBotResponse(message) {
+      const msg = message.toLowerCase();
+      
+      // Track interaction
+      if (typeof leadManager !== 'undefined') {
+        leadManager.trackInteraction('chat_message', { message });
+      }
+      
+      // Service inquiries with detailed responses
+      if (msg.includes('360') || (msg.includes('tour') && !msg.includes('vr'))) {
+        return `🎥 <strong>360° Tours & Videos</strong><br><br>High-resolution 360° photography with interactive hotspots.<br><br><strong>Price:</strong> 35,000–70,000 PKR<br><strong>Timeline:</strong> 1 week<br><br><button onclick="scheduleDemo('360_tour')" class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500 text-sm">Book Demo</button> <button onclick="sendQuickMessage('Send me 360 examples')" class="bg-gray-200 text-black px-3 py-1 rounded hover:bg-gray-300 text-sm">Examples</button>`;
+      }
+      
+      if ((msg.includes('vr') && (msg.includes('real estate') || msg.includes('property'))) || msg.includes('headset')) {
+        return `🥽 <strong>VR Real Estate</strong><br><br>Photorealistic VR environments for luxury properties.<br><br><strong>Price:</strong> 250,000–400,000 PKR<br><strong>Timeline:</strong> 4–6 weeks<br><br><button onclick="scheduleDemo('vr_real_estate')" class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500 text-sm">Book Demo</button> <button onclick="window.open('case-study.html', '_blank')" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm">Case Study</button>`;
+      }
+      
+      if (msg.includes('interactive') && (msg.includes('walkthrough') || msg.includes('walk'))) {
+        return `🚶 <strong>Interactive Walkthroughs</strong><br><br>WebGL-based 3D environments, no download required.<br><br><strong>Price:</strong> 100,000–180,000 PKR<br><strong>Timeline:</strong> 2–3 weeks<br><br><button onclick="window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank')" class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500 text-sm">Try Demo</button>`;
+      }
+      
+      // Pricing inquiries
+      if (msg.includes('budget') || msg.includes('cost') || msg.includes('price')) {
+        if (typeof leadManager !== 'undefined') {
+          leadManager.trackInteraction('pricing_request', { query: message });
+        }
+        return `💰 <strong>Transparent Pricing</strong><br><br>• <strong>Entry Level:</strong> 35K-70K PKR (360° Tours)<br>• <strong>Professional:</strong> 100K-250K PKR (Interactive/VR Staging)<br>• <strong>Premium:</strong> 250K-400K PKR (Full VR Experiences)<br><br>What's your budget range?<br><br><button onclick="sendQuickMessage('My budget is 50K-100K')" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300 text-black text-xs">50K-100K</button> <button onclick="sendQuickMessage('My budget is 100K-250K')" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300 text-black text-xs">100K-250K</button> <button onclick="sendQuickMessage('My budget is 250K+')" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300 text-black text-xs">250K+</button>`;
+      }
+      
+      // Scheduling requests
+      if (msg.includes('schedule') || msg.includes('book') || msg.includes('appointment') || msg.includes('meeting')) {
+        return `📅 <strong>Schedule Free Consultation</strong><br><br>Perfect! Let's set up a personalized demo.<br><br><strong>Available slots:</strong><br><button onclick="bookTimeSlot('today-2pm')" class="bg-yellow-400 text-black px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-500 text-xs">Today 2PM</button> <button onclick="bookTimeSlot('tomorrow-10am')" class="bg-yellow-400 text-black px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-500 text-xs">Tomorrow 10AM</button><br><button onclick="bookTimeSlot('custom')" class="bg-gray-200 text-black px-2 py-1 rounded mr-1 mb-1 hover:bg-gray-300 text-xs">Other Time</button><br><br>• 30-minute consultation<br>• Live VR demo<br>• Custom project discussion`;
+      }
+      
+      // Contact capture
+      if (msg.includes('@') || msg.includes('phone') || msg.includes('contact me')) {
+        return `📧 <strong>Get VR Portfolio & Pricing Guide</strong><br><br>I'll send you exclusive project examples and pricing info:<br><br><div class="mt-2"><input type="email" id="lead-email" placeholder="Your email" class="w-full p-2 border rounded mb-2 text-black text-sm"><input type="tel" id="lead-phone" placeholder="Phone (optional)" class="w-full p-2 border rounded mb-2 text-black text-sm"><button onclick="captureLeadContact()" class="bg-yellow-400 text-black px-4 py-2 rounded w-full hover:bg-yellow-500 font-semibold text-sm">Get Portfolio →</button></div>`;
+      }
+      
+      // General service inquiry
+      if (msg.includes('service') || msg.includes('what do you offer')) {
+        return `🏠 <strong>Our Complete VR Solutions</strong><br><br><div class="grid grid-cols-2 gap-1 text-xs"><button onclick="sendQuickMessage('Tell me about 360 tours')" class="bg-blue-100 text-black p-2 rounded hover:bg-blue-200">🎥 360° Tours<br><span class="text-xs">35K-70K</span></button><button onclick="sendQuickMessage('Tell me about VR real estate')" class="bg-green-100 text-black p-2 rounded hover:bg-green-200">🥽 VR Real Estate<br><span class="text-xs">250K-400K</span></button><button onclick="sendQuickMessage('Tell me about interactive walkthroughs')" class="bg-purple-100 text-black p-2 rounded hover:bg-purple-200">🚶 Walkthroughs<br><span class="text-xs">100K-180K</span></button><button onclick="sendQuickMessage('Tell me about VR staging')" class="bg-yellow-100 text-black p-2 rounded hover:bg-yellow-200">🛋️ VR Staging<br><span class="text-xs">120K-250K</span></button></div><br>Which service interests you most?`;
+      }
+      
+      // Greetings with personalization
+      if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+        const greetings = [
+          `Hello! 👋 Welcome to SQ Interactive. I'm here to help you explore our VR real estate solutions.`,
+          `Hi there! 😊 Great to meet you. I can help you learn about our VR services, pricing, or schedule a demo.`,
+          `Hey! 🌟 Thanks for visiting SQ Interactive. What brings you here today?`
+        ];
+        return greetings[Math.floor(Math.random() * greetings.length)] + `<br><br>Quick options:<br>• Ask about our services<br>• Get pricing information<br>• Schedule a demo<br>• Learn about project timelines`;
+      }
+      
+      // Thanks responses
+      if (msg.includes('thank') || msg.includes('thanks')) {
+        return `You're very welcome! 😊 Is there anything else I can help you with? I'm here to assist with VR solutions, pricing, or scheduling demos.`;
+      }
+      
+      // Default response with lead capture
+      return `I'd be happy to help! 😊<br><br><strong>I can assist with:</strong><br>• VR property experiences<br>• 360° virtual tours<br>• Pricing and timelines<br>• Custom project quotes<br><br><button onclick="addMessage(getContactResponse())" class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500 text-sm">Get Personalized Help</button>`;
+    }
+    
+    // Interactive functions for enhanced chatbot
+    function scheduleDemo(serviceType) {
+      addMessage(`🎯 <strong>Perfect! Let's schedule your ${serviceType.replace('_', ' ')} demo.</strong><br><br>What's the best way to reach you?<br><br><div class="mt-2"><input type="email" id="demo-email" placeholder="Your email" class="w-full p-2 border rounded mb-2 text-black text-sm"><input type="tel" id="demo-phone" placeholder="Phone number" class="w-full p-2 border rounded mb-2 text-black text-sm"><button onclick="confirmDemoBooking('${serviceType}')" class="bg-yellow-400 text-black px-4 py-2 rounded w-full hover:bg-yellow-500 font-semibold text-sm">Schedule My Demo →</button></div>`);
+    }
+    
+    function bookTimeSlot(slot) {
+      if (slot === 'custom') {
+        addMessage(`📅 <strong>Custom Scheduling</strong><br><br>Let's find a time that works for you.<br><br><div class="mt-2"><input type="datetime-local" id="custom-time" class="w-full p-2 border rounded mb-2 text-black text-sm"><textarea id="custom-message" placeholder="Any specific requirements?" class="w-full p-2 border rounded mb-2 text-black text-sm" rows="2"></textarea><button onclick="confirmCustomBooking()" class="bg-yellow-400 text-black px-4 py-2 rounded w-full hover:bg-yellow-500 font-semibold text-sm">Request This Time</button></div>`);
+      } else {
+        addMessage(`✅ <strong>Time Slot Reserved!</strong><br><br>Great! I've reserved ${slot.replace('-', ' at ')} for your VR consultation.<br><br><strong>What happens next:</strong><br>• Confirmation email sent<br>• Calendar invite with details<br>• Pre-demo questionnaire<br>• Direct line to VR specialist`);
+      }
+    }
+    
+    function captureLeadContact() {
+      const email = document.getElementById('lead-email')?.value;
+      if (email) {
+        addMessage(`✅ <strong>Perfect! Welcome to SQ Interactive VIP!</strong><br><br>I'm sending our exclusive VR portfolio to ${email} right now.<br><br><strong>You'll receive:</strong><br>• Complete project gallery<br>• ROI calculator access<br>• Pricing guide for all services<br>• Priority demo booking`);
+        document.getElementById('lead-email').value = '';
+      } else {
+        addMessage(`Please enter your email address to receive the VR portfolio! 😊`);
+      }
+    }
+    
+    function confirmDemoBooking(serviceType) {
+      const email = document.getElementById('demo-email')?.value;
+      if (email) {
+        addMessage(`🎉 <strong>Demo Confirmed!</strong><br><br>Your ${serviceType.replace('_', ' ')} demo is being scheduled.<br><br><strong>Confirmation sent to:</strong> ${email}<br><br>Our VR specialist will contact you within 2 hours.<br><br><strong>Questions?</strong> WhatsApp: +92 300 9452153`);
+      } else {
+        addMessage(`Please enter your email to confirm the demo booking! 😊`);
+      }
+    }
     class LeadManager {
       constructor() {
         this.leads = JSON.parse(localStorage.getItem('sq_leads') || '[]');
@@ -760,17 +923,22 @@ gtag('config', 'G-GYP19H93BR');
       }
     };
 
-    // Chat widget functionality
+    // Chat widget functionality - ensure it's defined early
     function toggleChat() {
       const chatBox = document.getElementById('chat-box');
-      chatBox.classList.toggle('hidden');
-      if (!chatBox.classList.contains('hidden')) {
-        document.getElementById('chat-input').focus();
+      if (chatBox) {
+        chatBox.classList.toggle('hidden');
+        if (!chatBox.classList.contains('hidden')) {
+          const chatInput = document.getElementById('chat-input');
+          if (chatInput) chatInput.focus();
+        }
       }
     }
 
     function addMessage(message, isUser = false) {
       const messagesContainer = document.getElementById('chat-messages');
+      if (!messagesContainer) return;
+      
       const messageDiv = document.createElement('div');
       messageDiv.className = `mb-3 ${isUser ? 'text-right' : ''}`;
       
@@ -785,6 +953,36 @@ gtag('config', 'G-GYP19H93BR');
       messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      if (!input) return;
+      
+      const message = input.value.trim();
+      if (message) {
+        addMessage(message, true);
+        input.value = '';
+        
+        setTimeout(() => {
+          const response = getBotResponse(message);
+          addMessage(response);
+        }, 500);
+      }
+    }
+
+    function sendQuickMessage(message) {
+      addMessage(message, true);
+      setTimeout(() => {
+        const response = getBotResponse(message);
+        addMessage(response);
+      }, 300);
+    }
+
+    function handleChatKeypress(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    }
+
     function getBotResponse(userMessage) {
       const msg = userMessage.toLowerCase();
       
@@ -794,7 +992,7 @@ gtag('config', 'G-GYP19H93BR');
       // Lead qualification patterns
       if (msg.includes('budget') || msg.includes('cost') || msg.includes('price')) {
         leadManager.trackInteraction('pricing_request', { query: userMessage });
-        return this.getPricingResponse(msg);
+        return getPricingResponse(msg);
       }
       
       if (msg.includes('urgent') || msg.includes('asap') || msg.includes('immediately')) {
@@ -803,13 +1001,13 @@ gtag('config', 'G-GYP19H93BR');
       
       // Appointment scheduling
       if (msg.includes('schedule') || msg.includes('book') || msg.includes('appointment') || msg.includes('meeting')) {
-        return this.getSchedulingResponse();
+        return getSchedulingResponse();
       }
       
       // Contact capture
       if (msg.includes('@') || msg.includes('phone') || msg.includes('contact me')) {
         leadManager.trackInteraction('contact_provided', { type: 'email_or_phone' });
-        return this.getContactCaptureResponse();
+        return getContactCaptureResponse();
       }
       
       // Natural conversation patterns (existing code)
@@ -878,7 +1076,7 @@ gtag('config', 'G-GYP19H93BR');
       }
       
       // Service-specific responses with tracking
-      return this.getServiceResponse(msg);
+      return getServiceResponse(msg);
     }
     
     // Helper methods for enhanced responses
@@ -1092,93 +1290,87 @@ gtag('config', 'G-GYP19H93BR');
       }
       
     
-    function getServiceResponse(msg) {
-      // Specific service inquiries with detailed responses and tracking
-      
-      // 360° Tours & Videos
-      if (msg.includes('360') || (msg.includes('tour') && !msg.includes('vr'))) {
-        AdvancedAnalytics.trackServiceInterest('360_tours');
-        return `🎥 <strong>360° Tours & Videos - Complete Guide</strong><br><br>
-        <strong>📋 What it includes:</strong><br>
-        • High-resolution 360° photography (8K quality)<br>
-        • Interactive hotspots with information pop-ups<br>
-        • Smooth transitions between rooms<br>
-        • Custom branding and logos<br>
-        • Mobile & desktop compatibility<br>
-        • Hosting for 1 year included<br><br>
-        <strong>💰 Investment:</strong> 35,000–70,000 PKR<br>
-        <strong>⏱️ Timeline:</strong> 1 week from shoot to delivery<br>
-        <strong>📱 Best for:</strong> Quick property showcases, rental listings, initial marketing<br><br>
-        <button onclick="scheduleDemo('360_tour')" class="bg-yellow-400 text-black px-4 py-2 rounded mr-2 hover:bg-yellow-500">Book 360° Demo</button>
-        <button onclick="sendQuickMessage('Send me 360 tour examples')" class="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300">See Examples</button>`;
-      }
-      
-      // VR Real Estate
-      if ((msg.includes('vr') && (msg.includes('real estate') || msg.includes('property'))) || msg.includes('headset')) {
-        AdvancedAnalytics.trackServiceInterest('vr_real_estate');
-        return `🥽 <strong>VR Real Estate - Premium Experience</strong><br><br>
-        <strong>📋 What it includes:</strong><br>
-        • Photorealistic VR environments<br>
-        • Full headset compatibility (Oculus, HTC Vive)<br>
-        • Interactive furniture placement<br>
-        • Day/night lighting scenarios<br>
-        • Multiple design variations<br>
-        • Sales presentation training<br>
-        • 6 months support & updates<br><br>
-        <strong>💰 Investment:</strong> 250,000–400,000 PKR<br>
-        <strong>⏱️ Timeline:</strong> 4–6 weeks (includes revisions)<br>
-        <strong>📱 Best for:</strong> Luxury properties, pre-construction sales, high-end developments<br><br>
-        <button onclick="scheduleDemo('vr_real_estate')" class="bg-yellow-400 text-black px-4 py-2 rounded mr-2 hover:bg-yellow-500">Book VR Demo</button>
-        <button onclick="window.open('case-study.html', '_blank')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Case Study</button>`;
-      }
-      
-      // Interactive Walkthroughs
-      if (msg.includes('interactive') && (msg.includes('walkthrough') || msg.includes('walk'))) {
-        AdvancedAnalytics.trackServiceInterest('interactive_walkthroughs');
-        return `🚶 <strong>Interactive Walkthroughs - Browser-Based</strong><br><br>
-        <strong>📋 What it includes:</strong><br>
-        • WebGL-based 3D environments<br>
-        • No download required - works in any browser<br>
-        • Click-to-move navigation<br>
-        • Embedded information panels<br>
-        • Lead capture integration<br>
-        • Analytics dashboard<br>
-        • SEO-friendly embedding<br><br>
-        <strong>💰 Investment:</strong> 100,000–180,000 PKR<br>
-        <strong>⏱️ Timeline:</strong> 2–3 weeks<br><br>
-        <button onclick="window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank'); AdvancedAnalytics.trackDemoRequest('webgl_demo');" class="bg-yellow-400 text-black px-4 py-2 rounded mr-2 hover:bg-yellow-500">Try Live Demo</button>
-        <button onclick="scheduleDemo('interactive_walkthrough')" class="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300">Schedule Demo</button>`;
-      }
-      
-      // General service inquiry
-      if (msg.includes('service') || msg.includes('what do you offer')) {
-        return `🏠 <strong>Our Complete VR Solutions</strong><br><br>
-        <div class="grid grid-cols-2 gap-2 text-sm">
-          <button onclick="sendQuickMessage('Tell me about 360 tours')" class="bg-blue-100 text-black p-2 rounded hover:bg-blue-200">🎥 360° Tours<br><span class="text-xs">35K-70K PKR</span></button>
-          <button onclick="sendQuickMessage('Tell me about VR real estate')" class="bg-green-100 text-black p-2 rounded hover:bg-green-200">🥽 VR Real Estate<br><span class="text-xs">250K-400K PKR</span></button>
-          <button onclick="sendQuickMessage('Tell me about interactive walkthroughs')" class="bg-purple-100 text-black p-2 rounded hover:bg-purple-200">🚶 Walkthroughs<br><span class="text-xs">100K-180K PKR</span></button>
-          <button onclick="sendQuickMessage('Tell me about VR staging')" class="bg-yellow-100 text-black p-2 rounded hover:bg-yellow-200">🛋️ VR Staging<br><span class="text-xs">120K-250K PKR</span></button>
-        </div><br>
-        Which service interests you most? I can provide detailed information and examples!`;
-      }
-      
-      // Default fallback with lead capture
-      const fallbackResponses = [
-        `That's an interesting question! 🤔 I'd love to help you with that. Could you tell me more about your specific VR needs?`,
-        `Great question! 🌟 Let me make sure I give you the perfect answer. Are you looking for property marketing solutions?`,
-        `I want to provide the most helpful response! 💭 What type of property or project are you working with?`
-      ];
-      
-      return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)] + `<br><br>
-      <strong>I can help with:</strong><br>
-      • VR property experiences<br>
-      • 360° virtual tours<br>
-      • Pricing and timelines<br>
-      • Custom project quotes<br><br>
-      <button onclick="getContactCaptureResponse(); addMessage(getContactCaptureResponse());" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">Get Personalized Help</button>`;
+    // Helper functions for chatbot
+    function getPricingResponse(msg) {
+      return `💰 <strong>Transparent Pricing</strong><br><br>• 360° Tours: 35K-70K PKR (1 week)<br>• Interactive Walkthroughs: 100K-180K PKR (2-3 weeks)<br>• VR Real Estate: 250K-400K PKR (4-6 weeks)<br><br>Want a custom quote for your project?`;
     }
     
-    // New interactive functions
+    function getSchedulingResponse() {
+      return `📅 <strong>Schedule Free Consultation</strong><br><br>Perfect! Let's set up a demo.<br><br><button onclick="scheduleDemo('consultation')" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">Book Demo</button>`;
+    }
+    
+    function getContactCaptureResponse() {
+      return `📧 <strong>Get VR Portfolio</strong><br><br><input type="email" id="lead-email" placeholder="Your email" class="w-full p-2 border rounded mb-2 text-black text-sm"><br><button onclick="captureLeadContact()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">Get Portfolio</button>`;
+    }
+    
+    function getServiceResponse(msg) {
+      // Service inquiries
+      if (msg.includes('360') || (msg.includes('tour') && !msg.includes('vr'))) {
+        return `🎥 <strong>360° Tours</strong><br><br>High-resolution 360° photography with interactive hotspots.<br><br><strong>Price:</strong> 35K-70K PKR<br><strong>Timeline:</strong> 1 week<br><br><button onclick="scheduleDemo('360_tour')" class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500">Book Demo</button>`;
+      }
+      
+      if (msg.includes('vr') && (msg.includes('real estate') || msg.includes('property'))) {
+        return `🥽 <strong>VR Real Estate</strong><br><br>Photorealistic VR environments for luxury properties.<br><br><strong>Price:</strong> 250K-400K PKR<br><strong>Timeline:</strong> 4-6 weeks<br><br><button onclick="scheduleDemo('vr_real_estate')" class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500">Book Demo</button>`;
+      }
+      
+      if (msg.includes('service') || msg.includes('what do you offer')) {
+        return `🏠 <strong>Our VR Solutions</strong><br><br>• 360° Tours: 35K-70K PKR<br>• Interactive Walkthroughs: 100K-180K PKR<br>• VR Real Estate: 250K-400K PKR<br><br>Which interests you most?`;
+      }
+      
+      if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+        return `Hello! 👋 I'm here to help with VR real estate solutions.<br><br>Quick options:<br>• Ask about services<br>• Get pricing<br>• Schedule demo`;
+      }
+      
+      return `I'd be happy to help! 😊<br><br>I can assist with:<br>• VR services & pricing<br>• Project timelines<br>• Demo scheduling<br><br>What would you like to know?`;
+    }
+    
+    // ROI Calculator functionality (ensure it works)
+    function calculateROI() {
+      const propertyPrice = parseFloat(document.getElementById('propertyPrice')?.value) || 5000000;
+      const propertiesPerMonth = parseFloat(document.getElementById('propertiesPerMonth')?.value) || 3;
+      const vrInvestment = parseFloat(document.getElementById('vrInvestment')?.value) || 200000;
+      
+      const monthlyRevenue = propertyPrice * propertiesPerMonth;
+      const additionalProperties = propertiesPerMonth * 0.4; // 40% increase
+      const additionalRevenue = propertyPrice * additionalProperties;
+      const roi = ((additionalRevenue - vrInvestment) / vrInvestment) * 100;
+      
+      // Update display elements if they exist
+      const monthlyRevenueEl = document.getElementById('monthlyRevenue');
+      const fasterSalesEl = document.getElementById('fasterSales');
+      const additionalRevenueEl = document.getElementById('additionalRevenue');
+      const roiEl = document.getElementById('roi');
+      
+      if (monthlyRevenueEl) monthlyRevenueEl.textContent = `PKR ${monthlyRevenue.toLocaleString()}`;
+      if (fasterSalesEl) fasterSalesEl.textContent = `+${additionalProperties.toFixed(1)} properties/month`;
+      if (additionalRevenueEl) additionalRevenueEl.textContent = `PKR ${additionalRevenue.toLocaleString()}`;
+      if (roiEl) roiEl.textContent = `${Math.round(roi)}%`;
+      
+      // Track calculator usage
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'roi_calculation', {
+          event_category: 'Engagement',
+          event_label: 'ROI Calculator',
+          value: Math.round(roi)
+        });
+      }
+    }
+    
+    // Initialize ROI calculator if on that page
+    if (window.location.pathname.includes('roi-calculator')) {
+      document.addEventListener('DOMContentLoaded', () => {
+        const propertyPriceInput = document.getElementById('propertyPrice');
+        const propertiesPerMonthInput = document.getElementById('propertiesPerMonth');
+        const vrInvestmentInput = document.getElementById('vrInvestment');
+        
+        if (propertyPriceInput) {
+          propertyPriceInput.addEventListener('input', calculateROI);
+          propertiesPerMonthInput.addEventListener('input', calculateROI);
+          vrInvestmentInput.addEventListener('input', calculateROI);
+          calculateROI(); // Initial calculation
+        }
+      });
+    }
     function scheduleDemo(serviceType) {
       AdvancedAnalytics.trackDemoRequest(serviceType);
       leadManager.trackInteraction('demo_request', { service: serviceType });
