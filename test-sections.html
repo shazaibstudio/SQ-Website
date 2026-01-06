@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Sections</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="p-8">
+        <h1 class="text-3xl mb-8">Portfolio Sections Test</h1>
+        
+        <!-- Test Modal -->
+        <section class="mb-8 p-4 bg-gray-800 rounded">
+            <h2 class="text-xl text-yellow-400 mb-4">Modal Section</h2>
+            <button onclick="document.getElementById('testModal').classList.remove('hidden')" class="bg-yellow-400 text-black px-4 py-2 rounded">Test Modal</button>
+        </section>
+        
+        <!-- Test Client Confidence -->
+        <section class="mb-8 p-4 bg-gray-800 rounded">
+            <h2 class="text-xl text-yellow-400 mb-4">Client Confidence Section</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-700 p-4 rounded">On-Time Delivery</div>
+                <div class="bg-gray-700 p-4 rounded">Pixel-Perfect Results</div>
+                <div class="bg-gray-700 p-4 rounded">End-to-End Support</div>
+            </div>
+        </section>
+        
+        <!-- Test Testimonials -->
+        <section class="mb-8 p-4 bg-gray-800 rounded">
+            <h2 class="text-xl text-yellow-400 mb-4">Testimonials Section</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-700 p-4 rounded">Testimonial 1</div>
+                <div class="bg-gray-700 p-4 rounded">Testimonial 2</div>
+                <div class="bg-gray-700 p-4 rounded">Testimonial 3</div>
+            </div>
+        </section>
+        
+        <!-- Test CTA -->
+        <section class="mb-8 p-4 bg-gray-800 rounded">
+            <h2 class="text-xl text-yellow-400 mb-4">CTA Section</h2>
+            <button class="bg-yellow-400 text-black px-6 py-3 rounded-full">Book Demo</button>
+        </section>
+    </div>
+    
+    <!-- Test Modal -->
+    <div id="testModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg text-black">
+            <h3>Test Modal Works!</h3>
+            <button onclick="document.getElementById('testModal').classList.add('hidden')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded">Close</button>
+        </div>
+    </div>
+</body>
+</html>
