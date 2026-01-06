@@ -77,6 +77,106 @@
 
 
 <body>
+  <!-- Live Chat Widget -->
+  <div id="chat-widget" class="fixed bottom-24 right-6 z-40 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')" style="position: fixed !important;">
+    <div class="flex items-center gap-2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <span class="font-semibold text-sm">لائیو چیٹ</span>
+    </div>
+  </div>
+  
+  <div id="chat-box" class="fixed bottom-40 right-6 z-40 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden" style="position: fixed !important;">
+    <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
+      <h3 class="font-semibold">SQ Interactive اسسٹنٹ</h3>
+      <button onclick="document.getElementById('chat-box').classList.toggle('hidden')" class="text-black hover:text-gray-700">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
+      <div class="mb-4">
+        <div class="bg-yellow-100 p-3 rounded-lg mb-2">
+          <p class="text-sm">👋 سلام! میں آپ کا SQ Interactive اسسٹنٹ ہوں۔ میں آپ کی مدد کر سکتا ہوں:</p>
+          <div class="mt-2 text-xs">
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>آپ کیا خدمات فراہم کرتے ہیں؟</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>🏠 ہمارے VR حل:<br>• 360° ٹورز: 35K-70K PKR<br>• VR ریئل اسٹیٹ: 250K-400K PKR<br>• انٹرایکٹو واک تھروز: 100K-180K PKR</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">خدمات</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>آپ کی قیمتیں کیا ہیں؟</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>💰 قیمتیں 35K PKR (360° ٹورز) سے 400K PKR (مکمل VR تجربات) تک ہیں</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">قیمتیں</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>پروجیکٹ میں کتنا وقت لگتا ہے؟</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>⏱️ پروجیکٹ کا وقت:<br>• 360° ٹورز: 1 ہفتہ<br>• انٹرایکٹو واک تھروز: 2-3 ہفتے<br>• VR ریئل اسٹیٹ: 4-6 ہفتے</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">وقت</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-4 border-t">
+      <div class="flex gap-2">
+        <input id="chat-input" type="text" placeholder="VR، قیمتوں، وقت کے بارے میں پوچھیں..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessage()}">
+        <button onclick="sendChatMessage()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const message = input.value.trim();
+      
+      if (message) {
+        const container = document.getElementById('chat-messages');
+        
+        // Add user message
+        const userDiv = document.createElement('div');
+        userDiv.className = 'mb-3 text-right';
+        userDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black">${message}</div>`;
+        container.appendChild(userDiv);
+        
+        // Clear input
+        input.value = '';
+        
+        // Generate bot response
+        setTimeout(() => {
+          let response = '';
+          const msg = message.toLowerCase();
+          
+          if (msg.includes('خدمات') || msg.includes('service')) {
+            response = '🏠 <strong>ہمارے VR حل:</strong><br>• 360° ٹورز: 35K-70K PKR<br>• VR ریئل اسٹیٹ: 250K-400K PKR<br>• انٹرایکٹو واک تھروز: 100K-180K PKR<br><br>💬 <strong>شروع کرنے کے لیے تیار؟</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">اب WhatsApp کریں</a> یا <a href="contact-ur.html" class="text-yellow-600 font-semibold">ڈیمو کی درخواست کریں!</a>';
+          } else if (msg.includes('قیمت') || msg.includes('price')) {
+            response = '💰 <strong>VR قیمتیں (پاکستان):</strong><br>• 360° ٹورز: 35K-70K PKR<br>• انٹرایکٹو: 100K-180K PKR<br>• مکمل VR: 250K-400K PKR<br><br>📞 <strong>صحیح قیمت حاصل کریں:</strong><br><a href="tel:+923009452153" class="text-yellow-600 font-semibold">کال کریں +92 300 9452153</a> یا <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">فوری قیمت کے لیے WhatsApp!</a>';
+          } else if (msg.includes('سلام') || msg.includes('hello')) {
+            response = 'سلام! 👋 میں VR ریئل اسٹیٹ حل کے ساتھ مدد کے لیے یہاں ہوں۔<br><br>🎯 <strong>فوری سوال:</strong> آپ کس قسم کی پراپرٹی دکھانا چاہتے ہیں؟<br><br>💬 تیز جواب کے لیے: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">براہ راست WhatsApp کریں!</a>';
+          } else if (msg.includes('ڈیمو') || msg.includes('demo')) {
+            response = '🎮 <strong>VR کو عمل میں دیکھیں!</strong><br><br>ہمارا لائیو ڈیمو دیکھیں یا اپنی پراپرٹی کے لیے کسٹم ڈیمو کی درخواست کریں۔<br><br>🚀 <a href="contact-ur.html" class="bg-yellow-400 text-black px-3 py-1 rounded font-semibold">ڈیمو کی درخواست</a><br>📱 <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">فوری ڈیمو کے لیے WhatsApp</a>';
+          } else if (msg.includes('رابطہ') || msg.includes('contact')) {
+            response = '📞 <strong>SQ Interactive سے رابطہ:</strong><br><br>📱 WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">+92 300 9452153</a><br>📧 ای میل: <a href="mailto:admin@sqinteractive.com" class="text-yellow-600">admin@sqinteractive.com</a><br>📍 مقام: لاہور، پاکستان<br><br>💬 <strong>فوری سوالات کے لیے WhatsApp سب سے تیز ہے!</strong>';
+          } else if (msg.includes('وقت') || msg.includes('time')) {
+            response = '⏱️ <strong>پروجیکٹ کا وقت:</strong><br>• 360° ٹورز: 1 ہفتہ<br>• انٹرایکٹو واک تھروز: 2-3 ہفتے<br>• VR ریئل اسٹیٹ: 4-6 ہفتے<br><br>🚀 <strong>جلدی چاہیے؟</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">تیز ڈیلیوری کے لیے WhatsApp کریں!</a>';
+          } else {
+            response = 'میں VR خدمات کے ساتھ مدد کر سکتا ہوں! 😊<br><br>🎯 <strong>مقبول سوالات:</strong><br>• "آپ کیا خدمات فراہم کرتے ہیں؟"<br>• "آپ کی قیمتیں کیا ہیں؟"<br>• "کتنا وقت لگتا ہے؟"<br><br>💬 <strong>یا براہ راست چیٹ:</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp +92 300 9452153</a>';
+          }
+          
+          const botDiv = document.createElement('div');
+          botDiv.className = 'mb-3';
+          botDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black">${response}</div>`;
+          container.appendChild(botDiv);
+          container.scrollTop = container.scrollHeight;
+        }, 500);
+      }
+    }
+  </script>
+
+  <!-- Demo Button -->
+  <a href="contact-ur.html" class="demo-btn fixed bottom-8 right-8 px-6 py-3 rounded-full shadow-lg font-semibold flex items-center gap-2 transition">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="5,3 19,12 5,21 5,3"></polygon>
+    </svg>
+    ڈیمو کی درخواست
+  </a>
 
 
 <!-- NAV -->
@@ -116,8 +216,8 @@
         <a href="contact.html" class="text-gray-200 hover:text-white">رابطہ کریں</a>
 
         <div class="flex items-center gap-3">
-          <button onclick="window.location.href='vr real estate.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
-          <button onclick="window.location.href='vr real estate-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
+          <button onclick="window.location.href='vr-real-estate.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">EN</button>
+          <button onclick="window.location.href='vr real estate-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">UR</button>
         </div>
       </div>
 
@@ -151,8 +251,8 @@
       <a href="about.html" class="block py-2 text-gray-200">ہمارے بارے میں</a>
       <a href="contact.html" class="block py-2 text-gray-200">رابطہ کریں</a>
       <div class="mt-3 flex gap-2">
-        <button onclick="window.location.href='vr real estate.html'" class="px-3 py-1 rounded bg-white/10 text-white">EN</button>
-        <button onclick="window.location.href='vr real estate-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">UR</button>
+        <button onclick="window.location.href='vr-real-estate.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">EN</button>
+        <button onclick="window.location.href='vr real estate-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white">UR</button>
       </div>
     </div>
   </div>
