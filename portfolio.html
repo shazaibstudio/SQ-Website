@@ -4,18 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SQ Interactive | Portfolio(EN)</title>
+  <!-- Performance: Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" as="style">
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  
+  <!-- CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet">
 
-  <link rel="icon" type="images/no-background.png" href="images/no-background.png">
-  <link rel="apple-touch-icon" href="images/no-background.png">
+<!-- Favicons & PWA - Enhanced for Google Search -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon_48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon_192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon_512.png">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon_57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon_60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon_72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon_76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon_114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon_120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon_144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon_152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_180.png">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#d4af37">
+<meta name="msapplication-TileColor" content="#d4af37">
+<meta name="msapplication-TileImage" content="favicon_144.png">
+<meta name="msapplication-config" content="browserconfig.xml">
 
-  <!-- MANIFEST & THEME -->
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#121212">
+<!-- SEO Meta -->
+<meta name="description" content="Explore SQ Interactive's portfolio of VR real estate projects, 360° tours, and immersive experiences that sell properties faster.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Shazaib Qaiser">
+<link rel="canonical" href="https://www.sqinteractive.com/portfolio.html">
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="SQ Interactive | Portfolio">
+<meta property="og:description" content="Explore SQ Interactive's portfolio of VR real estate projects and immersive experiences.">
+<meta property="og:image" content="https://www.sqinteractive.com/images/no-background.png">
+<meta property="og:url" content="https://www.sqinteractive.com/portfolio.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SQ Interactive">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SQ Interactive | Portfolio">
+<meta name="twitter:description" content="Explore SQ Interactive's portfolio of VR real estate projects and immersive experiences.">
+<meta name="twitter:image" content="https://www.sqinteractive.com/images/no-background.png">
+
+<!-- Google Site Verification -->
+<meta name="google-site-verification" content="bkEnLORPc-rHU8Fh8ifggrkix9cp7lV3mLe7i8D1sEY" />
 
 
   <style>
@@ -69,6 +114,59 @@
 
 </head>
 
+  <!-- Live Chat Widget -->
+  <div id="chat-widget" class="fixed bottom-8 right-60 z-50 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-5 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
+    <div class="flex items-center gap-2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <span class="font-semibold">Live Chat</span>
+    </div>
+  </div>
+  
+  <div id="chat-box" class="fixed bottom-24 right-60 z-50 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden">
+    <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
+      <h3 class="font-semibold">SQ Interactive Assistant</h3>
+      <button onclick="document.getElementById('chat-box').classList.toggle('hidden')" class="text-black hover:text-gray-700">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
+      <div class="mb-4">
+        <div class="bg-yellow-100 p-3 rounded-lg mb-2">
+          <p class="text-sm">👋 Hi! I'm your SQ Interactive assistant. I can help you with:</p>
+          <div class="mt-2 text-xs">
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>What services do you offer?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Services</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>What are your prices?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Pricing</button>
+            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>How long does a project take?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>⏱️ Project timelines:<br>• 360° Tours: 1 week<br>• Interactive Walkthroughs: 2-3 weeks<br>• VR Real Estate: 4-6 weeks</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Timeline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-4 border-t">
+      <div class="flex gap-2">
+        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){const input=this;const message=input.value.trim();if(message){const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>'+message+'</div>';container.appendChild(div);input.value='';setTimeout(()=>{let response='I can help with VR services! 😊';const msg=message.toLowerCase();if(msg.includes('service')||msg.includes('offer'))response='🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR';else if(msg.includes('price')||msg.includes('cost'))response='💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)';else if(msg.includes('hello')||msg.includes('hi'))response='Hello! 👋 I\'m here to help with VR real estate solutions. Ask about services, pricing, or demos!';const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>'+response+'</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},500);}}">
+        <button onclick="const input=document.getElementById('chat-input');const message=input.value.trim();if(message){const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\'>'+message+'</div>';container.appendChild(div);input.value='';setTimeout(()=>{let response='I can help with VR services! 😊';const msg=message.toLowerCase();if(msg.includes('service')||msg.includes('offer'))response='🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR';else if(msg.includes('price')||msg.includes('cost'))response='💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)';else if(msg.includes('hello')||msg.includes('hi'))response='Hello! 👋 I\'m here to help with VR real estate solutions. Ask about services, pricing, or demos!';const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\'>'+response+'</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},500);}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Button -->
+  <button onclick="window.location.href='contact.html'" class="demo-btn px-5 py-3 rounded-full flex items-center gap-2">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="5,3 19,12 5,21 5,3"></polygon>
+    </svg>
+    Request Demo
+  </button>
+
 <!-- NAV -->
 <nav class="fixed w-full z-50 bg-[#00000040] backdrop-blur-sm border-b border-[#ffffff0d]">
   <div class="max-w-7xl mx-auto px-5 md:px-8">
@@ -93,19 +191,20 @@
           <div id="services-popup" class="absolute right-0 mt-3 w-56 bg-[#0f1114] border border-[#ffffff12] rounded-lg shadow-lg p-2 hidden">
             <a href="services.html" class="block px-4 py-2 text-gray-200 hover:text-white">All Services</a>
             <a href="vr-real-estate.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Real Estate</a>
-            <a href="ai-interior-design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI AND VR Interiors (Coming Soon)</a>
+            <a href="ai-interior-design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI & VR Interiors (Pilot)</a>
             <a href="interactive-pc.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive PC Models</a>
-            <a href="360-content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° Tours & Videos </a>
-            <a href="vr-staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Showroom Showcase Staging </a>
-            <a href="interactive-walkthroughs.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive Phone Walkthroughs</a>
-            <a href="furniture-scanning.html" class="block px-4 py-2 text-gray-200 hover:text-white">Furniture Scanning & VR Staging</a>
-
+            <a href="360-content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° Tours & Videos</a>
+            <a href="vr-staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Staging</a>
+            <a href="interactive-walkthroughs.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive Walkthroughs</a>
+            <a href="furniture-scanning.html" class="block px-4 py-2 text-gray-200 hover:text-white">Furniture Scanning</a>
           </div>
         </div>
 
         <a href="portfolio.html" class="text-gray-200 hover:text-white">Portfolio</a>
         <a href="about.html" class="text-gray-200 hover:text-white">About</a>
         <a href="contact.html" class="text-gray-200 hover:text-white">Contact</a>
+        <a href="roi-calculator.html" class="text-yellow-400 hover:text-white">ROI Calculator</a>
+        <a href="case-study.html" class="text-yellow-400 hover:text-white">Case Study</a>
 
         <!-- Language Toggle -->
         <div class="flex items-center gap-3">
@@ -133,16 +232,19 @@
       <div id="mobile-services" class="hidden pl-4 mt-1">
         <a href="services.html" class="block py-2 text-gray-300">All Services</a>
         <a href="vr-real-estate.html" class="block py-2 text-gray-300">VR Real Estate</a>
-        <a href="ai-interior-design.html" class="block py-2 text-gray-300">AI AND VR Interiors (Coming Soon)</a>
-         <a href="interactive-pc.html" class="block py-2 text-gray-300">Interactive PC Models</a>
+        <a href="ai-interior-design.html" class="block py-2 text-gray-300">AI & VR Interiors (Pilot)</a>
+        <a href="interactive-pc.html" class="block py-2 text-gray-300">Interactive PC Models</a>
         <a href="360-content.html" class="block py-2 text-gray-300">360° Tours & Videos</a>
-        <a href="vr-staging.html" class="block py-2 text-gray-300">VR Showroom Showcase Staging </a>
-        <a href="interactive-walkthroughs.html" class="block py-2 text-gray-300">Interactive Phone Walkthroughs</a>
-        <a href="furniture-scanning.html" class="block py-2 text-gray-300">Furniture Scanning & VR Staging</a>
+        <a href="vr-staging.html" class="block py-2 text-gray-300">VR Staging</a>
+        <a href="interactive-walkthroughs.html" class="block py-2 text-gray-300">Interactive Walkthroughs</a>
+        <a href="furniture-scanning.html" class="block py-2 text-gray-300">Furniture Scanning</a>
       </div>
       <a href="portfolio.html" class="block py-2 text-gray-200">Portfolio</a>
       <a href="about.html" class="block py-2 text-gray-200">About</a>
       <a href="contact.html" class="block py-2 text-gray-200">Contact</a>
+      <hr class="border-gray-600 my-2">
+      <a href="roi-calculator.html" class="block py-2 text-yellow-400 font-semibold">ROI Calculator</a>
+      <a href="case-study.html" class="block py-2 text-yellow-400 font-semibold">Case Study</a>
 
       <!-- Mobile Language Toggle -->
       <div class="mt-3 flex gap-2">
