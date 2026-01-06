@@ -26,11 +26,15 @@ jobs:
         
     - name: Optimize files
       run: |
-        # Minify HTML files
-        find . -name "*.html" -not -path "./node_modules/*" -exec html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js {} -o {} \;
+        # Minify HTML files (skip on errors)
+        for file in $(find . -name "*.html" -not -path "./node_modules/*"); do
+          html-minifier-terser --collapse-whitespace --remove-comments --minify-css --minify-js "$file" -o "$file" || echo "Skipping $file due to parsing error"
+        done
         
-        # Minify CSS files
-        find . -name "*.css" -not -path "./node_modules/*" -exec cleancss -o {} {} \;
+        # Minify CSS files (skip on errors)
+        for file in $(find . -name "*.css" -not -path "./node_modules/*"); do
+          cleancss -o "$file" "$file" || echo "Skipping $file due to parsing error"
+        done
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
