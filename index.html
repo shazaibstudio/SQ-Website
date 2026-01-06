@@ -206,8 +206,8 @@ gtag('config', 'G-GYP19H93BR');
     </div>
     <div class="p-4 border-t">
       <div class="flex gap-2">
-        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){const input=this;const message=input.value.trim();if(message){const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>'+message+'</div>';container.appendChild(div);input.value='';setTimeout(()=>{let response='I can help with VR services! 😊';const msg=message.toLowerCase();if(msg.includes('service')||msg.includes('offer'))response='🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR';else if(msg.includes('price')||msg.includes('cost'))response='💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)';else if(msg.includes('hello')||msg.includes('hi'))response='Hello! 👋 I\\'m here to help with VR real estate solutions. Ask about services, pricing, or demos!';const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>'+response+'</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},500);}}">
-        <button onclick="const input=document.getElementById('chat-input');const message=input.value.trim();if(message){const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>'+message+'</div>';container.appendChild(div);input.value='';setTimeout(()=>{let response='I can help with VR services! 😊';const msg=message.toLowerCase();if(msg.includes('service')||msg.includes('offer'))response='🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR';else if(msg.includes('price')||msg.includes('cost'))response='💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)';else if(msg.includes('hello')||msg.includes('hi'))response='Hello! 👋 I\\'m here to help with VR real estate solutions. Ask about services, pricing, or demos!';const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>'+response+'</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},500);}" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
+        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessage()}">
+        <button onclick="sendChatMessage()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="22" y1="2" x2="11" y2="13"></line>
             <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
@@ -216,6 +216,54 @@ gtag('config', 'G-GYP19H93BR');
       </div>
     </div>
   </div>
+
+  <script>
+    function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const message = input.value.trim();
+      
+      if (message) {
+        const container = document.getElementById('chat-messages');
+        
+        // Add user message
+        const userDiv = document.createElement('div');
+        userDiv.className = 'mb-3 text-right';
+        userDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black">${message}</div>`;
+        container.appendChild(userDiv);
+        
+        // Clear input
+        input.value = '';
+        
+        // Generate bot response
+        setTimeout(() => {
+          let response = '';
+          const msg = message.toLowerCase();
+          
+          if (msg.includes('service') || msg.includes('offer')) {
+            response = '🏠 <strong>Our VR Solutions:</strong><br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR<br><br>💬 <strong>Ready to get started?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us now</a> or <a href="contact.html" class="text-yellow-600 font-semibold">request a demo!</a>';
+          } else if (msg.includes('price') || msg.includes('cost')) {
+            response = '💰 <strong>VR Pricing (Pakistan):</strong><br>• 360° Tours: 35K-70K PKR<br>• Interactive: 100K-180K PKR<br>• Full VR: 250K-400K PKR<br><br>📞 <strong>Get exact quote:</strong><br><a href="tel:+923009452153" class="text-yellow-600 font-semibold">Call +92 300 9452153</a> or <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant pricing!</a>';
+          } else if (msg.includes('hello') || msg.includes('hi')) {
+            response = 'Hello! 👋 I\'m here to help with VR real estate solutions.<br><br>🎯 <strong>Quick question:</strong> What type of property do you want to showcase?<br><br>💬 For faster response: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us directly!</a>';
+          } else if (msg.includes('demo') || msg.includes('example')) {
+            response = '🎮 <strong>See VR in Action!</strong><br><br>Check our live demo or request a custom demo for your property.<br><br>🚀 <a href="contact.html" class="bg-yellow-400 text-black px-3 py-1 rounded font-semibold">Request Demo</a><br>📱 <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant demo</a>';
+          } else if (msg.includes('contact') || msg.includes('call') || msg.includes('phone')) {
+            response = '📞 <strong>Contact SQ Interactive:</strong><br><br>📱 WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">+92 300 9452153</a><br>📧 Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-600">admin@sqinteractive.com</a><br>📍 Location: Lahore, Pakistan<br><br>💬 <strong>WhatsApp is fastest for quick questions!</strong>';
+          } else if (msg.includes('time') || msg.includes('timeline') || msg.includes('how long')) {
+            response = '⏱️ <strong>Project Timelines:</strong><br>• 360° Tours: 1 week<br>• Interactive Walkthroughs: 2-3 weeks<br>• VR Real Estate: 4-6 weeks<br><br>🚀 <strong>Need it faster?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us</a> to discuss rush delivery!';
+          } else {
+            response = 'I can help with VR services! 😊<br><br>🎯 <strong>Popular questions:</strong><br>• "What services do you offer?"<br>• "What are your prices?"<br>• "How long does it take?"<br><br>💬 <strong>Or chat directly:</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp +92 300 9452153</a>';
+          }
+          
+          const botDiv = document.createElement('div');
+          botDiv.className = 'mb-3';
+          botDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black">${response}</div>`;
+          container.appendChild(botDiv);
+          container.scrollTop = container.scrollHeight;
+        }, 500);
+      }
+    }
+  </script>
 
   <!-- Demo Button -->
   <button onclick="window.location.href='contact.html'" class="demo-btn px-5 py-3 rounded-full flex items-center gap-2">
