@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>SQ Interactive | VR Real Estste</title>
 
   <!-- Tailwind & AOS -->
@@ -15,7 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="images/no-background.png" href="images/no-background.png">
+  <link rel="icon" type="images/no-background.png" href="images/no-background.png">
   <link rel="apple-touch-icon" href="images/no-background.png">
 
   <!-- MANIFEST & THEME -->
@@ -27,6 +26,15 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; background:#121212; color:#f5f5f5; }
     h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
     .gold { color:#d4af37; }
+
+    @media (max-width: 768px) {
+      section { padding-left: 1rem; padding-right: 1rem; }
+      h1, h2, h3 { text-align: center; }
+      .max-w-7xl, .max-w-6xl { padding-left: 1rem; padding-right: 1rem; }
+      .hero img { width: 100%; height: auto; object-fit: cover; }
+      iframe { width: 100%; height: auto; aspect-ratio: 16/9; }
+      #mobile-menu { overflow-y: auto; max-height: 80vh; }
+    }
 
     /* Demo button fixed */
     .demo-btn {
@@ -43,14 +51,25 @@
     @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
     /* Mobile menu */
-    #mobile-menu { 
-      position: fixed; top: 4.5rem; left: 0; width: 100%; z-index: 9998; 
-      display: none; background-color: #0b0c0d; border-top: 1px solid rgba(255,255,255,0.06);
+    #mobile-menu {
+      position: fixed; top: 4.5rem; left: 0; width: 100%; z-index: 9998;
+      background-color: #0b0c0d; border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     /* Hide scrollbar for aesthetic */
     .scrollbar-hide::-webkit-scrollbar { display: none; }
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .aspect-\[16\/9\] { aspect-ratio: 16 / 9; }
+    }
+    html, body { scroll-behavior: smooth; overflow-x: hidden; }
   </style>
 
   <!-- Analytics & Hotjar (kept intact) -->
@@ -73,22 +92,25 @@
   </script>
   <script src="https://t.contentsquare.net/uxa/c97b2acc48ee8.js" async></script>
 </head>
-</head>
+
+
 <body>
   <!-- Live Chat Widget -->
-  <div id="chat-widget" class="fixed bottom-24 right-6 z-40 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')" style="position: fixed !important;">
-    <div class="flex items-center gap-2">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-      </svg>
-      <span class="font-semibold text-sm">Live Chat</span>
+  <div id="chat-widget" class="fixed bottom-24 right-6 z-50">
+    <div class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
+      <div class="flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="font-semibold text-sm">Live Chat</span>
+      </div>
     </div>
   </div>
   
-  <div id="chat-box" class="fixed bottom-40 right-6 z-40 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden" style="position: fixed !important;">
+  <div id="chat-box" class="fixed bottom-40 right-6 z-50 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden">
     <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
       <h3 class="font-semibold">SQ Interactive Assistant</h3>
-      <button onclick="document.getElementById('chat-box').classList.toggle('hidden')" class="text-black hover:text-gray-700">
+      <button onclick="document.getElementById('chat-box').classList.add('hidden')" class="text-black hover:text-gray-700">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -98,12 +120,7 @@
     <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
       <div class="mb-4">
         <div class="bg-yellow-100 p-3 rounded-lg mb-2">
-          <p class="text-sm">👋 Hi! I'm your SQ Interactive assistant. I can help you with:</p>
-          <div class="mt-2 text-xs">
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>What services do you offer?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>🏠 Our VR Solutions:<br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Services</button>
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>What are your prices?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>💰 Pricing ranges from 35K PKR (360° tours) to 400K PKR (full VR experiences)</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Pricing</button>
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>How long does a project take?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>⏱️ Project timelines:<br>• 360° Tours: 1 week<br>• Interactive Walkthroughs: 2-3 weeks<br>• VR Real Estate: 4-6 weeks</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Timeline</button>
-          </div>
+          <p class="text-sm">👋 Hi! I'm your SQ Interactive assistant. Ask me about VR services, pricing, or timelines!</p>
         </div>
       </div>
     </div>
@@ -168,13 +185,7 @@
     }
   </script>
 
-  <!-- Demo Button -->
-  <a href="contact.html" class="demo-btn fixed bottom-8 right-8 px-6 py-3 rounded-full shadow-lg font-semibold flex items-center gap-2 transition">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polygon points="5,3 19,12 5,21 5,3"></polygon>
-    </svg>
-    Request Demo
-  </a>
+
 
   <!-- NAV -->
   <nav class="fixed w-full z-50 bg-black/40 backdrop-blur-sm border-b border-white/5">
@@ -214,11 +225,21 @@
           <a href="roi-calculator.html" class="text-yellow-400 hover:text-white">ROI Calculator</a>
           <a href="case-study.html" class="text-yellow-400 hover:text-white">Case Study</a>
 
-          <div class="flex items-center gap-3">
-            <button onclick="window.location.href='vr-real-estate.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
-            <button onclick="window.location.href='vr real estate-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
-          </div>
+        <!-- Language Toggle -->
+        <div class="flex items-center gap-3">
+          <button onclick="window.location.href='vr-real-estate.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
+          <button onclick="window.location.href='vr real estate-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
         </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="menu-toggle" class="p-2 rounded bg-white/6 text-white">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
         <!-- Mobile -->
         <div class="md:hidden flex items-center gap-2">
@@ -253,13 +274,12 @@
         <a href="roi-calculator.html" class="block py-3 text-yellow-400 font-semibold">ROI Calculator</a>
         <a href="case-study.html" class="block py-3 text-yellow-400 font-semibold">Case Study</a>
         <div class="mt-4 flex gap-3">
-          <button onclick="window.location.href='vr-real-estate.html'" class="px-4 py-2 rounded bg-white/10 text-white">EN</button>
-          <button onclick="window.location.href='vr real estate-ur.html'" class="px-4 py-2 rounded bg-white/10 text-white/60">UR</button>
-        </div>
+        <button onclick="window.location.href='vr-real-estate.html'" class="px-4 py-2 rounded bg-white/10 text-white">EN</button>
+        <button onclick="window.location.href='vr real estate-ur.html'" class="px-4 py-2 rounded bg-white/10 text-white/60">UR</button>
       </div>
     </div>
-  </nav>
-
+  </div>
+</nav>
 <!-- ✅ FINAL VR REAL ESTATE SERVICE PAGE -->
 <section class="pt-32 pb-20 bg-[#121212] text-gray-200 overflow-hidden">
 
@@ -407,8 +427,6 @@
     </div>
   </div>
 </section>
-
-
 <!-- FOOTER -->
 <footer class="bg-[#070708] text-gray-300 py-10 border-t border-white/5">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
@@ -481,108 +499,49 @@
   </div>
 </footer>
 
+<!-- DEMO BUTTON -->
+<a href="contact.html"
+   class="demo-btn fixed bottom-8 right-8 px-6 py-3 rounded-full shadow-lg font-semibold flex items-center gap-2 transition">
+   <i data-feather="zap"></i> Book a Demo
+</a>
 
-
-<!-- Scripts -->
+<!-- Init Scripts -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS
-  AOS.init({ duration: 700, once: true });
+  AOS.init();
 
-  // Replace feather icons
   feather.replace();
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+  // Desktop dropdown
+  const servicesBtn = document.getElementById("services-btn");
+  const servicesPopup = document.getElementById("services-popup");
+
+  if (servicesBtn) {
+    servicesBtn.addEventListener("mouseenter", () => servicesPopup.classList.remove("hidden"));
+    servicesBtn.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        if (!servicesPopup.matches(":hover")) servicesPopup.classList.add("hidden");
+      }, 200);
+    });
+    servicesPopup.addEventListener("mouseleave", () => servicesPopup.classList.add("hidden"));
+  }
+
+  // Mobile menu
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+  const mobileServices = document.getElementById("mobile-services");
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
   }
 
-  // Mobile services dropdown toggle
-  const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-  const mobileServices = document.getElementById('mobile-services');
-  if (mobileServicesToggle && mobileServices) {
-    mobileServicesToggle.addEventListener('click', () => {
-      mobileServices.classList.toggle('hidden');
+  if (mobileServicesToggle) {
+    mobileServicesToggle.addEventListener("click", () => {
+      mobileServices.classList.toggle("hidden");
     });
   }
-
-  // Desktop services popup
-  const servicesBtn = document.getElementById('services-btn');
-  const servicesPopup = document.getElementById('services-popup');
-  if (servicesBtn && servicesPopup) {
-    servicesBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      servicesPopup.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', e => {
-      if (!servicesPopup.contains(e.target) && !servicesBtn.contains(e.target)) {
-        servicesPopup.classList.add('hidden');
-      }
-    });
-  }
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // Responsive video embeds
-  const videos = document.querySelectorAll('iframe[src*="youtube.com"], iframe[src*="youtu.be"]');
-  videos.forEach(v => {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('relative', 'pt-[56.25%]', 'overflow-hidden', 'rounded-2xl', 'shadow-lg');
-    v.parentNode.insertBefore(wrapper, v);
-    wrapper.appendChild(v);
-    v.classList.add('absolute', 'top-0', 'left-0', 'w-full', 'h-full');
-  });
-
-  // Lazy-load images
-  document.querySelectorAll('img').forEach(img => {
-    if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
-  });
-
-  // Contact email consistency
-  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-    link.href = 'mailto:admin@sqinteractive.com';
-    link.textContent = 'admin@sqinteractive.com';
-  });
-
-  // Small viewport fix for hero video
-  const resizeVideo = () => {
-    const video = document.querySelector('video');
-    if (video && window.innerWidth < 768) {
-      video.style.objectFit = 'cover';
-      video.style.objectPosition = 'center';
-    }
-  };
-  resizeVideo();
-  window.addEventListener('resize', resizeVideo);
-
-  // Force repaint for mobile (fix rendering glitches)
-  document.body.style.transform = 'translateZ(0)';
-
-});
-
-// Async translation function (requires valid Google API key)
-async function translateText(text, targetLang) {
-  const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY`, {
-    method: "POST",
-    body: JSON.stringify({ q: text, target: targetLang }),
-    headers: { "Content-Type": "application/json" }
-  });
-  const data = await response.json();
-  return data.data.translations[0].translatedText;
-}
 </script>
 
 </body>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>SQ Interactive | VR Real Estste</title>
+  <title>SQ Interactive | VR Real Estate</title>
 
   <!-- Tailwind & AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -102,14 +102,14 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
-        <span class="font-semibold text-sm">Live Chat</span>
+        <span class="font-semibold text-sm">لائیو چیٹ</span>
       </div>
     </div>
   </div>
   
   <div id="chat-box" class="fixed bottom-40 right-6 z-50 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden">
     <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
-      <h3 class="font-semibold">SQ Interactive Assistant</h3>
+      <h3 class="font-semibold">SQ Interactive اسسٹنٹ</h3>
       <button onclick="document.getElementById('chat-box').classList.add('hidden')" class="text-black hover:text-gray-700">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -120,13 +120,13 @@
     <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
       <div class="mb-4">
         <div class="bg-yellow-100 p-3 rounded-lg mb-2">
-          <p class="text-sm">👋 Hi! I'm your SQ Interactive assistant. Ask me about VR services, pricing, or timelines!</p>
+          <p class="text-sm">👋 سلام! میں آپ کا SQ Interactive اسسٹنٹ ہوں۔ VR خدمات، قیمتوں، یا ٹائم لائن کے بارے میں پوچھیں!</p>
         </div>
       </div>
     </div>
     <div class="p-4 border-t">
       <div class="flex gap-2">
-        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessage()}">
+        <input id="chat-input" type="text" placeholder="VR، قیمت، ٹائم لائن کے بارے میں پوچھیں..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessage()}">
         <button onclick="sendChatMessage()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -159,20 +159,20 @@
           let response = '';
           const msg = message.toLowerCase();
           
-          if (msg.includes('service') || msg.includes('offer')) {
-            response = '🏠 <strong>Our VR Solutions:</strong><br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR<br><br>💬 <strong>Ready to get started?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us now</a> or <a href="contact.html" class="text-yellow-600 font-semibold">request a demo!</a>';
-          } else if (msg.includes('price') || msg.includes('cost')) {
-            response = '💰 <strong>VR Pricing (Pakistan):</strong><br>• 360° Tours: 35K-70K PKR<br>• Interactive: 100K-180K PKR<br>• Full VR: 250K-400K PKR<br><br>📞 <strong>Get exact quote:</strong><br><a href="tel:+923009452153" class="text-yellow-600 font-semibold">Call +92 300 9452153</a> or <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant pricing!</a>';
-          } else if (msg.includes('hello') || msg.includes('hi')) {
-            response = 'Hello! 👋 I\'m here to help with VR real estate solutions.<br><br>🎯 <strong>Quick question:</strong> What type of property do you want to showcase?<br><br>💬 For faster response: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us directly!</a>';
-          } else if (msg.includes('demo') || msg.includes('example')) {
-            response = '🎮 <strong>See VR in Action!</strong><br><br>Check our live demo or request a custom demo for your property.<br><br>🚀 <a href="contact.html" class="bg-yellow-400 text-black px-3 py-1 rounded font-semibold">Request Demo</a><br>📱 <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant demo</a>';
-          } else if (msg.includes('contact') || msg.includes('call') || msg.includes('phone')) {
-            response = '📞 <strong>Contact SQ Interactive:</strong><br><br>📱 WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">+92 300 9452153</a><br>📧 Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-600">admin@sqinteractive.com</a><br>📍 Location: Lahore, Pakistan<br><br>💬 <strong>WhatsApp is fastest for quick questions!</strong>';
-          } else if (msg.includes('time') || msg.includes('timeline') || msg.includes('how long')) {
-            response = '⏱️ <strong>Project Timelines:</strong><br>• 360° Tours: 1 week<br>• Interactive Walkthroughs: 2-3 weeks<br>• VR Real Estate: 4-6 weeks<br><br>🚀 <strong>Need it faster?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us</a> to discuss rush delivery!';
+          if (msg.includes('service') || msg.includes('خدمات') || msg.includes('offer')) {
+            response = '🏠 <strong>ہمارے VR حل:</strong><br>• 360° ٹورز: 35K-70K PKR<br>• VR رئیل اسٹیٹ: 250K-400K PKR<br>• انٹرایکٹو واک تھروز: 100K-180K PKR<br><br>💬 <strong>شروع کرنے کے لیے تیار؟</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">اب WhatsApp کریں</a> یا <a href="contact-ur.html" class="text-yellow-600 font-semibold">ڈیمو کی درخواست کریں!</a>';
+          } else if (msg.includes('price') || msg.includes('قیمت') || msg.includes('cost')) {
+            response = '💰 <strong>VR قیمتیں (پاکستان):</strong><br>• 360° ٹورز: 35K-70K PKR<br>• انٹرایکٹو: 100K-180K PKR<br>• مکمل VR: 250K-400K PKR<br><br>📞 <strong>صحیح قیمت حاصل کریں:</strong><br><a href="tel:+923009452153" class="text-yellow-600 font-semibold">کال +92 300 9452153</a> یا <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">فوری قیمت کے لیے WhatsApp!</a>';
+          } else if (msg.includes('hello') || msg.includes('سلام') || msg.includes('hi')) {
+            response = 'سلام! 👋 میں VR رئیل اسٹیٹ حل کے ساتھ مدد کے لیے یہاں ہوں۔<br><br>🎯 <strong>فوری سوال:</strong> آپ کس قسم کی پراپرٹی دکھانا چاہتے ہیں؟<br><br>💬 تیز جواب کے لیے: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">براہ راست WhatsApp کریں!</a>';
+          } else if (msg.includes('demo') || msg.includes('ڈیمو') || msg.includes('example')) {
+            response = '🎮 <strong>VR کو عمل میں دیکھیں!</strong><br><br>ہمارا لائیو ڈیمو دیکھیں یا اپنی پراپرٹی کے لیے کسٹم ڈیمو کی درخواست کریں۔<br><br>🚀 <a href="contact-ur.html" class="bg-yellow-400 text-black px-3 py-1 rounded font-semibold">ڈیمو کی درخواست</a><br>📱 <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">فوری ڈیمو کے لیے WhatsApp</a>';
+          } else if (msg.includes('contact') || msg.includes('رابطہ') || msg.includes('call') || msg.includes('phone')) {
+            response = '📞 <strong>SQ Interactive سے رابطہ:</strong><br><br>📱 WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">+92 300 9452153</a><br>📧 Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-600">admin@sqinteractive.com</a><br>📍 مقام: لاہور، پاکستان<br><br>💬 <strong>فوری سوالات کے لیے WhatsApp سب سے تیز ہے!</strong>';
+          } else if (msg.includes('time') || msg.includes('وقت') || msg.includes('timeline') || msg.includes('how long')) {
+            response = '⏱️ <strong>پروجیکٹ ٹائم لائن:</strong><br>• 360° ٹورز: 1 ہفتہ<br>• انٹرایکٹو واک تھروز: 2-3 ہفتے<br>• VR رئیل اسٹیٹ: 4-6 ہفتے<br><br>🚀 <strong>جلدی چاہیے؟</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp کریں</a> تیز ڈیلیوری پر بات کرنے کے لیے!';
           } else {
-            response = 'I can help with VR services! 😊<br><br>🎯 <strong>Popular questions:</strong><br>• "What services do you offer?"<br>• "What are your prices?"<br>• "How long does it take?"<br><br>💬 <strong>Or chat directly:</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp +92 300 9452153</a>';
+            response = 'میں VR خدمات میں مدد کر سکتا ہوں! 😊<br><br>🎯 <strong>مقبول سوالات:</strong><br>• "آپ کی کیا خدمات ہیں؟"<br>• "آپ کی قیمتیں کیا ہیں؟"<br>• "کتنا وقت لگتا ہے؟"<br><br>💬 <strong>یا براہ راست چیٹ کریں:</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp +92 300 9452153</a>';
           }
           
           const botDiv = document.createElement('div');
@@ -190,40 +190,40 @@
 <nav class="fixed w-full z-50 bg-[#00000040] backdrop-blur-sm border-b border-[#ffffff0d]">
   <div class="max-w-7xl mx-auto px-5 md:px-8">
     <div class="flex items-center justify-between h-20">
-      <a href="index.html" class="flex items-center gap-3">
+      <a href="index-ur.html" class="flex items-center gap-3">
         <img src="images/no-background.png" alt="SQ Logo" class="h-10 w-auto">
         <div class="text-lg font-semibold">SQ <span class="gold">Interactive</span></div>
       </a>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="index.html" class="text-gray-200 hover:text-white">Home</a>
+        <a href="index-ur.html" class="text-gray-200 hover:text-white">ہوم</a>
         <div class="relative" id="services-desktop">
           <button id="services-btn" class="flex items-center gap-2 text-gray-200 hover:text-white">
-            Services
+            خدمات
             <i data-feather="chevron-down" class="text-yellow-400"></i>
           </button>
           <div id="services-popup" class="absolute right-0 mt-3 w-56 bg-[#0f1114] border border-[#ffffff12] rounded-lg shadow-lg p-2 hidden">
-            <a href="services.html" class="block px-4 py-2 text-gray-200 hover:text-white">All Services</a>
-            <a href="vr-real-estate.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Real Estate</a>
-            <a href="ai-interior-design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI & VR Interiors (Pilot)</a>
-            <a href="interactive-pc.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive PC Models</a>
-            <a href="360-content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° Tours & Videos</a>
-            <a href="vr-staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Staging</a>
-            <a href="interactive-walkthroughs.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive Walkthroughs</a>
-            <a href="furniture-scanning.html" class="block px-4 py-2 text-gray-200 hover:text-white">Furniture Scanning</a>
+            <a href="services-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">تمام خدمات</a>
+            <a href="vr-real-estate-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR رئیل اسٹیٹ</a>
+            <a href="ai-interior-design-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI اور VR انٹیریئرز (پائلٹ)</a>
+            <a href="interactive-pc-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">انٹرایکٹو PC ماڈلز</a>
+            <a href="360 content-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">360° ٹورز اور ویڈیوز</a>
+            <a href="vr staging-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR اسٹیجنگ</a>
+            <a href="interactive-walkthroughs-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">انٹرایکٹو واک تھروز</a>
+            <a href="furniture-scanning-ur.html" class="block px-4 py-2 text-gray-200 hover:text-white">فرنیچر اسکیننگ</a>
           </div>
         </div>
-        <a href="portfolio.html" class="text-gray-200 hover:text-white">Portfolio</a>
-        <a href="about.html" class="text-gray-200 hover:text-white">About</a>
-        <a href="contact.html" class="text-gray-200 hover:text-white">Contact</a>
-        <a href="roi-calculator.html" class="text-yellow-400 hover:text-white">ROI Calculator</a>
-        <a href="case-study.html" class="text-yellow-400 hover:text-white">Case Study</a>
+        <a href="portfolio-ur.html" class="text-gray-200 hover:text-white">پورٹ فولیو</a>
+        <a href="about-ur.html" class="text-gray-200 hover:text-white">ہمارے بارے میں</a>
+        <a href="contact-ur.html" class="text-gray-200 hover:text-white">رابطہ</a>
+        <a href="roi-calculator-ur.html" class="text-yellow-400 hover:text-white">ROI کیلکولیٹر</a>
+        <a href="case-study-ur.html" class="text-yellow-400 hover:text-white">کیس اسٹڈی</a>
 
         <!-- Language Toggle -->
         <div class="flex items-center gap-3">
-          <button onclick="window.location.href='furniture-scanning.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
-          <button onclick="window.location.href='furniture-scanning-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
+          <button onclick="window.location.href='furniture-scanning.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">EN</button>
+          <button onclick="window.location.href='furniture-scanning-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">UR</button>
         </div>
       </div>
 
@@ -239,29 +239,29 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-[#0b0c0d] border-t border-[#ffffff0a]">
     <div class="px-5 py-4">
-      <a href="index.html" class="block py-2 text-gray-200">Home</a>
+      <a href="index-ur.html" class="block py-2 text-gray-200">ہوم</a>
       <button id="mobile-services-toggle" class="w-full text-left py-2 text-gray-200 flex justify-between items-center">
-        Services <i data-feather="chevron-down" class="w-4 h-4"></i>
+        خدمات <i data-feather="chevron-down" class="w-4 h-4"></i>
       </button>
       <div id="mobile-services" class="hidden pl-4 mt-1">
-        <a href="services.html" class="block py-2 text-gray-300">All Services</a>
-        <a href="vr-real-estate.html" class="block py-2 text-gray-300">VR Real Estate</a>
-        <a href="ai-interior-design.html" class="block py-2 text-gray-300">AI & VR Interiors (Pilot)</a>
-        <a href="interactive-pc.html" class="block py-2 text-gray-300">Interactive PC Models</a>
-        <a href="360-content.html" class="block py-2 text-gray-300">360° Tours & Videos</a>
-        <a href="vr-staging.html" class="block py-2 text-gray-300">VR Staging</a>
-        <a href="interactive-walkthroughs.html" class="block py-2 text-gray-300">Interactive Walkthroughs</a>
-        <a href="furniture-scanning.html" class="block py-2 text-gray-300">Furniture Scanning</a>
+        <a href="services-ur.html" class="block py-2 text-gray-300">تمام خدمات</a>
+        <a href="vr-real-estate-ur.html" class="block py-2 text-gray-300">VR رئیل اسٹیٹ</a>
+        <a href="ai-interior-design-ur.html" class="block py-2 text-gray-300">AI اور VR انٹیریئرز (پائلٹ)</a>
+        <a href="interactive-pc-ur.html" class="block py-2 text-gray-300">انٹرایکٹو PC ماڈلز</a>
+        <a href="360 content-ur.html" class="block py-2 text-gray-300">360° ٹورز اور ویڈیوز</a>
+        <a href="vr staging-ur.html" class="block py-2 text-gray-300">VR اسٹیجنگ</a>
+        <a href="interactive-walkthroughs-ur.html" class="block py-2 text-gray-300">انٹرایکٹو واک تھروز</a>
+        <a href="furniture-scanning-ur.html" class="block py-2 text-gray-300">فرنیچر اسکیننگ</a>
       </div>
-      <a href="portfolio.html" class="block py-2 text-gray-200">Portfolio</a>
-      <a href="about.html" class="block py-2 text-gray-200">About</a>
-      <a href="contact.html" class="block py-2 text-gray-200">Contact</a>
+      <a href="portfolio-ur.html" class="block py-2 text-gray-200">پورٹ فولیو</a>
+      <a href="about-ur.html" class="block py-2 text-gray-200">ہمارے بارے میں</a>
+      <a href="contact-ur.html" class="block py-2 text-gray-200">رابطہ</a>
       <hr class="border-gray-600 my-2">
-      <a href="roi-calculator.html" class="block py-2 text-yellow-400 font-semibold">ROI Calculator</a>
-      <a href="case-study.html" class="block py-2 text-yellow-400 font-semibold">Case Study</a>
+      <a href="roi-calculator-ur.html" class="block py-2 text-yellow-400 font-semibold">ROI کیلکولیٹر</a>
+      <a href="case-study-ur.html" class="block py-2 text-yellow-400 font-semibold">کیس اسٹڈی</a>
       <div class="mt-3 flex gap-2">
-        <button onclick="window.location.href='furniture-scanning.html'" class="px-3 py-1 rounded bg-white/10 text-white">EN</button>
-        <button onclick="window.location.href='furniture-scanning-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">UR</button>
+        <button onclick="window.location.href='furniture-scanning.html'" class="px-3 py-1 rounded bg-white/10 text-white/60">EN</button>
+        <button onclick="window.location.href='furniture-scanning-ur.html'" class="px-3 py-1 rounded bg-white/10 text-white">UR</button>
       </div>
     </div>
   </div>
@@ -273,21 +273,21 @@
   <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
     <div data-aos="fade-right" class="flex-1">
       <h1 class="text-4xl md:text-5xl font-semibold mb-6 leading-tight text-white">
-        Transform Real Furniture with <span class="text-yellow-400">3D Scanning & VR Staging</span>
+        حقیقی فرنیچر کو <span class="text-yellow-400">3D اسکیننگ اور VR اسٹیجنگ</span> کے ساتھ تبدیل کریں
       </h1>
       <p class="text-lg text-gray-400 leading-relaxed">
-        At SQ Interactive, we digitize real furniture and bring it to life in immersive 3D environments.  
-        Through <span class="text-yellow-400 font-medium">high-precision scanning</span>, 
-        <span class="text-yellow-400 font-medium">texture mapping</span>, and 
-        <span class="text-yellow-400 font-medium">VR staging</span>, 
-        we let clients experience your furniture like never before — realistic, interactive, and ready for virtual showrooms.
+        SQ Interactive میں، ہم حقیقی فرنیچر کو ڈیجیٹل بناتے ہیں اور اسے انٹرایکٹو 3D ماحول میں زندہ کرتے ہیں۔  
+        <span class="text-yellow-400 font-medium">اعلیٰ درستگی اسکیننگ</span>، 
+        <span class="text-yellow-400 font-medium">ٹیکسچر میپنگ</span>، اور 
+        <span class="text-yellow-400 font-medium">VR اسٹیجنگ</span> کے ذریعے، 
+        ہم کلائنٹس کو آپ کے فرنیچر کا تجربہ پہلے سے کہیں زیادہ حقیقی، انٹرایکٹو، اور ورچوئل شو رومز کے لیے تیار کرتے ہیں۔
       </p>
       <div class="mt-6 flex gap-4">
-        <a href="contact.html" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
-          Request a Demo
+        <a href="contact-ur.html" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition">
+          ڈیمو کی درخواست کریں
         </a>
-        <a href="portfolio.html" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition">
-          View Portfolio
+        <a href="portfolio-ur.html" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-full hover:bg-yellow-400 hover:text-black transition">
+          پورٹ فولیو دیکھیں
         </a>
       </div>
     </div>
@@ -303,22 +303,22 @@
 <section class="py-20 bg-[#0b0c0d]">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
     <div data-aos="fade-right">
-      <h2 class="text-3xl font-semibold text-yellow-400 mb-6">Why Scan & Stage Your Furniture?</h2>
+      <h2 class="text-3xl font-semibold text-yellow-400 mb-6">فرنیچر کو اسکین اور اسٹیج کیوں کریں؟</h2>
       <p class="text-gray-400 mb-4">
-        Go beyond photos and catalogs — 3D furniture scans allow clients to interact, rotate, and visualize your designs 
-        in <span class="text-yellow-400">realistic digital spaces</span>. 
-        It’s the perfect blend of craftsmanship and technology, tailored for brands that value innovation and luxury.
+        فوٹوز اور کیٹلاگز سے آگے بڑھیں — 3D فرنیچر اسکینز کلائنٹس کو آپ کے ڈیزائنز کے ساتھ انٹرایکٹ، گھمانے، اور 
+        <span class="text-yellow-400">حقیقی ڈیجیٹل اسپیسز</span> میں تصور کرنے کی اجازت دیتے ہیں۔ 
+        یہ کاریگری اور ٹیکنالوجی کا بہترین امتزاج ہے، جو ان برانڈز کے لیے تیار کیا گیا ہے جو جدت اور لگژری کو اہمیت دیتے ہیں۔
       </p>
       <p class="text-gray-400 mb-4">
-        Our process captures <span class="text-yellow-400">true textures, scale, and proportions</span>, ensuring that every 
-        curve, fabric, and reflection looks exactly like its real-world counterpart — only now, it’s viewable anywhere.
+        ہمارا عمل <span class="text-yellow-400">حقیقی ٹیکسچرز، پیمانے، اور تناسب</span> کو کیپچر کرتا ہے، اس بات کو یقینی بناتے ہوئے کہ ہر 
+        منحنی، کپڑا، اور عکاسی بالکل اپنے حقیقی دنیا کے ہم منصب کی طرح نظر آئے — صرف اب، یہ کہیں بھی دیکھا جا سکتا ہے۔
       </p>
       <ul class="text-gray-300 space-y-3 mt-4">
-        <li>✔ Ultra-realistic 3D furniture models</li>
-        <li>✔ Photogrammetry-based texture accuracy</li>
-        <li>✔ Fast VR/AR integration</li>
-        <li>✔ Ideal for interior designers, real estate & eCommerce</li>
-        <li>✔ WebGL optimized for phones, desktops, and VR headsets</li>
+        <li>✔ انتہائی حقیقی 3D فرنیچر ماڈلز</li>
+        <li>✔ فوٹوگرامٹری پر مبنی ٹیکسچر کی درستگی</li>
+        <li>✔ تیز VR/AR انٹیگریشن</li>
+        <li>✔ انٹیریئر ڈیزائنرز، رئیل اسٹیٹ اور ای کامرس کے لیے مثالی</li>
+        <li>✔ فونز، ڈیسک ٹاپس، اور VR ہیڈسیٹس کے لیے WebGL بہتر بنایا گیا</li>
       </ul>
     </div>
 
@@ -337,13 +337,13 @@
   <!-- Content -->
   <div class="max-w-6xl mx-auto px-6 relative z-10 text-center" data-aos="fade-up">
     <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-6">
-      From Reality to Virtual Perfection
+      حقیقت سے ورچوئل کمال تک
     </h2>
     <p class="text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-      Experience how <span class="text-yellow-400 font-semibold">SQ Interactive</span> transforms real-world 
-      environments into <span class="text-yellow-400 font-semibold">fully interactive VR spaces</span> 
-      through precision <span class="text-yellow-400 font-semibold">3D scanning</span>, 
-      advanced <span class="text-yellow-400 font-semibold">VR staging</span>, and cinematic rendering.
+      تجربہ کریں کہ <span class="text-yellow-400 font-semibold">SQ Interactive</span> کس طرح حقیقی دنیا کے 
+      ماحول کو <span class="text-yellow-400 font-semibold">مکمل انٹرایکٹو VR اسپیسز</span> میں تبدیل کرتا ہے 
+      درستگی <span class="text-yellow-400 font-semibold">3D اسکیننگ</span>، 
+      ایڈوانسڈ <span class="text-yellow-400 font-semibold">VR اسٹیجنگ</span>، اور سینیمیٹک رینڈرنگ کے ذریعے۔
     </p>
 
     <!-- Video Embed -->
@@ -360,8 +360,8 @@
 
     <!-- Optional Subtext -->
     <p class="text-gray-500 text-sm max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-      Every frame is a blend of <span class="text-yellow-400">precision, depth,</span> and 
-      <span class="text-yellow-400">immersive realism</span> — built to redefine how clients experience your space.
+      ہر فریم <span class="text-yellow-400">درستگی، گہرائی،</span> اور 
+      <span class="text-yellow-400">انٹرایکٹو حقیقت</span> کا امتزاج ہے — جو کلائنٹس کے لیے آپ کی جگہ کے تجربے کو نئے سرے سے متعین کرنے کے لیے بنایا گیا ہے۔
     </p>
   </div>
 </section>
@@ -369,16 +369,16 @@
   <!-- HOW IT WORKS -->
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-left" data-aos="fade-up" data-aos-delay="200">
     <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
-      <h3 class="text-yellow-400 text-xl font-semibold mb-3">1. Scan & Capture</h3>
-      <p>Using high-resolution 3D scanners and photogrammetry, we capture every angle, material, and reflection of your furniture.</p>
+      <h3 class="text-yellow-400 text-xl font-semibold mb-3">1. اسکین اور کیپچر</h3>
+      <p>اعلیٰ ریزولیوشن 3D اسکینرز اور فوٹوگرامٹری کا استعمال کرتے ہوئے، ہم آپ کے فرنیچر کے ہر زاویے، مواد، اور عکاسی کو کیپچر کرتے ہیں۔</p>
     </div>
     <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
-      <h3 class="text-yellow-400 text-xl font-semibold mb-3">2. Refine & Optimize</h3>
-      <p>We clean and process the models for perfect geometry, then apply PBR textures for photorealistic lighting and shading.</p>
+      <h3 class="text-yellow-400 text-xl font-semibold mb-3">2. بہتر بنائیں اور آپٹیمائز کریں</h3>
+      <p>ہم کامل جیومیٹری کے لیے ماڈلز کو صاف اور پروسیس کرتے ہیں، پھر فوٹو ریئلسٹک لائٹنگ اور شیڈنگ کے لیے PBR ٹیکسچرز لگاتے ہیں۔</p>
     </div>
     <div class="bg-[#141414] p-8 rounded-2xl shadow-lg hover:bg-[#1a1a1a] transition">
-      <h3 class="text-yellow-400 text-xl font-semibold mb-3">3. Stage & Deliver</h3>
-      <p>Your assets are placed inside virtual rooms or showrooms — ready for client presentations, VR demos, or web showcases.</p>
+      <h3 class="text-yellow-400 text-xl font-semibold mb-3">3. اسٹیج اور ڈیلیور کریں</h3>
+      <p>آپ کے اثاثے ورچوئل کمروں یا شو رومز کے اندر رکھے جاتے ہیں — کلائنٹ پریزنٹیشنز، VR ڈیموز، یا ویب شوکیسز کے لیے تیار۔</p>
     </div>
   </div>
 </section>
@@ -389,43 +389,43 @@
   <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
   <div class="max-w-7xl mx-auto px-6 relative z-10" data-aos="fade-up">
 
-    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-8">Furniture that Speaks Innovation</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-8">فرنیچر جو جدت کی بات کرتا ہے</h2>
     <p class="text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-      Redefine how your clients experience design — turn every furniture piece into an 
-      <span class="text-yellow-400 font-medium">interactive 3D story</span>.  
-      Our VR staging workflows blend artistry, accuracy, and digital innovation to deliver unforgettable impressions.
+      اپنے کلائنٹس کے ڈیزائن کے تجربے کو نئے سرے سے متعین کریں — ہر فرنیچر کے ٹکڑے کو ایک 
+      <span class="text-yellow-400 font-medium">انٹرایکٹو 3D کہانی</span> میں تبدیل کریں۔  
+      ہمارے VR اسٹیجنگ ورک فلوز فن، درستگی، اور ڈیجیٹل جدت کو ملا کر ناقابل فراموش تاثرات فراہم کرتے ہیں۔
     </p>
 
     <!-- Features -->
     <div class="grid md:grid-cols-3 gap-10 text-left text-gray-300 mb-16">
       <div class="p-6 rounded-xl bg-[#1E1E1E]/70 backdrop-blur-lg shadow-lg hover:shadow-yellow-500/20 transition" data-aos="fade-right">
-        <h3 class="text-xl font-bold text-yellow-400 mb-3">3D Furniture Scanning</h3>
-        <p>Digitize every detail — from the fabric’s weave to the polish of wood — with precision scanning and texture capture.</p>
+        <h3 class="text-xl font-bold text-yellow-400 mb-3">3D فرنیچر اسکیننگ</h3>
+        <p>ہر تفصیل کو ڈیجیٹل بنائیں — کپڑے کی بنائی سے لے کر لکڑی کی پالش تک — درستگی اسکیننگ اور ٹیکسچر کیپچر کے ساتھ۔</p>
       </div>
       <div class="p-6 rounded-xl bg-[#1E1E1E]/70 backdrop-blur-lg shadow-lg hover:shadow-yellow-500/20 transition" data-aos="fade-up">
-        <h3 class="text-xl font-bold text-yellow-400 mb-3">Virtual Room Integration</h3>
-        <p>Visualize scanned furniture in fully staged 3D interiors, customized with lighting and ambiance that reflects your brand.</p>
+        <h3 class="text-xl font-bold text-yellow-400 mb-3">ورچوئل روم انٹیگریشن</h3>
+        <p>اسکین شدہ فرنیچر کو مکمل طور پر اسٹیج شدہ 3D انٹیریئرز میں تصور کریں، جو آپ کے برانڈ کو ظاہر کرنے والی لائٹنگ اور ماحول کے ساتھ کسٹمائز کیا گیا ہے۔</p>
       </div>
       <div class="p-6 rounded-xl bg-[#1E1E1E]/70 backdrop-blur-lg shadow-lg hover:shadow-yellow-500/20 transition" data-aos="fade-left">
-        <h3 class="text-xl font-bold text-yellow-400 mb-3">Cross-Platform Delivery</h3>
-        <p>Access your virtual furniture catalog online or in VR — optimized for performance and seamless viewing on any device.</p>
+        <h3 class="text-xl font-bold text-yellow-400 mb-3">کراس پلیٹ فارم ڈیلیوری</h3>
+        <p>اپنے ورچوئل فرنیچر کیٹلاگ کو آن لائن یا VR میں رسائی کریں — کسی بھی ڈیوائس پر کارکردگی اور ہموار دیکھنے کے لیے بہتر بنایا گیا۔</p>
       </div>
     </div>
 
 
 <!-- Pricing -->
 <div class="text-center mb-12 px-4 sm:px-6 md:px-0" data-aos="zoom-in">
-  <p class="text-base sm:text-lg text-gray-400 mb-2">Estimated Project Range</p>
+  <p class="text-base sm:text-lg text-gray-400 mb-2">متوقع پروجیکٹ رینج</p>
   <h3 class="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1">120,000 – 250,000 PKR</h3>
-  <p class="text-sm sm:text-gray-500 text-gray-400">Timeline: 2–4 Weeks</p>
+  <p class="text-sm sm:text-gray-500 text-gray-400">ٹائم لائن: 2–4 ہفتے</p>
 </div>
 
 
 
     <!-- CTA -->
     <div data-aos="fade-up" class="mt-10">
-      <a href="contact.html" class="bg-yellow-400 text-black font-semibold py-4 px-10 rounded-full hover:scale-105 transition text-lg shadow-lg">
-        Schedule a Furniture Scan Demo
+      <a href="contact-ur.html" class="bg-yellow-400 text-black font-semibold py-4 px-10 rounded-full hover:scale-105 transition text-lg shadow-lg">
+        فرنیچر اسکین ڈیمو شیڈول کریں
       </a>
     </div>
   </div>
@@ -439,36 +439,36 @@
     <div>
       <img src="images/no-background.png" class="h-12 mb-4" alt="SQ Interactive logo" loading="lazy">
       <p class="text-sm text-gray-400">
-        SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, interior design, and high-end media experiences.
+        SQ Interactive ریئل اسٹیٹ، انٹیریئر ڈیزائن، اور اعلیٰ درجے کے میڈیا تجربات کے لیے غامر VR، AI، اور ملٹی میڈیا حل تیار کرتا ہے۔
       </p>
     </div>
 
     <!-- Quick Links -->
     <div>
-      <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+      <h4 class="text-white font-semibold mb-3">فوری لنکس</h4>
       <ul class="space-y-2 text-sm">
-        <li><a href="index.html" class="hover:text-white">Home</a></li>
-        <li><a href="services.html" class="hover:text-white">Services</a></li>
-        <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
-        <li><a href="about.html" class="hover:text-white">About</a></li>
-        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        <li><a href="index-ur.html" class="hover:text-white">ہوم</a></li>
+        <li><a href="services-ur.html" class="hover:text-white">خدمات</a></li>
+        <li><a href="portfolio-ur.html" class="hover:text-white">پورٹ فولیو</a></li>
+        <li><a href="about-ur.html" class="hover:text-white">ہمارے بارے میں</a></li>
+        <li><a href="contact-ur.html" class="hover:text-white">رابطہ</a></li>
       </ul>
     </div>
 
     <!-- Contact Info -->
     <div>
-      <h4 class="text-white font-semibold mb-3">Contact</h4>
+      <h4 class="text-white font-semibold mb-3">رابطہ</h4>
       <p class="text-sm">
-        Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a>
+        ای میل: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a>
       </p>
       <p class="text-sm">
-        Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a>
+        انسٹاگرام: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a>
       </p>
       <p class="text-sm">
-        Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a>
+        فون: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a>
       </p>
       <p class="text-sm">
-        WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-400 hover:underline">Chat with us</a>
+        WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-400 hover:underline">ہمارے ساتھ چیٹ کریں</a>
       </p>
     </div>
 
@@ -499,14 +499,14 @@
   </div>
 
   <div class="text-center text-gray-500 text-sm mt-8">
-    &copy; <span id="yr"></span> SQ Interactive. All rights reserved.
+    &copy; <span id="yr"></span> SQ Interactive. تمام حقوق محفوظ ہیں۔
   </div>
 </footer>
 
 <!-- DEMO BUTTON -->
-<a href="contact.html"
+<a href="contact-ur.html"
    class="demo-btn fixed bottom-8 right-8 px-6 py-3 rounded-full shadow-lg font-semibold flex items-center gap-2 transition">
-   <i data-feather="zap"></i> Book a Demo
+   <i data-feather="zap"></i> ڈیمو بک کریں
 </a>
 
 <!-- Init Scripts -->
@@ -546,6 +546,10 @@
       mobileServices.classList.toggle("hidden");
     });
   }
+
+  // Auto-update footer year
+  const yearEl = document.getElementById('yr');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 </script>
 
 </body>
