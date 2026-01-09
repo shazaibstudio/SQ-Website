@@ -2,6 +2,32 @@
 (function() {
   'use strict';
 
+  // GitHub Pages URL Redirects (since no .htaccess support)
+  const redirects = {
+    '/vr real estate.html': '/vr-real-estate.html',
+    '/ai interior design.html': '/ai-interior-design.html',
+    '/360 content.html': '/360-content.html',
+    '/interractive pc .html': '/interactive-pc.html',
+    '/interractive walkthroughs.html': '/interactive-walkthroughs.html',
+    '/vr staging.html': '/vr-staging.html',
+    '/Furniture Scanning.html': '/furniture-scanning.html',
+    '/vr real estate-ur.html': '/vr-real-estate-ur.html',
+    '/ai interior design-ur.html': '/ai-interior-design-ur.html',
+    '/360 content-ur.html': '/360-content-ur.html',
+    '/interractive pc-ur.html': '/interactive-pc-ur.html',
+    '/interractive walkthroughs-ur.html': '/interactive-walkthroughs-ur.html',
+    '/vr staging-ur.html': '/vr-staging-ur.html',
+    '/Furniture Scanning-ur.html': '/furniture-scanning-ur.html',
+    '/home.html': '/',
+    '/home': '/'
+  };
+  
+  const currentPath = window.location.pathname;
+  if (redirects[currentPath] || redirects[decodeURIComponent(currentPath)]) {
+    window.location.replace(redirects[currentPath] || redirects[decodeURIComponent(currentPath)]);
+    return;
+  }
+
   const debounce = (func, wait) => {
     let timeout;
     return function executedFunction(...args) {

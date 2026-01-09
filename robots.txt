@@ -1,4 +1,52 @@
+# SQ Interactive - VR Real Estate & AI Interior Design Pakistan
+# Robots.txt for www.sqinteractive.com
+
 User-agent: *
 Allow: /
 
+# Disallow development and temporary files
+Disallow: /*.md$
+Disallow: /*.txt$
+Disallow: /.*
+Disallow: /test-sections.html
+Disallow: /urdu-nav-template.txt
+Disallow: /.github/
+Disallow: /CLIENT-READY-CHECKLIST.md
+Disallow: /GITHUB-PAGES-CONFIG.md
+Disallow: /GITHUB-PAGES-SEO.md
+Disallow: /MNC-ROADMAP.md
+Disallow: /SEO-OPTIMIZATION-SUMMARY.md
+Disallow: /TECHNICAL-GUIDE.md
+
+# Allow important directories and files
+Allow: /images/
+Allow: /Portfolio/
+Allow: /SQ-Tours/
+Allow: /css/
+Allow: /js/
+Allow: /videos/
+Allow: /urdu pages/
+Allow: /favicon.ico
+Allow: /site.webmanifest
+Allow: /browserconfig.xml
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# General crawl delay
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://www.sqinteractive.com/sitemap.xml

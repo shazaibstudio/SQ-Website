@@ -1,0 +1,8 @@
+# GitHub Pages doesn't support .htaccess files
+# All redirects and configurations are handled by:
+# 1. GitHub Pages automatic redirects
+# 2. DNS configuration at GoDaddy
+# 3. Client-side JavaScript redirects where needed
+
+# For reference, the original .htaccess content has been moved to:
+# GITHUB-PAGES-CONFIG.md

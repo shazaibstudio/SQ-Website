@@ -1,75 +1,325 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Main English Pages -->
   <url>
     <loc>https://www.sqinteractive.com/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/index-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/no-background.png</image:loc>
+      <image:title>SQ Interactive Logo - VR Real Estate Pakistan</image:title>
+      <image:caption>Leading VR real estate and AI interior design company in Pakistan</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/services.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/services-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/services.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/fyp.png</image:loc>
+      <image:title>VR Real Estate Services Pakistan</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/portfolio.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/portfolio-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/portfolio.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/after.png</image:loc>
+      <image:title>VR Real Estate Portfolio - Luxury Villa Tours</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sqinteractive.com/images/after.png</video:thumbnail_loc>
+      <video:title>SQ Interactive VR Real Estate Portfolio</video:title>
+      <video:description>Explore our portfolio of VR property tours and 360° experiences</video:description>
+    </video:video>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/about.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/about-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/about.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/my pic .png</image:loc>
+      <image:title>Shazaib Qaiser - CEO SQ Interactive</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/contact.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/contact-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/contact.html"/>
   </url>
+
+  <!-- Service Pages - English -->
   <url>
     <loc>https://www.sqinteractive.com/vr-real-estate.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/vr-real-estate-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/vr-real-estate.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/builds.png</image:loc>
+      <image:title>VR Real Estate Tours Pakistan</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/ai-interior-design.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/ai-interior-design-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/ai-interior-design.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/ai interior design.png</image:loc>
+      <image:title>AI Interior Design Pakistan</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/interactive-pc.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/interactive-pc-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/interactive-pc.html"/>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/360-content.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/360-content-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/360-content.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/360 sam.jpeg</image:loc>
+      <image:title>360 Degree Virtual Tours Pakistan</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/vr-staging.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/vr-staging-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/vr-staging.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/vr realeatate.jpg</image:loc>
+      <image:title>VR Staging Services Pakistan</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/interactive-walkthroughs.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/interactive-walkthroughs-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/interactive-walkthroughs.html"/>
   </url>
+  
   <url>
     <loc>https://www.sqinteractive.com/furniture-scanning.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/furniture-scanning-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/furniture-scanning.html"/>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/sofa.png</image:loc>
+      <image:title>3D Furniture Scanning Pakistan</image:title>
+    </image:image>
+  </url>
+
+  <!-- Tools & Resources -->
+  <url>
+    <loc>https://www.sqinteractive.com/roi-calculator.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/roi-calculator-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/roi-calculator.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/case-study.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/case-study-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/case-study.html"/>
+  </url>
+
+  <!-- Portfolio Demos -->
+  <url>
+    <loc>https://www.sqinteractive.com/SQ-Tours/heaven%20hotel%20360/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/front1.jpg</image:loc>
+      <image:title>Heaven Hotel 360 Virtual Tour</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/SQ-Tours/house%20tour/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Urdu Pages -->
+  <url>
+    <loc>https://www.sqinteractive.com/index-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/index-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/services-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/services-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/portfolio-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/portfolio-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/about-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/about-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/contact-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/contact-ur.html"/>
+  </url>
+
+  <!-- Urdu Service Pages -->
+  <url>
+    <loc>https://www.sqinteractive.com/vr-real-estate-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/vr-real-estate.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/vr-real-estate-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/ai-interior-design-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/ai-interior-design.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/ai-interior-design-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/interactive-pc-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/interactive-pc.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/interactive-pc-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/360-content-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/360-content.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/360-content-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/vr-staging-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/vr-staging.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/vr-staging-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/interactive-walkthroughs-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/interactive-walkthroughs.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/interactive-walkthroughs-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/furniture-scanning-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/furniture-scanning.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/furniture-scanning-ur.html"/>
+  </url>
+
+  <!-- Urdu Tools & Resources -->
+  <url>
+    <loc>https://www.sqinteractive.com/roi-calculator-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/roi-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/roi-calculator-ur.html"/>
+  </url>
+  
+  <url>
+    <loc>https://www.sqinteractive.com/case-study-ur.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/case-study-ur.html"/>
   </url>
 </urlset>

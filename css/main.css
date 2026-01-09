@@ -1,42 +1,67 @@
-/* SQ Interactive - Optimized Global Styles */
+/* SQ Interactive - SEO Optimized Global Styles */
 
-/* Base Styles */
+/* Critical CSS - Above the fold */
+:root {
+  --primary-gold: #d4af37;
+  --secondary-gold: #f1c40f;
+  --dark-bg: #121212;
+  --light-text: #f5f5f5;
+  --glass-bg: rgba(255,255,255,0.05);
+}
+
+/* Base Styles - Optimized for Core Web Vitals */
 body { 
   font-family: 'Plus Jakarta Sans', sans-serif; 
-  background: #121212; 
-  color: #f5f5f5; 
+  background: var(--dark-bg); 
+  color: var(--light-text); 
   line-height: 1.6;
+  font-display: swap; /* Improve font loading */
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 { 
   font-family: 'Playfair Display', serif; 
   font-weight: 600;
+  font-display: swap;
 }
 
-.gold { color: #d4af37; }
+.gold { color: var(--primary-gold); }
 
 /* Performance Optimizations */
 img { 
   max-width: 100%; 
   height: auto; 
   loading: lazy;
+  decoding: async;
+  /* Prevent layout shift */
+  aspect-ratio: attr(width) / attr(height);
 }
 
 video {
   object-fit: cover;
   object-position: center;
+  /* Optimize video loading */
+  preload: metadata;
 }
 
-/* Demo Button */
+/* Critical resource hints */
+.preload-font {
+  font-display: swap;
+}
+
+/* Demo Button - Optimized for interaction */
 .demo-btn {
   position: fixed; 
   bottom: 2rem; 
   right: 2rem; 
   z-index: 999;
-  background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+  background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
   box-shadow: 0 4px 15px rgba(212,175,55,0.3);
   animation: pulse 5s infinite;
   transition: all 0.3s ease;
+  /* Improve paint performance */
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .demo-btn:hover { 
@@ -49,12 +74,15 @@ video {
   50% { transform: scale(1.05); } 
 }
 
-/* Before/After Slider */
+/* Before/After Slider - Performance optimized */
 .before-after { 
   position: relative; 
   height: 24rem; 
   overflow: hidden; 
-  border-radius: 1rem; 
+  border-radius: 1rem;
+  /* Optimize for GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .before-after img { 
@@ -62,16 +90,20 @@ video {
   inset: 0; 
   width: 100%; 
   height: 100%; 
-  object-fit: cover; 
+  object-fit: cover;
+  /* Prevent repaints during interaction */
+  backface-visibility: hidden;
 }
 
 .slider-handle { 
   position: absolute; 
   width: 4px; 
   height: 100%; 
-  background: #d4af37; 
+  background: var(--primary-gold); 
   left: 50%; 
-  cursor: ew-resize; 
+  cursor: ew-resize;
+  /* Optimize for interaction */
+  touch-action: pan-x;
 }
 
 .slider-handle:after {
@@ -80,7 +112,7 @@ video {
   width: 32px; 
   height: 32px; 
   border-radius: 50%;
-  background: #d4af37; 
+  background: var(--primary-gold); 
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%);
@@ -92,7 +124,7 @@ video {
   top: 10px; 
   padding: 4px 10px; 
   background: rgba(0,0,0,0.6); 
-  color: #f5f5f5; 
+  color: var(--light-text); 
   font-size: 0.875rem; 
   border-radius: 6px; 
 }
@@ -100,7 +132,7 @@ video {
 .label.left { left: 10px; }
 .label.right { right: 10px; }
 
-/* Steam Background */
+/* Steam Background - Optimized for performance */
 .steam-bg {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   background-size: cover;
@@ -108,6 +140,8 @@ video {
   background-attachment: fixed;
   position: relative;
   z-index: 0;
+  /* Optimize background rendering */
+  contain: layout style paint;
 }
 
 .steam-bg::before {
@@ -117,6 +151,8 @@ video {
   background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(18,18,18,0.95));
   backdrop-filter: blur(4px);
   z-index: -1;
+  /* Optimize backdrop filter */
+  will-change: backdrop-filter;
 }
 
 /* Scrollbar Hide */
@@ -126,16 +162,21 @@ video {
   scrollbar-width: none; 
 }
 
-/* Portfolio Cards */
+/* Portfolio Cards - Optimized animations */
 .portfolio-card { 
   position: relative; 
   overflow: hidden; 
   border-radius: 1rem; 
-  background: #0f0f0f; 
+  background: #0f0f0f;
+  /* Optimize for hover effects */
+  contain: layout style paint;
 }
 
 .portfolio-card img { 
-  transition: transform 0.5s ease; 
+  transition: transform 0.5s ease;
+  /* Optimize transform performance */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .portfolio-card:hover img { 
@@ -154,6 +195,8 @@ video {
   transition: opacity 0.4s ease; 
   padding: 1.5rem; 
   text-align: center;
+  /* Optimize overlay performance */
+  will-change: opacity;
 }
 
 .portfolio-card:hover .portfolio-overlay { 
@@ -161,7 +204,7 @@ video {
 }
 
 .portfolio-overlay h3 { 
-  color: #d4af37; 
+  color: var(--primary-gold); 
   font-size: 1.25rem; 
   margin-bottom: 0.5rem; 
 }
@@ -174,37 +217,57 @@ video {
 
 /* Filter Buttons */
 .filter-btn { 
-  border: 1px solid #d4af37; 
-  color: #d4af37; 
+  border: 1px solid var(--primary-gold); 
+  color: var(--primary-gold); 
   border-radius: 9999px; 
   padding: 0.5rem 1.25rem; 
   font-size: 0.875rem; 
-  transition: 0.3s; 
+  transition: all 0.3s ease;
+  /* Optimize button interactions */
+  cursor: pointer;
+  user-select: none;
 }
 
 .filter-btn:hover, 
 .filter-btn.active { 
-  background: #d4af37; 
+  background: var(--primary-gold); 
   color: black; 
 }
 
 /* Glass Effect */
 .glass { 
-  background: rgba(255,255,255,0.05); 
+  background: var(--glass-bg); 
   border: 1px solid rgba(255,255,255,0.1); 
-  backdrop-filter: blur(8px); 
+  backdrop-filter: blur(8px);
+  /* Optimize backdrop filter */
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Button Styles */
 .btn-gold { 
-  background: linear-gradient(90deg, #d4af37, #b8860b); 
-  color: #121212; 
+  background: linear-gradient(90deg, var(--primary-gold), #b8860b); 
+  color: var(--dark-bg); 
   transition: all 0.3s ease;
+  /* Optimize button performance */
+  will-change: transform, box-shadow;
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(212,175,55,0.5);
+}
+
+/* SEO-friendly content visibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Responsive Optimizations */
@@ -221,7 +284,16 @@ video {
   }
   
   .steam-bg {
-    background-attachment: scroll;
+    background-attachment: scroll; /* Better mobile performance */
+  }
+  
+  /* Optimize mobile interactions */
+  .portfolio-card:hover img {
+    transform: none; /* Disable hover on mobile */
+  }
+  
+  .portfolio-card:active img {
+    transform: scale(1.02); /* Use active state instead */
   }
 }
 
@@ -229,9 +301,22 @@ video {
 .loading {
   opacity: 0.7;
   pointer-events: none;
+  cursor: wait;
 }
 
-/* Accessibility */
+/* Skeleton loading for better perceived performance */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Accessibility - Respect user preferences */
 @media (prefers-reduced-motion: reduce) {
   .demo-btn {
     animation: none;
@@ -248,23 +333,86 @@ video {
   }
 }
 
-/* Focus States */
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .gold {
+    color: #ffff00; /* Higher contrast gold */
+  }
+  
+  .btn-gold {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Focus States - Improved accessibility */
 button:focus,
-a:focus {
-  outline: 2px solid #d4af37;
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-gold);
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+/* Skip to content link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-gold);
+  color: var(--dark-bg);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
 }
 
 /* Print Styles */
 @media print {
   .demo-btn,
   nav,
-  footer {
+  footer,
+  .portfolio-overlay {
     display: none;
   }
   
   body {
     background: white;
     color: black;
+    font-size: 12pt;
+    line-height: 1.4;
   }
+  
+  h1, h2, h3, h4 {
+    color: black;
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+  
+  .gold {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dark-bg: #0a0a0a;
+    --light-text: #ffffff;
+  }
+}
+
+/* Performance monitoring */
+.perf-mark {
+  display: none; /* Hidden performance markers for analytics */
 }
