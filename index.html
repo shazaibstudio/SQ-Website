@@ -419,7 +419,6 @@ gtag('config', 'G-GYP19H93BR');
     </svg>
     Request Demo
   </button>
-
   <!-- NAV -->
   <nav class="fixed w-full z-50 bg-black/40 backdrop-blur-sm border-b border-white/5">
     <div class="max-w-7xl mx-auto px-5 md:px-8">
@@ -458,15 +457,16 @@ gtag('config', 'G-GYP19H93BR');
           <a href="roi-calculator.html" class="text-yellow-400 hover:text-white">ROI Calculator</a>
           <a href="case-study.html" class="text-yellow-400 hover:text-white">Case Study</a>
 
+          <!-- Language Toggle -->
           <div class="flex items-center gap-3">
-            <button onclick="window.location.href='index.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
-            <button onclick="window.location.href='index-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
+            <button onclick="window.location.href='360-content.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
+            <button onclick="window.location.href='360 content-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
           </div>
         </div>
 
-        <!-- Mobile -->
+        <!-- Mobile Menu Toggle -->
         <div class="md:hidden flex items-center gap-2">
-          <button id="menu-toggle" class="p-2 rounded bg-white/6 text-white" aria-label="Open menu">
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="p-2 rounded bg-white/6 text-white">
             <i data-feather="menu"></i>
           </button>
         </div>
@@ -477,8 +477,8 @@ gtag('config', 'G-GYP19H93BR');
     <div id="mobile-menu" class="hidden md:hidden bg-[#0b0c0d] border-t border-[#ffffff0a]">
       <div class="px-6 py-5">
         <a href="index.html" class="block py-3 text-gray-200">Home</a>
-        <button id="mobile-services-toggle" class="w-full text-left py-3 text-gray-200 flex justify-between items-center">
-          Services <i data-feather="chevron-down" class="w-4 h-4"></i>
+        <button onclick="document.getElementById('mobile-services').classList.toggle('hidden')" class="w-full text-left py-3 text-gray-200 flex justify-between items-center">
+          Services <span class="text-yellow-400">▼</span>
         </button>
         <div id="mobile-services" class="hidden pl-4 mt-1">
           <a href="services.html" class="block py-3 text-gray-300">All Services</a>
@@ -497,8 +497,8 @@ gtag('config', 'G-GYP19H93BR');
         <a href="roi-calculator.html" class="block py-3 text-yellow-400 font-semibold">ROI Calculator</a>
         <a href="case-study.html" class="block py-3 text-yellow-400 font-semibold">Case Study</a>
         <div class="mt-4 flex gap-3">
-          <button onclick="window.location.href='index.html'" class="px-4 py-2 rounded bg-white/10 text-white">EN</button>
-          <button onclick="window.location.href='index-ur.html'" class="px-4 py-2 rounded bg-white/10 text-white/60">UR</button>
+          <button onclick="window.location.href='360-content.html'" class="px-4 py-2 rounded bg-white/10 text-white">EN</button>
+          <button onclick="window.location.href='360 content-ur.html'" class="px-4 py-2 rounded bg-white/10 text-white/60">UR</button>
         </div>
       </div>
     </div>
@@ -835,22 +835,87 @@ gtag('config', 'G-GYP19H93BR');
 </script>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
-  <script src="js/sq-interactive.js" defer></script>
-  
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+<script src="js/sq-interactive.js" defer></script>
+
+
+ <!-- Init Scripts -->
   <script>
-    // VR Demo launcher
-    function startVRDemo() {
-      window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank');
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'vr_demo_launch', {
-          event_category: 'Engagement',
-          event_label: 'Homepage VR Demo',
-        });
-      }
+    AOS.init();
+    feather.replace();
+
+    // Desktop dropdown
+    const servicesBtn = document.getElementById("services-btn");
+    const servicesPopup = document.getElementById("services-popup");
+
+    if (servicesBtn) {
+      servicesBtn.addEventListener("mouseenter", () => servicesPopup.classList.remove("hidden"));
+      servicesBtn.addEventListener("mouseleave", () => {
+        setTimeout(() => {
+          if (!servicesPopup.matches(":hover")) servicesPopup.classList.add("hidden");
+        }, 200);
+      });
+      servicesPopup.addEventListener("mouseleave", () => servicesPopup.classList.add("hidden"));
     }
-  </script>
+
+    // Mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+    const mobileServices = document.getElementById("mobile-services");
+
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    if (mobileServicesToggle) {
+      mobileServicesToggle.addEventListener("click", () => {
+        mobileServices.classList.toggle("hidden");
+      });
+    }
+
+    // Set current year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Lazy load iframes for better performance
+    const observerOptions = {
+      root: null,
+      rootMargin: '50px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = entry.target;
+          if (iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+            observer.unobserve(iframe);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all iframes with data-src
+    document.querySelectorAll('iframe[data-src]').forEach(iframe => {
+      observer.observe(iframe);
+    });
+ 
+  // VR Demo launcher
+  function startVRDemo() {
+    window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank');
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'vr_demo_launch', {
+        event_category: 'Engagement',
+        event_label: 'Homepage VR Demo',
+      });
+    }
+  }
+</script>
 
 </body>
 </html>
