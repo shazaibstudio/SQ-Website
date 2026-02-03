@@ -286,11 +286,17 @@ gtag('config', 'G-GYP19H93BR');
 
   .before-after { position:relative; height:24rem; overflow:hidden; border-radius:1rem; }
   .before-after img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-  .slider-handle { position:absolute; width:4px; height:100%; background:#d4af37; left:50%; cursor:ew-resize; }
-  .slider-handle:after {
-    content:''; position:absolute; width:32px; height:32px; border-radius:50%;
-    background:#d4af37; top:50%; left:50%; transform:translate(-50%,-50%);
+  .slider-handle { 
+    position:absolute; width:4px; height:100%; background:#d4af37; left:50%; 
+    cursor:ew-resize; z-index:10; user-select:none;
   }
+  .slider-handle .dot {
+    position:absolute; width:20px; height:20px; border-radius:50%;
+    background:#d4af37; top:50%; left:50%; transform:translate(-50%,-50%);
+    border:3px solid white; box-shadow:0 2px 10px rgba(0,0,0,0.3);
+    cursor:grab;
+  }
+  .slider-handle .dot:active { cursor:grabbing; }
 
   .label { position:absolute; top:10px; padding:4px 10px; background:rgba(0,0,0,0.6); color:#f5f5f5; font-size:0.875rem; border-radius:6px; }
   .label.left { left:10px; }
@@ -514,8 +520,9 @@ gtag('config', 'G-GYP19H93BR');
 
     <div class="relative z-10 px-6 max-w-3xl" data-aos="fade-up">
       <img src="images/no-background.png" alt="SQ Interactive logo" class="mx-auto mb-6 w-28 h-auto" loading="lazy">
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">Sell Properties 40% Faster with Immersive VR & AI Experiences</h1>
-      <p class="text-gray-300 text-base md:text-lg mb-8">We create photoreal VR tours and AI-powered interior designs that convert browsers into buyers. From concept to VR-ready delivery in 2-4 weeks. Trusted by 15+ developers across Pakistan.</p>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">See Properties Before They Exist</h1>
+      <p class="text-gray-300 text-base md:text-lg mb-8">VR tours, 360° walkthroughs, and AI-assisted interior visualization — built in Pakistan.</p>
+      <p class="text-gray-400 text-sm mb-8">Founder-led immersive solutions using Unity, Unreal, and real-world 360° capture.</p>
 
       <div class="flex justify-center gap-4">
         <a href="portfolio.html" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-semibold py-3 px-6 rounded-full shadow hover:scale-105 transition">View Our Work</a>
@@ -539,13 +546,23 @@ gtag('config', 'G-GYP19H93BR');
       experience properties before they're even built.
     </p>
 
-    <!-- Scrollable gallery -->
-    <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory justify-start md:justify-center">
-      <img src="images/360 sam.jpeg" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
-      <img src="images/NeuroSpace VR Preview.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
-      <img src="images/after.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
-      <img src="images/builds.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
-      <img src="images/ai interior design.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center">
+    <!-- Scrollable gallery with navigation -->
+    <div class="relative">
+      <div id="image-gallery" class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory justify-start md:justify-center transition-transform duration-300">
+        <img src="images/360 sam.jpeg" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(-1)">
+        <img src="images/NeuroSpace VR Preview.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(0)">
+        <img src="images/after.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(1)">
+        <img src="images/builds.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(2)">
+        <img src="images/ai interior design.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(3)">
+      </div>
+      
+      <!-- Navigation arrows for desktop -->
+      <button onclick="scrollGallery(-1)" class="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">
+        ←
+      </button>
+      <button onclick="scrollGallery(1)" class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">
+        →
+      </button>
     </div>
 
     <h3 class="mt-8 text-lg text-gray-400">Founded in Lahore, Pakistan</h3>
@@ -554,20 +571,28 @@ gtag('config', 'G-GYP19H93BR');
 
 
 
-  <!-- Social Proof -->
+  <!-- Who We're For -->
   <section class="py-16 bg-[#0d0d0d]">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-8">Trusted by Leading Real Estate Professionals</h2>
-      <div class="text-center mt-8">
-      <p class="text-gray-400 text-sm mb-4">Trusted by developers and architects across Pakistan</p>
-      <div class="flex justify-center items-center gap-8 opacity-60">
-        <span class="text-sm">DHA Lahore Projects</span>
-        <span class="text-sm">•</span>
-        <span class="text-sm">Hotel Chains</span>
-        <span class="text-sm">•</span>
-        <span class="text-sm">Architecture Firms</span>
+      <h2 class="text-2xl font-bold mb-8">Who We're For</h2>
+      <div class="grid md:grid-cols-4 gap-6 mt-8">
+        <div class="p-4">
+          <h3 class="font-semibold text-yellow-400 mb-2">Real Estate Developers</h3>
+          <p class="text-gray-400 text-sm">Showcase projects before construction</p>
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-yellow-400 mb-2">Boutique Hotels</h3>
+          <p class="text-gray-400 text-sm">Virtual room tours and facilities</p>
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-yellow-400 mb-2">Architects & Interior Designers</h3>
+          <p class="text-gray-400 text-sm">Immersive design presentations</p>
+        </div>
+        <div class="p-4">
+          <h3 class="font-semibold text-yellow-400 mb-2">Property Marketers</h3>
+          <p class="text-gray-400 text-gray-400 text-sm">Interactive marketing experiences</p>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -591,17 +616,63 @@ gtag('config', 'G-GYP19H93BR');
   <p class="text-lg mb-10">See how our VR solutions elevate real estate experiences.</p>
   <p class="text-lg mb-10">(Slide the yellow dot to move)</p>
 
-  <div class="before-after relative shadow-xl mx-auto max-w-4xl overflow-hidden rounded-xl">
-    <img src="images/after.png" class="before-image absolute inset-0 w-full h-full object-cover">
-    <div class="after-wrapper absolute inset-0 overflow-hidden" style="width:50%;">
-      <img src="images/before.png" class="after-image w-full h-full object-cover">
+  <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl" style="height: 400px;" id="slider-container">
+    <img src="images/before.png" class="absolute inset-0 w-full h-full object-cover" alt="Before">
+    <div id="after-overlay" class="absolute inset-0 overflow-hidden" style="width: 50%;">
+      <img src="images/after.png" class="w-full h-full object-cover" alt="After">
     </div>
-    <div class="label left absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded">Before</div>
-    <div class="label right absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded">After</div>
-    <div class="slider-handle absolute top-0 bottom-0 w-1 bg-yellow-400 cursor-pointer" style="left:50%;">
-      <div class="dot absolute top-1/2 -translate-y-1/2 -left-2 w-4 h-4 bg-yellow-400 rounded-full border-2 border-white shadow-lg"></div>
+    
+    <div class="absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded">Before</div>
+    <div class="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded">After</div>
+    
+    <div id="slider-handle" class="absolute top-0 bottom-0 bg-yellow-400 cursor-ew-resize" style="width: 4px; left: 50%; z-index: 10;"
+         onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-yellow-400 rounded-full border-2 border-white shadow-lg cursor-grab"></div>
     </div>
   </div>
+  
+  <script>
+    let isDragging = false;
+    
+    function startDrag(e) {
+      isDragging = true;
+      e.preventDefault();
+    }
+    
+    document.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      updateSlider(e.clientX);
+    });
+    
+    document.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      updateSlider(e.touches[0].clientX);
+    });
+    
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+    
+    document.addEventListener('touchend', function() {
+      isDragging = false;
+    });
+    
+    function updateSlider(clientX) {
+      const container = document.getElementById('slider-container');
+      const handle = document.getElementById('slider-handle');
+      const overlay = document.getElementById('after-overlay');
+      
+      if (!container || !handle || !overlay) return;
+      
+      const rect = container.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      
+      handle.style.left = percentage + '%';
+      overlay.style.width = percentage + '%';
+    }
+  </script>
 </section>
 
 
@@ -915,6 +986,23 @@ gtag('config', 'G-GYP19H93BR');
       });
     }
   }
+
+  // Image gallery scroll function - FIXED
+  function scrollGallery(direction) {
+    const gallery = document.getElementById('image-gallery');
+    if (!gallery) return;
+    
+    const scrollAmount = 260; // Image width + gap
+    
+    if (direction === 1) {
+      gallery.scrollLeft += scrollAmount;
+    } else if (direction === -1) {
+      gallery.scrollLeft -= scrollAmount;
+    }
+  }
+  
+  // Make function global
+  window.scrollGallery = scrollGallery;
 </script>
 
 </body>
