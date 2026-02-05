@@ -1,7 +1,7 @@
 {
-  "name": "SQ Interactive - VR & AI Real Estate Experiences",
+  "name": "SQ Interactive - VR Real Estate Tours Pakistan",
   "short_name": "SQ Interactive",
-  "description": "Immersive VR, AI, and 3D real estate experiences by SQ Interactive",
+  "description": "Professional VR real estate tours, 360° property experiences & AI interior design in Pakistan. Sell properties 40% faster with immersive virtual tours.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#121212",
@@ -39,7 +39,16 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity", "technology"],
+  "categories": ["business", "productivity", "technology", "real-estate"],
   "lang": "en",
-  "scope": "/"
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/images/builds.png",
+      "sizes": "1200x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "VR Real Estate Tour Example"
+    }
+  ]
 }

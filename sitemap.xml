@@ -72,6 +72,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/contact.html"/>
   </url>
 
+  <url>
+    <loc>https://www.sqinteractive.com/faq.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/faq-ur.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/faq.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.sqinteractive.com/vr-real-estate-lahore.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.sqinteractive.com/images/builds.png</image:loc>
+      <image:title>VR Real Estate Tours Lahore - DHA Bahria Town</image:title>
+    </image:image>
+  </url>
+
   <!-- Service Pages - English -->
   <url>
     <loc>https://www.sqinteractive.com/vr-real-estate.html</loc>
