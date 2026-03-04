@@ -3,7 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shazaib Qaiser - VR Developer & Creative Technologist</title>
+<title>Shazaib Qaiser - VR Developer & Unity Expert | Portfolio</title>
+<meta name="description" content="VR/AR Developer specializing in Unity 3D, Unreal Engine, and WebGL. 15+ immersive projects for real estate & hospitality. Meta Quest 3 ready. Lahore, Pakistan.">
+<meta name="keywords" content="VR Developer, Unity Developer, Unreal Engine, WebGL, Meta Quest, VR Real Estate, 360 Tours, C# Developer, 3D Developer, Pakistan">
+<meta name="author" content="Shazaib Qaiser">
+<link rel="canonical" href="https://www.sqinteractive.com/Portfolio/shazaib-portfolio.html">
+
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Shazaib Qaiser - VR Developer & Unity Expert">
+<meta property="og:description" content="VR/AR Developer with 3+ years experience. Specialized in Unity 3D, Unreal Engine, Meta Quest development. 15+ production projects delivered.">
+<meta property="og:image" content="https://www.sqinteractive.com/images/builds.png">
+<meta property="og:url" content="https://www.sqinteractive.com/Portfolio/shazaib-portfolio.html">
+<meta property="profile:first_name" content="Shazaib">
+<meta property="profile:last_name" content="Qaiser">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shazaib Qaiser - VR Developer & Unity Expert">
+<meta name="twitter:description" content="VR/AR Developer specializing in Unity, Unreal Engine, WebGL. 15+ immersive projects.">
+<meta name="twitter:image" content="https://www.sqinteractive.com/images/builds.png">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shazaib Qaiser",
+  "jobTitle": "VR Developer & Creative Technologist",
+  "description": "VR/AR developer specializing in Unity 3D, Unreal Engine, and WebGL with 3+ years of experience building immersive experiences for real estate and hospitality.",
+  "url": "https://www.sqinteractive.com/Portfolio/shazaib-portfolio.html",
+  "image": "https://www.sqinteractive.com/images/builds.png",
+  "email": "shazaibqaiser@hotmail.com",
+  "telephone": "+92-300-9452153",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lahore",
+    "addressCountry": "Pakistan"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "BSc Multimedia Technology (VR/AR Specialization)"
+  },
+  "knowsAbout": [
+    "Unity 3D",
+    "Unreal Engine",
+    "Virtual Reality",
+    "Augmented Reality",
+    "WebGL",
+    "C# Programming",
+    "Meta Quest Development",
+    "3D Modeling",
+    "Real-time Rendering",
+    "360° Virtual Tours"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/shazaib-qaiser",
+    "https://github.com/shazaibqaiser",
+    "https://www.sqinteractive.com"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "SQ Interactive",
+    "url": "https://www.sqinteractive.com"
+  },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "degree",
+    "name": "BSc Multimedia Technology",
+    "educationalLevel": "Bachelor's Degree"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Shazaib Qaiser Portfolio",
+  "description": "Professional portfolio showcasing VR/AR development projects including Unity 3D, Unreal Engine, and WebGL applications.",
+  "author": {
+    "@type": "Person",
+    "name": "Shazaib Qaiser"
+  },
+  "datePublished": "2024",
+  "keywords": "VR Development, Unity, Unreal Engine, WebGL, Meta Quest, Portfolio",
+  "url": "https://www.sqinteractive.com/Portfolio/shazaib-portfolio.html"
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -111,10 +198,11 @@ nav a:hover{
 .hero-content p{
   font-size:clamp(16px,2vw,24px);
   margin-bottom:40px;
-  color:rgba(255,255,255,0.7);
+  color:rgba(255,255,255,0.85);
   max-width:800px;
   margin-left:auto;
   margin-right:auto;
+  text-shadow:0 2px 10px rgba(0,0,0,0.5);
 }
 .cta-buttons{
   display:flex;
@@ -411,10 +499,12 @@ section{
     <div class="hero-content">
       <h1>SHAZAIB QAISER</h1>
       <h2>VR Developer • Unity Expert • Creative Technologist</h2>
+      <p style="font-size:clamp(14px,1.5vw,18px);margin-bottom:20px;color:var(--cyan);font-weight:600;">Specializing in Real Estate & Hospitality VR Solutions</p>
       <p>Building immersive VR experiences, 360° virtual tours, and interactive 3D applications using Unity, Unreal Engine, and WebGL</p>
       <div class="cta-buttons">
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
         <a href="#work" class="btn btn-secondary">View Projects</a>
+        <a href="#" onclick="alert('CV download coming soon!');return false;" class="btn btn-secondary">Download CV</a>
       </div>
     </div>
   </section>
@@ -452,45 +542,45 @@ section{
     <h2 class="section-title">Projects</h2>
     <div class="gallery">
       <a href="https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds" target="_blank" class="gallery-item">
-        <img src="../images/builds.png" alt="VR Real Estate">
+        <img src="../images/builds.png" alt="VR Real Estate Unity Meta Quest 3 WebGL Demo">
         <div class="gallery-overlay">
-          <div class="gallery-title">2 Kanal VR House • Unity</div>
+          <div class="gallery-title">2 Kanal VR House • Unity • Real Estate</div>
           <div class="gallery-desc">Full VR property built from floor plans • Meta Quest 3 ready • Click to play WebGL demo</div>
         </div>
       </a>
       <a href="https://www.sqinteractive.com" target="_blank" class="gallery-item">
-        <img src="../images/360 sam.jpeg" alt="360 Virtual Tour">
+        <img src="../images/360 sam.jpeg" alt="360 Virtual Tours Real Estate Hospitality">
         <div class="gallery-overlay">
-          <div class="gallery-title">360° Virtual Tours</div>
-          <div class="gallery-desc">Interactive property tours with hotspots • 15+ projects delivered</div>
+          <div class="gallery-title">360° Virtual Tours • Real Estate & Hospitality</div>
+          <div class="gallery-desc">Interactive property tours with hotspots • 15+ projects delivered • WebGL</div>
         </div>
       </a>
       <a href="https://www.sqinteractive.com" target="_blank" class="gallery-item">
-        <img src="../images/NeuroSpace VR Preview.png" alt="VR Environment">
+        <img src="../images/NeuroSpace VR Preview.png" alt="NeuroSpace VR Unity Oculus SDK">
         <div class="gallery-overlay">
-          <div class="gallery-title">NeuroSpace VR</div>
-          <div class="gallery-desc">Immersive VR environment • Unity + Oculus SDK</div>
+          <div class="gallery-title">NeuroSpace VR • Unity • Oculus</div>
+          <div class="gallery-desc">Immersive VR environment • Unity + Oculus SDK • Interactive Media</div>
         </div>
       </a>
       <a href="https://www.sqinteractive.com" target="_blank" class="gallery-item">
-        <img src="../images/after.png" alt="VR Staging">
+        <img src="../images/after.png" alt="VR Staging Unreal Engine 5 Real Estate">
         <div class="gallery-overlay">
-          <div class="gallery-title">VR Staging System</div>
-          <div class="gallery-desc">Real-time furniture placement • Unreal Engine 5</div>
+          <div class="gallery-title">VR Staging System • Unreal Engine 5 • Real Estate</div>
+          <div class="gallery-desc">Real-time furniture placement • Ray tracing • Architectural visualization</div>
         </div>
       </a>
       <a href="https://www.sqinteractive.com" target="_blank" class="gallery-item">
-        <img src="../images/ai interior design.png" alt="AI Interior Design">
+        <img src="../images/ai interior design.png" alt="AI Interior Design Python Unity Machine Learning">
         <div class="gallery-overlay">
-          <div class="gallery-title">AI Interior Design Tool</div>
-          <div class="gallery-desc">AI-powered design assistant • Python + Unity integration</div>
+          <div class="gallery-title">AI Interior Design Tool • Python + Unity</div>
+          <div class="gallery-desc">AI-powered design assistant • Machine learning integration • Real Estate</div>
         </div>
       </a>
       <a href="https://www.sqinteractive.com" target="_blank" class="gallery-item">
-        <img src="../images/fyp.png" alt="Interactive Walkthrough">
+        <img src="../images/fyp.png" alt="WebGL Interactive Walkthroughs Unity Browser">
         <div class="gallery-overlay">
-          <div class="gallery-title">WebGL Walkthroughs</div>
-          <div class="gallery-desc">Browser-based 3D tours • Unity WebGL + optimization</div>
+          <div class="gallery-title">WebGL Walkthroughs • Unity • Real Estate</div>
+          <div class="gallery-desc">Browser-based 3D tours • Unity WebGL optimization • Mobile compatible</div>
         </div>
       </a>
       <a href="projects.html" class="gallery-item" style="background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;text-decoration:none;">
