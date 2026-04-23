@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VR & XR Projects — Shazaib Qaiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060a14;--ink2:#0a0e1a;--mid:#0f1626;--mid2:#141d2e;--electric:#00e5ff;--electric2:#5ef0ff;--amber:#ffb700;--text:#d8dce8;--muted:#4a5568;--muted2:#6b7a90;--border:rgba(255,255,255,0.07);--border2:rgba(0,229,255,0.15);--font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:68px;backdrop-filter:blur(24px) saturate(1.8);background:rgba(6,10,20,0.85);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.1rem;letter-spacing:0.12em;color:var(--electric);text-decoration:none;}
+.nav-logo em{color:var(--amber);font-style:normal;}
+.nav-back{display:flex;align-items:center;gap:0.5rem;color:var(--muted2);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.nav-back:hover{color:var(--electric);}
+
+.page-hero{margin-top:68px;padding:5rem 4rem 3.5rem;background:linear-gradient(160deg,var(--ink) 0%,var(--mid) 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,229,255,0.06) 0%,transparent 65%);pointer-events:none;}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.page-hero-inner{position:relative;z-index:1;}
+.section-kicker{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--electric);font-weight:600;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
+.section-kicker::before{content:'';width:16px;height:1px;background:var(--electric);}
+.page-hero h1{font-family:var(--font-h);font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1;color:#fff;margin-bottom:1rem;}
+.page-hero h1 em{color:var(--electric);font-style:normal;}
+.page-hero p{color:var(--muted2);font-size:1rem;max-width:560px;font-weight:300;}
+
+.grid-wrap{max-width:1200px;margin:0 auto;padding:5rem 4rem 8rem;}
+
+/* Featured card */
+.card-featured{display:grid;grid-template-columns:1.4fr 1fr;gap:2px;background:var(--border);margin-bottom:2px;}
+.card-featured .card-img{overflow:hidden;background:var(--mid2);position:relative;min-height:340px;}
+.card-featured .card-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7);transition:filter 0.5s,transform 0.6s;}
+.card-featured:hover .card-img img{filter:brightness(0.9);transform:scale(1.04);}
+.card-featured .card-body{background:var(--mid2);padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;transition:background 0.3s;}
+.card-featured:hover .card-body{background:var(--mid);}
+
+/* Regular grid */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.card{background:var(--mid2);overflow:hidden;transition:background 0.3s;cursor:pointer;position:relative;}
+.card:hover{background:var(--mid);}
+.card-img-wrap{overflow:hidden;aspect-ratio:16/9;background:var(--ink2);position:relative;}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.65);transition:filter 0.5s,transform 0.6s;}
+.card:hover .card-img-wrap img{filter:brightness(0.9);transform:scale(1.05);}
+.card-body{padding:1.8rem 1.6rem 2rem;}
+
+/* Shared card text */
+.card-cat{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--electric);margin-bottom:0.5rem;display:block;}
+.card-cat.amber{color:var(--amber);}
+.card h3{font-family:var(--font-h);font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;line-height:1.25;}
+.card-featured .card-body h3{font-size:1.5rem;margin-bottom:0.8rem;}
+.card p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.card-featured .card-body p{font-size:0.92rem;color:var(--muted2);line-height:1.75;margin-bottom:1.5rem;}
+.card-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
+.tag{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--muted);}
+.card-link{display:inline-flex;align-items:center;gap:0.4rem;margin-top:1.2rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);text-decoration:none;opacity:0.7;transition:opacity 0.25s;}
+.card-link:hover{opacity:1;}
+.card-link.amber{color:var(--amber);}
+.cover-link{position:absolute;inset:0;z-index:1;}
+
+/* Also section */
+.also-section{margin-top:5rem;padding-top:3rem;border-top:1px solid var(--border);}
+.also-section h2{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:var(--muted2);margin-bottom:2rem;letter-spacing:0.05em;}
+.also-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);}
+.also-card{background:var(--mid2);padding:1.8rem 1.5rem;transition:background 0.3s;position:relative;}
+.also-card:hover{background:var(--mid);}
+.also-card span{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--electric);display:block;margin-bottom:0.5rem;}
+.also-card h4{font-family:var(--font-h);font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.4rem;}
+.also-card p{font-size:0.78rem;color:var(--muted);line-height:1.5;}
+
+footer{background:#030610;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.footer-l{font-family:var(--font-h);font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.footer-links a:hover{color:var(--electric);}
+@media(max-width:1000px){.cards-grid{grid-template-columns:1fr 1fr;}.also-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){nav,.page-hero,.grid-wrap,footer{padding-left:1.5rem;padding-right:1.5rem;}.card-featured{grid-template-columns:1fr;}.cards-grid,.also-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">SQ<em>/</em></a>
+  <a href="index.html#vr" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-kicker">VR · XR · Immersive 3D</div>
+    <h1>Built for Headsets.<br><em>Designed for Clients.</em></h1>
+    <p>Real-time 3D environments, Unity tools, and 360° experiences — all shipped to actual devices for paying clients.</p>
+  </div>
+</section>
+
+<div class="grid-wrap">
+
+  <!-- Featured -->
+  <div class="card-featured">
+    <div class="card-img">
+      <img src="images/vr and 360/house render .png" alt="Luxury Villa VR">
+    </div>
+    <div class="card-body">
+      <span class="card-cat">Featured · Real Estate VR</span>
+      <h3>Luxury Villa VR Walkthrough</h3>
+      <p>Full VR property built from architectural floor plans. Meta Quest 3 native + WebGL browser demo. Real-time material swapping, spatial audio, 1:1 scale.</p>
+      <div class="card-tags">
+        <span class="tag">Unity 3D</span><span class="tag">Meta Quest 3</span><span class="tag">WebGL</span><span class="tag">C#</span>
+      </div>
+      <a href="case-villa.html" class="card-link">View Case Study →</a>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/vr and 360/NeuroSpace VR Preview.png" alt="NeuroSpace VR">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Therapeutic VR · FYP</span>
+        <h3>NeuroSpace VR Environment</h3>
+        <p>Immersive therapeutic VR with spatial audio and guided interaction. APU Final Year Project.</p>
+        <div class="card-tags"><span class="tag">Unity</span><span class="tag">Oculus SDK</span><span class="tag">Spatial Audio</span></div>
+        <a href="case-neurospace.html" class="card-link">View Case Study →</a>
+      </div>
+      <a href="case-neurospace.html" class="cover-link" aria-label="NeuroSpace"></a>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/vr and 360/before.png" alt="Material Swap Engine">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Unity Tool · Real-time</span>
+        <h3>VR Material Swap Engine</h3>
+        <p>Real-time material swapping system — clients change finishes live in headset. Zero loading time.</p>
+        <div class="card-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">ScriptableObjects</span></div>
+        <a href="case-materialswap.html" class="card-link">View Case Study →</a>
+      </div>
+      <a href="case-materialswap.html" class="cover-link" aria-label="Material Swap"></a>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/vr and 360/360 tour.jpg" alt="360 Virtual Tours">
+      </div>
+      <div class="card-body">
+        <span class="card-cat amber">360° · Hospitality</span>
+        <h3>360° Virtual Tour Suite</h3>
+        <p>15+ interactive property tours. Insta360 X3, hotspot editing, web-embedded on live client sites.</p>
+        <div class="card-tags"><span class="tag">Insta360 X3</span><span class="tag">Hotspots</span><span class="tag">Web Embed</span></div>
+        <a href="case-360tours.html" class="card-link amber">View Case Study →</a>
+      </div>
+      <a href="case-360tours.html" class="cover-link" aria-label="360 Tours"></a>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/vr and 360/vr training.png" alt="VR Training">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">VR Training · Enterprise</span>
+        <h3>VR Training Environment</h3>
+        <p>Interactive training simulation built in Unity for enterprise onboarding and safety procedures.</p>
+        <div class="card-tags"><span class="tag">Unity</span><span class="tag">XR Toolkit</span><span class="tag">C#</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/vr and 360/Screenshot 2026-03-26 204536.png" alt="VR Environment">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Environment Design</span>
+        <h3>Architectural VR Visualisation</h3>
+        <p>High-fidelity architectural visualisation for pre-construction client presentations.</p>
+        <div class="card-tags"><span class="tag">Unity</span><span class="tag">Blender</span><span class="tag">PBR</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/vr and 360/Screenshot 2026-03-27 171750.png" alt="VR Scene">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">3D Modelling · Unity</span>
+        <h3>Real-Time Interior Scene</h3>
+        <p>Photorealistic interior scene with baked lighting, PBR materials, and real-time rendering.</p>
+        <div class="card-tags"><span class="tag">Unity</span><span class="tag">Baked Lighting</span><span class="tag">Blender</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Also section — 3D models -->
+  <div class="also-section">
+    <h2>Also — 3D Models & Assets</h2>
+    <div class="also-grid">
+      <div class="also-card">
+        <img src="images/3d models/sofa.png" alt="Sofa model" style="width:100%;height:120px;object-fit:cover;display:block;margin-bottom:1rem;filter:brightness(0.8);">
+        <span>3D Asset</span>
+        <h4>Furniture Models</h4>
+        <p>High-poly sofa and furniture assets for VR interiors.</p>
+      </div>
+      <div class="also-card">
+        <img src="images/3d models/sifi.png" alt="Sci-fi model" style="width:100%;height:120px;object-fit:cover;display:block;margin-bottom:1rem;filter:brightness(0.8);">
+        <span>3D Asset</span>
+        <h4>Sci-Fi Environment</h4>
+        <p>Sci-fi themed 3D environment assets and props.</p>
+      </div>
+      <div class="also-card">
+        <img src="images/3d models/snake front.jpg" alt="Character model" style="width:100%;height:120px;object-fit:cover;display:block;margin-bottom:1rem;filter:brightness(0.8);">
+        <span>3D Character</span>
+        <h4>Character Modelling</h4>
+        <p>Organic character modelling and sculpting in Blender.</p>
+      </div>
+      <div class="also-card">
+        <img src="images/3d models/azog.png" alt="Character model 2" style="width:100%;height:120px;object-fit:cover;display:block;margin-bottom:1rem;filter:brightness(0.8);">
+        <span>3D Character</span>
+        <h4>Fantasy Character</h4>
+        <p>High-detail fantasy character model with textures.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-l">© 2025 Shazaib Qaiser · SQ Interactive</div>
+  <div class="footer-links">
+    <a href="mailto:Shazaibqasier@hotmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/" target="_blank">LinkedIn</a>
+    <a href="https://sqinteractive.com" target="_blank">sqinteractive.com</a>
+  </div>
+</footer>
+</body>
+</html>

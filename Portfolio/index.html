@@ -1149,92 +1149,134 @@ footer {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x000000, 0);
+  renderer.shadowMap.enabled = true;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.z = 50;
 
+  // ── LIGHTS ──────────────────────────────────────
+  const ambientLight = new THREE.AmbientLight(0x0a1628, 1.2);
+  scene.add(ambientLight);
+
+  // Orbiting cyan point light — casts dynamic shading on all meshes
+  const cyanLight = new THREE.PointLight(0x00e5ff, 4, 120);
+  scene.add(cyanLight);
+
+  // Static amber fill light
+  const amberLight = new THREE.PointLight(0xffb700, 2.5, 100);
+  amberLight.position.set(-30, -10, 20);
+  scene.add(amberLight);
+
   // ── PARTICLE FIELD ──────────────────────────────
-  const PARTICLE_COUNT = 1800;
+  const PARTICLE_COUNT = 2400;
   const pGeo = new THREE.BufferGeometry();
   const positions = new Float32Array(PARTICLE_COUNT * 3);
-  const colors = new Float32Array(PARTICLE_COUNT * 3);
+  const colors    = new Float32Array(PARTICLE_COUNT * 3);
+  const sizes     = new Float32Array(PARTICLE_COUNT);
 
   const cyan  = new THREE.Color('#00e5ff');
   const amber = new THREE.Color('#ffb700');
   const dim   = new THREE.Color('#1a2a3a');
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * 200;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 120;
+    positions[i*3]   = (Math.random()-0.5)*220;
+    positions[i*3+1] = (Math.random()-0.5)*220;
+    positions[i*3+2] = (Math.random()-0.5)*140;
     const r = Math.random();
-    const c = r < 0.12 ? cyan : r < 0.18 ? amber : dim;
-    colors[i * 3]     = c.r;
-    colors[i * 3 + 1] = c.g;
-    colors[i * 3 + 2] = c.b;
+    const c = r < 0.12 ? cyan : r < 0.20 ? amber : dim;
+    colors[i*3]=c.r; colors[i*3+1]=c.g; colors[i*3+2]=c.b;
+    sizes[i] = 0.3 + Math.random() * 0.9;
   }
   pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  pGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  pGeo.setAttribute('color',    new THREE.BufferAttribute(colors, 3));
 
   const pMat = new THREE.PointsMaterial({
-    size: 0.45, vertexColors: true, transparent: true, opacity: 0.7,
+    size: 0.55, vertexColors: true, transparent: true, opacity: 0.75,
     sizeAttenuation: true
   });
   const particles = new THREE.Points(pGeo, pMat);
   scene.add(particles);
 
-  // ── ICOSAHEDRON (large, cyan, right side) ───────
-  const icoGeo = new THREE.IcosahedronGeometry(14, 1);
-  const icoMat = new THREE.MeshBasicMaterial({
-    color: 0x00e5ff, wireframe: true, transparent: true, opacity: 0.12
+  // ── ICOSAHEDRON — solid shaded + wireframe overlay ──
+  const icoSolidMat = new THREE.MeshPhongMaterial({
+    color: 0x003344, emissive: 0x001a22, specular: 0x00e5ff,
+    shininess: 80, transparent: true, opacity: 0.55, wireframe: false
   });
-  const ico = new THREE.Mesh(icoGeo, icoMat);
+  const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(14, 1), icoSolidMat);
   ico.position.set(30, 5, -15);
   scene.add(ico);
 
-  // Inner icosahedron (slightly smaller, more visible)
-  const icoInnerMat = new THREE.MeshBasicMaterial({
-    color: 0x00e5ff, wireframe: true, transparent: true, opacity: 0.06
+  const icoWireMat = new THREE.MeshBasicMaterial({
+    color: 0x00e5ff, wireframe: true, transparent: true, opacity: 0.18
   });
-  const icoInner = new THREE.Mesh(new THREE.IcosahedronGeometry(9, 0), icoInnerMat);
-  icoInner.position.set(30, 5, -15);
-  scene.add(icoInner);
+  const icoWire = new THREE.Mesh(new THREE.IcosahedronGeometry(14.05, 1), icoWireMat);
+  ico.add(icoWire); // child so it moves with ico
 
-  // ── OCTAHEDRON (amber, left side) ────────────────
-  const octGeo = new THREE.OctahedronGeometry(10, 2);
-  const octMat = new THREE.MeshBasicMaterial({
-    color: 0xffb700, wireframe: true, transparent: true, opacity: 0.10
+  const icoInner = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(9, 0),
+    new THREE.MeshPhongMaterial({ color: 0x001a22, emissive: 0x00e5ff, emissiveIntensity: 0.08,
+      transparent: true, opacity: 0.3, wireframe: false })
+  );
+  ico.add(icoInner);
+
+  // ── OCTAHEDRON — solid shaded + wireframe overlay ──
+  const octSolidMat = new THREE.MeshPhongMaterial({
+    color: 0x332200, emissive: 0x1a0e00, specular: 0xffb700,
+    shininess: 60, transparent: true, opacity: 0.5, wireframe: false
   });
-  const oct = new THREE.Mesh(octGeo, octMat);
+  const oct = new THREE.Mesh(new THREE.OctahedronGeometry(10, 2), octSolidMat);
   oct.position.set(-28, -8, -20);
   scene.add(oct);
 
-  // Small octahedron inner
-  const octInnerMat = new THREE.MeshBasicMaterial({
-    color: 0xffb700, wireframe: true, transparent: true, opacity: 0.05
-  });
-  const octInner = new THREE.Mesh(new THREE.OctahedronGeometry(6, 1), octInnerMat);
-  octInner.position.set(-28, -8, -20);
-  scene.add(octInner);
+  const octWire = new THREE.Mesh(
+    new THREE.OctahedronGeometry(10.05, 2),
+    new THREE.MeshBasicMaterial({ color: 0xffb700, wireframe: true, transparent: true, opacity: 0.16 })
+  );
+  oct.add(octWire);
 
-  // ── TINY FLOATING GEOMETRIES ─────────────────────
+  // ── ENERGY RING (torus) ──────────────────────────
+  const torusMat = new THREE.MeshPhongMaterial({
+    color: 0x00e5ff, emissive: 0x00e5ff, emissiveIntensity: 0.4,
+    specular: 0xffffff, shininess: 120, transparent: true, opacity: 0.22
+  });
+  const torus = new THREE.Mesh(new THREE.TorusGeometry(18, 0.35, 16, 80), torusMat);
+  torus.position.set(30, 5, -15);
+  scene.add(torus);
+
+  // Second smaller ring — amber, around octahedron
+  const torus2 = new THREE.Mesh(
+    new THREE.TorusGeometry(13, 0.25, 12, 60),
+    new THREE.MeshPhongMaterial({ color: 0xffb700, emissive: 0xffb700, emissiveIntensity: 0.35,
+      transparent: true, opacity: 0.18 })
+  );
+  torus2.position.set(-28, -8, -20);
+  torus2.rotation.x = Math.PI / 3;
+  scene.add(torus2);
+
+  // ── FLOATING GEOMETRIES — now with Phong shading ─
   const floaters = [];
   const floaterData = [
-    { geo: new THREE.TetrahedronGeometry(2), color: 0x00e5ff, pos: [15, -20, -5], speed: 0.008 },
-    { geo: new THREE.OctahedronGeometry(1.5), color: 0xffb700, pos: [-15, 15, -10], speed: 0.012 },
-    { geo: new THREE.IcosahedronGeometry(1.8, 0), color: 0x00e5ff, pos: [5, 22, -8], speed: 0.006 },
-    { geo: new THREE.OctahedronGeometry(1.2), color: 0xffb700, pos: [-35, -15, -5], speed: 0.01 },
-    { geo: new THREE.TetrahedronGeometry(1.5), color: 0x00e5ff, pos: [38, -10, -12], speed: 0.009 },
+    { geo: new THREE.TetrahedronGeometry(2.2),    color: 0x00e5ff, emissive: 0x003344, pos: [15,-20,-5],  speed: 0.008 },
+    { geo: new THREE.OctahedronGeometry(1.8),     color: 0xffb700, emissive: 0x331a00, pos: [-15,15,-10], speed: 0.012 },
+    { geo: new THREE.IcosahedronGeometry(2, 0),   color: 0x00e5ff, emissive: 0x002233, pos: [5,22,-8],    speed: 0.006 },
+    { geo: new THREE.OctahedronGeometry(1.5),     color: 0xffb700, emissive: 0x221100, pos: [-35,-15,-5], speed: 0.010 },
+    { geo: new THREE.TetrahedronGeometry(1.8),    color: 0x00e5ff, emissive: 0x001122, pos: [38,-10,-12], speed: 0.009 },
+    { geo: new THREE.IcosahedronGeometry(1.4, 0), color: 0xffb700, emissive: 0x221100, pos: [-8,-25, 5],  speed: 0.007 },
+    { geo: new THREE.TetrahedronGeometry(1.2),    color: 0x00e5ff, emissive: 0x001122, pos: [22, 28,-6],  speed: 0.011 },
   ];
   floaterData.forEach(d => {
-    const mat = new THREE.MeshBasicMaterial({
-      color: d.color, wireframe: true, transparent: true, opacity: 0.25
+    const mat = new THREE.MeshPhongMaterial({
+      color: d.color, emissive: d.emissive, specular: d.color,
+      shininess: 90, transparent: true, opacity: 0.7
     });
+    const wire = new THREE.MeshBasicMaterial({ color: d.color, wireframe: true, transparent: true, opacity: 0.3 });
     const mesh = new THREE.Mesh(d.geo, mat);
+    mesh.add(new THREE.Mesh(d.geo.clone(), wire));
     mesh.position.set(...d.pos);
-    mesh.userData.speed = d.speed;
-    mesh.userData.origY = d.pos[1];
+    mesh.userData.speed  = d.speed;
+    mesh.userData.origY  = d.pos[1];
+    mesh.userData.origZ  = d.pos[2];
     scene.add(mesh);
     floaters.push(mesh);
   });
@@ -1242,8 +1284,14 @@ footer {
   // ── MOUSE PARALLAX ───────────────────────────────
   let mouseX = 0, mouseY = 0;
   document.addEventListener('mousemove', e => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseX = (e.clientX / window.innerWidth  - 0.5) * 2;
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  // ── SCROLL CAMERA DRIFT ──────────────────────────
+  let scrollZ = 0;
+  window.addEventListener('scroll', () => {
+    scrollZ = window.scrollY * 0.012;
   });
 
   // ── RESIZE ───────────────────────────────────────
@@ -1259,37 +1307,62 @@ footer {
     requestAnimationFrame(animate);
     t += 0.005;
 
-    // Particle slow drift
+    // Orbiting cyan light — creates sweeping highlights across all meshes
+    cyanLight.position.set(
+      Math.cos(t * 0.6) * 45,
+      Math.sin(t * 0.4) * 25,
+      Math.sin(t * 0.5) * 30 + 10
+    );
+    // Pulse light intensity for a breathing effect
+    cyanLight.intensity = 3.5 + Math.sin(t * 1.8) * 1.5;
+    amberLight.intensity = 2 + Math.sin(t * 1.2 + 1) * 0.8;
+
+    // Particles drift + breathe
     particles.rotation.y = t * 0.04;
     particles.rotation.x = t * 0.015;
+    pMat.opacity = 0.6 + Math.sin(t * 0.9) * 0.15;
 
-    // Icosahedron rotation + parallax
+    // Icosahedron — rotation + parallax + scale pulse
     ico.rotation.x = t * 0.18;
     ico.rotation.y = t * 0.12;
-    ico.position.x = 30 + mouseX * 2;
-    ico.position.y = 5 + mouseY * -1.5;
-    icoInner.rotation.x = -t * 0.22;
-    icoInner.rotation.y = t * 0.16;
-    icoInner.position.copy(ico.position);
+    ico.position.x = 30 + mouseX * 2.5;
+    ico.position.y = 5  + mouseY * -2;
+    const icoScale = 1 + Math.sin(t * 0.7) * 0.04;
+    ico.scale.setScalar(icoScale);
 
-    // Octahedron rotation + parallax
+    // Torus ring orbits ico
+    torus.position.copy(ico.position);
+    torus.rotation.x = t * 0.3;
+    torus.rotation.y = t * 0.5;
+    torus.rotation.z = t * 0.2;
+    torusMat.emissiveIntensity = 0.3 + Math.sin(t * 1.5) * 0.2;
+
+    // Octahedron — rotation + parallax
     oct.rotation.x = t * 0.14;
     oct.rotation.z = t * 0.09;
-    oct.position.x = -28 + mouseX * -1.5;
-    oct.position.y = -8 + mouseY * 1;
-    octInner.rotation.y = -t * 0.18;
-    octInner.position.copy(oct.position);
+    oct.position.x = -28 + mouseX * -2;
+    oct.position.y = -8  + mouseY * 1.5;
+    oct.scale.setScalar(1 + Math.sin(t * 0.55 + 1) * 0.05);
 
-    // Floating small geometries bobbing
+    torus2.position.copy(oct.position);
+    torus2.rotation.y = t * 0.4;
+    torus2.rotation.z = t * 0.25;
+
+    // Floaters — bob, spin, depth parallax
     floaters.forEach((f, i) => {
       f.rotation.x += f.userData.speed;
       f.rotation.y += f.userData.speed * 0.7;
-      f.position.y = f.userData.origY + Math.sin(t + i * 1.2) * 1.5;
+      f.position.y = f.userData.origY + Math.sin(t + i * 1.2) * 2;
+      f.position.z = f.userData.origZ + Math.cos(t * 0.4 + i) * 3;
+      // Depth-based parallax: closer floaters react more
+      const depth = Math.abs(f.userData.origZ) / 15;
+      f.position.x += (mouseX * (2 - depth) * 0.5 - f.position.x + f.userData.origX || 0) * 0.02;
     });
 
-    // Camera subtle parallax
-    camera.position.x += (mouseX * 3 - camera.position.x) * 0.02;
-    camera.position.y += (mouseY * -2 - camera.position.y) * 0.02;
+    // Camera parallax + scroll drift
+    camera.position.x += (mouseX * 3  - camera.position.x) * 0.025;
+    camera.position.y += (mouseY * -2 - camera.position.y) * 0.025;
+    camera.position.z += (50 + scrollZ - camera.position.z) * 0.04;
 
     renderer.render(scene, camera);
   }

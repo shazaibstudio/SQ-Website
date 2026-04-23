@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NetSol Enterprise UI — Shazaib Qaiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060a14;--ink2:#0a0e1a;--mid:#0f1626;--mid2:#141d2e;--electric:#00e5ff;--electric2:#5ef0ff;--amber:#ffb700;--amber2:#ffd060;--text:#d8dce8;--muted:#4a5568;--muted2:#6b7a90;--border:rgba(255,255,255,0.07);--border2:rgba(0,229,255,0.15);--font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:68px;backdrop-filter:blur(24px) saturate(1.8);background:rgba(6,10,20,0.85);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.1rem;letter-spacing:0.12em;color:var(--electric);text-decoration:none;}
+.nav-logo em{color:var(--amber);font-style:normal;}
+.nav-back{display:flex;align-items:center;gap:0.5rem;color:var(--muted2);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.nav-back:hover{color:var(--electric);}
+.case-hero{margin-top:68px;padding:6rem 4rem 4rem;background:linear-gradient(160deg,var(--ink) 0%,var(--mid) 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(0,229,255,0.06) 0%,transparent 65%);pointer-events:none;}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:860px;}
+.case-tag{display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 1rem;border:1px solid var(--border2);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--electric);margin-bottom:1.5rem;}
+.case-hero h1{font-family:var(--font-h);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.05;color:#fff;margin-bottom:1.2rem;}
+.case-hero h1 em{color:var(--electric);font-style:normal;}
+.case-hero .lead{font-size:1.05rem;color:var(--muted2);max-width:600px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+.case-meta{display:flex;flex-wrap:wrap;gap:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+.meta-item .label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:0.3rem;}
+.meta-item .value{font-family:var(--font-h);font-size:0.9rem;font-weight:700;color:var(--text);}
+.meta-item .value.cyan{color:var(--electric);}
+.case-body{max-width:960px;margin:0 auto;padding:5rem 4rem 8rem;}
+.section-kicker{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--electric);font-weight:600;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem;}
+.section-kicker::before{content:'';width:16px;height:1px;background:var(--electric);}
+.section-kicker.amber{color:var(--amber);}
+.section-kicker.amber::before{background:var(--amber);}
+h2.block-title{font-family:var(--font-h);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:1.2rem;line-height:1.1;}
+p.body-text{color:var(--muted2);line-height:1.9;margin-bottom:1rem;font-size:0.97rem;font-weight:300;}
+p.body-text strong{color:var(--text);font-weight:500;}
+.img-slot{width:100%;overflow:hidden;background:var(--mid2);border:1px solid var(--border);margin:2.5rem 0;}
+.img-slot img{width:100%;height:auto;display:block;transition:transform 0.6s ease;}
+.img-slot:hover img{transform:scale(1.02);}
+.img-slot .caption{padding:0.8rem 1.4rem;font-size:0.75rem;color:var(--muted);border-top:1px solid var(--border);background:rgba(0,0,0,0.3);letter-spacing:0.05em;}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin:2.5rem 0;}
+.img-grid .img-slot{margin:0;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:2.5rem 0;}
+.stat-card{background:var(--mid2);padding:2.2rem 1.8rem;text-align:center;}
+.stat-card .num{font-family:var(--font-h);font-size:2.6rem;font-weight:800;color:var(--electric);line-height:1;display:block;}
+.stat-card .num.amber{color:var(--amber);}
+.stat-card .desc{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;display:block;}
+.tech-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.2rem 0 2rem;}
+.pill{padding:0.25rem 0.8rem;border:1px solid var(--border2);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);}
+.pill.amber{border-color:rgba(255,183,0,0.3);color:var(--amber);}
+.process-list{display:flex;flex-direction:column;gap:1px;background:var(--border);margin:2rem 0;}
+.process-item{background:var(--mid2);padding:1.8rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:background 0.3s;}
+.process-item:hover{background:var(--mid);}
+.p-num{font-family:var(--font-h);font-size:0.65rem;letter-spacing:0.2em;color:var(--electric);min-width:60px;padding-top:0.2rem;}
+.p-content h4{font-family:var(--font-h);font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.4rem;}
+.p-content p{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.divider{border:none;border-top:1px solid var(--border);margin:3.5rem 0;}
+.case-cta{background:var(--mid);border:1px solid var(--border);padding:4rem;text-align:center;margin-top:5rem;position:relative;overflow:hidden;}
+.case-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,229,255,0.06) 0%,transparent 65%);pointer-events:none;}
+.case-cta h3{font-family:var(--font-h);font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:0.8rem;position:relative;}
+.case-cta p{color:var(--muted2);margin-bottom:2.5rem;position:relative;}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;}
+.btn-e{background:var(--electric);color:var(--ink);padding:0.9rem 2.4rem;font-family:var(--font-h);font-weight:700;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-e:hover{background:var(--electric2);}
+.btn-g{border:1px solid rgba(255,255,255,0.18);color:var(--text);padding:0.9rem 2.4rem;font-family:var(--font-h);font-weight:600;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-g:hover{border-color:var(--electric);color:var(--electric);}
+footer{background:#030610;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.footer-l{font-family:var(--font-h);font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.footer-links a:hover{color:var(--electric);}
+@media(max-width:900px){nav,.case-hero,.case-body,footer{padding-left:1.5rem;padding-right:1.5rem;}.img-grid{grid-template-columns:1fr;}.stats-row{grid-template-columns:1fr 1fr;}.case-cta{padding:2.5rem 1.5rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">SQ<em>/</em></a>
+  <a href="projects-uiux.html" class="nav-back">← All UI/UX Projects</a>
+</nav>
+
+<section class="case-hero">
+  <div class="hero-inner">
+    <div class="case-tag">Enterprise SaaS · NetSol Technologies · NASDAQ · Lahore</div>
+    <h1>Enterprise Software UI<br><em>NetSol Technologies</em></h1>
+    <p class="lead">Designed user-centric interfaces for complex enterprise software at Pakistan's largest NASDAQ-listed tech firm — improving user task efficiency by 20% across multiple product teams.</p>
+    <div class="case-meta">
+      <div class="meta-item"><span class="label">Company</span><span class="value cyan">NetSol Technologies</span></div>
+      <div class="meta-item"><span class="label">Listed</span><span class="value">NASDAQ: NTWK</span></div>
+      <div class="meta-item"><span class="label">Outcome</span><span class="value cyan">20% Efficiency Gain</span></div>
+      <div class="meta-item"><span class="label">Tools</span><span class="value">Figma · Adobe XD</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="case-body">
+
+  <div class="img-slot">
+    <img src="images/ui ux and web/Screenshot 2026-04-23 182629.png" alt="NetSol enterprise UI">
+    <div class="caption">NetSol Technologies — enterprise software interface redesign</div>
+  </div>
+
+  <div class="section-kicker">Overview</div>
+  <h2 class="block-title">Enterprise UX at Scale</h2>
+  <p class="body-text">NetSol Technologies is Pakistan's flagship NASDAQ-listed software company, building enterprise asset finance and leasing software used by global clients including BMW, Mercedes-Benz, and Caterpillar. I joined as a UI/UX designer working across multiple product teams on complex, data-heavy interfaces used daily by hundreds of finance professionals.</p>
+  <p class="body-text">The challenge with enterprise software is that <strong>users can't opt out</strong> — they have to use it, all day, every day. Bad UX doesn't just frustrate; it costs real money in lost productivity. My work focused on reducing cognitive load, streamlining high-frequency workflows, and building a consistent design system across products.</p>
+
+  <div class="stats-row">
+    <div class="stat-card"><span class="num">20%</span><span class="desc">Task Efficiency Gain</span></div>
+    <div class="stat-card"><span class="num amber">NASDAQ</span><span class="desc">Listed Company</span></div>
+    <div class="stat-card"><span class="num">Global</span><span class="desc">Enterprise Clients</span></div>
+  </div>
+
+  <div class="section-kicker amber">Screen Designs</div>
+  <h2 class="block-title">The Work</h2>
+
+  <div class="img-grid">
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-04-23 183118.png" alt="Dashboard design">
+      <div class="caption">Dashboard — key metrics at a glance</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-04-23 183139.png" alt="Data table design">
+      <div class="caption">Data tables — sortable, filterable, dense but readable</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-04-23 183301.png" alt="Form design">
+      <div class="caption">Complex forms — grouped, validated, error-safe</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-04-23 183322.png" alt="Workflow screen">
+      <div class="caption">Approval workflow — status-driven navigation</div>
+    </div>
+  </div>
+
+  <div class="img-grid">
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-04-23 183347.png" alt="Report view">
+      <div class="caption">Reporting — exportable, filterable data views</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-04-23 183523.png" alt="Settings panel">
+      <div class="caption">Settings — structured, searchable configuration</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker">Design Process</div>
+  <h2 class="block-title">How I Worked</h2>
+
+  <div class="process-list">
+    <div class="process-item">
+      <span class="p-num">01 · Embed</span>
+      <div class="p-content">
+        <h4>Working Alongside Product Teams</h4>
+        <p>Embedded with product managers and developers in Agile sprints. Attended daily standups, sprint planning, and retrospectives. Understood the technical constraints before designing anything.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">02 · Research</span>
+      <div class="p-content">
+        <h4>User Research with Finance Professionals</h4>
+        <p>Conducted contextual inquiry sessions with end users — watching them work, not just asking what they wanted. Identified the top 5 workflow bottlenecks causing the most daily friction.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">03 · System</span>
+      <div class="p-content">
+        <h4>Design System Development</h4>
+        <p>Built a shared component library in Figma covering 80+ components — tables, forms, modals, navigation, status indicators. Consistent patterns across all products reduced learning curve for users switching between tools.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">04 · Deliver</span>
+      <div class="p-content">
+        <h4>Developer Handoff & QA</h4>
+        <p>Delivered annotated Figma specs with interaction notes, spacing tokens, and edge case documentation. Participated in QA to ensure implementation matched design intent.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker">Tech Stack</div>
+  <h2 class="block-title">Tools & Technologies</h2>
+  <div class="tech-row">
+    <span class="pill">Figma</span>
+    <span class="pill">Adobe XD</span>
+    <span class="pill">Design Systems</span>
+    <span class="pill">User Research</span>
+    <span class="pill">Prototyping</span>
+    <span class="pill amber">Agile / Scrum</span>
+    <span class="pill amber">Jira</span>
+    <span class="pill amber">Developer Handoff</span>
+  </div>
+
+  <div class="case-cta">
+    <h3>Need Enterprise UX Done Right?</h3>
+    <p>I design complex software interfaces that make professionals faster — with research, systems thinking, and real delivery experience.</p>
+    <div class="cta-btns">
+      <a href="mailto:Shazaibqasier@hotmail.com" class="btn-e">Get in Touch →</a>
+      <a href="projects-uiux.html" class="btn-g">All UI/UX Projects</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-l">© 2025 Shazaib Qaiser · SQ Interactive</div>
+  <div class="footer-links">
+    <a href="mailto:Shazaibqasier@hotmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/" target="_blank">LinkedIn</a>
+    <a href="https://sqinteractive.com" target="_blank">sqinteractive.com</a>
+  </div>
+</footer>
+</body>
+</html>

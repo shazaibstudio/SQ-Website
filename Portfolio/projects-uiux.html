@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI/UX & Web Projects — Shazaib Qaiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060a14;--ink2:#0a0e1a;--mid:#0f1626;--mid2:#141d2e;--electric:#00e5ff;--electric2:#5ef0ff;--amber:#ffb700;--text:#d8dce8;--muted:#4a5568;--muted2:#6b7a90;--border:rgba(255,255,255,0.07);--border2:rgba(0,229,255,0.15);--font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:68px;backdrop-filter:blur(24px) saturate(1.8);background:rgba(6,10,20,0.85);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.1rem;letter-spacing:0.12em;color:var(--electric);text-decoration:none;}
+.nav-logo em{color:var(--amber);font-style:normal;}
+.nav-back{display:flex;align-items:center;gap:0.5rem;color:var(--muted2);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.nav-back:hover{color:var(--electric);}
+
+.page-hero{margin-top:68px;padding:5rem 4rem 3.5rem;background:linear-gradient(160deg,var(--ink) 0%,#090d1a 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 20% 50%,rgba(255,183,0,0.05) 0%,transparent 65%);pointer-events:none;}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,183,0,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,183,0,0.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.page-hero-inner{position:relative;z-index:1;}
+.section-kicker{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
+.section-kicker::before{content:'';width:16px;height:1px;background:var(--amber);}
+.page-hero h1{font-family:var(--font-h);font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1;color:#fff;margin-bottom:1rem;}
+.page-hero h1 em{color:var(--amber);font-style:normal;}
+.page-hero p{color:var(--muted2);font-size:1rem;max-width:560px;font-weight:300;}
+
+.grid-wrap{max-width:1200px;margin:0 auto;padding:5rem 4rem 8rem;}
+
+.card-featured{display:grid;grid-template-columns:1.4fr 1fr;gap:2px;background:var(--border);margin-bottom:2px;}
+.card-featured .card-img{overflow:hidden;background:var(--mid2);position:relative;min-height:340px;}
+.card-featured .card-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7);transition:filter 0.5s,transform 0.6s;}
+.card-featured:hover .card-img img{filter:brightness(0.9);transform:scale(1.04);}
+.card-featured .card-body{background:var(--mid2);padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;transition:background 0.3s;}
+.card-featured:hover .card-body{background:var(--mid);}
+
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.card{background:var(--mid2);overflow:hidden;transition:background 0.3s;position:relative;}
+.card:hover{background:var(--mid);}
+.card-img-wrap{overflow:hidden;aspect-ratio:16/9;background:var(--ink2);}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.65);transition:filter 0.5s,transform 0.6s;}
+.card:hover .card-img-wrap img{filter:brightness(0.9);transform:scale(1.05);}
+.card-body{padding:1.8rem 1.6rem 2rem;}
+
+.card-cat{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;display:block;}
+.card-cat.cyan{color:var(--electric);}
+.card h3{font-family:var(--font-h);font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;line-height:1.25;}
+.card-featured .card-body h3{font-size:1.5rem;margin-bottom:0.8rem;}
+.card p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.card-featured .card-body p{font-size:0.92rem;color:var(--muted2);line-height:1.75;margin-bottom:1.5rem;}
+.card-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
+.tag{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--muted);}
+.card-link{display:inline-flex;align-items:center;gap:0.4rem;margin-top:1.2rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);text-decoration:none;opacity:0.7;transition:opacity 0.25s;}
+.card-link:hover{opacity:1;}
+.cover-link{position:absolute;inset:0;z-index:1;}
+
+/* Graphic design section */
+.sub-section{margin-top:5rem;padding-top:3rem;border-top:1px solid var(--border);}
+.sub-section h2{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:var(--muted2);margin-bottom:2rem;letter-spacing:0.05em;}
+.graphic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);}
+.graphic-card{background:var(--mid2);overflow:hidden;transition:background 0.3s;}
+.graphic-card:hover{background:var(--mid);}
+.graphic-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:brightness(0.75);transition:filter 0.4s,transform 0.5s;}
+.graphic-card:hover img{filter:brightness(0.95);transform:scale(1.03);}
+.graphic-card-body{padding:1rem 1.2rem 1.4rem;}
+.graphic-card span{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.3rem;}
+.graphic-card h4{font-family:var(--font-h);font-size:0.82rem;font-weight:700;color:#fff;}
+
+/* JPJ / Figma section */
+.figma-section{margin-top:5rem;padding-top:3rem;border-top:1px solid var(--border);}
+.figma-section h2{font-family:var(--font-h);font-size:1.1rem;font-weight:700;color:var(--muted2);margin-bottom:2rem;}
+.figma-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);}
+.figma-card{background:var(--mid2);overflow:hidden;transition:background 0.3s;}
+.figma-card:hover{background:var(--mid);}
+.figma-card img{width:100%;height:220px;object-fit:cover;display:block;filter:brightness(0.7);transition:filter 0.4s,transform 0.5s;}
+.figma-card:hover img{filter:brightness(0.9);transform:scale(1.03);}
+.figma-card-body{padding:1.4rem 1.6rem 1.8rem;}
+.figma-card span{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--electric);display:block;margin-bottom:0.4rem;}
+.figma-card h4{font-family:var(--font-h);font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.4rem;}
+.figma-card p{font-size:0.8rem;color:var(--muted);line-height:1.6;}
+
+footer{background:#030610;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.footer-l{font-family:var(--font-h);font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.footer-links a:hover{color:var(--electric);}
+@media(max-width:1000px){.cards-grid,.graphic-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){nav,.page-hero,.grid-wrap,footer{padding-left:1.5rem;padding-right:1.5rem;}.card-featured,.figma-grid{grid-template-columns:1fr;}.cards-grid,.graphic-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">SQ<em>/</em></a>
+  <a href="index.html#uiux" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-kicker">UI/UX · Web · Digital Products</div>
+    <h1>Screens That<br><em>Convert & Delight.</em></h1>
+    <p>From enterprise SaaS to hospitality booking engines — interfaces designed with research and built for real users.</p>
+  </div>
+</section>
+
+<div class="grid-wrap">
+
+  <!-- Featured -->
+  <div class="card-featured">
+    <div class="card-img">
+      <img src="images/ui ux and web/Screenshot 2025-12-29 214138.png" alt="Heaven Hotel">
+    </div>
+    <div class="card-body">
+      <span class="card-cat">Featured · Hospitality · Full-Stack</span>
+      <h3>Heaven Hotel — Full Digital Overhaul</h3>
+      <p>Complete website revamp, mobile optimisation, 360° tour integration, and a full booking engine with live payment gateway. Brief to production deployment.</p>
+      <div class="card-tags">
+        <span class="tag">HTML/CSS/JS</span><span class="tag">Database</span><span class="tag">Payment API</span><span class="tag">Insta360</span>
+      </div>
+      <a href="case-heavenhotel.html" class="card-link">View Case Study →</a>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/ui ux and web/sq interactive 1.png" alt="SQ Interactive">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Brand · Web · Identity</span>
+        <h3>SQ Interactive — Brand & Website</h3>
+        <p>Full company brand identity and website built from zero. Self-directed, no templates.</p>
+        <div class="card-tags"><span class="tag">Figma</span><span class="tag">HTML/CSS/JS</span><span class="tag">Brand Design</span></div>
+        <a href="case-sqinteractive.html" class="card-link">View Case Study →</a>
+      </div>
+      <a href="case-sqinteractive.html" class="cover-link" aria-label="SQ Interactive"></a>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/ui ux and web/visa system 1.png" alt="Visa System">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Enterprise UI/UX · Database</span>
+        <h3>Visa Management System</h3>
+        <p>UX redesign of a complex visa processing system. 30% efficiency improvement measured.</p>
+        <div class="card-tags"><span class="tag">Figma</span><span class="tag">UX Research</span><span class="tag">Database</span></div>
+        <a href="case-visa.html" class="card-link">View Case Study →</a>
+      </div>
+      <a href="case-visa.html" class="cover-link" aria-label="Visa System"></a>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/ui ux and web/Screenshot 2026-04-23 182629.png" alt="NetSol">
+      </div>
+      <div class="card-body">
+        <span class="card-cat cyan">Enterprise SaaS · NASDAQ</span>
+        <h3>Enterprise Software UI — NetSol</h3>
+        <p>UI/UX for Pakistan's largest NASDAQ-listed tech firm. 20% task efficiency gain.</p>
+        <div class="card-tags"><span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">Design System</span></div>
+        <a href="case-netsol.html" class="card-link">View Case Study →</a>
+      </div>
+      <a href="case-netsol.html" class="cover-link" aria-label="NetSol"></a>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/ui ux and web/Screenshot 2026-01-12 220331.png" alt="Web project">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Web Design · Frontend</span>
+        <h3>Web Application UI</h3>
+        <p>Clean, responsive web application interface with component-driven design system.</p>
+        <div class="card-tags"><span class="tag">Figma</span><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/ui ux and web/Screenshot 2026-04-23 183523.png" alt="Dashboard UI">
+      </div>
+      <div class="card-body">
+        <span class="card-cat cyan">Dashboard · Data Viz</span>
+        <h3>Enterprise Dashboard Design</h3>
+        <p>Data-dense dashboard with clear hierarchy, status indicators, and actionable layouts.</p>
+        <div class="card-tags"><span class="tag">Figma</span><span class="tag">Data Viz</span><span class="tag">Components</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img-wrap">
+        <img src="images/ui ux and web/Screenshot 2025-05-13 200211.png" alt="Mobile UI">
+      </div>
+      <div class="card-body">
+        <span class="card-cat">Mobile · Responsive</span>
+        <h3>Mobile-First Interface</h3>
+        <p>Mobile-optimised interface design with touch-friendly components and fast load performance.</p>
+        <div class="card-tags"><span class="tag">Figma</span><span class="tag">Mobile</span><span class="tag">Responsive</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Figma / JPJ work -->
+  <div class="figma-section">
+    <h2>Figma & Web Design Work</h2>
+    <div class="figma-grid">
+      <div class="figma-card">
+        <img src="images/ui ux and web/jpj web design figma.png" alt="JPJ Web Design Figma">
+        <div class="figma-card-body">
+          <span>Figma · Government Web</span>
+          <h4>JPJ Web Redesign Concept</h4>
+          <p>Full Figma redesign concept for a government transport portal — cleaner IA, modern UI, mobile-first.</p>
+        </div>
+      </div>
+      <div class="figma-card">
+        <img src="images/ui ux and web/Screenshot 2025-05-13 210806.png" alt="UI Design">
+        <div class="figma-card-body">
+          <span>UI Design · Figma</span>
+          <h4>Product Interface Design</h4>
+          <p>High-fidelity product UI with full component library and interactive prototype.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graphic design -->
+  <div class="sub-section">
+    <h2>Graphic Design & Print</h2>
+    <div class="graphic-grid">
+      <div class="graphic-card">
+        <img src="images/graphic and design/brosure ready .png" alt="Brochure">
+        <div class="graphic-card-body"><span>Print Design</span><h4>Studio Brochure</h4></div>
+      </div>
+      <div class="graphic-card">
+        <img src="images/graphic and design/SQ main card/1.png" alt="Business Card">
+        <div class="graphic-card-body"><span>Brand Identity</span><h4>Business Cards</h4></div>
+      </div>
+      <div class="graphic-card">
+        <img src="images/graphic and design/animation.png" alt="Animation">
+        <div class="graphic-card-body"><span>Motion Design</span><h4>Animation Work</h4></div>
+      </div>
+      <div class="graphic-card">
+        <img src="images/graphic and design/small large.png" alt="Graphic design">
+        <div class="graphic-card-body"><span>Graphic Design</span><h4>Visual Assets</h4></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-l">© 2025 Shazaib Qaiser · SQ Interactive</div>
+  <div class="footer-links">
+    <a href="mailto:Shazaibqasier@hotmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/" target="_blank">LinkedIn</a>
+    <a href="https://sqinteractive.com" target="_blank">sqinteractive.com</a>
+  </div>
+</footer>
+</body>
+</html>

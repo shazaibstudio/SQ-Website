@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heaven Hotel — Full Digital Overhaul · Shazaib Qaiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060a14;--ink2:#0a0e1a;--mid:#0f1626;--mid2:#141d2e;--electric:#00e5ff;--electric2:#5ef0ff;--amber:#ffb700;--amber2:#ffd060;--text:#d8dce8;--muted:#4a5568;--muted2:#6b7a90;--border:rgba(255,255,255,0.07);--border2:rgba(0,229,255,0.15);--font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:68px;backdrop-filter:blur(24px) saturate(1.8);background:rgba(6,10,20,0.85);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.1rem;letter-spacing:0.12em;color:var(--electric);text-decoration:none;}
+.nav-logo em{color:var(--amber);font-style:normal;}
+.nav-back{display:flex;align-items:center;gap:0.5rem;color:var(--muted2);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.nav-back:hover{color:var(--electric);}
+.case-hero{margin-top:68px;padding:6rem 4rem 4rem;background:linear-gradient(160deg,var(--ink) 0%,var(--mid) 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(255,183,0,0.05) 0%,transparent 65%);pointer-events:none;}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,183,0,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,183,0,0.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:860px;}
+.case-tag{display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 1rem;border:1px solid rgba(255,183,0,0.3);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;}
+.case-hero h1{font-family:var(--font-h);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.05;color:#fff;margin-bottom:1.2rem;}
+.case-hero h1 em{color:var(--amber);font-style:normal;}
+.case-hero .lead{font-size:1.05rem;color:var(--muted2);max-width:600px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+.case-meta{display:flex;flex-wrap:wrap;gap:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+.meta-item .label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:0.3rem;}
+.meta-item .value{font-family:var(--font-h);font-size:0.9rem;font-weight:700;color:var(--text);}
+.meta-item .value.amber{color:var(--amber);}
+.meta-item .value.cyan{color:var(--electric);}
+.case-body{max-width:960px;margin:0 auto;padding:5rem 4rem 8rem;}
+.section-kicker{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--electric);font-weight:600;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem;}
+.section-kicker::before{content:'';width:16px;height:1px;background:var(--electric);}
+.section-kicker.amber{color:var(--amber);}
+.section-kicker.amber::before{background:var(--amber);}
+h2.block-title{font-family:var(--font-h);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:1.2rem;line-height:1.1;}
+p.body-text{color:var(--muted2);line-height:1.9;margin-bottom:1rem;font-size:0.97rem;font-weight:300;}
+p.body-text strong{color:var(--text);font-weight:500;}
+.img-slot{width:100%;overflow:hidden;background:var(--mid2);border:1px solid var(--border);margin:2.5rem 0;position:relative;}
+.img-slot img{width:100%;height:auto;display:block;transition:transform 0.6s ease;}
+.img-slot:hover img{transform:scale(1.02);}
+.img-slot .caption{padding:0.8rem 1.4rem;font-size:0.75rem;color:var(--muted);border-top:1px solid var(--border);background:rgba(0,0,0,0.3);letter-spacing:0.05em;}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin:2.5rem 0;}
+.img-grid .img-slot{margin:0;}
+.img-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border);margin:2.5rem 0;}
+.img-grid-3 .img-slot{margin:0;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin:2.5rem 0;}
+.stat-card{background:var(--mid2);padding:2rem 1.5rem;text-align:center;}
+.stat-card .num{font-family:var(--font-h);font-size:2.2rem;font-weight:800;color:var(--electric);line-height:1;display:block;}
+.stat-card .num.amber{color:var(--amber);}
+.stat-card .desc{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;display:block;}
+.tech-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.2rem 0 2rem;}
+.pill{padding:0.25rem 0.8rem;border:1px solid var(--border2);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);}
+.pill.amber{border-color:rgba(255,183,0,0.3);color:var(--amber);}
+.process-list{display:flex;flex-direction:column;gap:1px;background:var(--border);margin:2rem 0;}
+.process-item{background:var(--mid2);padding:1.8rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:background 0.3s;}
+.process-item:hover{background:var(--mid);}
+.p-num{font-family:var(--font-h);font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);min-width:60px;padding-top:0.2rem;}
+.p-content h4{font-family:var(--font-h);font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.4rem;}
+.p-content p{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.divider{border:none;border-top:1px solid var(--border);margin:3.5rem 0;}
+.case-cta{background:var(--mid);border:1px solid var(--border);padding:4rem;text-align:center;margin-top:5rem;position:relative;overflow:hidden;}
+.case-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,183,0,0.05) 0%,transparent 65%);pointer-events:none;}
+.case-cta h3{font-family:var(--font-h);font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:0.8rem;position:relative;}
+.case-cta p{color:var(--muted2);margin-bottom:2.5rem;position:relative;}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;}
+.btn-e{background:var(--amber);color:var(--ink);padding:0.9rem 2.4rem;font-family:var(--font-h);font-weight:700;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-e:hover{background:var(--amber2);}
+.btn-g{border:1px solid rgba(255,255,255,0.18);color:var(--text);padding:0.9rem 2.4rem;font-family:var(--font-h);font-weight:600;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-g:hover{border-color:var(--amber);color:var(--amber);}
+footer{background:#030610;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.footer-l{font-family:var(--font-h);font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.footer-links a:hover{color:var(--electric);}
+@media(max-width:900px){nav,.case-hero,.case-body,footer{padding-left:1.5rem;padding-right:1.5rem;}.img-grid,.img-grid-3{grid-template-columns:1fr;}.stats-row{grid-template-columns:1fr 1fr;}.case-cta{padding:2.5rem 1.5rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SQ<em>/</em></a>
+  <a href="projects-uiux.html" class="nav-back">← All UI/UX Projects</a>
+</nav>
+
+<section class="case-hero">
+  <div class="hero-inner">
+    <div class="case-tag">Hospitality · Web Redesign · Booking Engine · Payment Gateway</div>
+    <h1>Heaven Hotel —<br><em>Full Digital Overhaul</em></h1>
+    <p class="lead">Complete website revamp, mobile optimisation, 360° tour integration, and a full booking engine with live payment gateway — from brief to production deployment for a hospitality client.</p>
+    <div class="case-meta">
+      <div class="meta-item"><span class="label">Client</span><span class="value amber">Heaven Hotel</span></div>
+      <div class="meta-item"><span class="label">Scope</span><span class="value">Full-Stack Web + 360°</span></div>
+      <div class="meta-item"><span class="label">Stack</span><span class="value">HTML · CSS · JS · DB</span></div>
+      <div class="meta-item"><span class="label">Status</span><span class="value cyan">Live · Production</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="case-body">
+
+  <div class="img-slot">
+    <img src="images/ui ux and web/Screenshot 2025-12-29 214138.png" alt="Heaven Hotel website homepage">
+    <div class="caption">Heaven Hotel — redesigned homepage, live in production</div>
+  </div>
+
+  <div class="section-kicker amber">Overview</div>
+  <h2 class="block-title">Brief to Production. Everything.</h2>
+  <p class="body-text">Heaven Hotel came to me with an outdated website that wasn't converting visitors into bookings. The brief was comprehensive: <strong>redesign the entire digital presence</strong>, build a real booking engine that processes payments, integrate 360° virtual tours of the property, and make it all work flawlessly on mobile.</p>
+  <p class="body-text">This was a full-stack project — from initial UX research and Figma wireframes through to database design, backend development, payment gateway integration, and final deployment. Every component was built from scratch and tested on real devices before going live.</p>
+
+  <div class="stats-row">
+    <div class="stat-card"><span class="num amber">100%</span><span class="desc">Custom Build</span></div>
+    <div class="stat-card"><span class="num">Live</span><span class="desc">Payment Processing</span></div>
+    <div class="stat-card"><span class="num amber">360°</span><span class="desc">Tours Integrated</span></div>
+    <div class="stat-card"><span class="num">Mobile</span><span class="desc">First Design</span></div>
+  </div>
+
+  <div class="section-kicker">Website Design</div>
+  <h2 class="block-title">A Site That Converts</h2>
+  <p class="body-text">The redesign focused on one goal: <strong>get visitors to book</strong>. Every page was designed with that conversion funnel in mind — clear room showcases, prominent booking CTAs, trust signals, and a frictionless checkout flow.</p>
+
+  <div class="img-grid">
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2025-12-29 214144.png" alt="Rooms page">
+      <div class="caption">Rooms & suites page — clear pricing, direct booking</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2025-12-30 023115.png" alt="Booking flow">
+      <div class="caption">Booking flow — date selection to payment in 3 steps</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2025-12-30 030518.png" alt="Mobile view">
+      <div class="caption">Mobile-optimised — tested on real devices</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2025-12-30 043456.png" alt="Gallery page">
+      <div class="caption">Photo gallery with 360° tour integration</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker amber">Booking Engine</div>
+  <h2 class="block-title">Real Payments. Real Bookings.</h2>
+  <p class="body-text">The booking engine was built from scratch — no off-the-shelf plugins. It handles <strong>real-time availability checking</strong>, room selection, guest details, and live payment processing through an integrated payment gateway. Bookings are stored in a custom database and trigger automated confirmation emails.</p>
+
+  <div class="img-grid">
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-01-12 220044.png" alt="Booking engine UI">
+      <div class="caption">Booking engine — availability calendar</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/ui ux and web/Screenshot 2026-01-12 220127.png" alt="Payment flow">
+      <div class="caption">Payment gateway integration — live processing</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker">Build Process</div>
+  <h2 class="block-title">From Brief to Live</h2>
+
+  <div class="process-list">
+    <div class="process-item">
+      <span class="p-num">01 · Research</span>
+      <div class="p-content">
+        <h4>UX Audit & Competitor Analysis</h4>
+        <p>Audited the existing site for conversion blockers. Analysed competitor hotel sites. Defined the information architecture and user journey from landing to booking confirmation.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">02 · Design</span>
+      <div class="p-content">
+        <h4>Figma Wireframes & Visual Design</h4>
+        <p>Built full wireframes in Figma for all key pages. Designed the visual system — typography, colour palette, component library. Client approved designs before any code was written.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">03 · Build</span>
+      <div class="p-content">
+        <h4>Full-Stack Development</h4>
+        <p>Built the frontend in HTML/CSS/JavaScript. Designed and implemented the database schema for bookings, rooms, and availability. Integrated the payment gateway API. Built the admin dashboard for managing bookings.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">04 · 360°</span>
+      <div class="p-content">
+        <h4>Virtual Tour Integration</h4>
+        <p>Shot the property with the Insta360 X3. Edited panoramas, added hotspots, and embedded the tour suite directly into the website's gallery and room pages.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">05 · Deploy</span>
+      <div class="p-content">
+        <h4>Testing & Live Deployment</h4>
+        <p>Tested the full booking flow end-to-end with real payment transactions. Cross-device testing on iOS, Android, and desktop. Deployed to production with SSL, performance optimisation, and monitoring.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker">Tech Stack</div>
+  <h2 class="block-title">Tools & Technologies</h2>
+  <div class="tech-row">
+    <span class="pill">HTML5</span>
+    <span class="pill">CSS3</span>
+    <span class="pill">JavaScript</span>
+    <span class="pill">Database Design</span>
+    <span class="pill">Payment Gateway API</span>
+    <span class="pill amber">Figma</span>
+    <span class="pill amber">Insta360 X3</span>
+    <span class="pill amber">360° Tour Embed</span>
+    <span class="pill amber">Mobile Responsive</span>
+  </div>
+
+  <div class="case-cta">
+    <h3>Need a Full Digital Overhaul?</h3>
+    <p>I design and build complete hospitality web systems — from UX research to live payment processing.</p>
+    <div class="cta-btns">
+      <a href="mailto:Shazaibqasier@hotmail.com" class="btn-e">Get in Touch →</a>
+      <a href="projects-uiux.html" class="btn-g">All UI/UX Projects</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-l">© 2025 Shazaib Qaiser · SQ Interactive</div>
+  <div class="footer-links">
+    <a href="mailto:Shazaibqasier@hotmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/" target="_blank">LinkedIn</a>
+    <a href="https://sqinteractive.com" target="_blank">sqinteractive.com</a>
+  </div>
+</footer>
+</body>
+</html>

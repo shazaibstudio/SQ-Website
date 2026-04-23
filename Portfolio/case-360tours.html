@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>360° Virtual Tour Suite — Shazaib Qaiser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#060a14;--ink2:#0a0e1a;--mid:#0f1626;--mid2:#141d2e;--electric:#00e5ff;--electric2:#5ef0ff;--amber:#ffb700;--amber2:#ffd060;--text:#d8dce8;--muted:#4a5568;--muted2:#6b7a90;--border:rgba(255,255,255,0.07);--border2:rgba(0,229,255,0.15);--font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:68px;backdrop-filter:blur(24px) saturate(1.8);background:rgba(6,10,20,0.85);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--font-h);font-weight:800;font-size:1.1rem;letter-spacing:0.12em;color:var(--electric);text-decoration:none;}
+.nav-logo em{color:var(--amber);font-style:normal;}
+.nav-back{display:flex;align-items:center;gap:0.5rem;color:var(--muted2);text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.nav-back:hover{color:var(--electric);}
+.case-hero{margin-top:68px;padding:6rem 4rem 4rem;background:linear-gradient(160deg,var(--ink) 0%,var(--mid) 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.case-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(255,183,0,0.05) 0%,transparent 65%);pointer-events:none;}
+.case-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,183,0,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,183,0,0.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:860px;}
+.case-tag{display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 1rem;border:1px solid rgba(255,183,0,0.3);font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;}
+.case-hero h1{font-family:var(--font-h);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.05;color:#fff;margin-bottom:1.2rem;}
+.case-hero h1 em{color:var(--amber);font-style:normal;}
+.case-hero .lead{font-size:1.05rem;color:var(--muted2);max-width:600px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+.case-meta{display:flex;flex-wrap:wrap;gap:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+.meta-item .label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:0.3rem;}
+.meta-item .value{font-family:var(--font-h);font-size:0.9rem;font-weight:700;color:var(--text);}
+.meta-item .value.amber{color:var(--amber);}
+.case-body{max-width:960px;margin:0 auto;padding:5rem 4rem 8rem;}
+.section-kicker{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--electric);font-weight:600;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem;}
+.section-kicker::before{content:'';width:16px;height:1px;background:var(--electric);}
+.section-kicker.amber{color:var(--amber);}
+.section-kicker.amber::before{background:var(--amber);}
+h2.block-title{font-family:var(--font-h);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:1.2rem;line-height:1.1;}
+p.body-text{color:var(--muted2);line-height:1.9;margin-bottom:1rem;font-size:0.97rem;font-weight:300;}
+p.body-text strong{color:var(--text);font-weight:500;}
+.img-slot{width:100%;overflow:hidden;background:var(--mid2);border:1px solid var(--border);margin:2.5rem 0;position:relative;}
+.img-slot img{width:100%;height:auto;display:block;transition:transform 0.6s ease;}
+.img-slot:hover img{transform:scale(1.02);}
+.img-slot .caption{padding:0.8rem 1.4rem;font-size:0.75rem;color:var(--muted);border-top:1px solid var(--border);background:rgba(0,0,0,0.3);letter-spacing:0.05em;}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin:2.5rem 0;}
+.img-grid .img-slot{margin:0;}
+.img-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border);margin:2.5rem 0;}
+.img-grid-3 .img-slot{margin:0;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:2.5rem 0;}
+.stat-card{background:var(--mid2);padding:2.2rem 1.8rem;text-align:center;}
+.stat-card .num{font-family:var(--font-h);font-size:2.6rem;font-weight:800;color:var(--electric);line-height:1;display:block;}
+.stat-card .num.amber{color:var(--amber);}
+.stat-card .desc{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;display:block;}
+.tech-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.2rem 0 2rem;}
+.pill{padding:0.25rem 0.8rem;border:1px solid var(--border2);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);}
+.pill.amber{border-color:rgba(255,183,0,0.3);color:var(--amber);}
+.process-list{display:flex;flex-direction:column;gap:1px;background:var(--border);margin:2rem 0;}
+.process-item{background:var(--mid2);padding:1.8rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:background 0.3s;}
+.process-item:hover{background:var(--mid);}
+.p-num{font-family:var(--font-h);font-size:0.65rem;letter-spacing:0.2em;color:var(--amber);min-width:60px;padding-top:0.2rem;}
+.p-content h4{font-family:var(--font-h);font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.4rem;}
+.p-content p{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.divider{border:none;border-top:1px solid var(--border);margin:3.5rem 0;}
+.case-cta{background:var(--mid);border:1px solid var(--border);padding:4rem;text-align:center;margin-top:5rem;position:relative;overflow:hidden;}
+.case-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,183,0,0.05) 0%,transparent 65%);pointer-events:none;}
+.case-cta h3{font-family:var(--font-h);font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:0.8rem;position:relative;}
+.case-cta p{color:var(--muted2);margin-bottom:2.5rem;position:relative;}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;}
+.btn-e{background:var(--amber);color:var(--ink);padding:0.9rem 2.4rem;font-family:var(--font-h);font-weight:700;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-e:hover{background:var(--amber2);}
+.btn-g{border:1px solid rgba(255,255,255,0.18);color:var(--text);padding:0.9rem 2.4rem;font-family:var(--font-h);font-weight:600;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s;}
+.btn-g:hover{border-color:var(--amber);color:var(--amber);}
+footer{background:#030610;padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.footer-l{font-family:var(--font-h);font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.25s;}
+.footer-links a:hover{color:var(--electric);}
+@media(max-width:900px){nav,.case-hero,.case-body,footer{padding-left:1.5rem;padding-right:1.5rem;}.img-grid,.img-grid-3{grid-template-columns:1fr;}.stats-row{grid-template-columns:1fr 1fr;}.case-cta{padding:2.5rem 1.5rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SQ<em>/</em></a>
+  <a href="projects-vr.html" class="nav-back">← All VR Projects</a>
+</nav>
+
+<section class="case-hero">
+  <div class="hero-inner">
+    <div class="case-tag">360° Video · Insta360 X3 · Hospitality · Web-Embedded</div>
+    <h1>360° Virtual<br><em>Tour Suite</em></h1>
+    <p class="lead">15+ interactive 360° property tours shot with the Insta360 X3, edited with hotspots and floor plan navigation, and embedded live on hospitality client websites — helping close deals faster.</p>
+    <div class="case-meta">
+      <div class="meta-item"><span class="label">Camera</span><span class="value amber">Insta360 X3</span></div>
+      <div class="meta-item"><span class="label">Tours Delivered</span><span class="value amber">15+</span></div>
+      <div class="meta-item"><span class="label">Sector</span><span class="value">Hospitality · Real Estate</span></div>
+      <div class="meta-item"><span class="label">Status</span><span class="value amber">Live on Client Sites</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="case-body">
+
+  <div class="img-slot">
+    <img src="images/vr and 360/360 tour.jpg" alt="360 virtual tour in browser">
+    <div class="caption">360° tour embedded on client website — navigable in any browser</div>
+  </div>
+
+  <div class="section-kicker amber">Overview</div>
+  <h2 class="block-title">Let Guests Explore Before They Book</h2>
+  <p class="body-text">Hospitality clients were losing bookings to competitors who offered better online previews. Static photos weren't enough — guests wanted to <strong>feel the space</strong> before committing. The solution: a full 360° virtual tour suite, shot on-site with the Insta360 X3, edited with interactive hotspots, and embedded directly on the client's booking website.</p>
+  <p class="body-text">Each tour covers every key space: lobby, rooms, restaurant, pool, and outdoor areas. Guests can navigate freely, click hotspots for room details and pricing, and jump between floors using an interactive floor plan. The result: <strong>measurable increases in booking conversion</strong> for every client who deployed a tour.</p>
+
+  <div class="stats-row">
+    <div class="stat-card"><span class="num amber">15+</span><span class="desc">Tours Delivered</span></div>
+    <div class="stat-card"><span class="num">40%</span><span class="desc">Faster Client Sales</span></div>
+    <div class="stat-card"><span class="num amber">Live</span><span class="desc">Web-Embedded</span></div>
+  </div>
+
+  <div class="section-kicker">Tour Gallery</div>
+  <h2 class="block-title">Spaces Brought to Life</h2>
+
+  <div class="img-grid">
+    <div class="img-slot">
+      <img src="images/vr and 360/360 tour.png" alt="360 tour view 1">
+      <div class="caption">Hotel lobby — 360° panoramic view</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/vr and 360/360 2.png" alt="360 tour view 2">
+      <div class="caption">Guest room — hotspot navigation active</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/vr and 360/360 3.png" alt="360 tour view 3">
+      <div class="caption">Restaurant area — ambient lighting captured</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/vr and 360/36o1.png" alt="360 tour view 4">
+      <div class="caption">Outdoor terrace — full 360° coverage</div>
+    </div>
+  </div>
+
+  <div class="img-slot">
+    <img src="images/vr and 360/360 nav.webp" alt="360 tour navigation interface">
+    <div class="caption">Floor plan navigation — guests jump between spaces instantly</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker amber">Production Process</div>
+  <h2 class="block-title">From Shoot to Live Site</h2>
+
+  <div class="process-list">
+    <div class="process-item">
+      <span class="p-num">01 · Scout</span>
+      <div class="p-content">
+        <h4>Location Scouting & Shot Planning</h4>
+        <p>Visited each property to plan shooting positions — identifying the optimal spots for each room to maximise spatial impression. Scheduled shoots around natural light and guest activity.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">02 · Shoot</span>
+      <div class="p-content">
+        <h4>Insta360 X3 Capture</h4>
+        <p>Shot all spaces with the Insta360 X3 on a tripod at eye level. Multiple exposures per room for HDR blending. Captured both photo and video 360° content for different use cases.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">03 · Edit</span>
+      <div class="p-content">
+        <h4>Post-Production & Hotspot Editing</h4>
+        <p>Stitched and colour-graded all panoramas. Added interactive hotspots for room info, pricing, and navigation. Built floor plan overlays for multi-floor properties.</p>
+      </div>
+    </div>
+    <div class="process-item">
+      <span class="p-num">04 · Deploy</span>
+      <div class="p-content">
+        <h4>Web Embedding & Integration</h4>
+        <p>Embedded tours directly into client websites using iframe and JavaScript APIs. Integrated with booking engines so guests can go from tour to reservation in one click.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-grid">
+    <div class="img-slot">
+      <img src="images/graphic and design/insta 360.jpg" alt="Insta360 X3 camera">
+      <div class="caption">Insta360 X3 — the capture tool of choice</div>
+    </div>
+    <div class="img-slot">
+      <img src="images/vr and 360/360 2 (2).jpeg" alt="360 tour on device">
+      <div class="caption">Tour viewed on mobile — fully responsive</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-kicker">Tech Stack</div>
+  <h2 class="block-title">Tools & Technologies</h2>
+  <div class="tech-row">
+    <span class="pill amber">Insta360 X3</span>
+    <span class="pill amber">360° Photography</span>
+    <span class="pill amber">HDR Blending</span>
+    <span class="pill amber">Hotspot Editing</span>
+    <span class="pill">JavaScript Embed</span>
+    <span class="pill">Floor Plan Integration</span>
+    <span class="pill">Booking Engine API</span>
+    <span class="pill">Mobile Responsive</span>
+  </div>
+
+  <div class="case-cta">
+    <h3>Want a 360° Tour for Your Property?</h3>
+    <p>I shoot, edit, and deploy complete 360° virtual tour suites for hotels, resorts, and real estate clients.</p>
+    <div class="cta-btns">
+      <a href="mailto:Shazaibqasier@hotmail.com" class="btn-e">Get in Touch →</a>
+      <a href="projects-vr.html" class="btn-g">All VR Projects</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-l">© 2025 Shazaib Qaiser · SQ Interactive</div>
+  <div class="footer-links">
+    <a href="mailto:Shazaibqasier@hotmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/shazaib-qaiser-a0349825a/" target="_blank">LinkedIn</a>
+    <a href="https://sqinteractive.com" target="_blank">sqinteractive.com</a>
+  </div>
+</footer>
+</body>
+</html>
