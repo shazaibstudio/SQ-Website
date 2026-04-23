@@ -115,8 +115,14 @@
 <!-- ✅ Contentsquare Tag -->
 <script src="https://t.contentsquare.net/uxa/c97b2acc48ee8.js" async></script>
 
-
+</head>
 <body>
+  <!-- Sticky WhatsApp -->
+  <a href="https://wa.me/923009452153?text=سلام%20SQ%20Interactive!%20میں%20VR%20پروجیکٹ%20کے%20بارے%20میں%20بات%20کرنا%20چاہتا%20ہوں۔" target="_blank" class="whatsapp-sticky" aria-label="WhatsApp پر رابطہ">
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-label">WhatsApp کریں</span>
+  </a>
+  <div class="scroll-progress" id="scroll-progress"></div>
   <!-- Live Chat Widget -->
   <div id="chat-widget" class="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
     <div class="flex items-center gap-2">
@@ -126,91 +132,41 @@
       <span class="font-semibold text-sm">لائیو چیٹ</span>
     </div>
   </div>
-  
   <div id="chat-box" class="fixed bottom-40 right-6 z-50 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden">
     <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
       <h3 class="font-semibold">SQ Interactive اسسٹنٹ</h3>
       <button onclick="document.getElementById('chat-box').classList.toggle('hidden')" class="text-black hover:text-gray-700">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
     <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
-      <div class="mb-4">
-        <div class="bg-yellow-100 p-3 rounded-lg mb-2">
-          <p class="text-sm">👋 سلام! میں آپ کا SQ Interactive اسسٹنٹ ہوں۔ میں آپ کی مدد کر سکتا ہوں:</p>
-          <div class="mt-2 text-xs">
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>آپ کیا خدمات فراہم کرتے ہیں؟</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>🏠 ہمارے VR حل:<br>• 360° ٹورز: 35K-70K PKR<br>• VR ریئل اسٹیٹ: 250K-400K PKR<br>• انٹرایکٹو واک تھروز: 100K-180K PKR</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">خدمات</button>
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>آپ کی قیمتیں کیا ہیں؟</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>💰 قیمتیں 35K PKR (360° ٹورز) سے 400K PKR (مکمل VR تجربات) تک ہیں</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">قیمتیں</button>
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>پروجیکٹ میں کتنا وقت لگتا ہے؟</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'>⏱️ پروجیکٹ کا وقت:<br>• 360° ٹورز: 1 ہفتہ<br>• انٹرایکٹو واک تھروز: 2-3 ہفتے<br>• VR ریئل اسٹیٹ: 4-6 ہفتے</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">وقت</button>
-          </div>
-        </div>
-      </div>
+      <div class="mb-4"><div class="bg-yellow-100 p-3 rounded-lg"><p class="text-sm">👋 سلام! میں آپ کا SQ Interactive اسسٹنٹ ہوں۔ <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp کریں</a></p></div></div>
     </div>
-    <div class="p-4 border-t">
-      <div class="flex gap-2">
-        <input id="chat-input" type="text" placeholder="VR، قیمتوں، وقت کے بارے میں پوچھیں..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessage()}">
-        <button onclick="sendChatMessage()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="22" y1="2" x2="11" y2="13"></line>
-            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-          </svg>
-        </button>
-      </div>
-    </div>
+    <div class="p-4 border-t"><div class="flex gap-2">
+      <input id="chat-input" type="text" placeholder="VR، قیمت، وقت کے بارے میں پوچھیں..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessageUR()}">
+      <button onclick="sendChatMessageUR()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22,2 15,22 11,13 2,9 22,2"></polygon></svg>
+      </button>
+    </div></div>
   </div>
-
   <script>
-    function sendChatMessage() {
+    function sendChatMessageUR() {
       const input = document.getElementById('chat-input');
-      const message = input.value.trim();
-      
-      if (message) {
-        const container = document.getElementById('chat-messages');
-        
-        // Add user message
-        const userDiv = document.createElement('div');
-        userDiv.className = 'mb-3 text-right';
-        userDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black">${message}</div>`;
-        container.appendChild(userDiv);
-        
-        // Clear input
-        input.value = '';
-        
-        // Generate bot response
-        setTimeout(() => {
-          let response = '';
-          const msg = message.toLowerCase();
-          
-          if (msg.includes('service') || msg.includes('offer')) {
-            response = '🏠 <strong>Our VR Solutions:</strong><br>• 360° Tours: 35K-70K PKR<br>• VR Real Estate: 250K-400K PKR<br>• Interactive Walkthroughs: 100K-180K PKR<br><br>💬 <strong>Ready to get started?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us now</a> or <a href="contact.html" class="text-yellow-600 font-semibold">request a demo!</a>';
-          } else if (msg.includes('price') || msg.includes('cost')) {
-            response = '💰 <strong>VR Pricing (Pakistan):</strong><br>• 360° Tours: 35K-70K PKR<br>• Interactive: 100K-180K PKR<br>• Full VR: 250K-400K PKR<br><br>📞 <strong>Get exact quote:</strong><br><a href="tel:+923009452153" class="text-yellow-600 font-semibold">Call +92 300 9452153</a> or <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant pricing!</a>';
-          } else if (msg.includes('hello') || msg.includes('hi')) {
-            response = 'Hello! 👋 I\'m here to help with VR real estate solutions.<br><br>🎯 <strong>Quick question:</strong> What type of property do you want to showcase?<br><br>💬 For faster response: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us directly!</a>';
-          } else if (msg.includes('demo') || msg.includes('example')) {
-            response = '🎮 <strong>See VR in Action!</strong><br><br>Check our live demo or request a custom demo for your property.<br><br>🚀 <a href="contact.html" class="bg-yellow-400 text-black px-3 py-1 rounded font-semibold">Request Demo</a><br>📱 <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant demo</a>';
-          } else if (msg.includes('contact') || msg.includes('call') || msg.includes('phone')) {
-            response = '📞 <strong>Contact SQ Interactive:</strong><br><br>📱 WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">+92 300 9452153</a><br>📧 Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-600">admin@sqinteractive.com</a><br>📍 Location: Lahore, Pakistan<br><br>💬 <strong>WhatsApp is fastest for quick questions!</strong>';
-          } else if (msg.includes('time') || msg.includes('timeline') || msg.includes('how long')) {
-            response = '⏱️ <strong>Project Timelines:</strong><br>• 360° Tours: 1 week<br>• Interactive Walkthroughs: 2-3 weeks<br>• VR Real Estate: 4-6 weeks<br><br>🚀 <strong>Need it faster?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us</a> to discuss rush delivery!';
-          } else {
-            response = 'I can help with VR services! 😊<br><br>🎯 <strong>Popular questions:</strong><br>• "What services do you offer?"<br>• "What are your prices?"<br>• "How long does it take?"<br><br>💬 <strong>Or chat directly:</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp +92 300 9452153</a>';
-          }
-          
-          const botDiv = document.createElement('div');
-          botDiv.className = 'mb-3';
-          botDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black">${response}</div>`;
-          container.appendChild(botDiv);
-          container.scrollTop = container.scrollHeight;
-        }, 500);
-      }
+      const msg = input.value.trim();
+      if (!msg) return;
+      const c = document.getElementById('chat-messages');
+      const d = document.createElement('div'); d.className='mb-3 text-right';
+      d.innerHTML=`<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black">${msg}</div>`;
+      c.appendChild(d); input.value='';
+      setTimeout(()=>{ const b=document.createElement('div'); b.className='mb-3';
+        b.innerHTML=`<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black">میں VR خدمات میں مدد کر سکتا ہوں! <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp کریں</a></div>`;
+        c.appendChild(b); c.scrollTop=c.scrollHeight; },500);
     }
   </script>
-</head>
-<body>
+  <!-- Demo Button -->
+  <a href="contact-ur.html" class="demo-btn fixed bottom-8 right-8 px-6 py-3 rounded-full shadow-lg font-semibold flex items-center gap-2 transition">
+    <i data-feather="zap"></i> ڈیمو بک کریں
+  </a>
   <!-- NAV -->
   <nav class="fixed w-full z-50 bg-black/40 backdrop-blur-sm border-b border-white/5">
     <div class="max-w-7xl mx-auto px-5 md:px-8">
@@ -613,9 +569,10 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Smooth fade-in when page loads
-  window.addEventListener('load', () => {
-    document.body.classList.add('fade-in');
-  });
+  window.addEventListener('load', () => { document.body.classList.add('fade-in'); });
+
+  // Scroll progress
+  window.addEventListener('scroll', () => { const el = document.getElementById('scroll-progress'); if(el){ const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100; el.style.width=p+'%'; } });
 </script>
 
 </body>

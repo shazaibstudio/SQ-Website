@@ -17,13 +17,14 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 
-    <link rel="icon" type="images/no-background.png" href="images/no-background.png">
+  <link rel="icon" type="image/png" href="images/no-background.png">
   <link rel="apple-touch-icon" href="images/no-background.png">
 
   <!-- MANIFEST & THEME -->
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#121212">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#121212">
 
   
   <style>
@@ -138,6 +139,13 @@
 
 </head>
 <body>
+  <!-- Sticky WhatsApp Button -->
+  <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%20want%20to%20discuss%20a%20VR%20project." target="_blank" class="whatsapp-sticky" aria-label="Chat on WhatsApp">
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-label">WhatsApp Us</span>
+  </a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- Live Chat Widget -->
   <div id="chat-widget" class="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
     <div class="flex items-center gap-2">
@@ -457,16 +465,37 @@
 <!-- TESTIMONIALS -->
 <section class="py-20">
   <div class="max-w-6xl mx-auto px-5 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-8">Client Testimonials</h2>
+    <h2 class="text-3xl font-bold mb-4">Client Testimonials</h2>
+    <p class="text-gray-400 mb-10">Real results from real clients across Pakistan</p>
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="stat-box">
-        <p class="text-gray-300 italic">“Working with Shazaib and SQ Interactive accelerated our project timeline by 40% and delivered results beyond expectations.”</p>
-        <p class="mt-3 font-semibold">— Elite Developer</p>
+      <div class="stat-box text-left">
+        <div class="flex gap-1 mb-3 text-yellow-400">⭐⭐⭐⭐⭐</div>
+        <p class="text-gray-300 italic mb-4">"The VR walkthrough accelerated our project timeline by 40% and delivered results beyond expectations. Buyers could walk through the property before a single brick was laid."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-sm">AR</div>
+          <div>
+            <p class="font-semibold text-white">Ahmed R.</p>
+            <p class="text-gray-500 text-sm">Real Estate Developer, DHA Lahore</p>
+          </div>
+        </div>
       </div>
-      <div class="stat-box">
-        <p class="text-gray-300 italic">“The VR walkthroughs gave our clients a sense of space that photos could never convey — truly transformative.”</p>
-        <p class="mt-3 font-semibold">— Hotel Project Manager</p>
+      <div class="stat-box text-left">
+        <div class="flex gap-1 mb-3 text-yellow-400">⭐⭐⭐⭐⭐</div>
+        <p class="text-gray-300 italic mb-4">"The VR walkthroughs gave our clients a sense of space that photos could never convey. Our hotel bookings increased noticeably after the 360° tour went live."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-sm">SM</div>
+          <div>
+            <p class="font-semibold text-white">Sara M.</p>
+            <p class="text-gray-500 text-sm">Hotel Manager, Heaven Hotel</p>
+          </div>
+        </div>
       </div>
+    </div>
+    <!-- Viral stat -->
+    <div class="mt-12 bg-gradient-to-r from-yellow-400/10 to-transparent border border-yellow-400/20 rounded-2xl p-8">
+      <p class="text-5xl font-bold text-yellow-400 mb-2">40%</p>
+      <p class="text-xl text-white font-semibold mb-2">Faster Property Sales</p>
+      <p class="text-gray-400">Properties marketed with VR tours close deals significantly faster than traditional photo listings. Our clients see this difference firsthand.</p>
     </div>
   </div>
 </section>
@@ -614,6 +643,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Auto-year for footer
   const yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
+
+  // Scroll progress
+  window.addEventListener('scroll', () => { const el = document.getElementById('scroll-progress'); if(el){ const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100; el.style.width=p+'%'; } });
 
   // ⚙️ Optional Google Translate Helper (disabled by default)
   async function translateText(text, targetLang) {

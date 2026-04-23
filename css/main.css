@@ -1,5 +1,63 @@
 /* SQ Interactive - SEO Optimized Global Styles */
 
+/* =============================================
+   STICKY WHATSAPP BUTTON - Highest converting
+   element for Pakistan market
+   ============================================= */
+.whatsapp-sticky {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 1.5rem;
+  z-index: 998;
+  background: #25D366;
+  color: white;
+  border-radius: 50px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: wa-pulse 3s infinite;
+}
+.whatsapp-sticky:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(37,211,102,0.6);
+}
+.whatsapp-sticky .wa-label {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.4s ease;
+}
+.whatsapp-sticky:hover .wa-label {
+  max-width: 120px;
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+}
+@media (max-width: 768px) {
+  .whatsapp-sticky { bottom: 5rem; left: 1rem; padding: 0.75rem; }
+  .whatsapp-sticky .wa-label { display: none; }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, #f1c40f);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  width: 0%;
+}
+
 /* Critical CSS - Above the fold */
 :root {
   --primary-gold: #d4af37;

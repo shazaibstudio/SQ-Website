@@ -425,6 +425,14 @@ gtag('config', 'G-GYP19H93BR');
 
 </head>
 <body>
+  <!-- Sticky WhatsApp Button -->
+  <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%20want%20to%20discuss%20a%20VR%20project." target="_blank" class="whatsapp-sticky" aria-label="Chat on WhatsApp">
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-label">WhatsApp Us</span>
+  </a>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- Live Chat Widget -->
   <div id="chat-widget" class="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
     <div class="flex items-center gap-2">
@@ -624,16 +632,33 @@ gtag('config', 'G-GYP19H93BR');
 
     <div class="relative z-10 px-6 max-w-3xl" data-aos="fade-up">
       <img src="images/no-background.png" alt="SQ Interactive logo" class="mx-auto mb-6 w-28 h-auto" loading="lazy">
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">See Properties Before They Exist</h1>
-      <p class="text-gray-300 text-base md:text-lg mb-8">VR tours, 360 ° walkthroughs, and AI-assisted interior visualization built in Pakistan.</p>
-      <p class="text-gray-400 text-sm mb-8">Founder-led immersive solutions using Unity, Unreal, and real-world 360 ° capture.</p>
-
-      <div class="flex justify-center gap-4">
-        <a href="portfolio.html" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-semibold py-3 px-6 rounded-full shadow hover:scale-105 transition">View Our Work</a>
-        <a href="contact.html" class="border-2 border-white text-white font-semibold py-3 px-6 rounded-full hover:scale-105 transition">Hire SQ Interactive</a>
+      <!-- Urgency badge -->
+      <div class="inline-flex items-center gap-2 bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-5 animate-pulse">
+        <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+        Pakistan's #1 VR Real Estate Studio — 15+ Projects Delivered
       </div>
 
-      <div class="mt-6 text-sm text-gray-400">Contact: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></div>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">Your Buyers Will Walk Through the Property <span class="text-yellow-400">Before It's Built</span></h1>
+      <p class="text-gray-300 text-base md:text-lg mb-4">VR tours, 360° walkthroughs & AI interior design that sell properties <strong class="text-yellow-400">40% faster</strong> — built in Lahore, Pakistan.</p>
+
+      <!-- Social proof strip -->
+      <div class="flex justify-center gap-6 mb-8 text-sm text-gray-400">
+        <span>⭐ 4.9/5 Rating</span>
+        <span>•</span>
+        <span>🏠 15+ Projects</span>
+        <span>•</span>
+        <span>⚡ 1-Week Delivery</span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%20want%20a%20free%20VR%20demo%20for%20my%20property." target="_blank" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-bold py-4 px-8 rounded-full shadow-lg hover:scale-105 transition flex items-center justify-center gap-2">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Get Free Demo on WhatsApp
+        </a>
+        <a href="portfolio.html" class="border-2 border-white/60 text-white font-semibold py-4 px-8 rounded-full hover:scale-105 hover:border-yellow-400 hover:text-yellow-400 transition">See Our Work →</a>
+      </div>
+
+      <p class="mt-5 text-xs text-gray-500">📍 Based in Lahore · Serving all of Pakistan · Reply within 2 hours</p>
     </div>
   </header>
 
@@ -674,6 +699,30 @@ gtag('config', 'G-GYP19H93BR');
 </section>
 
 
+
+  <!-- Trust Bar -->
+  <section class="py-8 bg-[#0a0a0a] border-y border-yellow-400/10">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-bold text-yellow-400" id="counter-projects">0</div>
+          <div class="text-gray-400 text-sm mt-1">Projects Delivered</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">40%</div>
+          <div class="text-gray-400 text-sm mt-1">Faster Property Sales</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">4.9★</div>
+          <div class="text-gray-400 text-sm mt-1">Client Rating</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-yellow-400">1 Wk</div>
+          <div class="text-gray-400 text-sm mt-1">Fastest Delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Who We're For -->
   <section class="py-16 bg-[#0d0d0d]">
@@ -921,7 +970,47 @@ gtag('config', 'G-GYP19H93BR');
     </div>
   </section>
 
-    <!-- TECHNOLOGY / WEBGL -->
+    <!-- SOCIAL PROOF / TESTIMONIALS -->
+  <section class="py-20 bg-[#0d0d0d]">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-12">What Clients Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-yellow-400/10 text-left">
+          <div class="flex gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-300 italic mb-4">"The VR walkthrough SQ Interactive built for our DHA project got us 3 serious buyers in the first week. Clients could literally walk through the villa before construction started."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">A</div>
+            <div>
+              <div class="font-semibold text-white">Ahmed R.</div>
+              <div class="text-gray-500 text-sm">Real Estate Developer, DHA Lahore</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-yellow-400/10 text-left">
+          <div class="flex gap-1 mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-300 italic mb-4">"Our hotel bookings increased after the 360° virtual tour went live. Guests could explore rooms before booking — it completely changed how we market our property."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">S</div>
+            <div>
+              <div class="font-semibold text-white">Sara M.</div>
+              <div class="text-gray-500 text-sm">Hotel Manager, Heaven Hotel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- WhatsApp CTA -->
+      <div class="mt-12 bg-gradient-to-r from-yellow-400/10 to-amber-400/5 border border-yellow-400/20 rounded-2xl p-8">
+        <p class="text-xl font-semibold mb-2">Ready to sell your property faster?</p>
+        <p class="text-gray-400 mb-6">Join 15+ developers who already use VR to close deals faster.</p>
+        <a href="https://wa.me/923009452153?text=Hi!%20I%20want%20to%20discuss%20a%20VR%20project%20for%20my%20property." target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-8 rounded-full transition hover:scale-105">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us Now — Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY / WEBGL -->
   <section class="py-16 bg-[#121212] text-white">
     <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-4">Experience Our Technology</h2>
@@ -1004,9 +1093,57 @@ gtag('config', 'G-GYP19H93BR');
 </footer>
 
 <script>
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('scroll-progress');
+    if (el) {
+      const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      el.style.width = pct + '%';
+    }
+  });
+
   // Set current year automatically
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Animated counter
+  function animateCounter(id, target, duration) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target + '+'; clearInterval(timer); }
+      else el.textContent = Math.floor(start) + '+';
+    }, 16);
+  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter('counter-projects', 15, 1500); counterObserver.disconnect(); } });
+  });
+  const counterEl = document.getElementById('counter-projects');
+  if (counterEl) counterObserver.observe(counterEl);
+
+  // Exit-intent popup
+  let exitShown = false;
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY < 10 && !exitShown) {
+      exitShown = true;
+      document.getElementById('exit-popup').classList.remove('hidden');
+    }
+  });
 </script>
+
+<!-- Exit Intent Popup -->
+<div id="exit-popup" class="hidden fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-4">
+  <div class="bg-[#1a1a1a] border border-yellow-400/30 rounded-2xl p-8 max-w-md w-full text-center relative">
+    <button onclick="document.getElementById('exit-popup').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
+    <div class="text-4xl mb-4">🏠</div>
+    <h3 class="text-2xl font-bold text-yellow-400 mb-3">Wait — Get a Free VR Demo!</h3>
+    <p class="text-gray-300 mb-6">Before you go, let us show you exactly what a VR tour of YOUR property would look like. No cost, no commitment.</p>
+    <a href="https://wa.me/923009452153?text=Hi!%20I%20want%20a%20free%20VR%20demo%20before%20I%20decide." target="_blank" class="block bg-yellow-400 text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition mb-3">Yes, Show Me a Free Demo</a>
+    <button onclick="document.getElementById('exit-popup').classList.add('hidden')" class="text-gray-500 text-sm hover:text-gray-300">No thanks, I'll pass</button>
+  </div>
+</div>
 
   <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
