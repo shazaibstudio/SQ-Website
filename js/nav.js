@@ -6,9 +6,9 @@
 (function () {
   'use strict';
 
-  const nav     = document.querySelector('.sq-nav');
-  const toggle  = document.querySelector('.sq-nav__toggle');
-  const mobile  = document.querySelector('.sq-nav__mobile');
+  var nav    = document.querySelector('.sq-nav');
+  var toggle = document.querySelector('.sq-nav__toggle');
+  var mobile = document.querySelector('.sq-nav__mobile');
 
   if (!nav) return;
 
@@ -22,12 +22,11 @@
   /* ── Mobile toggle ── */
   if (toggle && mobile) {
     toggle.addEventListener('click', function () {
-      const isOpen = mobile.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen);
+      var isOpen = mobile.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    /* Close on outside click */
     document.addEventListener('click', function (e) {
       if (!nav.contains(e.target) && mobile.classList.contains('is-open')) {
         mobile.classList.remove('is-open');
@@ -36,7 +35,6 @@
       }
     });
 
-    /* Close on mobile link click */
     mobile.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         mobile.classList.remove('is-open');
@@ -46,11 +44,32 @@
     });
   }
 
-  /* ── Active link ── */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  /* ── Active link detection ──
+     Normalise both the current path and each link href to
+     a clean segment list so /work/ and ../work/ both match. */
+  var currentPath = window.location.pathname
+    .replace(/\/+$/, '')   /* strip trailing slash */
+    .split('/')
+    .filter(Boolean);      /* ['work'] or ['digital'] or [] for root */
+
   document.querySelectorAll('.sq-nav__link, .sq-nav__mobile-link').forEach(function (link) {
-    const href = link.getAttribute('href');
-    if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+
+    /* Resolve the href segments, ignoring ../ and ./ */
+    var hrefSegments = href
+      .replace(/\/+$/, '')
+      .split('/')
+      .filter(function (s) { return s && s !== '..' && s !== '.'; });
+
+    /* Match: the last segment of the href matches the last segment of current path */
+    var hrefLast    = hrefSegments[hrefSegments.length - 1] || '';
+    var currentLast = currentPath[currentPath.length - 1]   || '';
+
+    /* Root: both empty = homepage */
+    var isRoot = hrefLast === '' && currentLast === '';
+
+    if (isRoot || (hrefLast && hrefLast === currentLast)) {
       link.classList.add('sq-nav__link--active');
       link.setAttribute('aria-current', 'page');
     }

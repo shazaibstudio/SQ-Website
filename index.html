@@ -1,1242 +1,904 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SQ Interactive Build what your business needs next.</title>
-  
-  <!-- Performance: Preload critical resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" as="style">
-  <link rel="preload" href="css/main.css" as="style">
-  <link rel="preload" href="js/main.js" as="script">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GYP19H93BR');
+  </script>
+
+  <!-- Performance -->
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  
-  <!-- CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Favicons & PWA - Optimized for Google Search -->
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="shortcut icon" href="logo.png">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon_192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon_512.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon_180.png">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#d4af37">
-<meta name="msapplication-TileColor" content="#d4af37">
-<meta name="msapplication-TileImage" content="favicon_192.png">
-<meta name="msapplication-config" content="browserconfig.xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQ Interactive — Build what your business needs next.</title>
 
-<!-- Enhanced SEO Meta -->
-<meta name="description" content="Professional VR real estate tours, 360° property experiences & AI interior design in Lahore, Pakistan. Sell properties 40% faster. Starting from 30K PKR. Get free demo today.">
-<meta name="keywords" content="VR real estate Pakistan, virtual property tours Lahore, AI interior design, 360 degree tours, property marketing VR, real estate visualization, immersive property experience, VR staging Pakistan, interactive walkthroughs">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Shazaib Qaiser">
-<meta name="publisher" content="SQ Interactive">
-<meta name="language" content="English">
-<meta name="geo.region" content="PK-PB">
-<meta name="geo.placename" content="Lahore, Pakistan">
-<meta name="geo.position" content="31.5204;74.3587">
-<meta name="ICBM" content="31.5204, 74.3587">
-<link rel="canonical" href="https://www.sqinteractive.com/">
-<link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/">
-<link rel="alternate" hreflang="ur" href="https://www.sqinteractive.com/index-ur.html">
+  <!-- Primary SEO -->
+  <meta name="description" content="SQ Interactive is a digital innovation studio based in Lahore, Pakistan. Websites, software, AI automation, VR and immersive experiences — built around what your business actually needs.">
+  <meta name="keywords" content="digital studio Pakistan, AI automation, web development Lahore, e-commerce, software, VR, immersive technology, digital agency Pakistan">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Shazaib Qaiser">
+  <meta name="publisher" content="SQ Interactive">
+  <meta name="language" content="English">
+  <meta name="google-site-verification" content="bkEnLORPc-rHU8Fh8ifggrkix9cp7lV3mLe7i8D1sEY">
 
-<!-- Enhanced Open Graph / Social Media -->
-<meta property="og:title" content="SQ Interactive | VR Real Estate Tours & AI Interior Design Pakistan">
-<meta property="og:description" content="Create immersive VR property tours and AI interior designs that sell properties 40% faster. Leading VR real estate company in Pakistan with 15+ successful projects.">
-<meta property="og:image" content="https://www.sqinteractive.com/images/og-image-home.jpg">
-<meta property="og:image:alt" content="SQ Interactive VR Real Estate Tours - Immersive Property Experiences">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://www.sqinteractive.com">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SQ Interactive">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ur_PK">
-<meta property="article:author" content="Shazaib Qaiser">
-<meta property="business:contact_data:street_address" content="Lahore">
-<meta property="business:contact_data:locality" content="Lahore">
-<meta property="business:contact_data:region" content="Punjab">
-<meta property="business:contact_data:postal_code" content="54000">
-<meta property="business:contact_data:country_name" content="Pakistan">
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="PK-PB">
+  <meta name="geo.placename" content="Lahore, Pakistan">
+  <meta name="geo.position" content="31.5204;74.3587">
+  <meta name="ICBM" content="31.5204, 74.3587">
 
-<!-- Enhanced Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@SQInteractive">
-<meta name="twitter:creator" content="@ShazaibQaiser">
-<meta name="twitter:title" content="SQ Interactive | VR Real Estate Tours & AI Interior Design Pakistan">
-<meta name="twitter:description" content="Create immersive VR property tours and AI interior designs that sell properties 40% faster. Get pricing from 35K PKR.">
-<meta name="twitter:image" content="https://www.sqinteractive.com/images/og-image-home.jpg">
-<meta name="twitter:image:alt" content="SQ Interactive VR Real Estate Tours">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.sqinteractive.com/">
+  <link rel="alternate" hreflang="en" href="https://www.sqinteractive.com/">
 
-<!-- Additional Social Meta -->
-<meta property="fb:app_id" content="your_facebook_app_id">
-<meta name="pinterest-rich-pin" content="true">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="SQ Interactive — Build what your business needs next.">
+  <meta property="og:description" content="We figure out what needs fixing. Then we build the right solution. Digital, AI, Immersive and more.">
+  <meta property="og:url"         content="https://www.sqinteractive.com/">
+  <meta property="og:image"       content="https://www.sqinteractive.com/SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
+  <meta property="og:image:width"  content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:site_name"   content="SQ Interactive">
+  <meta property="og:locale"      content="en_US">
 
-<!-- Enhanced Structured Data for Better SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SQ Interactive",
-  "alternateName": "SQ Interactive Pakistan",
-  "url": "https://www.sqinteractive.com",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://www.sqinteractive.com/favicon_512.png",
-    "width": 512,
-    "height": 512
-  },
-  "image": "https://www.sqinteractive.com/images/no-background.png",
-  "description": "Leading VR real estate and AI interior design company in Pakistan. We create immersive property tours, 360° experiences, and interactive walkthroughs that sell properties 40% faster.",
-  "slogan": "Sell Properties 40% Faster with Immersive VR & AI Experiences",
-  "foundingDate": "2025",
-  "founder": {
-    "@type": "Person",
-    "name": "Shazaib Qaiser",
-    "jobTitle": "CEO & Founder",
-    "alumniOf": "BSc Multimedia Technology (VR/AR)"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Lahore",
-    "addressRegion": "Punjab",
-    "addressCountry": "Pakistan",
-    "postalCode": "54000"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 31.5204,
-    "longitude": 74.3587
-  },
-  "contactPoint": [
-    {
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@SQInteractive">
+  <meta name="twitter:title"       content="SQ Interactive — Build what your business needs next.">
+  <meta name="twitter:description" content="We figure out what needs fixing. Then we build the right solution.">
+  <meta name="twitter:image"       content="https://www.sqinteractive.com/SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SQ Interactive",
+    "url": "https://www.sqinteractive.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.sqinteractive.com/SQ_Interactive_Favicon_Pack/android-chrome-512x512.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "SQ Interactive is a digital innovation studio based in Lahore, Pakistan. We build websites, software, AI systems, automation and immersive experiences around what businesses actually need.",
+    "foundingDate": "2025",
+    "founder": {
+      "@type": "Person",
+      "name": "Shazaib Qaiser"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "addressCountry": "Pakistan"
+    },
+    "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+92-300-9452153",
       "email": "admin@sqinteractive.com",
       "contactType": "customer service",
       "availableLanguage": ["English", "Urdu"]
-    }
-  ],
-  "sameAs": [
-    "https://www.instagram.com/sqinteractive",
-    "https://www.linkedin.com/company/sqinteractive",
-    "https://www.youtube.com/@SQINTERACTIVE",
-    "https://www.facebook.com/share/1A619NgVwh/"
-  ],
-  "serviceArea": {
-    "@type": "Country",
-    "name": "Pakistan"
-  },
-  "areaServed": "Pakistan",
-  "knowsAbout": [
-    "VR Real Estate",
-    "AI Interior Design",
-    "360 Degree Tours",
-    "Virtual Property Tours",
-    "Interactive Walkthroughs",
-    "VR Staging",
-    "Property Marketing"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "VR Real Estate Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "360Â° Virtual Tours",
-          "description": "High-quality 360Â° photography and virtual tours"
-        },
-        "priceRange": "Starting from 30000 PKR"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "VR Real Estate",
-          "description": "Immersive VR headset-ready environments"
-        },
-        "priceRange": "Starting from 270000 PKR"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Interactive Walkthroughs",
-          "description": "WebGL-based property walkthroughs"
-        },
-        "priceRange": "Starting from 95000 PKR"
-      }
-    ]
-  }
-}
-</script>
-
-<!-- Local Business Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "SQ Interactive",
-  "image": "https://www.sqinteractive.com/images/no-background.png",
-  "@id": "https://www.sqinteractive.com",
-  "url": "https://www.sqinteractive.com",
-  "telephone": "+92-300-9452153",
-  "email": "admin@sqinteractive.com",
-  "priceRange": "30000-270000 PKR",
-  "paymentAccepted": "Cash, Bank Transfer",
-  "currenciesAccepted": "PKR",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Lahore",
-    "addressRegion": "Punjab",
-    "addressCountry": "PK"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Lahore"
     },
-    {
-      "@type": "City", 
-      "name": "Islamabad"
-    },
-    {
-      "@type": "Country",
-      "name": "Pakistan"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 31.5204,
-    "longitude": 74.3587
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
+    "sameAs": [
+      "https://www.instagram.com/sqinteractive",
+      "https://www.linkedin.com/company/sqinteractive",
+      "https://www.youtube.com/@SQINTERACTIVE",
+      "https://www.facebook.com/share/1A619NgVwh/"
     ],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "sameAs": [
-    "https://www.instagram.com/sqinteractive",
-    "https://www.linkedin.com/company/sqinteractive",
-    "https://www.youtube.com/@SQINTERACTIVE",
-    "https://www.facebook.com/share/1A619NgVwh/"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "15",
-    "bestRating": "5"
+    "areaServed": "Pakistan"
   }
-}
-</script>
+  </script>
 
-<!-- Service Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "VR Real Estate Tours Pakistan",
-  "description": "Professional VR real estate tours, 360° virtual property experiences, and interactive walkthroughs for real estate developers, architects, and property marketers in Pakistan.",
-  "provider": {
+  <!-- JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "SQ Interactive",
-    "url": "https://www.sqinteractive.com"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Pakistan"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "VR Real Estate Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "360Â° Virtual Tours",
-          "description": "High-quality 360Â° photography and virtual property tours with interactive hotspots"
-        },
-        "price": "30000",
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Interactive Walkthroughs",
-          "description": "WebGL-based interactive property walkthroughs for web and mobile"
-        },
-        "price": "95000",
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "VR Real Estate",
-          "description": "Immersive VR headset-ready environments for luxury real estate presentations"
-        },
-        "price": "270000",
-        "priceCurrency": "PKR",
-        "availability": "https://schema.org/InStock"
-      }
+    "url": "https://www.sqinteractive.com",
+    "telephone": "+92-300-9452153",
+    "email": "admin@sqinteractive.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "addressCountry": "PK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.5204,
+      "longitude": 74.3587
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/sqinteractive",
+      "https://www.linkedin.com/company/sqinteractive",
+      "https://www.youtube.com/@SQINTERACTIVE",
+      "https://www.facebook.com/share/1A619NgVwh/"
     ]
   }
-}
-</script>
-
-<!-- Website Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "SQ Interactive",
-  "url": "https://www.sqinteractive.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://www.sqinteractive.com/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-
-<!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.sqinteractive.com/"
-    }
-  ]
-}
-</script>
-
-<!-- Google Site Verification -->
-<meta name="google-site-verification" content="bkEnLORPc-rHU8Fh8ifggrkix9cp7lV3mLe7i8D1sEY" />
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-GYP19H93BR');
-</script>
-
-<!-- Hotjar / ContentSquare -->
-<script>
-(function(c, s, q, u, a, r, e) {
-    c.hj = c.hj || function(){(c.hj.q = c.hj.q || []).push(arguments)}
-    c._hjSettings = { hjid: 6545315 };
-    r = s.getElementsByTagName('head')[0];
-    e = s.createElement('script');
-    e.async = true;
-    e.src = q + c._hjSettings.hjid + u;
-    r.appendChild(e);
-})(window, document, 'https://static.hj.contentsquare.net/uxa/', '.js');
-</script>
-<script src="https://t.contentsquare.net/uxa/c97b2acc48ee8.js" async></script>
-
-<!-- ===================== -->
-<!--  GLOBAL STYLING -->
-<!-- ===================== -->
-<style>
-  body { font-family: 'Plus Jakarta Sans', sans-serif; background:#121212; color:#f5f5f5; }
-  h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
-  .gold { color:#d4af37; }
-
-  .demo-btn {
-    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
-    background: linear-gradient(135deg,#d4af37 0%,#f1c40f 100%);
-    box-shadow: 0 4px 15px rgba(212,175,55,0.3);
-  }
-  .demo-btn:hover { box-shadow:0 0 20px rgba(212,175,55,0.5); transform:translateY(-3px); }
-  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-  .before-after { position:relative; height:24rem; overflow:hidden; border-radius:1rem; }
-  .before-after img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-  .slider-handle { 
-    position:absolute; width:4px; height:100%; background:#d4af37; left:50%; 
-    cursor:ew-resize; z-index:10; user-select:none;
-  }
-  .slider-handle .dot {
-    position:absolute; width:20px; height:20px; border-radius:50%;
-    background:#d4af37; top:50%; left:50%; transform:translate(-50%,-50%);
-    border:3px solid white; box-shadow:0 2px 10px rgba(0,0,0,0.3);
-    cursor:grab;
-  }
-  .slider-handle .dot:active { cursor:grabbing; }
-
-  .label { position:absolute; top:10px; padding:4px 10px; background:rgba(0,0,0,0.6); color:#f5f5f5; font-size:0.875rem; border-radius:6px; }
-  .label.left { left:10px; }
-  .label.right { right:10px; }
-
-  .steam-bg {
-    background-image: url('images/steam-bg.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    z-index: 0;
-  }
-  .steam-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(18,18,18,0.95));
-    backdrop-filter: blur(4px);
-    z-index: -1;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
-
-</head>
-<body>
-  <!-- Sticky WhatsApp Button -->
-  <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%20want%20to%20discuss%20a%20VR%20project." target="_blank" class="whatsapp-sticky" aria-label="Chat on WhatsApp">
-    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="wa-label">WhatsApp Us</span>
-  </a>
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" id="scroll-progress"></div>
-
-  <!-- Live Chat Widget -->
-  <div id="chat-widget" class="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-yellow-400 to-amber-300 text-black px-4 py-3 rounded-full shadow-lg cursor-pointer hover:scale-105 hover:shadow-yellow-400/30 transition-all" onclick="document.getElementById('chat-box').classList.toggle('hidden')">
-    <div class="flex items-center gap-2">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-      </svg>
-      <span class="font-semibold text-sm">Live Chat</span>
-    </div>
-  </div>
-  
-  <div id="chat-box" class="fixed bottom-40 right-6 z-50 bg-white rounded-2xl shadow-2xl w-80 h-96 hidden border border-gray-200 overflow-hidden">
-    <div class="bg-yellow-400 text-black p-4 rounded-t-lg flex justify-between items-center">
-      <h3 class="font-semibold">SQ Interactive Assistant</h3>
-      <button onclick="document.getElementById('chat-box').classList.toggle('hidden')" class="text-black hover:text-gray-700">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-    <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-50 text-black">
-      <div class="mb-4">
-        <div class="bg-yellow-100 p-3 rounded-lg mb-2">
-          <p class="text-sm">‹ Hi! I'm your SQ Interactive assistant. I can help you with:</p>
-          <div class="mt-2 text-xs">
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>What services do you offer?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'> Our VR Solutions:<br>360 ° Tours: 30K PKR<br> VR Real Estate: 270K PKR<br> Interactive Walkthroughs: 95K PKR</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Services</button>
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>What are your prices?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'> Pricing starts from 30K PKR (360 ° tours) up to 270K PKR (full VR experiences)</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Pricing</button>
-            <button onclick="const container=document.getElementById('chat-messages');const div=document.createElement('div');div.className='mb-3 text-right';div.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black\\'>How long does a project take?</div>';container.appendChild(div);setTimeout(()=>{const botDiv=document.createElement('div');botDiv.className='mb-3';botDiv.innerHTML='<div class=\\'inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black\\'> Project timelines:<br> 360 ° Tours: 1 week<br> Interactive Walkthroughs: 2-3 weeks<br> VR Real Estate: 4-6 weeks</div>';container.appendChild(botDiv);container.scrollTop=container.scrollHeight;},300);" class="bg-yellow-200 px-2 py-1 rounded mr-1 mb-1 hover:bg-yellow-300">Timeline</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="p-4 border-t">
-      <div class="flex gap-2">
-        <input id="chat-input" type="text" placeholder="Ask about VR, pricing, timeline..." class="flex-1 p-2 border rounded text-black text-sm" onkeypress="if(event.key==='Enter'){sendChatMessage()}">
-        <button onclick="sendChatMessage()" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="22" y1="2" x2="11" y2="13"></line>
-            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function sendChatMessage() {
-      const input = document.getElementById('chat-input');
-      const message = input.value.trim();
-      
-      if (message) {
-        const container = document.getElementById('chat-messages');
-        
-        // Add user message
-        const userDiv = document.createElement('div');
-        userDiv.className = 'mb-3 text-right';
-        userDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-400 text-black">${message}</div>`;
-        container.appendChild(userDiv);
-        
-        // Clear input
-        input.value = '';
-        
-        // Generate bot response
-        setTimeout(() => {
-          let response = '';
-          const msg = message.toLowerCase();
-          
-          if (msg.includes('service') || msg.includes('offer')) {
-            response = '  <strong>Our VR Solutions:</strong><br> 360° Tours: Starting from 30K PKR<br> VR Real Estate: Starting from 270K PKR<br> Interactive Walkthroughs: Starting from 95K PKR<br><br> <strong>Ready to get started?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us now</a> or <a href="contact.html" class="text-yellow-600 font-semibold">request a demo!</a>';
-          } else if (msg.includes('price') || msg.includes('cost')) {
-            response = ' <strong>VR Pricing (Pakistan):</strong><br>â€¢ 360 ° Tours: Starting from 30K PKR<br> Interactive: Starting from 95K PKR<br> Full VR: Starting from 270K PKR<br><br> <strong>Get exact quote:</strong><br><a href="tel:+923009452153" class="text-yellow-600 font-semibold">Call +92 300 9452153</a> or <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant pricing!</a>';
-          } else if (msg.includes('hello') || msg.includes('hi')) {
-            response = 'Hello! ‹ I\'m here to help with VR real estate solutions.<br><br> <strong>Quick question:</strong> What type of property do you want to showcase?<br><br> For faster response: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us directly!</a>';
-          } else if (msg.includes('demo') || msg.includes('example')) {
-            response = ' <strong>See VR in Action!</strong><br><br>Check our live demo or request a custom demo for your property.<br><br> <a href="contact.html" class="bg-yellow-400 text-black px-3 py-1 rounded font-semibold">Request Demo</a><br> <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp for instant demo</a>';
-          } else if (msg.includes('contact') || msg.includes('call') || msg.includes('phone')) {
-            response = ' <strong>Contact SQ Interactive:</strong><br><br> WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">+92 300 9452153</a><br> Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-600">admin@sqinteractive.com</a><br> Location: Lahore, Pakistan<br><br> <strong>WhatsApp is fastest for quick questions!</strong>';
-          } else if (msg.includes('time') || msg.includes('timeline') || msg.includes('how long')) {
-            response = 'â±ï¸ <strong>Project Timelines:</strong><br> 360 ° Tours: 1 week<br> Interactive Walkthroughs: 2-3 weeks<br> VR Real Estate: 4-6 weeks<br><br> <strong>Need it faster?</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp us</a> to discuss rush delivery!';
-          } else {
-            response = 'I can help with VR services! <br><br>¯ <strong>Popular questions:</strong><br> "What services do you offer?"<br>â€¢ "What are your prices?"<br>â€¢ "How long does it take?"<br><br>ðŸ’¬ <strong>Or chat directly:</strong><br><a href="https://wa.me/923009452153" target="_blank" class="text-green-600 font-semibold">WhatsApp +92 300 9452153</a>';
-          }
-          
-          const botDiv = document.createElement('div');
-          botDiv.className = 'mb-3';
-          botDiv.innerHTML = `<div class="inline-block p-3 rounded-lg max-w-xs text-sm bg-yellow-100 text-black">${response}</div>`;
-          container.appendChild(botDiv);
-          container.scrollTop = container.scrollHeight;
-        }, 500);
-      }
-    }
   </script>
 
-  <!-- Demo Button -->
-  <button onclick="window.location.href='contact.html'" class="demo-btn px-5 py-3 rounded-full flex items-center gap-2">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polygon points="5,3 19,12 5,21 5,3"></polygon>
-    </svg>
-    Request Demo
-  </button>
-  <!-- NAV -->
-  <nav class="fixed w-full z-50 bg-black/40 backdrop-blur-sm border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-5 md:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="images/no-background.png" alt="SQ Interactive Logo" class="h-10 w-auto">
-          <div class="text-lg font-semibold">SQ <span class="gold">Interactive</span></div>
-        </a>
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="index.html" class="text-gray-200 hover:text-white">Home</a>
+  <!-- CSS -->
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/unified-nav.css">
+<link rel="stylesheet" href="/css/home.css">
 
-          <div class="relative" id="services-desktop">
-            <button id="services-btn" class="flex items-center gap-2 text-gray-200 hover:text-white">
-              Services
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <div id="services-popup" class="absolute right-0 mt-3 w-56 bg-[#0f1114] border border-[#ffffff12] rounded-lg shadow-lg p-2 hidden">
-              <a href="services.html" class="block px-4 py-2 text-gray-200 hover:text-white">All Services</a>
-              <a href="vr-real-estate.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Real Estate</a>
-              <a href="ai-interior-design.html" class="block px-4 py-2 text-gray-200 hover:text-white">AI & VR Interiors (Pilot)</a>
-              <a href="interactive-pc.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive PC Models</a>
-              <a href="360-content.html" class="block px-4 py-2 text-gray-200 hover:text-white">360 ° Tours & Videos</a>
-              <a href="vr-staging.html" class="block px-4 py-2 text-gray-200 hover:text-white">VR Staging</a>
-              <a href="interactive-walkthroughs.html" class="block px-4 py-2 text-gray-200 hover:text-white">Interactive Walkthroughs</a>
-              <a href="furniture-scanning.html" class="block px-4 py-2 text-gray-200 hover:text-white">Furniture Scanning</a>
-            </div>
-          </div>
+  <style>
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    [data-reveal].will-reveal {
+      transition: opacity var(--sq-duration-base) var(--sq-ease),
+                  transform var(--sq-duration-base) var(--sq-ease);
+    }
+    [data-reveal].is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 
-          <a href="portfolio.html" class="text-gray-200 hover:text-white">Portfolio</a>
-          <a href="about.html" class="text-gray-200 hover:text-white">About</a>
-          <a href="contact.html" class="text-gray-200 hover:text-white">Contact</a>
-          <a href="faq.html" class="text-gray-200 hover:text-white">FAQ</a>
-          <a href="vr-real-estate-lahore.html" class="text-yellow-400 hover:text-white">Lahore VR</a>
-          <a href="roi-calculator.html" class="text-yellow-400 hover:text-white">ROI Calculator</a>
-          <a href="case-study.html" class="text-yellow-400 hover:text-white">Case Study</a>
+  <link rel="icon" type="image/x-icon"       href="SQ_Interactive_Favicon_Pack/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16"   href="SQ_Interactive_Favicon_Pack/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="SQ_Interactive_Favicon_Pack/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48"   href="SQ_Interactive_Favicon_Pack/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96"   href="SQ_Interactive_Favicon_Pack/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180"      href="SQ_Interactive_Favicon_Pack/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="SQ_Interactive_Favicon_Pack/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
+</head>
 
-          <!-- Language Toggle -->
-          <div class="flex items-center gap-3">
-            <button onclick="window.location.href='index.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/90 hover:bg-white/20">EN</button>
-            <button onclick="window.location.href='index-ur.html'" class="px-3 py-1 rounded-full bg-white/10 text-white/60 hover:bg-white/20">UR</button>
-          </div>
+
+<body>
+  <!-- ============================================================
+       SQ INTERACTIVE — UNIVERSAL SITE HEADER
+
+       This exact HTML header is used across the entire website.
+
+       HTML = structure
+       unified-nav.css = styling
+       unified-nav.js = behavior
+
+       DO NOT dynamically render this header with JavaScript.
+       ============================================================ -->
+
+<header>
+
+  <nav
+    class="sq-nav"
+    aria-label="Main navigation"
+  >
+
+    <div class="sq-nav__inner">
+
+      <!-- ======================================================
+           BRAND
+           ====================================================== -->
+
+      <a
+        href="/"
+        class="sq-nav__logo"
+        aria-label="SQ Interactive — Home"
+      >
+
+        <div class="sq-nav__logo-mark">
+
+          <img
+            src="/images/no-background.png"
+            alt=""
+            width="36"
+            height="36"
+            aria-hidden="true"
+          >
+
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <div class="md:hidden flex items-center gap-2">
-          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="p-2 rounded bg-white/6 text-white">
-            <i data-feather="menu"></i>
+        <span class="sq-nav__logo-text">
+          SQ <span>Interactive</span>
+        </span>
+
+      </a>
+
+      <!-- ======================================================
+           DESKTOP NAVIGATION
+           ====================================================== -->
+
+      <div class="sq-nav__links">
+
+        <!-- HOME -->
+
+        <a href="/" class="sq-nav__link" data-sq-nav-link>Home</a>
+
+        <!-- SERVICES -->
+
+        <div class="sq-nav__services-wrapper">
+
+          <button
+            id="sq-services-btn"
+            class="sq-nav__link"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-controls="sq-services-popup"
+          >
+
+            <span>Services</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+
           </button>
+
+          <!-- DESKTOP SERVICES DROPDOWN -->
+
+          <div
+            id="sq-services-popup"
+            class="sq-services-popup hidden"
+            role="menu"
+            aria-label="Services menu"
+          >
+
+            <a href="/services/" class="sq-services-popup__all" role="menuitem" data-sq-nav-link>All Services</a>
+
+            <div class="sq-services-popup__divider"></div>
+
+            <!-- DIGITAL -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-digital">
+              <span>Digital</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-digital" class="sq-services-popup__world-links">
+              <a href="/digital/website-development/" class="sq-services-popup__link" role="menuitem">Website Development</a>
+              <a href="/digital/e-commerce/" class="sq-services-popup__link" role="menuitem">E-Commerce</a>
+              <a href="/digital/custom-software/" class="sq-services-popup__link" role="menuitem">Custom Software</a>
+              <a href="/digital/ui-ux-experiences/" class="sq-services-popup__link" role="menuitem">UI/UX Experiences</a>
+              <a href="/digital/seo-digital-growth/" class="sq-services-popup__link" role="menuitem">SEO &amp; Digital Growth</a>
+              <a href="/digital/automation-integration/" class="sq-services-popup__link" role="menuitem">Automation &amp; Integration</a>
+            </div>
+
+            <!-- AI -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-ai">
+              <span>AI</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-ai" class="sq-services-popup__world-links">
+              <a href="/ai/ai-systems-models/" class="sq-services-popup__link" role="menuitem">AI Systems &amp; Models</a>
+              <a href="/ai/intelligent-automation/" class="sq-services-popup__link" role="menuitem">Intelligent Automation</a>
+              <a href="/ai/data-intelligence/" class="sq-services-popup__link" role="menuitem">Data Intelligence</a>
+              <a href="/ai/ai-integration/" class="sq-services-popup__link" role="menuitem">AI Integration</a>
+              <a href="/ai/ai-content/" class="sq-services-popup__link" role="menuitem">AI Content</a>
+              <a href="/ai/process-optimization/" class="sq-services-popup__link" role="menuitem">Process Optimization</a>
+            </div>
+
+            <!-- IMMERSIVE -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-immersive">
+              <span>Immersive</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-immersive" class="sq-services-popup__world-links">
+              <a href="/immersive/virtual-reality/" class="sq-services-popup__link" role="menuitem">Virtual Reality</a>
+              <a href="/immersive/augmented-reality/" class="sq-services-popup__link" role="menuitem">Augmented Reality</a>
+              <a href="/immersive/3d-visualization/" class="sq-services-popup__link" role="menuitem">3D Visualization</a>
+              <a href="/immersive/360-experiences/" class="sq-services-popup__link" role="menuitem">360° Experiences</a>
+              <a href="/immersive/interactive-installation/" class="sq-services-popup__link" role="menuitem">Interactive Installation</a>
+              <a href="/immersive/web-immersion/" class="sq-services-popup__link" role="menuitem">Web Immersion</a>
+              <a href="/immersive/vr-staging/" class="sq-services-popup__link" role="menuitem">VR Staging</a>
+              <a href="/immersive/furniture-scanning/" class="sq-services-popup__link" role="menuitem">Furniture Scanning</a>
+            </div>
+
+            <!-- LAB -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-lab">
+              <span>Lab</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-lab" class="sq-services-popup__world-links">
+              <a href="/lab/ai-research/" class="sq-services-popup__link" role="menuitem">AI Research</a>
+              <a href="/lab/3d-tech/" class="sq-services-popup__link" role="menuitem">3D Technology</a>
+              <a href="/lab/no-code-platforms/" class="sq-services-popup__link" role="menuitem">No-Code Platforms</a>
+              <a href="/lab/web-performance/" class="sq-services-popup__link" role="menuitem">Web Performance</a>
+              <a href="/lab/ar-vr-innovation/" class="sq-services-popup__link" role="menuitem">AR/VR Innovation</a>
+              <a href="/lab/design-systems/" class="sq-services-popup__link" role="menuitem">Design Systems</a>
+            </div>
+
+          </div>
+
         </div>
+
+        <!-- WORK -->
+        <a href="/work/" class="sq-nav__link" data-sq-nav-link>Work</a>
+
+        <!-- HOW WE WORK -->
+        <a href="/how-we-work/" class="sq-nav__link" data-sq-nav-link>How We Work</a>
+
+        <!-- ABOUT -->
+        <a href="/about/" class="sq-nav__link" data-sq-nav-link>About</a>
+
+        <!-- CONTACT -->
+        <a href="/contact/" class="sq-nav__link" data-sq-nav-link>Contact</a>
+
+        <!-- DESKTOP LANGUAGE -->
+
+        <div class="sq-nav__lang-buttons">
+
+          <button
+            id="sq-lang-en"
+            class="sq-lang-btn sq-lang-btn--active"
+            type="button"
+            aria-label="English"
+            aria-pressed="true"
+          >
+            EN
+          </button>
+
+          <button
+            id="sq-lang-ur"
+            class="sq-lang-btn"
+            type="button"
+            aria-label="Urdu"
+            aria-pressed="false"
+          >
+            UR
+          </button>
+
+        </div>
+
       </div>
+
+      <!-- ======================================================
+           MOBILE MENU TOGGLE
+           ====================================================== -->
+
+      <button
+        id="sq-mobile-menu-toggle"
+        class="sq-nav__mobile-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sq-mobile-menu"
+        aria-label="Open menu"
+      >
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+
+      </button>
+
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#0b0c0d] border-t border-[#ffffff0a]">
-      <div class="px-6 py-5">
-        <a href="index.html" class="block py-3 text-gray-200">Home</a>
-        <button onclick="document.getElementById('mobile-services').classList.toggle('hidden')" class="w-full text-left py-3 text-gray-200 flex justify-between items-center">
-          Services <span class="text-yellow-400"></span>
+    <!-- ========================================================
+         MOBILE NAVIGATION
+         ======================================================== -->
+
+    <div id="sq-mobile-menu" class="sq-nav__mobile" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+
+      <a href="/" class="sq-nav__mobile-link" data-sq-nav-link>Home</a>
+      <a href="/work/" class="sq-nav__mobile-link" data-sq-nav-link>Work</a>
+      <a href="/how-we-work/" class="sq-nav__mobile-link" data-sq-nav-link>How We Work</a>
+      <a href="/about/" class="sq-nav__mobile-link" data-sq-nav-link>About</a>
+      <a href="/contact/" class="sq-nav__mobile-link" data-sq-nav-link>Contact</a>
+
+      <!-- MOBILE SERVICES -->
+
+      <button id="sq-mobile-services-toggle" class="sq-nav__mobile-services-toggle" type="button" aria-expanded="false" aria-controls="sq-mobile-services">
+        <span>Services</span>
+        <span class="sq-mobile-services__toggle-icon" aria-hidden="true">+</span>
+      </button>
+
+      <div id="sq-mobile-services" class="sq-mobile-services">
+
+        <a href="/services/" class="sq-mobile-services__link" data-sq-nav-link>All Services</a>
+
+        <!-- DIGITAL -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-digital" aria-expanded="false" aria-controls="sq-mobile-digital">
+          <span>01 — Digital</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
         </button>
-        <div id="mobile-services" class="hidden pl-4 mt-1">
-          <a href="services.html" class="block py-3 text-gray-300">All Services</a>
-          <a href="vr-real-estate.html" class="block py-3 text-gray-300">VR Real Estate</a>
-          <a href="ai-interior-design.html" class="block py-3 text-gray-300">AI & VR Interiors (Pilot)</a>
-          <a href="interactive-pc.html" class="block py-3 text-gray-300">Interactive PC Models</a>
-          <a href="360-content.html" class="block py-3 text-gray-300">360° Tours & Videos</a>
-          <a href="vr-staging.html" class="block py-3 text-gray-300">VR Staging</a>
-          <a href="interactive-walkthroughs.html" class="block py-3 text-gray-300">Interactive Walkthroughs</a>
-          <a href="furniture-scanning.html" class="block py-3 text-gray-300">Furniture Scanning</a>
+        <div id="sq-mobile-digital" class="sq-mobile-services__world-menu">
+          <a href="/digital/website-development/" class="sq-mobile-services__world-link">Website Development</a>
+          <a href="/digital/e-commerce/" class="sq-mobile-services__world-link">E-Commerce</a>
+          <a href="/digital/custom-software/" class="sq-mobile-services__world-link">Custom Software</a>
+          <a href="/digital/ui-ux-experiences/" class="sq-mobile-services__world-link">UI/UX Experiences</a>
+          <a href="/digital/seo-digital-growth/" class="sq-mobile-services__world-link">SEO &amp; Digital Growth</a>
+          <a href="/digital/automation-integration/" class="sq-mobile-services__world-link">Automation &amp; Integration</a>
         </div>
-        <a href="portfolio.html" class="block py-3 text-gray-200">Portfolio</a>
-        <a href="about.html" class="block py-3 text-gray-200">About</a>
-        <a href="contact.html" class="block py-3 text-gray-200">Contact</a>
-        <a href="faq.html" class="block py-3 text-gray-200">FAQ</a>
-        <a href="vr-real-estate-lahore.html" class="block py-3 text-yellow-400 font-semibold">Lahore VR</a>
-        <hr class="border-gray-600 my-2">
-        <a href="roi-calculator.html" class="block py-3 text-yellow-400 font-semibold">ROI Calculator</a>
-        <a href="case-study.html" class="block py-3 text-yellow-400 font-semibold">Case Study</a>
-        <div class="mt-4 flex gap-3">
-          <button onclick="window.location.href='360-content.html'" class="px-4 py-2 rounded bg-white/10 text-white">EN</button>
-          <button onclick="window.location.href='360 content-ur.html'" class="px-4 py-2 rounded bg-white/10 text-white/60">UR</button>
+
+        <!-- AI -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-ai" aria-expanded="false" aria-controls="sq-mobile-ai">
+          <span>02 — AI</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-ai" class="sq-mobile-services__world-menu">
+          <a href="/ai/ai-systems-models/" class="sq-mobile-services__world-link">AI Systems &amp; Models</a>
+          <a href="/ai/intelligent-automation/" class="sq-mobile-services__world-link">Intelligent Automation</a>
+          <a href="/ai/data-intelligence/" class="sq-mobile-services__world-link">Data Intelligence</a>
+          <a href="/ai/ai-integration/" class="sq-mobile-services__world-link">AI Integration</a>
+          <a href="/ai/ai-content/" class="sq-mobile-services__world-link">AI Content</a>
+          <a href="/ai/process-optimization/" class="sq-mobile-services__world-link">Process Optimization</a>
         </div>
+
+        <!-- IMMERSIVE -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-immersive" aria-expanded="false" aria-controls="sq-mobile-immersive">
+          <span>03 — Immersive</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-immersive" class="sq-mobile-services__world-menu">
+          <a href="/immersive/virtual-reality/" class="sq-mobile-services__world-link">Virtual Reality</a>
+          <a href="/immersive/augmented-reality/" class="sq-mobile-services__world-link">Augmented Reality</a>
+          <a href="/immersive/3d-visualization/" class="sq-mobile-services__world-link">3D Visualization</a>
+          <a href="/immersive/360-experiences/" class="sq-mobile-services__world-link">360° Experiences</a>
+          <a href="/immersive/interactive-installation/" class="sq-mobile-services__world-link">Interactive Installation</a>
+          <a href="/immersive/web-immersion/" class="sq-mobile-services__world-link">Web Immersion</a>
+          <a href="/immersive/vr-staging/" class="sq-mobile-services__world-link">VR Staging</a>
+          <a href="/immersive/furniture-scanning/" class="sq-mobile-services__world-link">Furniture Scanning</a>
+        </div>
+
+        <!-- LAB -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-lab" aria-expanded="false" aria-controls="sq-mobile-lab">
+          <span>04 — Lab</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-lab" class="sq-mobile-services__world-menu">
+          <a href="/lab/ai-research/" class="sq-mobile-services__world-link">AI Research</a>
+          <a href="/lab/3d-tech/" class="sq-mobile-services__world-link">3D Technology</a>
+          <a href="/lab/no-code-platforms/" class="sq-mobile-services__world-link">No-Code Platforms</a>
+          <a href="/lab/web-performance/" class="sq-mobile-services__world-link">Web Performance</a>
+          <a href="/lab/ar-vr-innovation/" class="sq-mobile-services__world-link">AR/VR Innovation</a>
+          <a href="/lab/design-systems/" class="sq-mobile-services__world-link">Design Systems</a>
+        </div>
+
       </div>
+
+      <!-- MOBILE LANGUAGE -->
+
+      <div class="sq-nav__mobile-lang">
+        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true">EN</button>
+        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false">UR</button>
+      </div>
+
     </div>
+
   </nav>
 
-  <!-- HERO -->
-  <header class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-    <!-- muted cinematic video (kept) -->
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" poster="images/no-background.png">
-      <source src="videos/home.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 bg-black/60"></div>
-
-    <div class="relative z-10 px-6 max-w-3xl" data-aos="fade-up">
-      <img src="images/no-background.png" alt="SQ Interactive logo" class="mx-auto mb-6 w-28 h-auto" loading="lazy">
-      <!-- Urgency badge -->
-      <div class="inline-flex items-center gap-2 bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-5 animate-pulse">
-        <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
-        Build what your business needs
-      </div>
-
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">You don't always need more technology <span class="text-yellow-400">Before It's Built</span></h1>
-      <p class="text-gray-300 text-base md:text-lg mb-4">You need the Right Technology <strong class="text-yellow-400"> WEB.VR.AI</strong> Based in Lahore · Working across Pakistan</p>
+</header>
 
 
 
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%20want%20a%20free%20VR%20demo%20for%20my%20property." target="_blank" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-bold py-4 px-8 rounded-full shadow-lg hover:scale-105 transition flex items-center justify-center gap-2">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Get Free Demo on WhatsApp
-        </a>
-        <a href="portfolio.html" class="border-2 border-white/60 text-white font-semibold py-4 px-8 rounded-full hover:scale-105 hover:border-yellow-400 hover:text-yellow-400 transition">See Our Work →</a>
-      </div>
+  <!-- ============================================================
+       ACCESSIBILITY
+       ============================================================ -->
 
-      <p class="mt-5 text-xs text-gray-500">📍 Based in Lahore · Serving all of Pakistan · Reply within 2 hours</p>
-    </div>
-  </header>
-
- <!-- Mission -->
-<section class="steam-bg py-24 text-center relative overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
-
-  <div class="relative z-10 max-w-5xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-yellow-400 mb-6">Our Mission</h2>
-    <p class="mb-10 text-gray-300 leading-relaxed">
-      At <span class="text-yellow-400 font-semibold">SQ Interactive</span>, we redefine how people explore and interact with
-      digital real estate creating fully immersive VR environments that allow users to walk through, design, and
-      experience properties before they're even built.
-    </p>
-
-    <!-- Scrollable gallery with navigation -->
-    <div class="relative">
-      <div id="image-gallery" class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory justify-start md:justify-center transition-transform duration-300">
-        <img src="images/material swap.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(-1)">
-        <img src="images/NeuroSpace VR Preview.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(0)">
-        <img src="images/after.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(1)">
-        <img src="images/builds.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(2)">
-        <img src="images/ai interior design.png" class="w-56 h-36 object-cover rounded-xl shadow-lg flex-shrink-0 snap-center cursor-pointer hover:scale-105 transition-transform" onclick="scrollGallery(3)">
-      </div>
-      
-      <!-- Navigation arrows for desktop -->
-      <button onclick="scrollGallery(-1)" class="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">
-        
-      </button>
-      <button onclick="scrollGallery(1)" class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">
-      
-      </button>
-    </div>
-
-    <h3 class="mt-8 text-lg text-gray-400">Founded in Lahore, Pakistan</h3>
-  </div>
-</section>
+  <a
+    href="#main"
+    class="skip-link"
+  >
+    Skip to main content
+  </a>
 
 
+  <!-- ============================================================
+       SCROLL PROGRESS
+       ============================================================ -->
 
-  <!-- Trust Bar -->
-  <section class="py-8 bg-[#0a0a0a] border-y border-yellow-400/10">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div>
-          <div class="text-3xl font-bold text-yellow-400" id="counter-projects">0</div>
-          <div class="text-gray-400 text-sm mt-1">Projects Delivered</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-yellow-400">40%</div>
-          <div class="text-gray-400 text-sm mt-1">Faster Property Sales</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-yellow-400">4.9★</div>
-          <div class="text-gray-400 text-sm mt-1">Client Rating</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-yellow-400">1 Wk</div>
-          <div class="text-gray-400 text-sm mt-1">Fastest Delivery</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Who We're For -->
-  <section class="py-16 bg-[#0d0d0d]">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-8">Who We're For</h2>
-      <div class="grid md:grid-cols-4 gap-6 mt-8">
-        <div class="p-4">
-          <h3 class="font-semibold text-yellow-400 mb-2">Real Estate Developers</h3>
-          <p class="text-gray-400 text-sm">Showcase projects before construction</p>
-        </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-yellow-400 mb-2">Boutique Hotels</h3>
-          <p class="text-gray-400 text-sm">Virtual room tours and facilities</p>
-        </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-yellow-400 mb-2">Architects & Interior Designers</h3>
-          <p class="text-gray-400 text-sm">Immersive design presentations</p>
-        </div>
-        <div class="p-4">
-          <h3 class="font-semibold text-yellow-400 mb-2">Property Marketers</h3>
-          <p class="text-gray-400 text-gray-400 text-sm">Interactive marketing experiences</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Demo Highlight -->
-  <section class="py-20 bg-[#121212]">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-6">Our Latest Project</h2>
-      <p class="text-lg mb-10 max-w-2xl mx-auto text-gray-400">VR Material Swap System for Real Estate &mdash; swap wall, floor &amp; furniture materials in real-time inside VR.</p>
-      <div class="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg">
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed/tM35bx3G15U" title="VR Material Swap System Demo" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
+  <div
+    class="sq-scroll-progress"
+    aria-hidden="true"
+  ></div>
 
 
-<!-- Before/After -->
-<section class="steam-bg py-24 text-center relative overflow-hidden">
-  <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
+  <!-- ============================================================
+       GOOGLE TRANSLATE MOUNT
+       ============================================================ -->
 
-  <h2 class="text-4xl font-bold mb-4">Transformative Results</h2>
-  <p class="text-lg mb-10">See how our VR solutions elevate real estate experiences.</p>
-  <p class="text-lg mb-10">(Slide the yellow dot to move)</p>
-
-  <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl" style="height: 400px;" id="slider-container">
-    <img src="images/before.png" class="absolute inset-0 w-full h-full object-cover" alt="Before">
-    <div id="after-overlay" class="absolute inset-0 overflow-hidden" style="width: 50%;">
-      <img src="images/after.png" class="w-full h-full object-cover" alt="After">
-    </div>
-    
-    <div class="absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded">Before</div>
-    <div class="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded">After</div>
-    
-    <div id="slider-handle" class="absolute top-0 bottom-0 bg-yellow-400 cursor-ew-resize" style="width: 4px; left: 50%; z-index: 10;"
-         onmousedown="startDrag(event)" ontouchstart="startDrag(event)">
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-yellow-400 rounded-full border-2 border-white shadow-lg cursor-grab"></div>
-    </div>
-  </div>
-  
-  <script>
-    let isDragging = false;
-    
-    function startDrag(e) {
-      isDragging = true;
-      e.preventDefault();
-    }
-    
-    document.addEventListener('mousemove', function(e) {
-      if (!isDragging) return;
-      updateSlider(e.clientX);
-    });
-    
-    document.addEventListener('touchmove', function(e) {
-      if (!isDragging) return;
-      e.preventDefault();
-      updateSlider(e.touches[0].clientX);
-    });
-    
-    document.addEventListener('mouseup', function() {
-      isDragging = false;
-    });
-    
-    document.addEventListener('touchend', function() {
-      isDragging = false;
-    });
-    
-    function updateSlider(clientX) {
-      const container = document.getElementById('slider-container');
-      const handle = document.getElementById('slider-handle');
-      const overlay = document.getElementById('after-overlay');
-      
-      if (!container || !handle || !overlay) return;
-      
-      const rect = container.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-      
-      handle.style.left = percentage + '%';
-      overlay.style.width = percentage + '%';
-    }
-  </script>
-</section>
+  <div
+    id="sq-google-translate-element"
+    style="display: none;"
+  ></div>
 
 
+  <!-- ============================================================
+       MAIN CONTENT START
+       ============================================================ -->
 
-  <!-- Interactive VR Preview -->
-  <section class="py-20 bg-[#0d0d0d]">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">Experience VR Before You Buy</h2>
-      <p class="text-gray-400 mb-8">Try our interactive VR demo right in your browser</p>
-      
-      <div class="relative bg-black rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-        <div class="aspect-video bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-          <button onclick="startVRDemo()" class="bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition flex items-center gap-3">
-            <i data-feather="play" class="w-6 h-6"></i>
-            Launch VR Demo
-          </button>
-        </div>
-        <div class="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-          WebGL No Download Required
-        </div>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-6 mt-12">
-        <div class="text-center">
-          <div class="bg-yellow-400/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-feather="smartphone" class="w-8 h-8 text-yellow-400"></i>
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ════════════════════════════════════════ -->
+    <section class="sq-hero" aria-labelledby="hero-heading">
+      <div class="sq-hero__bg" aria-hidden="true"></div>
+      <video class="sq-hero__video"
+             autoplay muted loop playsinline
+             aria-hidden="true"
+             poster="images/no-background.png">
+        <source src="videos/home.mp4" type="video/mp4">
+      </video>
+      <div class="sq-hero__overlay" aria-hidden="true"></div>
+
+      <div class="sq-hero__content">
+        <div class="sq-hero__text">
+          <p class="sq-label sq-hero__eyebrow" data-reveal>SQ Interactive</p>
+
+          <h1 class="sq-hero__heading" id="hero-heading" data-reveal>
+            Build what your business needs <em>next.</em>
+          </h1>
+
+          <p class="sq-hero__subheading" data-reveal>
+            You don't always need more technology.<br>
+            You need the <em style="font-style:normal; color:var(--sq-text-strong);">right</em> technology.
+          </p>
+
+          <div class="sq-hero__actions" data-reveal>
+            <a href="contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="hero_primary">Tell us your challenge</a>
+            <a href="work/"    class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="hero_work">See our work</a>
           </div>
-          <h3 class="font-semibold mb-2">Mobile Compatible</h3>
-          <p class="text-gray-400 text-sm">Works on any device</p>
-        </div>
-        <div class="text-center">
-          <div class="bg-yellow-400/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-feather="zap" class="w-8 h-8 text-yellow-400"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Instant Loading</h3>
-          <p class="text-gray-400 text-sm">No app installation</p>
-        </div>
-        <div class="text-center">
-          <div class="bg-yellow-400/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-feather="eye" class="w-8 h-8 text-yellow-400"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Photorealistic</h3>
-          <p class="text-gray-400 text-sm">True-to-life visuals</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CORE SERVICES -->
-  <section class="steam-bg py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-400 mb-10">Our Core Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212]" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">360&deg; Tours &amp; Videos</h3>
-          <img src="images/fyp.png" alt="360 degree virtual tours" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">High-quality 360&deg; photography and virtual tours with hotspots and smooth transitions.</p>
-          <p class="text-sm text-gray-400 mb-3">Starting from: 30,000 PKR &bull; Timeline: 1 week</p>
-          <a href="360-content.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
+          <p class="sq-hero__location" data-reveal>Based in Lahore · Working across Pakistan</p>
         </div>
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212]" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">Interactive Walkthroughs</h3>
-          <img src="images/360 sam.jpeg" alt="Interactive walkthroughs" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">WebGL-based walkthroughs viewable on any browser or device.</p>
-          <p class="text-sm text-gray-400 mb-3">Starting from: 95,000 PKR &bull; Timeline: 2&ndash;3 weeks</p>
-          <a href="interactive-walkthroughs.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
-        </div>
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212]" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">VR Staging &amp; Furniture</h3>
-          <img src="images/vr realeatate.jpg" alt="VR staging" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">Transform empty rooms into furnished, styled interiors using VR/AR visuals.</p>
-          <p class="text-sm text-gray-400 mb-3">Starting from: 140,000 PKR &bull; Timeline: 3&ndash;5 weeks</p>
-          <a href="vr-staging.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
-        </div>
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212]" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">3D Furniture Scanning</h3>
-          <img src="images/vr realestate 3.jpg" alt="Furniture scanning" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">Scan real furniture and create a 3D catalog or showroom for sales.</p>
-          <p class="text-sm text-gray-400 mb-3">Starting from: 150,000 PKR &bull; Timeline: 2&ndash;4 weeks</p>
-          <a href="furniture-scanning.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
-        </div>
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212]" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">Interactive PC Models</h3>
-          <img src="images/after.png" alt="Interactive PC models" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">Executable property models for exhibitions and sales centers.</p>
-          <p class="text-sm text-gray-400 mb-3">Starting from: 150,000 PKR &bull; Timeline: 2&ndash;3 weeks</p>
-          <a href="interactive-pc.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
-        </div>
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212]" data-aos="fade-up">
-          <h3 class="text-xl font-semibold mb-2">VR Real Estate</h3>
-          <img src="images/builds.png" alt="VR real estate" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">Immersive headset-ready environments for luxury real estate presentations.</p>
-          <p class="text-sm text-gray-400 mb-3">Starting from: 270,000 PKR &bull; Timeline: 4&ndash;6 weeks</p>
-          <a href="vr-real-estate.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
-        </div>
-        <div class="p-6 rounded-xl shadow-lg bg-[#121212] border border-yellow-400/30" data-aos="fade-up">
-          <span class="inline-block bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full mb-3">NEW</span>
-          <h3 class="text-xl font-semibold mb-2">VR Material Swap System</h3>
-          <img src="images/material swap.png" alt="VR Material Swap System" class="rounded mb-3 w-full object-cover" loading="lazy">
-          <p class="text-gray-400 mb-3">Swap wall, floor, and furniture materials in real-time inside VR. Clients visualize design choices instantly before committing.</p>
-          <p class="text-sm text-gray-400 mb-3">Add-on to VR Real Estate packages &bull; Contact for pricing</p>
-          <a href="vr-real-estate.html" class="text-yellow-400 hover:underline">Learn More &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- Pricing -->
-<section class="py-20 bg-[#1E1E1E]">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-12">Pricing Packages</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-[#121212] p-8 rounded-xl text-center">
-        <h3 class="text-2xl font-bold mb-4">Entry</h3>
-        <p class="mb-6 text-gray-400">360 ° Tour Starting from 30K PKR</p>
-        <a href="#contact" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold">Book Demo</a>
-      </div>
-      <div class="bg-[#121212] p-8 rounded-xl text-center border-2 border-yellow-400">
-        <h3 class="text-2xl font-bold mb-4">Mid</h3>
-        <p class="mb-6 text-gray-400">Interactive Walkthrough Starting from 95K PKR</p>
-        <a href="#contact" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold">Book Demo</a>
-      </div>
-      <div class="bg-[#121212] p-8 rounded-xl text-center">
-        <h3 class="text-2xl font-bold mb-4">Premium</h3>
-        <p class="mb-6 text-gray-400">VR Staging Starting from 140K PKR</p>
-        <a href="#contact" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold">Book Demo</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-  <!-- CTA -->
-   
-     <section class="steam-bg py-24 text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-yellow-700 via-transparent to-black blur-3xl"></div>
-    <div class="max-w-5xl mx-auto text-center px-6 bg-black/50 rounded-2xl p-12" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Build Something Unreal.</h2>
-        <p class="text-gray-400 mb-6">Book a demo or send your project brief to <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a></p>
-        <div class="flex justify-center gap-4">
-          <a href="contact.html" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-semibold py-3 px-6 rounded-full shadow hover:scale-105 transition">Request Consultation</a>
-          <a href="services.html" class="border border-white/10 text-white py-3 px-6 rounded-full hover:scale-105 transition">Explore Services</a>
+        <div class="sq-hero__logo-panel" aria-hidden="true" data-reveal>
+          <img src="images/no-background.png" alt="" class="sq-hero__logo-img">
         </div>
-    </div>
-  </section>
+      </div>
 
-    <!-- SOCIAL PROOF / TESTIMONIALS -->
-  <section class="py-20 bg-[#0d0d0d]">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-yellow-400 mb-12">What Clients Say</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-yellow-400/10 text-left">
-          <div class="flex gap-1 mb-4">⭐⭐⭐⭐⭐</div>
-          <p class="text-gray-300 italic mb-4">"The VR walkthrough SQ Interactive built for our DHA project got us 3 serious buyers in the first week. Clients could literally walk through the villa before construction started."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">A</div>
-            <div>
-              <div class="font-semibold text-white">Ahmed Raiz.</div>
-              <div class="text-gray-500 text-sm">Real Estate Developer, DHA Lahore</div>
+      <div class="sq-hero__scroll-hint" aria-hidden="true">
+        <span>Explore</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         HUB — FOUR WORLDS
+    ════════════════════════════════════════ -->
+    <section class="sq-hub" aria-labelledby="hub-heading">
+      <div class="sq-hub__inner">
+
+        <div class="sq-hub__header">
+          <p class="sq-hub__label" id="hub-heading">Choose your world</p>
+          <p class="sq-hub__sublabel">Four capabilities. One studio.</p>
+        </div>
+
+        <div class="sq-hub__grid" data-reveal>
+
+          <!-- 01 — Digital -->
+          <a href="digital/"
+             class="sq-hub-card sq-hub-card--digital"
+             aria-label="Enter Digital world — websites, e-commerce and software"
+             data-hub-world="digital">
+            <span class="sq-hub-card__watermark" aria-hidden="true">01</span>
+            <div class="sq-hub-card__top">
+              <div class="sq-hub-card__img"><img src="images/sq web.png" alt="" loading="lazy"></div>
+              <div class="sq-hub-card__number">01 — Digital</div>
+              <p class="sq-hub-card__subtitle">Websites · Commerce · Software</p>
+              <h2 class="sq-hub-card__title">Build It</h2>
             </div>
-          </div>
-        </div>
-        <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-yellow-400/10 text-left">
-          <div class="flex gap-1 mb-4">⭐⭐⭐⭐⭐</div>
-          <p class="text-gray-300 italic mb-4">"Our hotel bookings increased after the 360° virtual tour went live. Guests could explore rooms before booking — it completely changed how we market our property."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">AB</div>
-            <div>
-              <div class="font-semibold text-white">Amir Bhatti</div>
-              <div class="text-gray-500 text-sm">Hotel Manager, Heaven Hotel</div>
+            <div class="sq-hub-card__bottom">
+              <p class="sq-hub-card__desc">Websites, e-commerce, software and digital experiences designed around how your business actually works.</p>
+              <div class="sq-hub-card__action">
+                <span class="sq-hub-card__action-label">Explore Digital</span>
+                <span class="sq-hub-card__action-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </div>
             </div>
-          </div>
+          </a>
+
+          <!-- 02 — AI -->
+          <a href="ai/"
+             class="sq-hub-card sq-hub-card--ai"
+             aria-label="Enter AI world — AI systems and automation"
+             data-hub-world="ai">
+            <span class="sq-hub-card__watermark" aria-hidden="true">02</span>
+            <div class="sq-hub-card__top">
+              <div class="sq-hub-card__img"><img src="images/AI.png" alt="" loading="lazy"></div>
+              <div class="sq-hub-card__number">02 — AI</div>
+              <p class="sq-hub-card__subtitle">AI · Automation · Workflows</p>
+              <h2 class="sq-hub-card__title">Make It Smart</h2>
+            </div>
+            <div class="sq-hub-card__bottom">
+              <p class="sq-hub-card__desc">AI systems, automation and intelligent workflows that save time and create new capabilities for your business.</p>
+              <div class="sq-hub-card__action">
+                <span class="sq-hub-card__action-label">Explore AI</span>
+                <span class="sq-hub-card__action-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 03 — Immersive -->
+          <a href="immersive/"
+             class="sq-hub-card sq-hub-card--immersive"
+             aria-label="Enter Immersive world — VR, AR and 3D"
+             data-hub-world="immersive">
+            <span class="sq-hub-card__watermark" aria-hidden="true">03</span>
+            <div class="sq-hub-card__top">
+              <div class="sq-hub-card__img"><img src="images/VR-2.png" alt="" loading="lazy"></div>
+              <div class="sq-hub-card__number">03 — Immersive</div>
+              <p class="sq-hub-card__subtitle">VR · AR · 3D</p>
+              <h2 class="sq-hub-card__title">Make It Immersive</h2>
+            </div>
+            <div class="sq-hub-card__bottom">
+              <p class="sq-hub-card__desc">VR, AR, 3D and interactive experiences — when they genuinely add value to what you're building.</p>
+              <div class="sq-hub-card__action">
+                <span class="sq-hub-card__action-label">Explore Immersive</span>
+                <span class="sq-hub-card__action-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 04 — Lab -->
+          <a href="lab/"
+             class="sq-hub-card sq-hub-card--lab"
+             aria-label="Enter SQ Lab — experiments and emerging technology"
+             data-hub-world="lab">
+            <span class="sq-hub-card__watermark" aria-hidden="true">04</span>
+            <div class="sq-hub-card__top">
+              <div class="sq-hub-card__img"><img src="images/r&d sample.png" alt="" loading="lazy"></div>
+              <div class="sq-hub-card__number">04 — Lab</div>
+              <p class="sq-hub-card__subtitle">Experiments · Prototypes · R&amp;D</p>
+              <h2 class="sq-hub-card__title">Explore What's Next</h2>
+            </div>
+            <div class="sq-hub-card__bottom">
+              <p class="sq-hub-card__desc">Our R&amp;D space. Experiments, prototypes and emerging technology — tested before it's offered to clients.</p>
+              <div class="sq-hub-card__action">
+                <span class="sq-hub-card__action-label">Explore the Lab</span>
+                <span class="sq-hub-card__action-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="sq-hub__footer" data-reveal>
+          <p class="sq-hub__footer-text">Not sure which world fits your problem?</p>
+          <a href="contact/" class="sq-hub__contact-link" data-cta="hub_contact">
+            Talk to us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         LIVE PROOF
+    ════════════════════════════════════════ -->
+    <section class="sq-proof" aria-labelledby="proof-heading">
+      <div class="sq-proof__inner">
+        <div class="sq-proof__header">
+          <p class="sq-proof__label" id="proof-heading">Live work</p>
+          <a href="work/" class="sq-proof__all-link">See all work
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+        <div class="sq-proof__grid" data-reveal>
+
+          <a href="https://designlineconstruction.com/" target="_blank" rel="noopener noreferrer" class="sq-proof-card" aria-label="DesignLine Construction — live site">
+            <div class="sq-proof-card__body">
+              <span class="sq-proof-card__live" aria-label="Live site"></span>
+              <span class="sq-proof-card__name">DesignLine Construction</span>
+              <span class="sq-proof-card__domain">designlineconstruction.com</span>
+            </div>
+            <div class="sq-proof-card__meta">
+              <span class="sq-proof-card__type">Web · Digital</span>
+              <span class="sq-proof-card__arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://www.heavenhotel.com.pk/" target="_blank" rel="noopener noreferrer" class="sq-proof-card" aria-label="Heaven Hotel — live site">
+            <div class="sq-proof-card__body">
+              <span class="sq-proof-card__live" aria-label="Live site"></span>
+              <span class="sq-proof-card__name">Heaven Hotel</span>
+              <span class="sq-proof-card__domain">heavenhotel.com.pk</span>
+            </div>
+            <div class="sq-proof-card__meta">
+              <span class="sq-proof-card__type">Web · Hospitality</span>
+              <span class="sq-proof-card__arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://sqinteractive.com/" target="_blank" rel="noopener noreferrer" class="sq-proof-card" aria-label="SQ Interactive — live site">
+            <div class="sq-proof-card__body">
+              <span class="sq-proof-card__live" aria-label="Live site"></span>
+              <span class="sq-proof-card__name">SQ Interactive</span>
+              <span class="sq-proof-card__domain">sqinteractive.com</span>
+            </div>
+            <div class="sq-proof-card__meta">
+              <span class="sq-proof-card__type">Web · Studio</span>
+              <span class="sq-proof-card__arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
+            </div>
+          </a>
+
         </div>
       </div>
-      <!-- WhatsApp CTA -->
-      <div class="mt-12 bg-gradient-to-r from-yellow-400/10 to-amber-400/5 border border-yellow-400/20 rounded-2xl p-8">
-        <p class="text-xl font-semibold mb-2">Ready to sell your property faster?</p>
-        <p class="text-gray-400 mb-6">Join 15+ developers who already use VR to close deals faster.</p>
-        <a href="https://wa.me/923009452153?text=Hi!%20I%20want%20to%20discuss%20a%20VR%20project%20for%20my%20property." target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-8 rounded-full transition hover:scale-105">
-          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp Us Now — Free Consultation
-        </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PHILOSOPHY
+    ════════════════════════════════════════ -->
+    <section class="sq-philosophy sq-philosophy--gradient" aria-label="Our philosophy">
+      <div class="sq-philosophy__inner">
+        <p class="sq-philosophy__statement" data-reveal>
+          <strong>We figure out what needs fixing.</strong>
+          Then we build the right solution —
+          not the most impressive one.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FINAL CTA
+    ════════════════════════════════════════ -->
+    <section class="sq-cta" id="contact" aria-labelledby="cta-heading">
+      <div class="sq-cta__inner" data-reveal>
+        <span class="sq-label">Start Here</span>
+        <h2 class="sq-cta__heading" id="cta-heading">Have a problem worth solving?</h2>
+        <p class="sq-cta__sub">
+          Tell us what you're trying to achieve. We'll listen, ask the right questions,
+          and help you figure out what actually makes sense to build.
+        </p>
+        <div class="sq-cta__actions">
+          <a href="contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="primary">Start a conversation</a>
+          <a href="work/"    class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="work">See our work</a>
+        </div>
+        <p class="sq-cta__note">No pressure. No sales pitch. Just a genuine conversation about your business.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="sq-footer">
+    <div class="sq-container">
+      <div class="sq-footer__grid">
+
+        <div class="sq-footer__brand">
+          <p style="font-family:var(--sq-font-sans); font-size:var(--sq-text-base); font-weight:700; color:var(--sq-text-strong); margin-bottom:var(--sq-space-3);">SQ Interactive</p>
+          <p>We help businesses understand what they actually need, then design and build the right digital solution.</p>
+          <div class="sq-footer__contact">
+            <a href="tel:+923009452153" class="sq-footer__contact-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              +92 300 9452153
+            </a>
+            <a href="mailto:admin@sqinteractive.com" class="sq-footer__contact-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              admin@sqinteractive.com
+            </a>
+            <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="sq-footer__contact-link sq-footer__contact-link--wa">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="sq-footer__heading">Explore</h2>
+          <ul class="sq-footer__links">
+            <li><a href="digital/"    class="sq-footer__link">Digital</a></li>
+            <li><a href="ai/"         class="sq-footer__link">AI &amp; Automation</a></li>
+            <li><a href="immersive/"  class="sq-footer__link">Immersive</a></li>
+            <li><a href="lab/"        class="sq-footer__link">SQ Lab</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="sq-footer__heading">Company</h2>
+          <ul class="sq-footer__links">
+            <li><a href="work/"         class="sq-footer__link">Work</a></li>
+            <li><a href="how-we-work/"  class="sq-footer__link">How We Work</a></li>
+            <li><a href="about/"        class="sq-footer__link">About</a></li>
+            <li><a href="contact/"      class="sq-footer__link">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="sq-footer__bottom">
+        <p class="sq-footer__copy">&copy; <span id="sq-year"></span> SQ Interactive. All rights reserved.</p>
+        <div class="sq-footer__social">
+          <a href="https://www.instagram.com/sqinteractive" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--instagram" aria-label="SQ Interactive on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7m9-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/sqinteractive" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--linkedin" aria-label="SQ Interactive on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/1A619NgVwh/" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--facebook" aria-label="SQ Interactive on Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@SQINTERACTIVE" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--youtube" aria-label="SQ Interactive on YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- TECHNOLOGY / WEBGL -->
-  <section class="py-16 bg-[#121212] text-white">
-    <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-4">Experience Our Technology</h2>
-      <p class="text-gray-400 mb-8">Launch our WebGL property viewer to interact with live 3D environments in the browser.</p>
-      <div class="flex justify-center">
-        <button onclick="window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank')" class="bg-gradient-to-r from-yellow-400 to-amber-300 text-black font-semibold py-3 px-6 rounded-full shadow hover:scale-105 transition">Launch Viewer</button>
-      </div>
-    </div>
-  </section>
-<!-- FOOTER -->
-<footer class="bg-[#070708] text-gray-300 py-10 border-t border-white/5">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+  <!-- WhatsApp sticky -->
+  <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%27d%20like%20to%20discuss%20a%20project."
+     target="_blank" rel="noopener noreferrer"
+     class="sq-wa-sticky"
+     aria-label="Chat on WhatsApp">
+    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    <span>WhatsApp</span>
+  </a>
 
-    <!-- Logo + Description -->
-    <div>
-      <img src="images/no-background.png" class="h-12 mb-4" alt="SQ Interactive logo" loading="lazy">
-      <p class="text-sm text-gray-400">
-        SQ Interactive crafts immersive VR, AI, and multimedia solutions for real estate, interior design, and high-end media experiences.
-      </p>
-    </div>
-
-    <!-- Quick Links -->
-    <div>
-      <h4 class="text-white font-semibold mb-3">Quick Links</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="index.html" class="hover:text-white">Home</a></li>
-        <li><a href="services.html" class="hover:text-white">Services</a></li>
-        <li><a href="portfolio.html" class="hover:text-white">Portfolio</a></li>
-        <li><a href="about.html" class="hover:text-white">About</a></li>
-        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div>
-      <h4 class="text-white font-semibold mb-3">Contact</h4>
-      <p class="text-sm">
-        Email: <a href="mailto:admin@sqinteractive.com" class="text-yellow-400 hover:underline">admin@sqinteractive.com</a>
-      </p>
-      <p class="text-sm">
-        Instagram: <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-yellow-400 hover:underline">@SQInteractive</a>
-      </p>
-      <p class="text-sm">
-        Phone: <a href="tel:+923009452153" class="text-yellow-400 hover:underline">+92 300 9452153</a>
-      </p>
-      <p class="text-sm">
-        WhatsApp: <a href="https://wa.me/923009452153" target="_blank" class="text-green-400 hover:underline">Chat with us</a>
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Social Icons -->
-  <div class="flex justify-center gap-6 mt-6">
-    <a href="https://www.instagram.com/sqinteractive" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
-    </a>
-    <a href="https://www.facebook.com/share/1A619NgVwh/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
-    </a>
-    <a href="https://www.linkedin.com/company/sqinteractive" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
-    </a>
-    <a href="https://www.youtube.com/@SQINTERACTIVE" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-      </svg>
-    </a>
-  </div>
-
-  <div class="text-center text-gray-500 text-sm mt-8">
-    &copy; <span id="yr"></span> SQ Interactive. All rights reserved.
-  </div>
-</footer>
-
-<script>
-  // Scroll progress bar
-  window.addEventListener('scroll', () => {
-    const el = document.getElementById('scroll-progress');
-    if (el) {
-      const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      el.style.width = pct + '%';
-    }
-  });
-
-  // Set current year automatically
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Animated counter
-  function animateCounter(id, target, duration) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    let start = 0;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { el.textContent = target + '+'; clearInterval(timer); }
-      else el.textContent = Math.floor(start) + '+';
-    }, 16);
-  }
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { animateCounter('counter-projects', 15, 1500); counterObserver.disconnect(); } });
-  });
-  const counterEl = document.getElementById('counter-projects');
-  if (counterEl) counterObserver.observe(counterEl);
-
-  // Exit-intent popup
-  let exitShown = false;
-  document.addEventListener('mouseleave', (e) => {
-    if (e.clientY < 10 && !exitShown) {
-      exitShown = true;
-      document.getElementById('exit-popup').classList.remove('hidden');
-    }
-  });
-</script>
-
-<!-- Exit Intent Popup -->
-<div id="exit-popup" class="hidden fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center p-4">
-  <div class="bg-[#1a1a1a] border border-yellow-400/30 rounded-2xl p-8 max-w-md w-full text-center relative">
-    <button onclick="document.getElementById('exit-popup').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
-    <div class="text-4xl mb-4">🏠</div>
-    <h3 class="text-2xl font-bold text-yellow-400 mb-3">Wait — Get a Free VR Demo!</h3>
-    <p class="text-gray-300 mb-6">Before you go, let us show you exactly what a VR tour of YOUR property would look like. No cost, no commitment.</p>
-    <a href="https://wa.me/923009452153?text=Hi!%20I%20want%20a%20free%20VR%20demo%20before%20I%20decide." target="_blank" class="block bg-yellow-400 text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition mb-3">Yes, Show Me a Free Demo</a>
-    <button onclick="document.getElementById('exit-popup').classList.add('hidden')" class="text-gray-500 text-sm hover:text-gray-300">No thanks, I'll pass</button>
-  </div>
-</div>
+  <!-- Floating contact button -->
+  <a href="contact/"
+     class="sq-float-cta"
+     aria-label="Tell us your challenge"
+     data-cta="float">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    <span>Tell us your challenge</span>
+  </a>
 
   <!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
-<script src="js/sq-interactive.js" defer></script>
+  <script src="/js/unified-nav.js" defer></script>
+  <script src="js/translation.js" defer></script>
+  <script src="js/main.js"      defer></script>
+  <script src="js/analytics.js" defer></script>
+  <script src="js/hub.js"       defer></script>
 
-
- <!-- Init Scripts -->
-  <script>
-    AOS.init();
-    feather.replace();
-
-    // Desktop dropdown
-    const servicesBtn = document.getElementById("services-btn");
-    const servicesPopup = document.getElementById("services-popup");
-
-    if (servicesBtn) {
-      servicesBtn.addEventListener("mouseenter", () => servicesPopup.classList.remove("hidden"));
-      servicesBtn.addEventListener("mouseleave", () => {
-        setTimeout(() => {
-          if (!servicesPopup.matches(":hover")) servicesPopup.classList.add("hidden");
-        }, 200);
-      });
-      servicesPopup.addEventListener("mouseleave", () => servicesPopup.classList.add("hidden"));
-    }
-
-    // Mobile menu
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const mobileServicesToggle = document.getElementById("mobile-services-toggle");
-    const mobileServices = document.getElementById("mobile-services");
-
-    if (menuToggle) {
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    }
-
-    if (mobileServicesToggle) {
-      mobileServicesToggle.addEventListener("click", () => {
-        mobileServices.classList.toggle("hidden");
-      });
-    }
-
-    // Set current year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // Lazy load iframes for better performance
-    const observerOptions = {
-      root: null,
-      rootMargin: '50px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const iframe = entry.target;
-          if (iframe.dataset.src) {
-            iframe.src = iframe.dataset.src;
-            iframe.removeAttribute('data-src');
-            observer.unobserve(iframe);
-          }
-        }
-      });
-    }, observerOptions);
-
-    // Observe all iframes with data-src
-    document.querySelectorAll('iframe[data-src]').forEach(iframe => {
-      observer.observe(iframe);
-    });
- 
-  // VR Demo launcher
-  function startVRDemo() {
-    window.open('https://play.unity.com/en/games/a8f724c8-91a7-4882-a127-87ad9bbc4840/webgl-builds', '_blank');
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'vr_demo_launch', {
-        event_category: 'Engagement',
-        event_label: 'Homepage VR Demo',
-      });
-    }
-  }
-
-  // Image gallery scroll function - FIXED
-  function scrollGallery(direction) {
-    const gallery = document.getElementById('image-gallery');
-    if (!gallery) return;
-    
-    const scrollAmount = 260; // Image width + gap
-    
-    if (direction === 1) {
-      gallery.scrollLeft += scrollAmount;
-    } else if (direction === -1) {
-      gallery.scrollLeft -= scrollAmount;
-    }
-  }
-  
-  // Make function global
-  window.scrollGallery = scrollGallery;
-</script>
 
 </body>
 </html>
