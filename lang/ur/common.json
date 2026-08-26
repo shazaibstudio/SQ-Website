@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "ہوم",
+    "services": "خدمات",
+    "work": "کام",
+    "howWeWork": "ہم کیسے کام کرتے ہیں",
+    "about": "ہمارے بارے میں",
+    "contact": "رابطہ",
+    "serviceAll": "تمام خدمات",
+    "digital": "ڈیجیٹل",
+    "ai": "ہوشیار نظام",
+    "immersive": "جذب کن تجربہ",
+    "lab": "لیبارٹری"
+  },
+  "footer": {
+    "brand": "SQ Interactive",
+    "tagline": "ہم کاروبار کو سمجھنے میں مدد دیتے ہیں کہ انہیں دراصل کیا چاہیے، پھر صحیح حل تیار کرتے ہیں۔",
+    "explore": "دریافت کریں",
+    "company": "کمپنی",
+    "phone": "+92 300 9452153",
+    "email": "admin@sqinteractive.com",
+    "whatsapp": "واٹس ایپ",
+    "social": {
+      "instagram": "انسٹاگرام پر SQ Interactive",
+      "linkedin": "لنکڈ ان پر SQ Interactive",
+      "facebook": "فیس بک پر SQ Interactive",
+      "youtube": "یوٹیوب پر SQ Interactive"
+    },
+    "copyright": "© {year} SQ Interactive۔ تمام حقوق محفوظ ہیں۔",
+    "exploreMenu": {
+      "services": "خدمات",
+      "work": "کام",
+      "howWeWork": "ہم کیسے کام کرتے ہیں"
+    },
+    "companyMenu": {
+      "about": "ہمارے بارے میں",
+      "contact": "رابطہ"
+    }
+  },
+  "buttons": {
+    "learnMore": "مزید جانیں →",
+    "startConversation": "گفتگو شروع کریں",
+    "seeWork": "ہمارا کام دیکھیں",
+    "viewProject": "منصوبہ دیکھیں →",
+    "watchDemo": "ڈیمو دیکھیں →",
+    "watchTour": "ٹور دیکھیں →",
+    "privateProject": "نجی منصوبہ"
+  },
+  "common": {
+    "noResults": "کوئی نتیجہ نہیں ملا"
+  },
+  "contact": {
+    "heroHeading": "رابطہ کریں",
+    "heroSubheading": "حقیقت کی نئی تعریف — جذباتی ڈیزائن کے علمبرداروں کے ساتھ کام کریں۔",
+    "infoHeading": "SQ Interactive سے رابطہ کریں",
+    "infoText": "آئیے اپنے منصوبے کے بارے میں بات کریں — چاہے آپ کو ڈیجیٹل حل، AI خودکاری، جذب کن تجربات، یا لیب جدت کی ضرورت ہو، ہم تعاون کے لیے تیار ہیں۔",
+    "emailLabel": "ای میل",
+    "instagramLabel": "انسٹاگرام",
+    "phoneLabel": "فون",
+    "namePlaceholder": "آپ کا نام",
+    "emailPlaceholder": "ای میل پتہ",
+    "phonePlaceholder": "فون نمبر",
+    "selectProjectType": "منصوبے کی قسم منتخب کریں",
+    "messagePlaceholder": "مختصر پیغام",
+    "sendButton": "بھیجیں",
+    "demoButton": "ڈیمو کی درخواست کریں"
+  }
+}

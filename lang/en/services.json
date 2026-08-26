@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "label": "Our Services",
+    "heading": "Services built around <em>what you need.</em>",
+    "subheading": "Explore our capabilities across four major areas.<br>Choose the right solution for your challenge.",
+    "ctaWork": "See our work",
+    "ctaExplore": "Explore services"
+  },
+  "header": {
+    "title": "All Services",
+    "subtitle": "Our services organized by capability. Choose your world to explore what we can build."
+  },
+  "worlds": {
+    "digital": {
+      "number": "01",
+      "title": "Digital",
+      "desc": "Websites, software, and growth"
+    },
+    "ai": {
+      "number": "02",
+      "title": "AI",
+      "desc": "Intelligence, automation, insights"
+    },
+    "immersive": {
+      "number": "03",
+      "title": "Immersive",
+      "desc": "VR, AR, 3D experiences"
+    },
+    "lab": {
+      "number": "04",
+      "title": "Lab",
+      "desc": "R&D, experiments, emerging tech"
+    }
+  },
+  "cta": {
+    "label": "Get Started",
+    "heading": "Ready to explore our services?",
+    "subheading": "Tell us about your challenge. We'll listen, understand what you need,<br>and recommend the right solution to build.",
+    "primary": "Start a conversation",
+    "secondary": "See our work",
+    "note": "No pressure. No sales pitch. Just a genuine conversation about your business."
+  }
+}

@@ -54,6 +54,7 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/unified-nav.css">
   <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
   <link rel="stylesheet" href="../css/services.css">
 
   <style>
@@ -82,7 +83,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="../SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
 </head>
 
-<body>
+<body class="page-services">
 
   <!-- Skip to content -->
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -266,6 +267,7 @@
             type="button"
             aria-label="English"
             aria-pressed="true"
+            data-lang-switch="en"
           >
             EN
           </button>
@@ -276,6 +278,7 @@
             type="button"
             aria-label="Urdu"
             aria-pressed="false"
+            data-lang-switch="ur"
           >
             UR
           </button>
@@ -397,8 +400,8 @@
       <!-- MOBILE LANGUAGE -->
 
       <div class="sq-nav__mobile-lang">
-        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true">EN</button>
-        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false">UR</button>
+        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true" data-lang-switch="en">EN</button>
+        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false" data-lang-switch="ur">UR</button>
       </div>
 
     </div>
@@ -426,20 +429,20 @@
 
       <div class="sq-hero__content">
         <div class="sq-hero__text">
-          <p class="sq-label sq-hero__eyebrow" data-reveal>Our Services</p>
+          <p class="sq-label sq-hero__eyebrow" data-reveal data-i18n="hero.label">Our Services</p>
 
-          <h1 class="sq-hero__heading" id="services-heading" data-reveal>
+          <h1 class="sq-hero__heading" id="services-heading" data-reveal data-i18n="hero.heading">
             Services built around <em>what you need.</em>
           </h1>
 
-          <p class="sq-hero__subheading" data-reveal>
+          <p class="sq-hero__subheading" data-reveal data-i18n="hero.subheading">
             Explore our capabilities across four major areas.<br>
             Choose the right solution for your challenge.
           </p>
 
           <div class="sq-hero__actions" data-reveal>
-            <a href="../work/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="services_hero_work">See our work</a>
-            <a href="#services" class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="services_hero_explore">Explore services</a>
+            <a href="../work/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="services_hero_work" data-i18n="hero.ctaWork">See our work</a>
+            <a href="#services" class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="services_hero_explore" data-i18n="hero.ctaExplore">Explore services</a>
           </div>
         </div>
 
@@ -457,453 +460,494 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         SERVICES GRID — ALL 26 SERVICES
+         SERVICES GRID — SEPARATED BY WORLD
     ════════════════════════════════════════ -->
     <section class="sq-proof" aria-labelledby="services-label" id="services">
       <div class="sq-proof__inner">
         <div class="sq-proof__header">
-          <h2 class="sq-proof__label" id="services-label">All Services</h2>
-          <p style="text-align: center; color: var(--sq-text-base); max-width: 600px; margin: var(--sq-space-3) auto 0;">
-            26 specialized services across four capability areas. Click any service to learn more.
+          <h2 class="sq-proof__label" id="services-label" data-i18n="header.title">All Services</h2>
+          <p style="text-align: center; color: var(--sq-text-base); max-width: 600px; margin: var(--sq-space-3) auto 0;" data-i18n="header.subtitle">
+            Our services organized by capability. Choose your world to explore what we can build.
           </p>
         </div>
 
-        <!-- Services Grid -->
-        <div class="sq-portfolio-grid">
-
-          <!-- DIGITAL: Website Development -->
-          <article class="sq-project-card" data-world="digital">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/jpj.png" alt="Website Development" loading="lazy">
+        <!-- ════════════════════════════════════════
+             01 — DIGITAL (6 services)
+        ════════════════════════════════════════ -->
+        <div class="sq-services-world">
+          <div class="sq-services-world__header">
+            <div class="sq-services-world__number">01</div>
+            <div>
+              <h3 class="sq-services-world__title" data-i18n="worlds.digital.title">Digital</h3>
+              <p class="sq-services-world__desc" data-i18n="worlds.digital.desc">Websites, software, and growth</p>
             </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Website Development</span>
-              <h3 class="sq-project-card__title">Website Development</h3>
-              <p class="sq-project-card__desc">Fast, responsive websites built for conversion. Professional design, clean code, and SEO foundation.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Web Design</span>
-              </div>
-              <a href="../digital/website-development/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- DIGITAL: E-Commerce -->
-          <article class="sq-project-card" data-world="digital">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/it.png" alt="E-Commerce Solutions" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">E-Commerce Solutions</span>
-              <h3 class="sq-project-card__title">E-Commerce Solutions</h3>
-              <p class="sq-project-card__desc">Shopify and custom platforms designed to convert browsers into buyers. Complete setup and optimization.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">E-Commerce</span>
-              </div>
-              <a href="../digital/e-commerce/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- DIGITAL: Custom Software -->
-          <article class="sq-project-card" data-world="digital">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/visa system 2.png" alt="Custom Software" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Custom Software & Systems</span>
-              <h3 class="sq-project-card__title">Custom Software & Systems</h3>
-              <p class="sq-project-card__desc">Bespoke software solutions tailored to your unique business requirements and workflows.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Software</span>
-              </div>
-              <a href="../digital/custom-software/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- DIGITAL: UI/UX Design -->
-          <article class="sq-project-card" data-world="digital">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/it.png" alt="UI/UX Design" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">UI/UX Design</span>
-              <h3 class="sq-project-card__title">UI/UX Design</h3>
-              <p class="sq-project-card__desc">User-centered interface design that makes complex systems intuitive and delightful to use.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Design</span>
-              </div>
-              <a href="../digital/ui-ux-experiences/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- DIGITAL: SEO & Digital Growth -->
-          <article class="sq-project-card" data-world="digital">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/jpj.png" alt="SEO & Digital Growth" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">SEO & Digital Growth</span>
-              <h3 class="sq-project-card__title">SEO & Digital Growth</h3>
-              <p class="sq-project-card__desc">Strategic SEO that improves visibility, drives qualified traffic, and helps you outrank competitors.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">SEO</span>
-              </div>
-              <a href="../digital/seo-digital-growth/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- DIGITAL: Automation & Integration -->
-          <article class="sq-project-card" data-world="digital">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/it 2.png" alt="Automation & Integration" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Automation & Integration</span>
-              <h3 class="sq-project-card__title">Automation & Integration</h3>
-              <p class="sq-project-card__desc">Automated workflows that eliminate repetitive work, reduce errors, and free your team to focus.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Automation</span>
-              </div>
-              <a href="../digital/automation-integration/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- AI: AI Systems & Models -->
-          <article class="sq-project-card" data-world="ai">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai interior design.png" alt="AI Systems & Models" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">AI Systems & Models</span>
-              <h3 class="sq-project-card__title">AI Systems & Models</h3>
-              <p class="sq-project-card__desc">Custom AI and machine learning systems designed to solve your specific business challenges.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">AI/ML</span>
-              </div>
-              <a href="../ai/ai-systems-models/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- AI: Intelligent Automation -->
-          <article class="sq-project-card" data-world="ai">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai agent job seeker.png" alt="Intelligent Automation" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Intelligent Automation</span>
-              <h3 class="sq-project-card__title">Intelligent Automation</h3>
-              <p class="sq-project-card__desc">Automated workflows powered by AI that learn and adapt to your business processes.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Automation</span>
-              </div>
-              <a href="../ai/intelligent-automation/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- AI: Data Intelligence -->
-          <article class="sq-project-card" data-world="ai">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai interior design.png" alt="Data Intelligence" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Data Intelligence</span>
-              <h3 class="sq-project-card__title">Data Intelligence</h3>
-              <p class="sq-project-card__desc">Transform raw data into actionable insights that drive smarter business decisions.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Data</span>
-              </div>
-              <a href="../ai/data-intelligence/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- AI: AI Integration -->
-          <article class="sq-project-card" data-world="ai">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai agent job seeker.png" alt="AI Integration" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">AI Integration</span>
-              <h3 class="sq-project-card__title">AI Integration</h3>
-              <p class="sq-project-card__desc">Seamlessly integrate AI capabilities into your existing systems and workflows.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Integration</span>
-              </div>
-              <a href="../ai/ai-integration/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- AI: AI Content -->
-          <article class="sq-project-card" data-world="ai">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai interior design.png" alt="AI Content Generation" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">AI Content Generation</span>
-              <h3 class="sq-project-card__title">AI Content Generation</h3>
-              <p class="sq-project-card__desc">AI-powered content creation that scales your messaging across channels while maintaining brand voice.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Content</span>
-              </div>
-              <a href="../ai/ai-content/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- AI: Process Optimization -->
-          <article class="sq-project-card" data-world="ai">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai agent job seeker.png" alt="Process Optimization" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Process Optimization</span>
-              <h3 class="sq-project-card__title">Process Optimization</h3>
-              <p class="sq-project-card__desc">AI-driven analysis and optimization of your business processes for efficiency and cost savings.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Process</span>
-              </div>
-              <a href="../ai/process-optimization/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: Virtual Reality -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/after.png" alt="Virtual Reality" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Virtual Reality</span>
-              <h3 class="sq-project-card__title">Virtual Reality</h3>
-              <p class="sq-project-card__desc">High-fidelity VR experiences for real estate, design, training, and immersive brand experiences.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">VR</span>
-              </div>
-              <a href="../immersive/virtual-reality/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: Augmented Reality -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/ik house.png" alt="Augmented Reality" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Augmented Reality</span>
-              <h3 class="sq-project-card__title">Augmented Reality</h3>
-              <p class="sq-project-card__desc">AR experiences that overlay digital content into the real world for marketing and product visualization.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">AR</span>
-              </div>
-              <a href="../immersive/augmented-reality/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: 3D Visualization -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/matlock.png" alt="3D Visualization" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">3D Visualization</span>
-              <h3 class="sq-project-card__title">3D Visualization</h3>
-              <p class="sq-project-card__desc">Photorealistic 3D renderings and interactive visualizations that bring your concepts to life.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">3D</span>
-              </div>
-              <a href="../immersive/3d-visualization/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: 360° Experiences -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/360 tour.png" alt="360° Experiences" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">360° Experiences</span>
-              <h3 class="sq-project-card__title">360° Experiences</h3>
-              <p class="sq-project-card__desc">Interactive 360° photography and panoramic experiences for web and mobile platforms.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">360°</span>
-              </div>
-              <a href="../immersive/360-experiences/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: Interactive Installation -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/NeuroSpace VR Preview.png" alt="Interactive Installation" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Interactive Installation</span>
-              <h3 class="sq-project-card__title">Interactive Installation</h3>
-              <p class="sq-project-card__desc">Physical and digital installations that engage and captivate audiences at events and exhibitions.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Installation</span>
-              </div>
-              <a href="../immersive/interactive-installation/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: Web Immersion -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/material swap.png" alt="Web Immersion" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Web Immersion</span>
-              <h3 class="sq-project-card__title">Web Immersion</h3>
-              <p class="sq-project-card__desc">Immersive web experiences using WebGL and modern web technologies for accessible experiences.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Web</span>
-              </div>
-              <a href="../immersive/web-immersion/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: VR Staging -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/360 2.png" alt="VR Staging" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">VR Staging</span>
-              <h3 class="sq-project-card__title">VR Staging</h3>
-              <p class="sq-project-card__desc">Virtual staging and interior visualization that transforms empty spaces into fully furnished showrooms.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Staging</span>
-              </div>
-              <a href="../immersive/vr-staging/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- IMMERSIVE: Furniture Scanning -->
-          <article class="sq-project-card" data-world="immersive">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/elephant scan.png" alt="Furniture Scanning" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Furniture Scanning</span>
-              <h3 class="sq-project-card__title">Furniture Scanning</h3>
-              <p class="sq-project-card__desc">3D photogrammetry and scanning of furniture and assets for reuse across VR and visualization projects.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">3D Scan</span>
-              </div>
-              <a href="../immersive/furniture-scanning/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- LAB: AI Research -->
-          <article class="sq-project-card" data-world="lab">
-            <div class="sq-project-card__image">
-              <img src="../images/ai/ai interior design.png" alt="AI Research" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">AI Research</span>
-              <h3 class="sq-project-card__title">AI Research</h3>
-              <p class="sq-project-card__desc">Cutting-edge AI and machine learning research exploring new possibilities and capabilities.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Research</span>
-              </div>
-              <a href="../lab/ai-research/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- LAB: 3D Technology -->
-          <article class="sq-project-card" data-world="lab">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/sofa.png" alt="3D Technology" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">3D Technology</span>
-              <h3 class="sq-project-card__title">3D Technology</h3>
-              <p class="sq-project-card__desc">Experimental 3D technologies and techniques pushing the boundaries of digital visualization.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">3D Tech</span>
-              </div>
-              <a href="../lab/3d-tech/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- LAB: No-Code Platforms -->
-          <article class="sq-project-card" data-world="lab">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/jpj.png" alt="No-Code Platforms" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">No-Code Platforms</span>
-              <h3 class="sq-project-card__title">No-Code Platforms</h3>
-              <p class="sq-project-card__desc">Exploring and building with emerging no-code and low-code platforms for rapid development.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">No-Code</span>
-              </div>
-              <a href="../lab/no-code-platforms/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- LAB: Web Performance -->
-          <article class="sq-project-card" data-world="lab">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/it.png" alt="Web Performance" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Web Performance</span>
-              <h3 class="sq-project-card__title">Web Performance</h3>
-              <p class="sq-project-card__desc">Optimization and research into next-generation web performance techniques and technologies.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Performance</span>
-              </div>
-              <a href="../lab/web-performance/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- LAB: AR/VR Innovation -->
-          <article class="sq-project-card" data-world="lab">
-            <div class="sq-project-card__image">
-              <img src="../images/vr and 360/ik house.png" alt="AR/VR Innovation" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">AR/VR Innovation</span>
-              <h3 class="sq-project-card__title">AR/VR Innovation</h3>
-              <p class="sq-project-card__desc">Experimental AR and VR technologies exploring new frontiers in immersive experiences.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Innovation</span>
-              </div>
-              <a href="../lab/ar-vr-innovation/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-          <!-- LAB: Design Systems -->
-          <article class="sq-project-card" data-world="lab">
-            <div class="sq-project-card__image">
-              <img src="../images/ui ux and web/visa system 2.png" alt="Design Systems" loading="lazy">
-            </div>
-            <div class="sq-project-card__content">
-              <span class="sq-label">Design Systems</span>
-              <h3 class="sq-project-card__title">Design Systems</h3>
-              <p class="sq-project-card__desc">Research and development of scalable design systems and component libraries for teams.</p>
-              <div class="sq-project-card__meta">
-                <span class="sq-project-card__type">Design</span>
-              </div>
-              <a href="../lab/design-systems/" class="sq-project-card__link">Learn More →</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-        <!-- ══════════════════════════════════════════════════════════════════════════════
-             LAB WORLD
-        ══════════════════════════════════════════════════════════════════════════════ -->
-        <div class="sq-services__world" data-reveal>
-          <div class="sq-services__world-header">
-            <div class="sq-services__world-number">04</div>
-            <h2 class="sq-services__world-title">Lab</h2>
-            <p class="sq-services__world-subtitle">R&D · Experiments · Emerging Tech</p>
-            <p class="sq-services__world-description">Our research and development space. Experiments, prototypes, and emerging technology tested before becoming core services. If you need something unique, we'll build it here first.</p>
           </div>
+          <div class="sq-portfolio-grid sq-portfolio-grid--2col">
 
-          <div class="sq-services__cards">
-            <p class="sq-services__world-coming">Coming soon — experimental projects and emerging capabilities. Interested in pioneering new technology? <a href="/contact/" class="sq-link">Let's talk.</a></p>
+            <!-- DIGITAL: Website Development -->
+            <article class="sq-project-card" data-world="digital">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/jpj.png" alt="Website Development" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Website Development</span>
+                <h4 class="sq-project-card__title">Website Development</h4>
+                <p class="sq-project-card__desc">Fast, responsive websites built for conversion. Professional design, clean code, and SEO foundation.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Web Design</span>
+                </div>
+                <a href="../digital/website-development/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- DIGITAL: E-Commerce -->
+            <article class="sq-project-card" data-world="digital">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/it.png" alt="E-Commerce Solutions" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">E-Commerce Solutions</span>
+                <h4 class="sq-project-card__title">E-Commerce Solutions</h4>
+                <p class="sq-project-card__desc">Shopify and custom platforms designed to convert browsers into buyers.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">E-Commerce</span>
+                </div>
+                <a href="../digital/e-commerce/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- DIGITAL: Custom Software -->
+            <article class="sq-project-card" data-world="digital">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/visa system 2.png" alt="Custom Software" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Custom Software & Systems</span>
+                <h4 class="sq-project-card__title">Custom Software</h4>
+                <p class="sq-project-card__desc">Bespoke solutions tailored to your unique business requirements.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Software</span>
+                </div>
+                <a href="../digital/custom-software/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- DIGITAL: UI/UX Design -->
+            <article class="sq-project-card" data-world="digital">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/it.png" alt="UI/UX Design" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">UI/UX Design</span>
+                <h4 class="sq-project-card__title">UI/UX Design</h4>
+                <p class="sq-project-card__desc">User-centered interface design that makes complex systems intuitive.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Design</span>
+                </div>
+                <a href="../digital/ui-ux-experiences/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- DIGITAL: SEO & Digital Growth -->
+            <article class="sq-project-card" data-world="digital">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/jpj.png" alt="SEO & Digital Growth" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">SEO & Digital Growth</span>
+                <h4 class="sq-project-card__title">SEO & Digital Growth</h4>
+                <p class="sq-project-card__desc">Strategic SEO that improves visibility and drives qualified traffic.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">SEO</span>
+                </div>
+                <a href="../digital/seo-digital-growth/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- DIGITAL: Automation & Integration -->
+            <article class="sq-project-card" data-world="digital">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/it 2.png" alt="Automation & Integration" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Automation & Integration</span>
+                <h4 class="sq-project-card__title">Automation & Integration</h4>
+                <p class="sq-project-card__desc">Automated workflows that eliminate repetitive work and reduce errors.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Automation</span>
+                </div>
+                <a href="../digital/automation-integration/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════
+             02 — AI (6 services)
+        ════════════════════════════════════════ -->
+        <div class="sq-services-world">
+          <div class="sq-services-world__header">
+            <div class="sq-services-world__number">02</div>
+            <div>
+              <h3 class="sq-services-world__title" data-i18n="worlds.ai.title">AI</h3>
+              <p class="sq-services-world__desc" data-i18n="worlds.ai.desc">Intelligence, automation, insights</p>
+            </div>
+          </div>
+          <div class="sq-portfolio-grid sq-portfolio-grid--2col">
+
+            <!-- AI: AI Systems & Models -->
+            <article class="sq-project-card" data-world="ai">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai interior design.png" alt="AI Systems & Models" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">AI Systems & Models</span>
+                <h4 class="sq-project-card__title">AI Systems & Models</h4>
+                <p class="sq-project-card__desc">Custom AI and machine learning systems designed for your business challenges.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">AI/ML</span>
+                </div>
+                <a href="../ai/ai-systems-models/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- AI: Intelligent Automation -->
+            <article class="sq-project-card" data-world="ai">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai agent job seeker.png" alt="Intelligent Automation" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Intelligent Automation</span>
+                <h4 class="sq-project-card__title">Intelligent Automation</h4>
+                <p class="sq-project-card__desc">Automated workflows powered by AI that learn and adapt to your processes.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Automation</span>
+                </div>
+                <a href="../ai/intelligent-automation/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- AI: Data Intelligence -->
+            <article class="sq-project-card" data-world="ai">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai interior design.png" alt="Data Intelligence" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Data Intelligence</span>
+                <h4 class="sq-project-card__title">Data Intelligence</h4>
+                <p class="sq-project-card__desc">Transform raw data into actionable insights that drive business decisions.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Data</span>
+                </div>
+                <a href="../ai/data-intelligence/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- AI: AI Integration -->
+            <article class="sq-project-card" data-world="ai">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai agent job seeker.png" alt="AI Integration" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">AI Integration</span>
+                <h4 class="sq-project-card__title">AI Integration</h4>
+                <p class="sq-project-card__desc">Seamlessly integrate AI capabilities into your existing systems.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Integration</span>
+                </div>
+                <a href="../ai/ai-integration/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- AI: AI Content -->
+            <article class="sq-project-card" data-world="ai">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai interior design.png" alt="AI Content Generation" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">AI Content Generation</span>
+                <h4 class="sq-project-card__title">AI Content</h4>
+                <p class="sq-project-card__desc">AI-powered content creation that scales your messaging across channels.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Content</span>
+                </div>
+                <a href="../ai/ai-content/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- AI: Process Optimization -->
+            <article class="sq-project-card" data-world="ai">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai agent job seeker.png" alt="Process Optimization" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Process Optimization</span>
+                <h4 class="sq-project-card__title">Process Optimization</h4>
+                <p class="sq-project-card__desc">AI-driven optimization of your business processes for efficiency.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Process</span>
+                </div>
+                <a href="../ai/process-optimization/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════
+             03 — IMMERSIVE (8 services)
+        ════════════════════════════════════════ -->
+        <div class="sq-services-world">
+          <div class="sq-services-world__header">
+            <div class="sq-services-world__number">03</div>
+            <div>
+              <h3 class="sq-services-world__title" data-i18n="worlds.immersive.title">Immersive</h3>
+              <p class="sq-services-world__desc" data-i18n="worlds.immersive.desc">VR, AR, 3D experiences</p>
+            </div>
+          </div>
+          <div class="sq-portfolio-grid sq-portfolio-grid--2col">
+
+            <!-- IMMERSIVE: Virtual Reality -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/after.png" alt="Virtual Reality" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Virtual Reality</span>
+                <h4 class="sq-project-card__title">Virtual Reality</h4>
+                <p class="sq-project-card__desc">High-fidelity VR experiences for real estate, design, and training.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">VR</span>
+                </div>
+                <a href="../immersive/virtual-reality/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: Augmented Reality -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/ik house.png" alt="Augmented Reality" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Augmented Reality</span>
+                <h4 class="sq-project-card__title">Augmented Reality</h4>
+                <p class="sq-project-card__desc">AR experiences that overlay digital content into the real world.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">AR</span>
+                </div>
+                <a href="../immersive/augmented-reality/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: 3D Visualization -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/matlock.png" alt="3D Visualization" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">3D Visualization</span>
+                <h4 class="sq-project-card__title">3D Visualization</h4>
+                <p class="sq-project-card__desc">Photorealistic 3D renderings and interactive visualizations.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">3D</span>
+                </div>
+                <a href="../immersive/3d-visualization/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: 360° Experiences -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/360 tour.png" alt="360° Experiences" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">360° Experiences</span>
+                <h4 class="sq-project-card__title">360° Experiences</h4>
+                <p class="sq-project-card__desc">Interactive 360° photography for web and mobile platforms.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">360°</span>
+                </div>
+                <a href="../immersive/360-experiences/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: Interactive Installation -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/NeuroSpace VR Preview.png" alt="Interactive Installation" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Interactive Installation</span>
+                <h4 class="sq-project-card__title">Interactive Installation</h4>
+                <p class="sq-project-card__desc">Physical and digital installations for events and exhibitions.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Installation</span>
+                </div>
+                <a href="../immersive/interactive-installation/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: Web Immersion -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/material swap.png" alt="Web Immersion" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Web Immersion</span>
+                <h4 class="sq-project-card__title">Web Immersion</h4>
+                <p class="sq-project-card__desc">Immersive web experiences using WebGL and modern web technologies.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Web</span>
+                </div>
+                <a href="../immersive/web-immersion/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: VR Staging -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/360 2.png" alt="VR Staging" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">VR Staging</span>
+                <h4 class="sq-project-card__title">VR Staging</h4>
+                <p class="sq-project-card__desc">Virtual staging that transforms empty spaces into furnished showrooms.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Staging</span>
+                </div>
+                <a href="../immersive/vr-staging/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- IMMERSIVE: Furniture Scanning -->
+            <article class="sq-project-card" data-world="immersive">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/elephant scan.png" alt="Furniture Scanning" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Furniture Scanning</span>
+                <h4 class="sq-project-card__title">Furniture Scanning</h4>
+                <p class="sq-project-card__desc">3D photogrammetry and scanning for VR and visualization projects.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">3D Scan</span>
+                </div>
+                <a href="../immersive/furniture-scanning/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════
+             04 — LAB (6 services)
+        ════════════════════════════════════════ -->
+        <div class="sq-services-world">
+          <div class="sq-services-world__header">
+            <div class="sq-services-world__number">04</div>
+            <div>
+              <h3 class="sq-services-world__title" data-i18n="worlds.lab.title">Lab</h3>
+              <p class="sq-services-world__desc" data-i18n="worlds.lab.desc">R&D, experiments, emerging tech</p>
+            </div>
+          </div>
+          <div class="sq-portfolio-grid sq-portfolio-grid--2col">
+
+            <!-- LAB: AI Research -->
+            <article class="sq-project-card" data-world="lab">
+              <div class="sq-project-card__image">
+                <img src="../images/ai/ai interior design.png" alt="AI Research" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">AI Research</span>
+                <h4 class="sq-project-card__title">AI Research</h4>
+                <p class="sq-project-card__desc">Cutting-edge AI and machine learning research exploring new possibilities.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Research</span>
+                </div>
+                <a href="../lab/ai-research/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- LAB: 3D Technology -->
+            <article class="sq-project-card" data-world="lab">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/sofa.png" alt="3D Technology" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">3D Technology</span>
+                <h4 class="sq-project-card__title">3D Technology</h4>
+                <p class="sq-project-card__desc">Experimental 3D technologies pushing the boundaries of visualization.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">3D Tech</span>
+                </div>
+                <a href="../lab/3d-tech/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- LAB: No-Code Platforms -->
+            <article class="sq-project-card" data-world="lab">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/jpj.png" alt="No-Code Platforms" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">No-Code Platforms</span>
+                <h4 class="sq-project-card__title">No-Code Platforms</h4>
+                <p class="sq-project-card__desc">Exploring emerging no-code and low-code platforms for rapid development.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">No-Code</span>
+                </div>
+                <a href="../lab/no-code-platforms/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- LAB: Web Performance -->
+            <article class="sq-project-card" data-world="lab">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/it.png" alt="Web Performance" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Web Performance</span>
+                <h4 class="sq-project-card__title">Web Performance</h4>
+                <p class="sq-project-card__desc">Optimization and research into next-generation web performance techniques.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Performance</span>
+                </div>
+                <a href="../lab/web-performance/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- LAB: AR/VR Innovation -->
+            <article class="sq-project-card" data-world="lab">
+              <div class="sq-project-card__image">
+                <img src="../images/vr and 360/ik house.png" alt="AR/VR Innovation" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">AR/VR Innovation</span>
+                <h4 class="sq-project-card__title">AR/VR Innovation</h4>
+                <p class="sq-project-card__desc">Experimental AR and VR technologies exploring immersive frontiers.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Innovation</span>
+                </div>
+                <a href="../lab/ar-vr-innovation/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
+            <!-- LAB: Design Systems -->
+            <article class="sq-project-card" data-world="lab">
+              <div class="sq-project-card__image">
+                <img src="../images/ui ux and web/visa system 2.png" alt="Design Systems" loading="lazy">
+              </div>
+              <div class="sq-project-card__content">
+                <span class="sq-label">Design Systems</span>
+                <h4 class="sq-project-card__title">Design Systems</h4>
+                <p class="sq-project-card__desc">Scalable design systems and component libraries for teams.</p>
+                <div class="sq-project-card__meta">
+                  <span class="sq-project-card__type">Design</span>
+                </div>
+                <a href="../lab/design-systems/" class="sq-project-card__link">Learn More →</a>
+              </div>
+            </article>
+
           </div>
         </div>
 
@@ -915,17 +959,16 @@
     ════════════════════════════════════════ -->
     <section class="sq-cta" id="contact" aria-labelledby="cta-heading">
       <div class="sq-cta__inner" data-reveal>
-        <span class="sq-label">Get Started</span>
-        <h2 class="sq-cta__heading" id="cta-heading">Ready to explore our services?</h2>
-        <p class="sq-cta__sub">
-          Tell us about your challenge. We'll listen, understand what you need,
-          and recommend the right solution to build.
+        <span class="sq-label" data-i18n="cta.label">Get Started</span>
+        <h2 class="sq-cta__heading" id="cta-heading" data-i18n="cta.heading">Ready to explore our services?</h2>
+        <p class="sq-cta__sub" data-i18n="cta.subheading">
+          Tell us about your challenge. We'll listen, understand what you need,<br>and recommend the right solution to build.
         </p>
         <div class="sq-cta__actions">
-          <a href="/contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="services_primary">Start a conversation</a>
-          <a href="/work/" class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="services_work">See our work</a>
+          <a href="/contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="services_primary" data-i18n="cta.primary">Start a conversation</a>
+          <a href="/work/" class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="services_work" data-i18n="cta.secondary">See our work</a>
         </div>
-        <p class="sq-cta__note">No pressure. No sales pitch. Just a genuine conversation about your business.</p>
+        <p class="sq-cta__note" data-i18n="cta.note">No pressure. No sales pitch. Just a genuine conversation about your business.</p>
       </div>
     </section>
 
@@ -956,7 +999,7 @@
         </div>
 
         <div>
-          <h2 class="sq-footer__heading">Explore</h2>
+          <h2 class="sq-footer__heading" data-i18n="footer.explore">Explore</h2>
           <ul class="sq-footer__links">
             <li><a href="/services/" class="sq-footer__link">Services</a></li>
             <li><a href="/work/" class="sq-footer__link">Work</a></li>
@@ -965,7 +1008,7 @@
         </div>
 
         <div>
-          <h2 class="sq-footer__heading">Company</h2>
+          <h2 class="sq-footer__heading" data-i18n="footer.company">Company</h2>
           <ul class="sq-footer__links">
             <li><a href="/about/" class="sq-footer__link">About</a></li>
             <li><a href="/contact/" class="sq-footer__link">Contact</a></li>
@@ -1012,6 +1055,8 @@
   </a>
 
   <!-- Scripts -->
+  <script src="../js/language.js" defer></script>
+  <script src="../js/chatbot.js" defer></script>
   <script src="../js/unified-nav.js" defer></script>
   <script src="../js/translation.js" defer></script>
   <script src="../js/main.js"></script>

@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "eyebrow": "Digital Innovation",
+    "heading": "Build what your business <em>needs next.</em>",
+    "subheading": "We understand what you're trying to solve. Then we design and build the right solution—not the most impressive one.",
+    "ctaPrimary": "Have a problem?",
+    "ctaSecondary": "See our work"
+  },
+  "hub": {
+    "label": "Our Capabilities",
+    "heading": "Four worlds, infinite solutions",
+    "subheading": "From websites to VR, from automation to R&D—we build across four distinct capability areas.",
+    "worlds": {
+      "digital": {
+        "number": "01",
+        "title": "Digital",
+        "desc": "Websites, software & growth"
+      },
+      "ai": {
+        "number": "02",
+        "title": "AI",
+        "desc": "Intelligence & automation"
+      },
+      "immersive": {
+        "number": "03",
+        "title": "Immersive",
+        "desc": "VR, AR & 3D experiences"
+      },
+      "lab": {
+        "number": "04",
+        "title": "Lab",
+        "desc": "R&D & emerging technology"
+      }
+    }
+  },
+  "proof": {
+    "label": "Live Proof",
+    "heading": "Real projects solving real problems",
+    "subheading": "These aren't case studies or renders. They're live, working solutions built for real clients."
+  },
+  "philosophy": {
+    "label": "Our Philosophy",
+    "heading": "We figure out what needs fixing",
+    "subheading": "Then we build the right solution — not the most impressive one.",
+    "text": "Every project starts with one question: <strong>What does this business actually need?</strong> Not what's trendy. Not what's technically impressive. What genuinely solves the problem. We listen, we research, we think deeply—then we build with precision. The result isn't flashy. It's effective. It works. And it matters."
+  },
+  "cta": {
+    "label": "Let's Talk",
+    "heading": "Have a problem worth solving?",
+    "subheading": "Tell us about your challenge. We'll listen, understand your situation, and recommend the right approach.",
+    "primary": "Start a conversation",
+    "secondary": "Schedule a call",
+    "note": "No pressure. No sales pitch. Just a genuine conversation about your business."
+  }
+}

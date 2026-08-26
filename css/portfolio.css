@@ -248,3 +248,94 @@
     padding: 0 var(--sq-space-8);
   }
 }
+
+/* ── Services World Section ── */
+.sq-services-world {
+  margin-bottom: var(--sq-space-16);
+  padding-bottom: var(--sq-space-12);
+  border-bottom: 1px solid var(--sq-border);
+}
+
+.sq-services-world:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.sq-services-world__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sq-space-6);
+  margin-bottom: var(--sq-space-8);
+  padding: 0 var(--sq-space-4);
+}
+
+@media (min-width: 768px) {
+  .sq-services-world__header {
+    padding: 0 var(--sq-space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sq-services-world__header {
+    padding: 0 var(--sq-space-8);
+  }
+}
+
+.sq-services-world__number {
+  font-family: var(--sq-font-serif);
+  font-size: var(--sq-text-xl);
+  font-weight: 600;
+  color: var(--sq-gold);
+  line-height: 1;
+  min-width: 40px;
+  flex-shrink: 0;
+}
+
+.sq-services-world__title {
+  font-family: var(--sq-font-serif);
+  font-size: var(--sq-text-lg);
+  font-weight: 600;
+  color: var(--sq-text-strong);
+  margin: 0 0 var(--sq-space-1) 0;
+  line-height: 1.2;
+}
+
+.sq-services-world__desc {
+  font-family: var(--sq-font-sans);
+  font-size: var(--sq-text-sm);
+  color: var(--sq-text-muted);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Two-Column Grid for Services ── */
+.sq-portfolio-grid--2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sq-space-6);
+  margin-bottom: 0;
+  padding: 0 var(--sq-space-4);
+}
+
+@media (min-width: 640px) {
+  .sq-portfolio-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sq-space-5);
+    padding: 0 var(--sq-space-2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sq-portfolio-grid--2col {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sq-space-6);
+    padding: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sq-portfolio-grid--2col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

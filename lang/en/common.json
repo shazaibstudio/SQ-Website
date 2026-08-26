@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "howWeWork": "How We Work",
+    "about": "About",
+    "contact": "Contact",
+    "serviceAll": "All Services",
+    "digital": "Digital",
+    "ai": "AI",
+    "immersive": "Immersive",
+    "lab": "Lab"
+  },
+  "footer": {
+    "brand": "SQ Interactive",
+    "tagline": "We help businesses understand what they actually need, then design and build the right digital solution.",
+    "explore": "Explore",
+    "company": "Company",
+    "phone": "+92 300 9452153",
+    "email": "admin@sqinteractive.com",
+    "whatsapp": "WhatsApp",
+    "social": {
+      "instagram": "SQ Interactive on Instagram",
+      "linkedin": "SQ Interactive on LinkedIn",
+      "facebook": "SQ Interactive on Facebook",
+      "youtube": "SQ Interactive on YouTube"
+    },
+    "copyright": "© {year} SQ Interactive. All rights reserved.",
+    "exploreMenu": {
+      "services": "Services",
+      "work": "Work",
+      "howWeWork": "How We Work"
+    },
+    "companyMenu": {
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "buttons": {
+    "learnMore": "Learn More →",
+    "startConversation": "Start a conversation",
+    "seeWork": "See our work",
+    "viewProject": "View Project →",
+    "watchDemo": "Watch Demo →",
+    "watchTour": "Watch Tour →",
+    "privateProject": "Private Project"
+  },
+  "common": {
+    "noResults": "No results found"
+  },
+  "contact": {
+    "heroHeading": "Get in Touch",
+    "heroSubheading": "Redefining Reality — Work with the pioneers of immersive design.",
+    "infoHeading": "Contact SQ Interactive",
+    "infoText": "Let's talk about your project — whether you need Digital solutions, AI automation, Immersive experiences, or Lab innovation, we're ready to collaborate.",
+    "emailLabel": "Email",
+    "instagramLabel": "Instagram",
+    "phoneLabel": "Phone",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Email address",
+    "phonePlaceholder": "Phone number",
+    "selectProjectType": "Select project type",
+    "messagePlaceholder": "Short message",
+    "sendButton": "Send",
+    "demoButton": "Request Demo"
+  }
+}

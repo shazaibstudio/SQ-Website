@@ -171,7 +171,7 @@
 </head>
 
 
-<body>
+<body class="page-home">
   <!-- ============================================================
        SQ INTERACTIVE — UNIVERSAL SITE HEADER
 
@@ -360,6 +360,7 @@
             type="button"
             aria-label="English"
             aria-pressed="true"
+            data-lang-switch="en"
           >
             EN
           </button>
@@ -370,6 +371,7 @@
             type="button"
             aria-label="Urdu"
             aria-pressed="false"
+            data-lang-switch="ur"
           >
             UR
           </button>
@@ -491,8 +493,8 @@
       <!-- MOBILE LANGUAGE -->
 
       <div class="sq-nav__mobile-lang">
-        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true">EN</button>
-        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false">UR</button>
+        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true" data-lang-switch="en">EN</button>
+        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false" data-lang-switch="ur">UR</button>
       </div>
 
     </div>
@@ -556,20 +558,19 @@
 
       <div class="sq-hero__content">
         <div class="sq-hero__text">
-          <p class="sq-label sq-hero__eyebrow" data-reveal>SQ Interactive</p>
+          <p class="sq-label sq-hero__eyebrow" data-reveal data-i18n="hero.eyebrow">Digital Innovation</p>
 
-          <h1 class="sq-hero__heading" id="hero-heading" data-reveal>
+          <h1 class="sq-hero__heading" id="hero-heading" data-reveal data-i18n="hero.heading">
             Build what your business needs <em>next.</em>
           </h1>
 
-          <p class="sq-hero__subheading" data-reveal>
-            You don't always need more technology.<br>
-            You need the <em style="font-style:normal; color:var(--sq-text-strong);">right</em> technology.
+          <p class="sq-hero__subheading" data-reveal data-i18n="hero.subheading">
+            We understand what you're trying to solve. Then we design and build the right solution—not the most impressive one.
           </p>
 
           <div class="sq-hero__actions" data-reveal>
-            <a href="contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="hero_primary">Tell us your challenge</a>
-            <a href="work/"    class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="hero_work">See our work</a>
+            <a href="contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="hero_primary" data-i18n="hero.ctaPrimary">Have a problem?</a>
+            <a href="work/"    class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="hero_work" data-i18n="hero.ctaSecondary">See our work</a>
           </div>
 
           <p class="sq-hero__location" data-reveal>Based in Lahore · Working across Pakistan</p>
@@ -595,8 +596,8 @@
       <div class="sq-hub__inner">
 
         <div class="sq-hub__header">
-          <p class="sq-hub__label" id="hub-heading">Choose your world</p>
-          <p class="sq-hub__sublabel">Four capabilities. One studio.</p>
+          <p class="sq-hub__label" id="hub-heading" data-i18n="hub.label">Our Capabilities</p>
+          <p class="sq-hub__sublabel" data-i18n="hub.heading">Four worlds, infinite solutions</p>
         </div>
 
         <div class="sq-hub__grid" data-reveal>
@@ -614,7 +615,7 @@
               <h2 class="sq-hub-card__title">Build It</h2>
             </div>
             <div class="sq-hub-card__bottom">
-              <p class="sq-hub-card__desc">Websites, e-commerce, software and digital experiences designed around how your business actually works.</p>
+              <p class="sq-hub-card__desc" data-i18n="hub.worlds.digital.desc">Websites, e-commerce, software and digital experiences designed around how your business actually works.</p>
               <div class="sq-hub-card__action">
                 <span class="sq-hub-card__action-label">Explore Digital</span>
                 <span class="sq-hub-card__action-arrow" aria-hidden="true">
@@ -637,7 +638,7 @@
               <h2 class="sq-hub-card__title">Make It Smart</h2>
             </div>
             <div class="sq-hub-card__bottom">
-              <p class="sq-hub-card__desc">AI systems, automation and intelligent workflows that save time and create new capabilities for your business.</p>
+              <p class="sq-hub-card__desc" data-i18n="hub.worlds.ai.desc">AI systems, automation and intelligent workflows that save time and create new capabilities for your business.</p>
               <div class="sq-hub-card__action">
                 <span class="sq-hub-card__action-label">Explore AI</span>
                 <span class="sq-hub-card__action-arrow" aria-hidden="true">
@@ -660,7 +661,7 @@
               <h2 class="sq-hub-card__title">Make It Immersive</h2>
             </div>
             <div class="sq-hub-card__bottom">
-              <p class="sq-hub-card__desc">VR, AR, 3D and interactive experiences — when they genuinely add value to what you're building.</p>
+              <p class="sq-hub-card__desc" data-i18n="hub.worlds.immersive.desc">VR, AR, 3D and interactive experiences — when they genuinely add value to what you're building.</p>
               <div class="sq-hub-card__action">
                 <span class="sq-hub-card__action-label">Explore Immersive</span>
                 <span class="sq-hub-card__action-arrow" aria-hidden="true">
@@ -683,7 +684,7 @@
               <h2 class="sq-hub-card__title">Explore What's Next</h2>
             </div>
             <div class="sq-hub-card__bottom">
-              <p class="sq-hub-card__desc">Our R&amp;D space. Experiments, prototypes and emerging technology — tested before it's offered to clients.</p>
+              <p class="sq-hub-card__desc" data-i18n="hub.worlds.lab.desc">Our R&amp;D space. Experiments, prototypes and emerging technology — tested before it's offered to clients.</p>
               <div class="sq-hub-card__action">
                 <span class="sq-hub-card__action-label">Explore the Lab</span>
                 <span class="sq-hub-card__action-arrow" aria-hidden="true">
@@ -712,8 +713,8 @@
     <section class="sq-proof" aria-labelledby="proof-heading">
       <div class="sq-proof__inner">
         <div class="sq-proof__header">
-          <p class="sq-proof__label" id="proof-heading">Live work</p>
-          <a href="work/" class="sq-proof__all-link">See all work
+          <p class="sq-proof__label" id="proof-heading" data-i18n="proof.label">Live work</p>
+          <a href="work/" class="sq-proof__all-link" data-i18n="proof.heading">See all work
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
@@ -770,7 +771,7 @@
     ════════════════════════════════════════ -->
     <section class="sq-philosophy sq-philosophy--gradient" aria-label="Our philosophy">
       <div class="sq-philosophy__inner">
-        <p class="sq-philosophy__statement" data-reveal>
+        <p class="sq-philosophy__statement" data-reveal data-i18n="philosophy.heading">
           <strong>We figure out what needs fixing.</strong>
           Then we build the right solution —
           not the most impressive one.
@@ -783,17 +784,17 @@
     ════════════════════════════════════════ -->
     <section class="sq-cta" id="contact" aria-labelledby="cta-heading">
       <div class="sq-cta__inner" data-reveal>
-        <span class="sq-label">Start Here</span>
-        <h2 class="sq-cta__heading" id="cta-heading">Have a problem worth solving?</h2>
-        <p class="sq-cta__sub">
+        <span class="sq-label" data-i18n="cta.label">Start Here</span>
+        <h2 class="sq-cta__heading" id="cta-heading" data-i18n="cta.heading">Have a problem worth solving?</h2>
+        <p class="sq-cta__sub" data-i18n="cta.subheading">
           Tell us what you're trying to achieve. We'll listen, ask the right questions,
           and help you figure out what actually makes sense to build.
         </p>
         <div class="sq-cta__actions">
-          <a href="contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="primary">Start a conversation</a>
-          <a href="work/"    class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="work">See our work</a>
+          <a href="contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="primary" data-i18n="cta.primary">Start a conversation</a>
+          <a href="work/"    class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="work" data-i18n="cta.secondary">See our work</a>
         </div>
-        <p class="sq-cta__note">No pressure. No sales pitch. Just a genuine conversation about your business.</p>
+        <p class="sq-cta__note" data-i18n="cta.note">No pressure. No sales pitch. Just a genuine conversation about your business.</p>
       </div>
     </section>
 
@@ -824,7 +825,7 @@
         </div>
 
         <div>
-          <h2 class="sq-footer__heading">Explore</h2>
+          <h2 class="sq-footer__heading" data-i18n="footer.explore">Explore</h2>
           <ul class="sq-footer__links">
             <li><a href="digital/"    class="sq-footer__link">Digital</a></li>
             <li><a href="ai/"         class="sq-footer__link">AI &amp; Automation</a></li>
@@ -834,7 +835,7 @@
         </div>
 
         <div>
-          <h2 class="sq-footer__heading">Company</h2>
+          <h2 class="sq-footer__heading" data-i18n="footer.company">Company</h2>
           <ul class="sq-footer__links">
             <li><a href="work/"         class="sq-footer__link">Work</a></li>
             <li><a href="how-we-work/"  class="sq-footer__link">How We Work</a></li>
@@ -883,16 +884,9 @@
     <span>WhatsApp</span>
   </a>
 
-  <!-- Floating contact button -->
-  <a href="contact/"
-     class="sq-float-cta"
-     aria-label="Tell us your challenge"
-     data-cta="float">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-    <span>Tell us your challenge</span>
-  </a>
-
   <!-- Scripts -->
+  <script src="/js/language.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
   <script src="/js/unified-nav.js" defer></script>
   <script src="js/translation.js" defer></script>
   <script src="js/main.js"      defer></script>

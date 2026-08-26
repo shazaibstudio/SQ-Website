@@ -1,0 +1,138 @@
+{
+  "greeting": {
+    "text": "Hi, I'm the SQ Interactive assistant. I can point you to the right service, share pricing, or show real work we've done.\n\nWhat are you trying to do?",
+    "chips": [
+      "Build or improve a website",
+      "Automate something with AI",
+      "Show a property/space in 3D or VR",
+      "Something new / not sure"
+    ]
+  },
+  "worlds": {
+    "digital": {
+      "label": "Digital",
+      "oneLiner": "Websites, software, e-commerce, SEO and automation.",
+      "forWhom": "businesses that need a stronger online presence, a store, or systems that remove manual work",
+      "services": [
+        { "name": "Website Design & Development", "hint": "a new site or a redesign" },
+        { "name": "Custom Software & Systems", "hint": "internal tools, databases, business systems" },
+        { "name": "E-Commerce & Shopify", "hint": "selling products online" },
+        { "name": "SEO & Digital Growth", "hint": "getting found on Google" },
+        { "name": "Automation & Integration", "hint": "removing repetitive manual work" },
+        { "name": "Hosting & Technical Support", "hint": "keeping an existing site running" }
+      ],
+      "pricingNote": "Actual cost depends on scope — happy to get you an exact number."
+    },
+    "ai": {
+      "label": "Artificial Intelligence",
+      "oneLiner": "AI visualization, design automation, and intelligent workflows.",
+      "forWhom": "businesses that want faster design iteration or to automate decisions and workflows with AI",
+      "services": [
+        { "name": "AI-Powered Visualization", "hint": "architecture / interior renders fast" },
+        { "name": "AI Interior & Exterior Design", "hint": "style and material generation" },
+        { "name": "Custom AI Workflows", "hint": "purpose-built pipelines for your business" },
+        { "name": "AI Consulting & Strategy", "hint": "figuring out where AI actually helps you" },
+        { "name": "Intelligent Automation", "hint": "document and decision automation" }
+      ],
+      "pricingNote": "Actual cost depends on scope — happy to get you an exact number."
+    },
+    "immersive": {
+      "label": "Immersive Technology",
+      "oneLiner": "360° tours, VR walkthroughs, and interactive showcases.",
+      "forWhom": "real estate, hospitality, and anyone who needs people to experience a space before visiting",
+      "services": [
+        { "name": "360° Virtual Tours", "hint": "walk-through of a property or venue" },
+        { "name": "Virtual Reality Walkthroughs", "hint": "full VR headset experiences" },
+        { "name": "Interactive Digital Experiences", "hint": "custom navigable 3D environments" },
+        { "name": "VR Showrooms & Displays", "hint": "virtual product/property showrooms" },
+        { "name": "Augmented Reality (AR)", "hint": "mobile AR product/space visualization" }
+      ],
+      "pricingNote": "Actual cost depends on scope — happy to get you an exact number."
+    },
+    "lab": {
+      "label": "Research & Innovation Lab",
+      "oneLiner": "Emerging tech, prototypes, and custom R&D.",
+      "forWhom": "businesses exploring something new that does not fit a standard package yet",
+      "services": [
+        { "name": "Emerging Technology Research", "hint": "evaluating new tech for your business" },
+        { "name": "Prototype Development", "hint": "proof-of-concept builds" },
+        { "name": "Innovation Consulting", "hint": "digital transformation roadmap" },
+        { "name": "Custom R&D Projects", "hint": "long-term proprietary development" }
+      ],
+      "pricingNote": "Actual cost depends on scope — happy to get you an exact number."
+    }
+  },
+  "projects": [
+    { "summary": "Website plus AI visualization tooling for a construction company." },
+    { "summary": "360° virtual tour integrated with booking; reported increase in bookings." }
+  ],
+  "process": [
+    "Discover — understand your business and the real problem",
+    "Understand — find the root challenge, not just the request",
+    "Strategize — recommend the right solution, even if it differs from what was asked",
+    "Build — design, develop, test with transparency",
+    "Deploy — launch and optimize",
+    "Grow — long-term support and continuous improvement"
+  ],
+  "whyChoose": [
+    "One partner across web, AI, immersive and emerging tech — no juggling vendors",
+    "Founder-led — direct oversight on strategy and quality",
+    "We recommend the solution that fits the problem, not the one that is easiest to sell",
+    "Real, verifiable projects — not stock case studies"
+  ],
+  "chips": {
+    "seeServices": "See services",
+    "seePricing": "See pricing",
+    "seeProjects": "See real work",
+    "visitPage": "Visit the {world} page",
+    "talkToShazaib": "Talk to Shazaib",
+    "whatCost": "What does that cost?",
+    "showProof": "Show me proof",
+    "howWork": "How do you work?",
+    "whyWorkSQ": "Why work with SQ?",
+    "backServices": "Back to services",
+    "getQuote": "Get an exact quote",
+    "notRightNow": "Not right now",
+    "callNow": "📞 Call {founder} now",
+    "whatsappInstead": "💬 WhatsApp instead",
+    "whatsappChat": "💬 Chat on WhatsApp",
+    "keepBrowsing": "Keep browsing here",
+    "needCustomers": "I need more customers / visibility",
+    "teamWastes": "My team wastes time on repetitive work",
+    "needSee": "People need to \"see\" a space before visiting",
+    "experimental": "It's an experimental / new idea",
+    "moreWorlds": "Which world?"
+  },
+  "responses": {
+    "routeWorld": "{label} — {oneLiner}\nThat's typically a fit for {forWhom}.\n\nWhat would help most right now?",
+    "showServices": "{label} services:",
+    "showPricing": "{label} pricing:",
+    "showProjects": "Real work in this area:",
+    "showProcess": "Here's how a project runs, start to finish:",
+    "unsureFlow": "No problem — quick way to narrow it down. Which sounds closest?",
+    "escalateUrgent": "This sounds like something worth a quick, specific conversation. {founder} can usually give you a real number faster than I can.",
+    "escalateHandoff": "Want me to connect you with {founder} directly? Fastest way to get exact pricing for your project.",
+    "contactResponse": "Sure — easiest way is WhatsApp, usually a reply within minutes. Or call directly if you'd rather talk it through.",
+    "greetingRepeat": "Hey! What are you looking to do — build something, automate something, or showcase something?",
+    "fallback": "I want to point you to the right place rather than guess — which of these is closest to what you need?"
+  },
+  "fallbackChips": [
+    "01 — Digital",
+    "02 — AI",
+    "03 — Immersive",
+    "04 — Lab",
+    "Just let me talk to someone"
+  ],
+  "greetingRepeatChips": [
+    "Build or improve a website",
+    "Automate with AI",
+    "Showcase in 3D/VR"
+  ],
+  "whatsappMessage": {
+    "intro": "Hi SQ Interactive,",
+    "interested": "I'm interested in {world} services.",
+    "exploring": "I'm exploring what you offer.",
+    "urgent": "This is fairly time-sensitive for me.",
+    "closing": "Can we discuss?"
+  }
+}
