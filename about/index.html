@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/unified-nav.css">
+  <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="icon" type="image/x-icon"       href="../SQ_Interactive_Favicon_Pack/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../SQ_Interactive_Favicon_Pack/favicon-32x32.png">
@@ -340,14 +341,47 @@
 
   <main id="main">
 
-    <!-- HERO -->
-    <div class="sq-page-hero">
-      <div class="sq-container">
-        <span class="sq-label">About SQ Interactive</span>
-        <h1>Technology with purpose.</h1>
-        <p>We help businesses solve digital problems — and figure out what to build next.</p>
+    <!-- HERO WITH VIDEO -->
+    <section class="sq-hero" aria-labelledby="about-hero-heading">
+      <div class="sq-hero__bg" aria-hidden="true"></div>
+      <video class="sq-hero__video"
+             autoplay muted loop playsinline
+             aria-hidden="true"
+             poster="../images/no-background.png">
+        <source src="../videos/home.mp4" type="video/mp4">
+      </video>
+      <div class="sq-hero__overlay" aria-hidden="true"></div>
+
+      <div class="sq-hero__content">
+        <div class="sq-hero__text">
+          <p class="sq-label sq-hero__eyebrow" data-reveal>About Us</p>
+
+          <h1 class="sq-hero__heading" id="about-hero-heading" data-reveal>
+            Technology with <em>purpose.</em>
+          </h1>
+
+          <p class="sq-hero__subheading" data-reveal>
+            We help businesses solve digital problems — and figure out what to build next.
+          </p>
+
+          <div class="sq-hero__actions" data-reveal>
+            <a href="../contact/" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="about_hero_contact">Get in touch</a>
+            <a href="../work/" class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="about_hero_work">See our work</a>
+          </div>
+        </div>
+
+        <div class="sq-hero__logo-panel" aria-hidden="true" data-reveal>
+          <img src="../images/no-background.png" alt="" class="sq-hero__logo-img">
+        </div>
       </div>
-    </div>
+
+      <div class="sq-hero__scroll-hint" aria-hidden="true">
+        <span>Learn about us</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
 
     <!-- WHO WE ARE -->
     <section class="sq-about-section sq-about-section--alt" aria-labelledby="who-heading">

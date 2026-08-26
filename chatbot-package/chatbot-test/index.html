@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQ Assistant — Test Harness</title>
+<style>
+  :root{
+    --bg:#0A0A0A; --surface:#0D0D0D; --surface-raised:#1A1A1A;
+    --gold:#D4AF37; --gold-light:#F1C40F;
+    --text:#F5F5F5; --text-strong:#fff; --text-secondary:#A0A0A0; --text-muted:#666;
+    --border: rgba(255,255,255,.07);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{ font-family:'Playfair Display', Georgia, serif; color:var(--text-strong); }
+  a{ color: var(--gold); }
+  header.site{
+    position:sticky; top:0; z-index:50; background:rgba(10,10,10,.9);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--border);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{ font-weight:800; letter-spacing:.02em; color:#fff; text-decoration:none; }
+  .logo b{ color:var(--gold); }
+  nav.pages a{
+    color:var(--text-secondary); text-decoration:none; margin-left:20px; font-size:14px; font-weight:600;
+  }
+  nav.pages a.active, nav.pages a:hover{ color:var(--gold); }
+  main{ max-width:900px; margin:0 auto; padding:64px 24px 120px; }
+  .hero-badge{
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--gold); border:1px solid rgba(212,175,55,.3); padding:6px 12px; border-radius:9999px; margin-bottom:16px;
+  }
+  h1{ font-size:clamp(2rem,5vw,3.2rem); margin:0 0 16px; line-height:1.15; }
+  p.lead{ color:var(--text-secondary); font-size:1.1rem; max-width:60ch; }
+  .panel{
+    margin-top:48px; background:var(--surface-raised); border:1px solid var(--border);
+    border-radius:16px; padding:24px;
+  }
+  .panel h3{ margin-top:0; font-size:1rem; color:var(--gold); }
+  .panel ul{ margin:0; padding-left:18px; color:var(--text-secondary); font-size:14px; }
+  .panel li{ margin-bottom:8px; }
+  .test-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  @media (max-width:640px){ .test-grid{ grid-template-columns:1fr; } }
+  .test-card{
+    border:1px dashed rgba(212,175,55,.35); border-radius:12px; padding:16px; font-size:13px; color:var(--text-secondary);
+  }
+  .test-card b{ color:#fff; display:block; margin-bottom:6px; font-size:13.5px; }
+  code{ background:#000; padding:2px 6px; border-radius:4px; font-size:12px; color:var(--gold-light); }
+  footer{ text-align:center; padding:32px; color:var(--text-muted); font-size:12px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a href="index.html" class="logo">SQ <b>Interactive</b></a>
+  <nav class="pages">
+    <a href="index.html" class="active">Home</a>
+    <a href="digital.html">Digital</a>
+    <a href="immersive.html">Immersive</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <span class="hero-badge">Chatbot Test Harness</span>
+  <h1>SQ Assistant — Widget Test Page</h1>
+  <p class="lead">
+    This is a plain test harness, not the real site. It exists to verify that
+    <code>chatbot.js</code> drops in with a single script tag, persists conversation
+    across page loads, and routes/qualifies/converts correctly.
+  </p>
+
+  <div class="panel">
+    <h3>How to test</h3>
+    <ul>
+      <li>Click the gold <b>“Ask SQ”</b> bubble bottom-right to open the assistant.</li>
+      <li>Try the guided chips first — greeting → world → services/pricing/proof.</li>
+      <li>Try free text too: type things like <code>how much does a website cost</code>,
+          <code>vr tour pricing</code>, <code>I need this urgently</code>, or
+          <code>can I talk to someone</code>.</li>
+      <li>Navigate to the <b>Digital</b>, <b>Immersive</b>, or <b>Contact</b> page using the
+          top nav — the conversation should still be there when you reopen the widget.</li>
+      <li>Push the score up (ask about pricing, say it's urgent) and confirm the
+          WhatsApp / Call handoff chips appear automatically.</li>
+    </ul>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card">
+      <b>Expect: guided-first</b>
+      Every bot message ends in tappable chips. Free typing always works too, but
+      nothing requires it.
+    </div>
+    <div class="test-card">
+      <b>Expect: grounded answers</b>
+      Prices, services, and project examples come only from the KB object in
+      chatbot.js — nothing invented.
+    </div>
+    <div class="test-card">
+      <b>Expect: quiet qualification</b>
+      No WhatsApp/Call push on message 1. It should escalate only after enough
+      signal (pricing asked, urgency stated, a couple of exchanges).
+    </div>
+    <div class="test-card">
+      <b>Expect: persistence</b>
+      Reload this page or click to another test page — the widget should remember
+      the conversation via sessionStorage, not restart it.
+    </div>
+  </div>
+</main>
+
+<footer>SQ Interactive · internal test harness · not for deployment</footer>
+
+<!-- The one-line drop-in -->
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

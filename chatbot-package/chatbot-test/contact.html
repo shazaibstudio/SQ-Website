@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SQ Assistant Test</title>
+<style>
+  :root{--bg:#0A0A0A;--surface-raised:#1A1A1A;--gold:#D4AF37;--gold-light:#F1C40F;--text:#F5F5F5;--text-strong:#fff;--text-secondary:#A0A0A0;--text-muted:#666;--border:rgba(255,255,255,.07);}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .logo{font-weight:800;color:#fff;text-decoration:none;}
+  .logo b{color:var(--gold);}
+  nav.pages a{color:var(--text-secondary);text-decoration:none;margin-left:20px;font-size:14px;font-weight:600;}
+  nav.pages a.active,nav.pages a:hover{color:var(--gold);}
+  main{max-width:900px;margin:0 auto;padding:64px 24px 120px;}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,175,55,.3);padding:6px 12px;border-radius:9999px;margin-bottom:16px;}
+  h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 16px;}
+  p.lead{color:var(--text-secondary);font-size:1.05rem;max-width:60ch;}
+  footer{text-align:center;padding:32px;color:var(--text-muted);font-size:12px;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<header class="site">
+  <a href="index.html" class="logo">SQ <b>Interactive</b></a>
+  <nav class="pages">
+    <a href="index.html">Home</a>
+    <a href="digital.html">Digital</a>
+    <a href="immersive.html">Immersive</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+<main>
+  <span class="badge">Contact</span>
+  <h1>Talk to SQ Interactive</h1>
+  <p class="lead">This page exists so you can test the "Talk to someone" / WhatsApp / Call handoff chips landing correctly, and that <code>data-*</code> overrides on the script tag work if you set them.</p>
+</main>
+<footer>SQ Interactive · internal test harness</footer>
+<script src="js/chatbot.js" data-phone-display="+92 333 4151313" data-phone-dial="+923334151313" data-whatsapp="923334151313" data-contact-url="contact.html"></script>
+</body>
+</html>

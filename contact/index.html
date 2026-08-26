@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/unified-nav.css">
+  <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/contact.css">
   <link rel="icon" type="image/x-icon"       href="../SQ_Interactive_Favicon_Pack/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16"   href="../SQ_Interactive_Favicon_Pack/favicon-16x16.png">
@@ -344,10 +345,45 @@
   <main id="main">
 
     <!-- HERO -->
-    <section class="ct-hero" aria-labelledby="contact-heading">
-      <div class="ct-hero__content">
-        <h1 class="ct-hero__heading" id="contact-heading">Tell us your challenge.</h1>
-        <p class="ct-hero__subheading">No pressure. No sales pitch. Tell us what you're trying to achieve and we'll have an honest conversation about whether and how we can help.</p>
+    <!-- HERO WITH VIDEO -->
+    <section class="sq-hero" aria-labelledby="contact-hero-heading">
+      <div class="sq-hero__bg" aria-hidden="true"></div>
+      <video class="sq-hero__video"
+             autoplay muted loop playsinline
+             aria-hidden="true"
+             poster="../images/no-background.png">
+        <source src="../videos/home.mp4" type="video/mp4">
+      </video>
+      <div class="sq-hero__overlay" aria-hidden="true"></div>
+
+      <div class="sq-hero__content">
+        <div class="sq-hero__text">
+          <p class="sq-label sq-hero__eyebrow" data-reveal>Get in Touch</p>
+
+          <h1 class="sq-hero__heading" id="contact-hero-heading" data-reveal>
+            Tell us your <em>challenge.</em>
+          </h1>
+
+          <p class="sq-hero__subheading" data-reveal>
+            No pressure. No sales pitch. Start a genuine conversation about what you're trying to achieve.
+          </p>
+
+          <div class="sq-hero__actions" data-reveal>
+            <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="sq-btn sq-btn--primary sq-btn--lg" data-cta="contact_hero_whatsapp">Chat on WhatsApp</a>
+            <a href="mailto:hello@sqinteractive.com" class="sq-btn sq-btn--secondary sq-btn--lg" data-cta="contact_hero_email">Send an email</a>
+          </div>
+        </div>
+
+        <div class="sq-hero__logo-panel" aria-hidden="true" data-reveal>
+          <img src="../images/no-background.png" alt="" class="sq-hero__logo-img">
+        </div>
+      </div>
+
+      <div class="sq-hero__scroll-hint" aria-hidden="true">
+        <span>Get in touch</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
       </div>
     </section>
 
