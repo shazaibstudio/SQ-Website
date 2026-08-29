@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "eyebrow": "Our Work",
+    "heading": "Real projects solving <em>real problems.</em>",
+    "subheading": "Case studies showing how we've helped businesses improve through technology.",
+    "ctaPrimary": "Start a conversation",
+    "ctaSecondary": "See projects"
+  },
+  "portfolio": {
+    "label": "Our Portfolio",
+    "filters": {
+      "all": "All Projects",
+      "digital": "Digital",
+      "immersive": "Immersive",
+      "ai": "AI",
+      "lab": "Lab"
+    }
+  },
+  "cta": {
+    "label": "Ready?",
+    "heading": "Let's start with a conversation.",
+    "subheading": "Tell us about your challenge. We'll listen, ask the right questions, and show you how we'd approach solving it.",
+    "primary": "Start a conversation",
+    "secondary": "See our work",
+    "note": "No pressure. No sales pitch. Just a genuine conversation about your business."
+  }
+}

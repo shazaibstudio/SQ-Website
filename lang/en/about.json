@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "eyebrow": "About Us",
+    "heading": "Technology with <em>purpose.</em>",
+    "subheading": "We help businesses solve digital problems — and figure out what to build next.",
+    "ctaPrimary": "Get in touch",
+    "ctaSecondary": "See our work"
+  },
+  "who": {
+    "label": "Who We Are",
+    "heading": "A founder-led Digital Technology Partner.",
+    "text1": "SQ Interactive is based in Lahore, Pakistan. We work alongside businesses to understand what is actually getting in the way, identify where technology can create value, and build practical solutions around those needs.",
+    "text2": "That can mean a better website, a digital system, an AI workflow, business automation, custom software, an immersive experience — or something that doesn't fit neatly into a category yet.",
+    "text3": "We don't start with a technology and look for somewhere to use it. <strong>We start with the problem.</strong>"
+  },
+  "why": {
+    "label": "Why SQ Exists",
+    "heading": "Bridging the gap between business and technology.",
+    "text1": "Technology moves quickly. For a business, keeping up with every new platform, tool, AI model, automation system, or digital trend can create as many questions as answers.",
+    "text2": "What should we actually use? What is worth building? What will make a difference? What will simply add complexity?",
+    "text3": "SQ Interactive exists to bridge that gap. Our purpose is to make modern technology <strong>practical, accessible, and valuable for businesses</strong> — helping organizations use technology effectively without having to become technology experts themselves.",
+    "text4": "We believe technology should solve business problems, not create new ones."
+  },
+  "positioning": {
+    "label": "Our Positioning",
+    "heading": "Not just another technology vendor.",
+    "text1": "SQ Interactive is not built around selling isolated services. We see ourselves as a <strong>technology partner</strong>.",
+    "text2": "That means understanding the business before recommending a solution, being honest about what is and isn't necessary, and staying involved when a project needs improvement, maintenance, training, or continued technical support.",
+    "text3": "Our positioning is deliberately technology-agnostic. We don't recommend a technology because it is popular. <strong>We recommend what makes sense for the problem.</strong>"
+  },
+  "origin": {
+    "label": "Our Story",
+    "heading": "From one laptop to a technology company.",
+    "text1": "SQ Interactive began from a small room in Lahore. The company was built through experimentation — combining design, development, 3D, immersive technology, and emerging AI systems to see what could actually be made.",
+    "text2": "The early work was heavily focused on websites, immersive experiences, digital media, and visualization. Those projects became the foundation for the broader technology capabilities SQ is developing today.",
+    "versions": {
+      "v1Title": "Foundation",
+      "v1Desc": "Websites, immersive technologies, digital media, and technical experimentation. Establishing the initial portfolio.",
+      "v2Title": "Technology Partner",
+      "v2Desc": "Expanding beyond specialist services into a broader Digital Technology Partner capable of solving different kinds of business challenges.",
+      "v3Title": "Future",
+      "v3Desc": "Software platforms, AI products, automation systems, immersive technologies, research, and intellectual property for global markets."
+    }
+  },
+  "capabilities": {
+    "label": "What We Bring",
+    "heading": "Capabilities across multiple areas of technology.",
+    "subheading": "Real business problems rarely fit neatly into one category. Our capabilities can stand alone, but they can also work together when a problem requires a broader solution.",
+    "digital": {
+      "title": "Digital",
+      "desc": "Websites, e-commerce, Shopify, UI/UX, digital products, SEO, systems, and digital experiences."
+    },
+    "ai": {
+      "title": "AI",
+      "desc": "Artificial intelligence solutions, AI visualization, intelligent workflows, and practical AI adoption."
+    },
+    "automation": {
+      "title": "Automation &amp; Systems",
+      "desc": "Business automation, databases, integrations, custom software, and systems that reduce unnecessary manual work."
+    },
+    "immersive": {
+      "title": "Immersive",
+      "desc": "VR, AR, 360° experiences, interactive 3D, visualization, and other immersive technologies."
+    },
+    "support": {
+      "title": "Technology Support",
+      "desc": "Hosting, maintenance, optimization, training, technical support, and ongoing improvement."
+    }
+  },
+  "clients": {
+    "label": "Who We Work With",
+    "heading": "Businesses that are trying to improve something.",
+    "text": "SQ's current focus is particularly relevant to <strong>construction, real estate, hospitality, and businesses looking for broader digital transformation</strong>, while the company's capabilities are designed to expand into additional sectors over time.",
+    "useCases": {
+      "case1": "Replacing an outdated digital presence",
+      "case2": "Reducing inefficient manual processes",
+      "case3": "Introducing useful automation",
+      "case4": "Adopting AI responsibly",
+      "case5": "Connecting fragmented systems",
+      "case6": "Improving customer experiences",
+      "case7": "Building custom software",
+      "case8": "Presenting a property, product, or idea differently",
+      "case9": "Figuring out where technology can create a new opportunity"
+    }
+  },
+  "future": {
+    "label": "Where We're Going",
+    "heading": "Built in Pakistan. Thinking beyond it.",
+    "text1": "SQ Interactive is based in Lahore. Our foundation is local, but our ambitions are not limited by geography. The long-term direction is to grow from a founder-led technology partner into an internationally recognized technology company.",
+    "text2": "Over time, we intend to develop software products, AI systems, automation, immersive technologies, research &amp; innovation, and intellectual property for wider markets.",
+    "text3": "The objective is not growth for its own sake. <strong>It is to build a company capable of creating technology that has lasting value.</strong>"
+  },
+  "promise": {
+    "label": "Our Promise",
+    "heading": "Come to us with a problem. Leave with a plan.",
+    "subheading": "We'll listen. We'll understand the situation. We'll tell you what makes sense. We'll build what is needed. And when we see an opportunity beyond the original problem, we'll show you that too.",
+    "primary": "Tell us your challenge",
+    "secondary": "See our work",
+    "note": "No pressure. No sales pitch. Just a genuine conversation about your business."
+  }
+}

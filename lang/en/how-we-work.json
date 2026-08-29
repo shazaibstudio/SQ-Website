@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "eyebrow": "How We Work",
+    "heading": "Problem-first. <em>Strategy-led. Delivered well.</em>",
+    "subheading": "Our process is designed around understanding your business deeply before jumping to solutions.",
+    "ctaPrimary": "Start a conversation",
+    "ctaSecondary": "See our work"
+  },
+  "approach": {
+    "label": "Our Approach",
+    "heading": "We start by understanding what actually needs to happen.",
+    "text": "Most tech projects fail because they build solutions to the wrong problems. We flip that. Before recommending technology or approach, we listen. We ask hard questions. We understand your business, your constraints, your goals, and where technology can actually create value."
+  },
+  "process": {
+    "label": "The Process",
+    "heading": "How we move from idea to outcome.",
+    "steps": {
+      "step1": {
+        "title": "Discovery &amp; Strategy",
+        "desc": "We conduct interviews, audit your current systems, and define the actual problem. This phase typically takes 1-2 weeks and produces a strategic brief that aligns everyone on goals, constraints, and success metrics."
+      },
+      "step2": {
+        "title": "Design &amp; Planning",
+        "desc": "We create wireframes, prototypes, and technical specifications. You see exactly what you're getting before we build it. Changes are cheap at this stage. Approval gates ensure alignment before development starts."
+      },
+      "step3": {
+        "title": "Development &amp; Iteration",
+        "desc": "We build in increments, not silos. Regular demos and feedback loops mean you're never surprised. We prioritize quality and maintainability — code you can live with long-term."
+      },
+      "step4": {
+        "title": "Testing &amp; Refinement",
+        "desc": "Comprehensive testing, accessibility audits, performance optimization, and security review. We deliver polished work, not beta versions."
+      },
+      "step5": {
+        "title": "Launch &amp; Support",
+        "desc": "We handle launch logistics, monitor performance, and provide training. We're here during and after — to fix issues, optimize, and help your team get the most value from what we built."
+      }
+    }
+  },
+  "principles": {
+    "label": "Core Principles",
+    "heading": "What guides our work.",
+    "principle1": {
+      "title": "Problem First",
+      "desc": "We don't recommend technology because it's cool. We recommend what solves your actual problem."
+    },
+    "principle2": {
+      "title": "Transparency",
+      "desc": "You know what we're building, how long it takes, and how much it costs. No surprises, no vague estimates."
+    },
+    "principle3": {
+      "title": "Quality Obsession",
+      "desc": "We take pride in clean code, thoughtful design, and attention to detail. Your project isn't shipped until it's right."
+    },
+    "principle4": {
+      "title": "Partnership",
+      "desc": "We're not a vendor. We're invested in your success. Your wins are our wins."
+    },
+    "principle5": {
+      "title": "Honesty",
+      "desc": "If an idea won't work, we tell you why. If there's a better approach, we explore it together."
+    }
+  },
+  "cta": {
+    "label": "Ready?",
+    "heading": "Let's start with a conversation.",
+    "subheading": "Tell us about your challenge. We'll listen, ask the right questions, and show you how we'd approach solving it.",
+    "primary": "Start a conversation",
+    "secondary": "See our work",
+    "note": "No pressure. No sales pitch. Just a genuine conversation about your business."
+  }
+}
