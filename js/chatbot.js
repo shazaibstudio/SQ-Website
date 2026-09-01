@@ -40,9 +40,9 @@
      ================================================================ */
 
   var CONFIG = {
-    phoneDisplay: attr('data-phone-display', '+92 333 4151313'),
-    phoneDial:    attr('data-phone-dial', '+923334151313'),
-    whatsapp:     attr('data-whatsapp', '923334151313'),
+    phoneDisplay: attr('data-phone-display', '+92 300 9452153'),
+    phoneDial:    attr('data-phone-dial', '+923009452153'),
+    whatsapp:     attr('data-whatsapp', '923009452153'),
     contactUrl:   attr('data-contact-url', '/contact/'),
     gaEventPrefix: attr('data-ga-prefix', 'sq_assistant'),
     storageKey:   'sq_assistant_session_v1',

@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Immersive — SQ Interactive</title>
-  <meta name="description" content="VR, AR, 3D and interactive experiences that transform how audiences engage with your content and ideas.">
+  <meta name="description" content="VR, AR, 360° tours and 3D experiences for businesses in Pakistan. From PKR 40,000. Transform how your audience engages. Let's talk.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Immersive — SQ Interactive">
   <meta property="og:description" content="VR, AR, 3D and interactive experiences built around your business.">
   <meta property="og:url" content="https://www.sqinteractive.com/immersive/">
+  <meta property="og:image" content="https://www.sqinteractive.com/SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -36,7 +37,7 @@
     }
   </style>
 </head>
-<body>
+<body class="page-immersive">
   <a href="#main" class="skip-link">Skip to main content</a>
   <div class="sq-scroll-progress" aria-hidden="true"></div>
 
@@ -216,6 +217,7 @@
             type="button"
             aria-label="English"
             aria-pressed="true"
+            data-lang-switch="en"
           >
             EN
           </button>
@@ -226,6 +228,7 @@
             type="button"
             aria-label="Urdu"
             aria-pressed="false"
+            data-lang-switch="ur"
           >
             UR
           </button>
@@ -347,8 +350,8 @@
       <!-- MOBILE LANGUAGE -->
 
       <div class="sq-nav__mobile-lang">
-        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true">EN</button>
-        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false">UR</button>
+        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true" data-lang-switch="en">EN</button>
+        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false" data-lang-switch="ur">UR</button>
       </div>
 
     </div>
@@ -592,6 +595,77 @@
       </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="dg-pricing" aria-labelledby="im-pricing-heading">
+      <div class="dg-section-inner">
+        <div class="dg-section-header">
+          <p class="sq-label">Pricing</p>
+          <h2 id="im-pricing-heading">Clear Pakistan pricing</h2>
+        </div>
+
+        <div class="dg-pricing-grid">
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">360° Virtual Tour</h3>
+            <p class="dg-pricing-card__price">PKR 40,000–80,000</p>
+            <ul class="dg-pricing-card__features">
+              <li>Single property/venue capture</li>
+              <li>5–10 tour hot-spots</li>
+              <li>Mobile-responsive</li>
+              <li>1-year hosting included</li>
+            </ul>
+          </div>
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">Interactive 3D Showcase</h3>
+            <p class="dg-pricing-card__price">PKR 150,000–300,000</p>
+            <ul class="dg-pricing-card__features">
+              <li>Custom 3D environment</li>
+              <li>15+ interactive hot-spots</li>
+              <li>Branded interface</li>
+              <li>Analytics included</li>
+            </ul>
+          </div>
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">VR Experience (Headset-Ready)</h3>
+            <p class="dg-pricing-card__price">PKR 300,000–750,000</p>
+            <ul class="dg-pricing-card__features">
+              <li>Full VR environment design</li>
+              <li>Custom interactions</li>
+              <li>Multi-device (headset + mobile)</li>
+              <li>2-month development</li>
+            </ul>
+          </div>
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">AR Mobile Experience</h3>
+            <p class="dg-pricing-card__price">PKR 150,000–400,000</p>
+            <ul class="dg-pricing-card__features">
+              <li>AR mobile app (iOS/Android)</li>
+              <li>Product/space visualization</li>
+              <li>Analytics dashboard</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="dg-support" aria-label="Immersive maintenance" style="margin-top:var(--sq-space-8)">
+          <div class="dg-section-inner">
+            <div class="dg-support-content">
+              <h3 class="dg-support-title">Immersive Maintenance</h3>
+              <p class="dg-support-price">PKR 40,000 / month</p>
+              <p class="dg-support-desc">Content updates, hosting management, analytics reporting, and ongoing optimization to keep your immersive experiences performing.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="dg-pricing-note" data-reveal>
+          <strong>Starting prices.</strong> Final pricing depends on scope, complexity, and content volume. <a href="../contact/">Get an exact quote →</a>
+        </p>
+      </div>
+    </section>
+
     <!-- EXPLORE OTHER WORLDS -->
     <section class="im-crosslinks" aria-label="Explore other SQ worlds">
       <div class="im-section-inner">
@@ -731,9 +805,17 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
   </a>
 
-  <script src="../js/nav.js" defer></script>
-  <script src="../js/main.js" defer></script>
-  <script>document.getElementById('sq-year').textContent = new Date().getFullYear();</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GYP19H93BR');
+  </script>
+  <script src="../js/language.js" defer></script>
+  <script src="../js/chatbot.js" defer></script>
   <script src="../js/unified-nav.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

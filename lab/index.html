@@ -79,7 +79,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="../SQ_Interactive_Favicon_Pack/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="../SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
 </head>
-<body>
+<body class="page-lab">
   <a href="#main" class="skip-link">Skip to main content</a>
   <div class="sq-scroll-progress" aria-hidden="true"></div>
 
@@ -259,6 +259,7 @@
             type="button"
             aria-label="English"
             aria-pressed="true"
+            data-lang-switch="en"
           >
             EN
           </button>
@@ -269,6 +270,7 @@
             type="button"
             aria-label="Urdu"
             aria-pressed="false"
+            data-lang-switch="ur"
           >
             UR
           </button>
@@ -513,6 +515,55 @@
       </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="dg-pricing" aria-labelledby="lb-pricing-heading">
+      <div class="lb-section-inner">
+        <div class="lb-section-header">
+          <p class="sq-label">Pricing</p>
+          <h2 id="lb-pricing-heading">Clear Pakistan pricing</h2>
+        </div>
+
+        <div class="dg-pricing-grid">
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">Proof of Concept</h3>
+            <p class="dg-pricing-card__price">PKR 100,000–250,000</p>
+            <ul class="dg-pricing-card__features">
+              <li>3-week research + prototype</li>
+              <li>Validation report</li>
+              <li>No production deployment</li>
+            </ul>
+          </div>
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">Rapid Prototype</h3>
+            <p class="dg-pricing-card__price">PKR 250,000–500,000</p>
+            <ul class="dg-pricing-card__features">
+              <li>6-week build + deployment</li>
+              <li>Functional MVP</li>
+              <li>1-month support included</li>
+            </ul>
+          </div>
+
+          <div class="dg-pricing-card" data-reveal>
+            <h3 class="dg-pricing-card__title">Custom R&amp;D Project</h3>
+            <p class="dg-pricing-card__price">PKR 500,000–2,000,000+</p>
+            <ul class="dg-pricing-card__features">
+              <li>3–6 month engagement</li>
+              <li>Proprietary development</li>
+              <li>IP discussion available</li>
+              <li>Long-term partnership</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="dg-pricing-note" data-reveal>
+          <strong>Starting prices.</strong> Final pricing depends on scope, research depth, and timeline. <a href="../contact/">Get an exact quote →</a>
+        </p>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════════════════
          EXPLORE OTHER WORLDS
     ════════════════════════════════════════ -->
@@ -671,14 +722,13 @@
   </a>
 
   <!-- Scripts -->
+  <script src="../js/language.js" defer></script>
+  <script src="../js/chatbot.js" defer></script>
+  <script src="../js/unified-nav.js" defer></script>
   <script src="../js/main.js" defer></script>
-  <script src="../js/nav.js" defer></script>
   <script src="../js/analytics.js" defer></script>
-  
   <script>
-    // Auto-update year in footer
     document.getElementById('sq-year').textContent = new Date().getFullYear();
   </script>
-  <script src="../js/unified-nav.js" defer></script>
 </body>
 </html>

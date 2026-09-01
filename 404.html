@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting — SQ Interactive</title>
+  <script>
+    // V1 → V2 redirect map for GitHub Pages
+    var redirects = {
+      '/index.html': '/',
+      '/contact.html': '/contact/',
+      '/services.html': '/services/',
+      '/about.html': '/about/',
+      '/portfolio.html': '/work/',
+      '/vr-real-estate.html': '/immersive/virtual-reality/',
+      '/vr-real-estate-lahore.html': '/immersive/virtual-reality/',
+      '/vr-staging.html': '/immersive/vr-staging/',
+      '/360-content.html': '/immersive/360-experiences/',
+      '/furniture-scanning.html': '/immersive/furniture-scanning/',
+      '/interactive-walkthroughs.html': '/immersive/virtual-reality/',
+      '/interactive-pc.html': '/immersive/interactive-installation/',
+      '/ai-interior-design.html': '/ai/ai-interior-design/',
+      '/case-study.html': '/work/',
+      '/faq.html': '/',
+      '/roi-calculator.html': '/contact/'
+    };
+
+    var path = window.location.pathname;
+    var destination = redirects[path];
+
+    if (destination) {
+      window.location.replace(destination);
+    } else {
+      // Unknown 404 — redirect to homepage after 3s
+      setTimeout(function() {
+        window.location.replace('/');
+      }, 3000);
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: #0A0A0A; color: #F5F5F5; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
+    .wrap { max-width: 480px; padding: 2rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+    p { color: #A0A0A0; }
+    a { color: #D4AF37; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Redirecting you…</h1>
+    <p>This page has moved. Taking you to the right place.</p>
+    <p>Not redirected? <a href="/">Go to homepage</a></p>
+  </div>
+</body>
+</html>

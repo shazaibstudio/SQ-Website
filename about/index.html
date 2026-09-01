@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GYP19H93BR');
+  </script>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — SQ Interactive</title>
+  <title>About SQ Interactive — Digital Technology Partner, Lahore</title>
   <meta name="description" content="SQ Interactive is a founder-led Digital Technology Partner based in Lahore, Pakistan. We help businesses solve digital problems and figure out what to build next.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About SQ Interactive — Digital Technology Partner">
+  <meta property="og:description" content="Founder-led digital agency in Lahore, Pakistan. Websites, AI, immersive tech and R&D built around your business.">
+  <meta property="og:url" content="https://www.sqinteractive.com/about/">
+  <meta property="og:image" content="https://www.sqinteractive.com/SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/tokens.css">
@@ -17,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../SQ_Interactive_Favicon_Pack/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180"    href="../SQ_Interactive_Favicon_Pack/apple-touch-icon.png">
 </head>
-<body>
+<body class="page-about">
   <a href="#main" class="skip-link">Skip to main content</a>
   <div class="sq-scroll-progress" aria-hidden="true"></div>
 
@@ -330,8 +343,8 @@
       <!-- MOBILE LANGUAGE -->
 
       <div class="sq-nav__mobile-lang">
-        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true">EN</button>
-        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false">UR</button>
+        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true" data-lang-switch="en">EN</button>
+        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false" data-lang-switch="ur">UR</button>
       </div>
 
     </div>
@@ -609,6 +622,8 @@
   </a>
 
   <script src="../js/unified-nav.js" defer></script>
+  <script src="../js/language.js" defer></script>
+  <script src="../js/chatbot.js" defer></script>
   <script src="../js/main.js" defer></script>
   <script>document.getElementById('sq-year').textContent = new Date().getFullYear();</script>
 </body>
