@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "heading": "Get in Touch",
+    "subheading": "Redefining Reality — Work with the pioneers of immersive design."
+  },
+  "info": {
+    "heading": "Contact SQ Interactive",
+    "text": "Let's talk about your project — whether you need Digital solutions, AI automation, Immersive experiences, or Lab innovation, we're ready to collaborate."
+  },
+  "form": {
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Email address",
+    "phonePlaceholder": "Phone number",
+    "projectTypeLabel": "Select project type",
+    "projectTypes": {
+      "digital_website": "Digital - Website",
+      "digital_ecommerce": "Digital - E-Commerce",
+      "digital_software": "Digital - Custom Software",
+      "ai_visualization": "AI - Visualization",
+      "ai_interior": "AI - Interior Design",
+      "ai_automation": "AI - Automation",
+      "immersive_360": "Immersive - 360° Tours",
+      "immersive_vr": "Immersive - VR Walkthroughs",
+      "immersive_ar": "Immersive - AR Experiences",
+      "lab_rd": "Lab - R&D Project",
+      "other": "Other / Custom"
+    },
+    "messagePlaceholder": "Short message",
+    "sendButton": "Send",
+    "demoButton": "Request Demo"
+  }
+}

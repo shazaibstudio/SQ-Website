@@ -16,23 +16,23 @@
     "heading": "How we move from idea to outcome.",
     "steps": {
       "step1": {
-        "title": "Discovery &amp; Strategy",
+        "title": "Discovery & Strategy",
         "desc": "We conduct interviews, audit your current systems, and define the actual problem. This phase typically takes 1-2 weeks and produces a strategic brief that aligns everyone on goals, constraints, and success metrics."
       },
       "step2": {
-        "title": "Design &amp; Planning",
+        "title": "Design & Planning",
         "desc": "We create wireframes, prototypes, and technical specifications. You see exactly what you're getting before we build it. Changes are cheap at this stage. Approval gates ensure alignment before development starts."
       },
       "step3": {
-        "title": "Development &amp; Iteration",
+        "title": "Development & Iteration",
         "desc": "We build in increments, not silos. Regular demos and feedback loops mean you're never surprised. We prioritize quality and maintainability — code you can live with long-term."
       },
       "step4": {
-        "title": "Testing &amp; Refinement",
+        "title": "Testing & Refinement",
         "desc": "Comprehensive testing, accessibility audits, performance optimization, and security review. We deliver polished work, not beta versions."
       },
       "step5": {
-        "title": "Launch &amp; Support",
+        "title": "Launch & Support",
         "desc": "We handle launch logistics, monitor performance, and provide training. We're here during and after — to fix issues, optimize, and help your team get the most value from what we built."
       }
     }

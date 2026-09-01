@@ -13,7 +13,6 @@
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--sq-nav-height);
   display: flex;
   align-items: center;
   background: rgba(10, 10, 10, 0.85);

@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "heading": "رابطہ کریں",
+    "subheading": "حقیقت کی نئی تعریف — جذب کن ڈیزائن کے علمبرداروں کے ساتھ کام کریں۔"
+  },
+  "info": {
+    "heading": "SQ Interactive سے رابطہ کریں",
+    "text": "آئیے اپنے منصوبے کے بارے میں بات کریں — چاہے آپ کو ڈیجیٹل حل، AI خودکاری، جذب کن تجربات، یا لیب جدت کی ضرورت ہو، ہم تعاون کے لیے تیار ہیں۔"
+  },
+  "form": {
+    "namePlaceholder": "آپ کا نام",
+    "emailPlaceholder": "ای میل پتہ",
+    "phonePlaceholder": "فون نمبر",
+    "projectTypeLabel": "منصوبے کی قسم منتخب کریں",
+    "projectTypes": {
+      "digital_website": "ڈیجیٹل - ویب سائٹ",
+      "digital_ecommerce": "ڈیجیٹل - ای کامرس",
+      "digital_software": "ڈیجیٹل - اختصاری سافٹ ویئر",
+      "ai_visualization": "AI - تصویری بندی",
+      "ai_interior": "AI - اندرونی ڈیزائن",
+      "ai_automation": "AI - خودکاری",
+      "immersive_360": "جذب کن - 360° ٹور",
+      "immersive_vr": "جذب کن - VR واک تھرو",
+      "immersive_ar": "جذب کن - AR تجربات",
+      "lab_rd": "لیبارٹری - تحقیق منصوبہ",
+      "other": "دیگر / اختصاری"
+    },
+    "messagePlaceholder": "مختصر پیغام",
+    "sendButton": "بھیجیں",
+    "demoButton": "ڈیمو کی درخواست کریں"
+  }
+}

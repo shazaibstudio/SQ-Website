@@ -93,4 +93,11 @@
   --sq-shadow-sm:   0 1px 3px rgba(0,0,0,0.4);
   --sq-shadow-md:   0 4px 16px rgba(0,0,0,0.5);
   --sq-shadow-gold: 0 4px 20px rgba(212,175,55,0.25);
+
+  /* ── Aliases (unified-nav.css + portfolio.css compatibility) ── */
+  --sq-brand-gold:       #D4AF37;
+  --sq-bg-alt:           #1A1A1A;
+  --sq-bg-dark:          #0A0A0A;
+  --sq-transition-fast:  150ms ease;
+  --sq-transition-norm:  250ms ease;
 }
