@@ -555,6 +555,73 @@
   }
 }
 
+/* ══════════════════════════════════════════
+   FLOATING BUTTONS FOR PAGES WITH CHATBOT
+   (all pages: swap positions & sizes)
+══════════════════════════════════════════ */
+
+/* Pages with chatbot: move Ask SQ button up, move WhatsApp to bottom, make it smaller */
+.page-home #sq-assistant,
+.page-digital #sq-assistant,
+.page-ai #sq-assistant,
+.page-immersive #sq-assistant,
+.page-lab #sq-assistant,
+.page-services #sq-assistant,
+.page-work #sq-assistant,
+.page-contact #sq-assistant,
+.page-about #sq-assistant,
+.page-how-we-work #sq-assistant {
+  bottom: 85px !important;
+}
+
+/* Pages with chatbot: move WhatsApp to bottom, make it smaller */
+.page-home .sq-wa-sticky,
+.page-digital .sq-wa-sticky,
+.page-ai .sq-wa-sticky,
+.page-immersive .sq-wa-sticky,
+.page-lab .sq-wa-sticky,
+.page-services .sq-wa-sticky,
+.page-work .sq-wa-sticky,
+.page-contact .sq-wa-sticky,
+.page-about .sq-wa-sticky,
+.page-how-we-work .sq-wa-sticky {
+  bottom: var(--sq-space-4);
+  padding: var(--sq-space-2) var(--sq-space-3);
+  font-size: calc(var(--sq-text-xs) * 0.9);
+}
+
+@media (min-width: 640px) {
+  .page-home .sq-wa-sticky,
+  .page-digital .sq-wa-sticky,
+  .page-ai .sq-wa-sticky,
+  .page-immersive .sq-wa-sticky,
+  .page-lab .sq-wa-sticky,
+  .page-services .sq-wa-sticky,
+  .page-work .sq-wa-sticky,
+  .page-contact .sq-wa-sticky,
+  .page-about .sq-wa-sticky,
+  .page-how-we-work .sq-wa-sticky {
+    bottom: var(--sq-space-6);
+    padding: var(--sq-space-2) var(--sq-space-4);
+  }
+}
+
+@media (max-width: 479px) {
+  .page-home .sq-wa-sticky,
+  .page-digital .sq-wa-sticky,
+  .page-ai .sq-wa-sticky,
+  .page-immersive .sq-wa-sticky,
+  .page-lab .sq-wa-sticky,
+  .page-services .sq-wa-sticky,
+  .page-work .sq-wa-sticky,
+  .page-contact .sq-wa-sticky,
+  .page-about .sq-wa-sticky,
+  .page-how-we-work .sq-wa-sticky {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 .sq-footer__heading {
   font-family: var(--sq-font-sans);
   font-size: var(--sq-text-xs);
