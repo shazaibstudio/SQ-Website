@@ -781,3 +781,30 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   ALTERNATING SECTION BACKGROUNDS (Dark + Light theme)
+   Creates visual rhythm and "alive" feel
+   ════════════════════════════════════════════════════════════════ */
+
+.page-digital main > section:nth-child(odd) {
+  background: var(--sq-bg);
+}
+
+.page-digital main > section:nth-child(even) {
+  background: var(--sq-surface);
+  border-top: 1px solid var(--sq-border);
+}
+
+/* Pricing premium section gets surface background */
+.page-digital .sq-pricing-premium {
+  background: var(--sq-surface);
+  border-top: 1px solid var(--sq-border);
+}
+
+/* Testimonials section gets surface background */
+.page-digital .sq-testimonials {
+  background: var(--sq-surface);
+  border-top: 1px solid var(--sq-border);
+}
+

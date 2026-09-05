@@ -479,6 +479,13 @@
   }
 }
 
+/* PRICING SECTION */
+.page-ai .sq-pricing-premium {
+  background: var(--sq-surface);
+  padding: var(--sq-space-20) 0;
+  border-top: 1px solid var(--sq-border);
+}
+
 /* FINAL CTA */
 .ai-final-cta {
   background: var(--sq-bg-deep);
@@ -516,3 +523,36 @@
 .sq-footer__social-link--youtube {
   color: #FF0000;
 }
+
+
+/* ════════════════════════════════════════════════════════════════
+   ALTERNATING SECTION BACKGROUNDS (Dark + Light theme)
+   Creates visual rhythm and "alive" feel
+   ════════════════════════════════════════════════════════════════ */
+
+.page-ai main > section:nth-child(odd) {
+  background: var(--sq-bg);
+}
+
+.page-ai main > section:nth-child(even) {
+  background: var(--sq-surface);
+  border-top: 1px solid var(--sq-border);
+}
+
+/* Testimonials section gets surface background */
+.page-ai .sq-testimonials {
+  background: var(--sq-surface);
+  border-top: 1px solid var(--sq-border);
+}
+
+/* Pricing premium section gets surface background */
+.page-ai .sq-pricing-premium {
+  background: var(--sq-surface);
+  border-top: 1px solid var(--sq-border);
+}
+
+/* Final CTA gets bg-deep */
+.page-ai .dg-final-cta {
+  background: var(--sq-bg-deep);
+}
+
