@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block legacy, portfolio, and dev-only folders
+Disallow: /legacy/
+Disallow: /Portfolio/
+Disallow: /chatbot-package/
+Disallow: /v2/
+Disallow: /SQ-Tours/
+
+# Block raw asset directories (no SEO value)
+Disallow: /videos/
+Disallow: /lang/
+
+# Sitemap
+Sitemap: https://www.sqinteractive.com/sitemap.xml
+
+# Crawl-delay (optional — helps with shared hosting)
+Crawl-delay: 1
