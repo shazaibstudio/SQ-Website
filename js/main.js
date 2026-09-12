@@ -41,15 +41,14 @@
       observer.observe(el);
     });
     
-    // Ensure content is revealed immediately if already in viewport
-    setTimeout(function() {
-      revealEls.forEach(function (el) {
-        if (!el.classList.contains('is-revealed') && observer) {
-          observer.unobserve(el);
-          el.classList.add('is-revealed');
-        }
-      });
-    }, 100);
+    // Stagger delay for sibling elements
+    revealEls.forEach(function (el, i) {
+      const siblings = el.parentElement ? el.parentElement.querySelectorAll('[data-reveal]') : [];
+      if (siblings.length > 1) {
+        const idx = Array.from(siblings).indexOf(el);
+        if (idx > 0) el.style.transitionDelay = (idx * 80) + 'ms';
+      }
+    });
   } else {
     /* Reduced motion or no IntersectionObserver — show everything immediately */
     document.querySelectorAll('[data-reveal]').forEach(function (el) {

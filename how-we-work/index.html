@@ -41,6 +41,140 @@
   <link rel="icon" type="image/x-icon" href="../SQ_Interactive_Favicon_Pack/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../SQ_Interactive_Favicon_Pack/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../SQ_Interactive_Favicon_Pack/apple-touch-icon.png">
+  <style>
+    /* ── Reveal animation ── */
+    [data-reveal]{opacity:0;transform:translateY(16px);}
+    [data-reveal].will-reveal{transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);}
+    [data-reveal].is-revealed{opacity:1;transform:translateY(0);}
+
+    /* ── Process steps grid ── */
+    .sq-hww-steps{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:var(--sq-space-5);
+      counter-reset:step;
+    }
+    @media(min-width:640px){.sq-hww-steps{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:1024px){.sq-hww-steps{grid-template-columns:repeat(3,1fr);}}
+
+    .sq-hww-step{
+      background:var(--sq-bg-deep);
+      border:1px solid var(--sq-border);
+      border-radius:var(--sq-radius-xl);
+      padding:var(--sq-space-7);
+      display:flex;
+      flex-direction:column;
+      gap:var(--sq-space-3);
+      position:relative;
+      overflow:hidden;
+      transition:border-color .3s,transform .3s,box-shadow .3s;
+    }
+    .sq-hww-step::before{
+      content:'';
+      position:absolute;
+      top:0;left:0;right:0;
+      height:3px;
+      background:linear-gradient(90deg,var(--sq-gold),transparent);
+      opacity:0;
+      transition:opacity .3s;
+    }
+    .sq-hww-step:hover{border-color:var(--sq-gold-border);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.35);}
+    .sq-hww-step:hover::before{opacity:1;}
+
+    .sq-hww-step__head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:var(--sq-space-2);
+    }
+    .sq-hww-step__num{
+      font-family:var(--sq-font-serif);
+      font-size:var(--sq-text-3xl);
+      font-weight:600;
+      color:var(--sq-gold);
+      line-height:1;
+      opacity:.35;
+    }
+    .sq-hww-step__icon{
+      width:44px;height:44px;
+      border-radius:var(--sq-radius-lg);
+      background:var(--sq-gold-subtle);
+      border:1px solid var(--sq-gold-border);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--sq-gold);
+      flex-shrink:0;
+    }
+    .sq-hww-step__title{
+      font-family:var(--sq-font-serif);
+      font-size:var(--sq-text-lg);
+      font-weight:600;
+      color:var(--sq-text-strong);
+      margin:0;
+    }
+    .sq-hww-step__desc{
+      font-size:var(--sq-text-sm);
+      color:var(--sq-text-secondary);
+      line-height:1.7;
+      flex:1;
+      margin:0;
+    }
+    .sq-hww-step__tag{
+      display:inline-block;
+      font-size:var(--sq-text-xs);
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--sq-gold);
+      background:var(--sq-gold-subtle);
+      border:1px solid var(--sq-gold-border);
+      border-radius:var(--sq-radius-full);
+      padding:3px 10px;
+      margin-top:auto;
+      align-self:flex-start;
+    }
+
+    /* ── Principles grid ── */
+    .sq-hww-principles{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:var(--sq-space-4);
+    }
+    @media(min-width:640px){.sq-hww-principles{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:1024px){.sq-hww-principles{grid-template-columns:repeat(3,1fr);}}
+
+    .sq-hww-principle{
+      display:flex;
+      flex-direction:column;
+      gap:var(--sq-space-3);
+      padding:var(--sq-space-6);
+      background:var(--sq-surface);
+      border:1px solid var(--sq-border);
+      border-left:3px solid var(--sq-gold);
+      border-radius:0 var(--sq-radius-lg) var(--sq-radius-lg) 0;
+      transition:background .25s,border-color .25s,transform .25s;
+    }
+    .sq-hww-principle:hover{background:var(--sq-bg-deep);border-color:var(--sq-gold-border);transform:translateX(4px);}
+    .sq-hww-principle__icon{
+      width:40px;height:40px;
+      border-radius:var(--sq-radius-md);
+      background:var(--sq-gold-subtle);
+      border:1px solid var(--sq-gold-border);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--sq-gold);
+    }
+    .sq-hww-principle__title{
+      font-size:var(--sq-text-base);
+      font-weight:700;
+      color:var(--sq-text-strong);
+      margin:0;
+    }
+    .sq-hww-principle__desc{
+      font-size:var(--sq-text-sm);
+      color:var(--sq-text-secondary);
+      line-height:1.65;
+      margin:0;
+    }
+  </style>
 </head>
 <body class="page-how-we-work">
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -412,91 +546,126 @@
     <!-- PHILOSOPHY -->
     <section class="sq-about-section" aria-labelledby="philosophy-heading">
       <div class="sq-about-inner">
-        <div class="sq-about-text">
-          <span class="sq-label" data-i18n="how-we-work.approach.label">Our Approach</span>
-          <h2 id="philosophy-heading" data-i18n="how-we-work.approach.heading">We start by understanding what actually needs to happen.</h2>
-          <p data-i18n="how-we-work.approach.text">Most tech projects fail because they build solutions to the wrong problems. We flip that. Before recommending technology or approach, we listen. We ask hard questions. We understand your business, your constraints, your goals, and where technology can actually create value.</p>
+        <div class="sq-about-text" data-reveal>
+          <span class="sq-label">Our Approach</span>
+          <h2 id="philosophy-heading">We start by understanding what actually needs to happen.</h2>
+          <p>Most tech projects fail because they build solutions to the wrong problems. We flip that. Before recommending technology or approach, we listen. We ask hard questions. We understand your business, your constraints, your goals, and where technology can actually create value.</p>
           <p>Only then do we design and build.</p>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS STEPS -->
+    <!-- PROCESS STEPS — VISUAL CARDS -->
     <section class="sq-about-section sq-about-section--alt" aria-labelledby="process-heading">
       <div class="sq-about-inner">
-        <div class="sq-about-text">
-          <span class="sq-label" data-i18n="how-we-work.process.label">The Process</span>
-          <h2 id="process-heading" data-i18n="how-we-work.process.heading">How we move from idea to outcome.</h2>
+        <div class="sq-about-text" data-reveal>
+          <span class="sq-label">The Process</span>
+          <h2 id="process-heading">How we move from idea to outcome.</h2>
         </div>
-        <ol class="sq-process-list">
-          <li class="sq-process-step">
-            <span class="sq-process-step__num">1</span>
-            <div>
-              <p class="sq-process-step__title" data-i18n="how-we-work.process.steps.step1.title">Discovery &amp; Strategy</p>
-              <p class="sq-process-step__desc" data-i18n="how-we-work.process.steps.step1.desc">We conduct interviews, audit your current systems, and define the actual problem. This phase typically takes 1-2 weeks and produces a strategic brief that aligns everyone on goals, constraints, and success metrics.</p>
+        <div class="sq-hww-steps">
+          <div class="sq-hww-step" data-reveal>
+            <div class="sq-hww-step__head">
+              <span class="sq-hww-step__num">01</span>
+              <div class="sq-hww-step__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
             </div>
-          </li>
-          <li class="sq-process-step">
-            <span class="sq-process-step__num">2</span>
-            <div>
-              <p class="sq-process-step__title" data-i18n="how-we-work.process.steps.step2.title">Design &amp; Planning</p>
-              <p class="sq-process-step__desc" data-i18n="how-we-work.process.steps.step2.desc">We create wireframes, prototypes, and technical specifications. You see exactly what you're getting before we build it. Changes are cheap at this stage. Approval gates ensure alignment before development starts.</p>
+            <h3 class="sq-hww-step__title">Discovery &amp; Strategy</h3>
+            <p class="sq-hww-step__desc">We conduct interviews, audit your current systems, and define the actual problem. This phase produces a strategic brief that aligns everyone on goals, constraints, and success metrics.</p>
+            <span class="sq-hww-step__tag">1–2 weeks</span>
+          </div>
+          <div class="sq-hww-step" data-reveal>
+            <div class="sq-hww-step__head">
+              <span class="sq-hww-step__num">02</span>
+              <div class="sq-hww-step__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
             </div>
-          </li>
-          <li class="sq-process-step">
-            <span class="sq-process-step__num">3</span>
-            <div>
-              <p class="sq-process-step__title" data-i18n="how-we-work.process.steps.step3.title">Development &amp; Iteration</p>
-              <p class="sq-process-step__desc" data-i18n="how-we-work.process.steps.step3.desc">We build in increments, not silos. Regular demos and feedback loops mean you're never surprised. We prioritize quality and maintainability — code you can live with long-term.</p>
+            <h3 class="sq-hww-step__title">Design &amp; Planning</h3>
+            <p class="sq-hww-step__desc">We create wireframes, prototypes, and technical specifications. You see exactly what you're getting before we build it. Changes are cheap at this stage.</p>
+            <span class="sq-hww-step__tag">Approval gate</span>
+          </div>
+          <div class="sq-hww-step" data-reveal>
+            <div class="sq-hww-step__head">
+              <span class="sq-hww-step__num">03</span>
+              <div class="sq-hww-step__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
             </div>
-          </li>
-          <li class="sq-process-step">
-            <span class="sq-process-step__num">4</span>
-            <div>
-              <p class="sq-process-step__title" data-i18n="how-we-work.process.steps.step4.title">Testing &amp; Refinement</p>
-              <p class="sq-process-step__desc" data-i18n="how-we-work.process.steps.step4.desc">Comprehensive testing, accessibility audits, performance optimization, and security review. We deliver polished work, not beta versions.</p>
+            <h3 class="sq-hww-step__title">Development &amp; Iteration</h3>
+            <p class="sq-hww-step__desc">We build in increments, not silos. Regular demos and feedback loops mean you're never surprised. We prioritize quality and maintainability.</p>
+            <span class="sq-hww-step__tag">Regular demos</span>
+          </div>
+          <div class="sq-hww-step" data-reveal>
+            <div class="sq-hww-step__head">
+              <span class="sq-hww-step__num">04</span>
+              <div class="sq-hww-step__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
             </div>
-          </li>
-          <li class="sq-process-step">
-            <span class="sq-process-step__num">5</span>
-            <div>
-              <p class="sq-process-step__title" data-i18n="how-we-work.process.steps.step5.title">Launch &amp; Support</p>
-              <p class="sq-process-step__desc" data-i18n="how-we-work.process.steps.step5.desc">We handle launch logistics, monitor performance, and provide training. We're here during and after — to fix issues, optimize, and help your team get the most value from what we built.</p>
+            <h3 class="sq-hww-step__title">Testing &amp; Refinement</h3>
+            <p class="sq-hww-step__desc">Comprehensive testing, accessibility audits, performance optimization, and security review. We deliver polished work, not beta versions.</p>
+            <span class="sq-hww-step__tag">Zero shortcuts</span>
+          </div>
+          <div class="sq-hww-step" data-reveal>
+            <div class="sq-hww-step__head">
+              <span class="sq-hww-step__num">05</span>
+              <div class="sq-hww-step__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
             </div>
-          </li>
-        </ol>
+            <h3 class="sq-hww-step__title">Launch &amp; Support</h3>
+            <p class="sq-hww-step__desc">We handle launch logistics, monitor performance, and provide training. We're here during and after — to fix issues, optimize, and help your team get the most value.</p>
+            <span class="sq-hww-step__tag">Ongoing support</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- PRINCIPLES -->
+    <!-- PRINCIPLES — VISUAL GRID -->
     <section class="sq-about-section" aria-labelledby="principles-heading">
       <div class="sq-about-inner">
-        <div class="sq-about-text">
-          <span class="sq-label" data-i18n="how-we-work.principles.label">Core Principles</span>
-          <h2 id="principles-heading" data-i18n="how-we-work.principles.heading">What guides our work.</h2>
+        <div class="sq-about-text" data-reveal>
+          <span class="sq-label">Core Principles</span>
+          <h2 id="principles-heading">What guides our work.</h2>
         </div>
-        <ul class="sq-principles-list">
-          <li class="sq-principle">
-            <p class="sq-principle__title" data-i18n="how-we-work.principles.principle1.title">Problem First</p>
-            <p class="sq-principle__desc" data-i18n="how-we-work.principles.principle1.desc">We don't recommend technology because it's cool. We recommend what solves your actual problem.</p>
-          </li>
-          <li class="sq-principle">
-            <p class="sq-principle__title" data-i18n="how-we-work.principles.principle2.title">Transparency</p>
-            <p class="sq-principle__desc" data-i18n="how-we-work.principles.principle2.desc">You know what we're building, how long it takes, and how much it costs. No surprises, no vague estimates.</p>
-          </li>
-          <li class="sq-principle">
-            <p class="sq-principle__title" data-i18n="how-we-work.principles.principle3.title">Quality Obsession</p>
-            <p class="sq-principle__desc" data-i18n="how-we-work.principles.principle3.desc">We take pride in clean code, thoughtful design, and attention to detail. Your project isn't shipped until it's right.</p>
-          </li>
-          <li class="sq-principle">
-            <p class="sq-principle__title" data-i18n="how-we-work.principles.principle4.title">Partnership</p>
-            <p class="sq-principle__desc" data-i18n="how-we-work.principles.principle4.desc">We're not a vendor. We're invested in your success. Your wins are our wins.</p>
-          </li>
-          <li class="sq-principle">
-            <p class="sq-principle__title" data-i18n="how-we-work.principles.principle5.title">Honesty</p>
-            <p class="sq-principle__desc" data-i18n="how-we-work.principles.principle5.desc">If an idea won't work, we tell you why. If there's a better approach, we explore it together.</p>
-          </li>
-        </ul>
+        <div class="sq-hww-principles">
+          <div class="sq-hww-principle" data-reveal>
+            <div class="sq-hww-principle__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3 class="sq-hww-principle__title">Problem First</h3>
+            <p class="sq-hww-principle__desc">We don't recommend technology because it's cool. We recommend what solves your actual problem.</p>
+          </div>
+          <div class="sq-hww-principle" data-reveal>
+            <div class="sq-hww-principle__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="sq-hww-principle__title">Transparency</h3>
+            <p class="sq-hww-principle__desc">You know what we're building, how long it takes, and how much it costs. No surprises, no vague estimates.</p>
+          </div>
+          <div class="sq-hww-principle" data-reveal>
+            <div class="sq-hww-principle__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="sq-hww-principle__title">Quality Obsession</h3>
+            <p class="sq-hww-principle__desc">We take pride in clean code, thoughtful design, and attention to detail. Your project isn't shipped until it's right.</p>
+          </div>
+          <div class="sq-hww-principle" data-reveal>
+            <div class="sq-hww-principle__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="sq-hww-principle__title">Partnership</h3>
+            <p class="sq-hww-principle__desc">We're not a vendor. We're invested in your success. Your wins are our wins.</p>
+          </div>
+          <div class="sq-hww-principle" data-reveal>
+            <div class="sq-hww-principle__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="sq-hww-principle__title">Honesty</h3>
+            <p class="sq-hww-principle__desc">If an idea won't work, we tell you why. If there's a better approach, we explore it together.</p>
+          </div>
+        </div>
       </div>
     </section>
 

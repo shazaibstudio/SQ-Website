@@ -424,8 +424,8 @@
         <input type="hidden" name="_subject" value="New SQ Interactive Website Inquiry">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.sqinteractive.com/thank-you.html">
         <input type="hidden" name="_autoresponse" value="Thank you for contacting SQ Interactive! Our team will reply within 24 hours.">
+        <input type="hidden" name="_next" value="https://www.sqinteractive.com/thank-you/">
 
         <input type="text" name="name" placeholder="Your name" class="sq-contact-form__input" required>
         <input type="email" name="email" placeholder="Email address" class="sq-contact-form__input" required>
@@ -449,10 +449,47 @@
         <textarea name="message" placeholder="Short message" class="sq-contact-form__textarea" rows="4" required></textarea>
 
         <div class="sq-contact-form__actions">
-          <button type="submit" class="sq-btn sq-btn--primary">Send</button>
+          <button type="submit" class="sq-btn sq-btn--primary" id="sqFormSubmit">Send</button>
           <a href="mailto:admin@sqinteractive.com" class="sq-btn sq-btn--secondary">Request Demo</a>
         </div>
       </form>
+
+      <!-- Thank You State (hidden until form submitted) -->
+      <div id="sqFormThankyou" class="sq-contact-thankyou" style="display:none;" aria-live="polite">
+        <div class="sq-contact-thankyou__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h2 class="sq-contact-thankyou__heading">Message received.</h2>
+        <p class="sq-contact-thankyou__sub">Thanks for reaching out. We'll review your project and get back to you within 24 hours.</p>
+        <a href="/work/" class="sq-btn sq-btn--secondary" style="margin-top:1.5rem;">See Our Work</a>
+      </div>
+
+      <script>
+      (function(){
+        var form = document.getElementById('sqForm');
+        var btn  = document.getElementById('sqFormSubmit');
+        var ty   = document.getElementById('sqFormThankyou');
+        if (!form) return;
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          btn.textContent = 'Sending…';
+          btn.disabled = true;
+          var data = new FormData(form);
+          fetch(form.action, { method:'POST', body: data, headers:{'Accept':'application/json'} })
+            .then(function(r){ return r.ok ? r : Promise.reject(r); })
+            .then(function(){
+              form.style.display = 'none';
+              ty.style.display = 'flex';
+              ty.scrollIntoView({ behavior:'smooth', block:'center' });
+            })
+            .catch(function(){
+              btn.textContent = 'Send';
+              btn.disabled = false;
+              alert('Something went wrong. Please email us directly at admin@sqinteractive.com');
+            });
+        });
+      })();
+      </script>
     </div>
   </section>
 

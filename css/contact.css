@@ -272,3 +272,54 @@
   outline: 2px solid var(--sq-gold);
   outline-offset: 2px;
 }
+
+/* ─────────────────────────────────────────
+   INLINE THANK YOU STATE
+──────────────────────────────────────── */
+
+.sq-contact-thankyou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sq-space-12) var(--sq-space-6);
+  border-radius: var(--sq-radius-xl);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--sq-gold-border);
+  min-height: 320px;
+  animation: sq-fadein 0.5s ease forwards;
+}
+
+@keyframes sq-fadein {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sq-contact-thankyou__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sq-gold-subtle);
+  border: 2px solid var(--sq-gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sq-gold);
+  margin-bottom: var(--sq-space-6);
+}
+
+.sq-contact-thankyou__heading {
+  font-family: var(--sq-font-serif);
+  font-size: var(--sq-text-2xl);
+  font-weight: 600;
+  color: var(--sq-text-strong);
+  margin-bottom: var(--sq-space-3);
+}
+
+.sq-contact-thankyou__sub {
+  font-size: var(--sq-text-base);
+  color: var(--sq-text-secondary);
+  line-height: 1.7;
+  max-width: 38ch;
+}
