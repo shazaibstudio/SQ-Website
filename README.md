@@ -1,8 +1,8 @@
 # SQ Interactive — Website
 
-**Live:** https://www.sqinteractive.com  
-**Stack:** Static HTML · GitHub Pages  
-**Analytics:** GA4 `G-GYP19H93BR`  
+**Live:** https://www.sqinteractive.com
+**Stack:** Static HTML · GitHub Pages
+**Analytics:** GA4 `G-GYP19H93BR` · Hotjar/ContentSquare `hjid: 6545315`
 **Owner:** Shazaib Qaiser · admin@sqinteractive.com
 
 ---
@@ -16,6 +16,7 @@
 /about/                  → About SQ Interactive
 /how-we-work/            → Process & approach
 /contact/                → Contact form
+/thank-you.html          → Post-form submission page
 
 /digital/                → Digital world hub
   /website-development/
@@ -71,17 +72,66 @@
 | `js/main.js` | Scroll reveals, year, general UI |
 | `js/language.js` | EN/UR language switching |
 | `js/chatbot.js` | Chatbot widget |
+| `js/analytics.js` | GA4 + Hotjar + Web Vitals + CTA tracking |
+
+---
+
+## Analytics Stack
+
+Every page loads `js/analytics.js` which includes:
+
+| Tool | ID | Purpose |
+|------|----|---------|
+| GA4 | `G-GYP19H93BR` | Page views, events, conversions |
+| Hotjar / ContentSquare | `hjid: 6545315` | Heatmaps, session recordings |
+| ContentSquare tag | `c97b2acc48ee8` | UX analytics |
+
+Tracked events: `cta_click`, `whatsapp_click`, `form_start`, `form_submit`, `scroll_depth` (25/50/75/90%), `video_play`, `LCP`, `FID`, `CLS`, `TTFB`, `page_load_time`.
 
 ---
 
 ## SEO Status
 
-Every indexable page must have:
+### Required on every indexable page
 - `<meta name="robots" content="index, follow, ...">`
 - `<link rel="canonical" href="...">`
+- `<link rel="alternate" hreflang="en" href="...">`
 - `<meta name="geo.region" content="PK-PB">` + related geo tags
 - `<meta name="description">` (unique per page)
 - OG tags (`og:title`, `og:description`, `og:url`, `og:image`)
+- `<meta name="twitter:card">` + title + description
+
+### Schema required per page type
+- All pages: `BreadcrumbList`
+- Service sub-pages: `Service` (with `offers.priceCurrency: PKR`)
+- High-intent pages: `FAQPage`
+- Homepage: `Organization` + `LocalBusiness` + `WebSite`
+- Contact: `ContactPage`
+
+### AI World SEO Status (Phase C complete)
+
+| Page | Title ✅ | Desc ✅ | Geo ✅ | Robots ✅ | Canonical ✅ | hreflang ✅ | BreadcrumbList ✅ | Service ✅ | FAQ ✅ | Hero ✅ | analytics.js ✅ |
+|------|---------|---------|--------|----------|------------|-----------|-----------------|---------|------|------|------|
+| `/ai/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | — | ✅ |
+| `/ai/ai-systems-models/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/ai/intelligent-automation/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/ai/ai-interior-design/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/ai/data-intelligence/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/ai/ai-integration/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/ai/ai-content/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/ai/process-optimization/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+
+### Digital World SEO Status (Phase B complete)
+
+| Page | Title ✅ | Desc ✅ | Geo ✅ | Robots ✅ | Canonical ✅ | hreflang ✅ | BreadcrumbList ✅ | Service ✅ | FAQ ✅ |
+|------|---------|---------|--------|----------|------------|-----------|-----------------|---------|------|
+| `/digital/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| `/digital/website-development/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/digital/e-commerce/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/digital/custom-software/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| `/digital/ui-ux-experiences/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| `/digital/seo-digital-growth/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/digital/automation-integration/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 
 See `SEO-PLAN-V2.md` for the full keyword strategy and per-page action items.
 
@@ -101,3 +151,5 @@ The following directories are blocked in `robots.txt`:
 - Navigation HTML is duplicated across pages (no server-side includes)
 - Bilingual support via `js/language.js` + `lang/en/` and `lang/ur/` JSON files
 - Videos autoplay muted on hero sections — keep file sizes optimised
+- Contact form uses formsubmit.co with AJAX fetch — shows inline thank-you on success
+- `thank-you.html` exists as a standalone page (noindex) for direct access
