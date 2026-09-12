@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GYP19H93BR');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — SQ Interactive</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.sqinteractive.com/thank-you.html">
+  <link rel="icon" type="image/x-icon" href="/SQ_Interactive_Favicon_Pack/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/unified-nav.css">
+  <style>
+    .sq-thankyou {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--sq-space-8);
+      background: var(--sq-bg-deep);
+      position: relative;
+      overflow: hidden;
+    }
+    .sq-thankyou::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,175,55,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .sq-thankyou__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+    }
+    .sq-thankyou__icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--sq-gold-subtle);
+      border: 2px solid var(--sq-gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--sq-space-8);
+      color: var(--sq-gold);
+    }
+    .sq-thankyou__heading {
+      font-family: var(--sq-font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      color: var(--sq-text-strong);
+      margin-bottom: var(--sq-space-5);
+      line-height: 1.15;
+    }
+    .sq-thankyou__sub {
+      font-size: var(--sq-text-lg);
+      color: var(--sq-text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--sq-space-10);
+      max-width: 44ch;
+      margin-inline: auto;
+    }
+    .sq-thankyou__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sq-space-4);
+      justify-content: center;
+    }
+    .sq-thankyou__note {
+      margin-top: var(--sq-space-8);
+      font-size: var(--sq-text-xs);
+      color: var(--sq-text-muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="sq-thankyou">
+      <div class="sq-thankyou__inner">
+        <div class="sq-thankyou__icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h1 class="sq-thankyou__heading">Message received.</h1>
+        <p class="sq-thankyou__sub">Thanks for reaching out. We'll review your project details and get back to you within 24 hours.</p>
+        <div class="sq-thankyou__actions">
+          <a href="/" class="sq-btn sq-btn--primary sq-btn--lg">Back to Home</a>
+          <a href="/work/" class="sq-btn sq-btn--secondary sq-btn--lg">See Our Work</a>
+        </div>
+        <p class="sq-thankyou__note">You'll also receive a confirmation email shortly.</p>
+      </div>
+    </section>
+  </main>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

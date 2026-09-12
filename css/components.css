@@ -1067,10 +1067,11 @@
 
 .sq-testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--sq-space-8);
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .sq-testimonial-card {
@@ -1080,6 +1081,9 @@
   padding: var(--sq-space-8);
   transition: all 0.3s var(--sq-ease-smooth);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
 }
 
 .sq-testimonial-card:hover {
@@ -1094,6 +1098,7 @@
   margin-bottom: var(--sq-space-4);
   color: var(--sq-gold);
   font-size: 18px;
+  flex-shrink: 0;
 }
 
 .sq-testimonial-card__quote {
@@ -1102,6 +1107,7 @@
   color: var(--sq-text-base);
   margin-bottom: var(--sq-space-6);
   font-style: italic;
+  flex: 1;
 }
 
 .sq-testimonial-card__author {
@@ -1110,6 +1116,8 @@
   gap: var(--sq-space-3);
   padding-top: var(--sq-space-4);
   border-top: 1px solid var(--sq-border);
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .sq-testimonial-card__avatar {
