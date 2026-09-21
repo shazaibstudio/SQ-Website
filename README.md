@@ -108,6 +108,22 @@ Tracked events: `cta_click`, `whatsapp_click`, `form_start`, `form_submit`, `scr
 - Homepage: `Organization` + `LocalBusiness` + `WebSite`
 - Contact: `ContactPage`
 
+### Immersive World SEO Status (Phase D complete)
+
+| Page | Title ✅ | Desc ✅ | Geo ✅ | Robots ✅ | Canonical ✅ | hreflang ✅ | BreadcrumbList ✅ | Service ✅ | FAQ ✅ | Hero ✅ | analytics.js ✅ |
+|------|---------|---------|--------|----------|------------|-----------|-----------------|---------|------|------|------|
+| `/immersive/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | — | ✅ |
+| `/immersive/virtual-reality/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/immersive/augmented-reality/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/immersive/vr-real-estate/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/immersive/360-experiences/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/immersive/360-tours/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `/immersive/3d-visualization/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/immersive/vr-staging/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/immersive/interactive-installation/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/immersive/web-immersion/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| `/immersive/furniture-scanning/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+
 ### AI World SEO Status (Phase C complete)
 
 | Page | Title ✅ | Desc ✅ | Geo ✅ | Robots ✅ | Canonical ✅ | hreflang ✅ | BreadcrumbList ✅ | Service ✅ | FAQ ✅ | Hero ✅ | analytics.js ✅ |
