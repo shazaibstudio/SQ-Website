@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <!-- Google Consent Mode v2: defaults MUST run before gtag.js loads -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      var sqC = JSON.parse(localStorage.getItem('sq_consent_v1') || 'null');
+      if (sqC && sqC.analytics === true && (Date.now() - sqC.ts) < 15552000000) {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-GYP19H93BR');
   </script>
-
-  <!-- hotjar Analytics -->
-
-  <script>
-    (function (c, s, q, u, a, r, e) {
-        c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
-        c._hjSettings = { hjid: a };
-        r = s.getElementsByTagName('head')[0];
-        e = s.createElement('script');
-        e.async = true;
-        e.src = q + c._hjSettings.hjid + u;
-        r.appendChild(e);
-    })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js', 6545315);
-</script>
+  <link rel="stylesheet" href="/css/consent.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -722,6 +724,13 @@
 
       <div class="sq-footer__bottom">
         <p class="sq-footer__copy">&copy; <span id="sq-year"></span> SQ Interactive. All rights reserved.</p>
+        <nav aria-label="Legal"><ul class="sq-footer__legal">
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/cookie-policy/">Cookie Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+        </ul></nav>
         <div class="sq-footer__social">
           <a href="https://www.instagram.com/sqinteractive" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link" aria-label="SQ Interactive on Instagram">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7m9-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
@@ -742,5 +751,6 @@
   </script>
   <script src="../../js/unified-nav.js" defer></script>
   <script src="/js/chatbot.js" defer></script>
+  <script src="/js/consent.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Consent Mode v2: defaults MUST run before gtag.js loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      var sqC = JSON.parse(localStorage.getItem('sq_consent_v1') || 'null');
+      if (sqC && sqC.analytics === true && (Date.now() - sqC.ts) < 15552000000) {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-GYP19H93BR');
+  </script>
+  <link rel="stylesheet" href="/css/consent.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy — SQ Interactive</title>
+  <meta name="description" content="Cookie Policy for SQ Interactive (sqinteractive.com), Lahore, Pakistan.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="PK-PB">
+  <meta name="geo.placename" content="Lahore, Pakistan">
+  <meta name="geo.position" content="31.5204;74.3587">
+  <meta name="ICBM" content="31.5204, 74.3587">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.sqinteractive.com/cookie-policy/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cookie Policy — SQ Interactive">
+  <meta property="og:description" content="Cookie Policy for SQ Interactive (sqinteractive.com), Lahore, Pakistan.">
+  <meta property="og:url" content="https://www.sqinteractive.com/cookie-policy/">
+  <meta property="og:image" content="https://www.sqinteractive.com/SQ_Interactive_Favicon_Pack/android-chrome-512x512.png">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/unified-nav.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="icon" type="image/x-icon"       href="../SQ_Interactive_Favicon_Pack/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../SQ_Interactive_Favicon_Pack/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180"    href="../SQ_Interactive_Favicon_Pack/apple-touch-icon.png">
+  <style>
+    /* ── Reveal ── */
+    [data-reveal]{opacity:0;transform:translateY(16px);}
+    [data-reveal].will-reveal{transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);}
+    [data-reveal].is-revealed{opacity:1;transform:translateY(0);}
+
+    /* ── Stats bar ── */
+    .sq-about-stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1px;
+      background:var(--sq-border);
+      border:1px solid var(--sq-border);
+      border-radius:var(--sq-radius-xl);
+      overflow:hidden;
+      margin-top:var(--sq-space-12);
+    }
+    @media(min-width:640px){.sq-about-stats{grid-template-columns:repeat(4,1fr);}}
+    .sq-about-stat{
+      background:var(--sq-bg-deep);
+      padding:var(--sq-space-6) var(--sq-space-5);
+      text-align:center;
+    }
+    .sq-about-stat__num{
+      font-family:var(--sq-font-serif);
+      font-size:clamp(1.75rem,4vw,2.5rem);
+      font-weight:600;
+      color:var(--sq-gold);
+      line-height:1;
+      margin-bottom:var(--sq-space-2);
+    }
+    .sq-about-stat__label{
+      font-size:var(--sq-text-xs);
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--sq-text-muted);
+    }
+
+    /* ── Founder card ── */
+    .sq-founder{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:var(--sq-space-8);
+      align-items:center;
+    }
+    @media(min-width:768px){.sq-founder{grid-template-columns:auto 1fr;}}
+    .sq-founder__img{
+      width:160px;height:160px;
+      border-radius:var(--sq-radius-xl);
+      object-fit:cover;
+      border:2px solid var(--sq-gold-border);
+      flex-shrink:0;
+    }
+    .sq-founder__name{
+      font-family:var(--sq-font-serif);
+      font-size:var(--sq-text-2xl);
+      font-weight:600;
+      color:var(--sq-text-strong);
+      margin-bottom:var(--sq-space-1);
+    }
+    .sq-founder__role{
+      font-size:var(--sq-text-sm);
+      color:var(--sq-gold);
+      font-weight:600;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin-bottom:var(--sq-space-4);
+    }
+    .sq-founder__bio{
+      font-size:var(--sq-text-base);
+      color:var(--sq-text-secondary);
+      line-height:1.75;
+      margin:0;
+    }
+
+    /* ── Capability cards with icons ── */
+    .sq-caps-grid-v2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:var(--sq-space-4);
+    }
+    @media(min-width:640px){.sq-caps-grid-v2{grid-template-columns:repeat(2,1fr);}}
+    @media(min-width:1024px){.sq-caps-grid-v2{grid-template-columns:repeat(3,1fr);}}
+    .sq-cap-card-v2{
+      display:flex;
+      gap:var(--sq-space-4);
+      padding:var(--sq-space-6);
+      background:var(--sq-bg-deep);
+      border:1px solid var(--sq-border);
+      border-radius:var(--sq-radius-xl);
+      transition:border-color .3s,transform .3s;
+    }
+    .sq-cap-card-v2:hover{border-color:var(--sq-gold-border);transform:translateY(-3px);}
+    .sq-cap-card-v2__icon{
+      width:44px;height:44px;
+      border-radius:var(--sq-radius-lg);
+      background:var(--sq-gold-subtle);
+      border:1px solid var(--sq-gold-border);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--sq-gold);
+      flex-shrink:0;
+    }
+    .sq-cap-card-v2__title{
+      font-size:var(--sq-text-sm);
+      font-weight:700;
+      color:var(--sq-text-strong);
+      margin-bottom:var(--sq-space-1);
+    }
+    .sq-cap-card-v2__desc{
+      font-size:var(--sq-text-sm);
+      color:var(--sq-text-secondary);
+      line-height:1.6;
+      margin:0;
+    }
+  </style>
+</head>
+<body class="page-about">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="sq-scroll-progress" aria-hidden="true"></div>
+
+  <header>
+
+  <nav
+    class="sq-nav"
+    aria-label="Main navigation"
+  >
+
+    <div class="sq-nav__inner">
+
+      <!-- ======================================================
+           BRAND
+           ====================================================== -->
+
+      <a
+        href="/"
+        class="sq-nav__logo"
+        aria-label="SQ Interactive — Home"
+      >
+
+        <div class="sq-nav__logo-mark">
+
+          <img
+            src="/images/no-background.png"
+            alt=""
+            width="36"
+            height="36"
+            aria-hidden="true"
+          >
+
+        </div>
+
+        <span class="sq-nav__logo-text">
+          SQ <span>Interactive</span>
+        </span>
+
+      </a>
+
+      <!-- ======================================================
+           DESKTOP NAVIGATION
+           ====================================================== -->
+
+      <div class="sq-nav__links">
+
+        <!-- HOME -->
+
+        <a href="/" class="sq-nav__link" data-sq-nav-link>Home</a>
+
+        <!-- SERVICES -->
+
+        <div class="sq-nav__services-wrapper">
+
+          <button
+            id="sq-services-btn"
+            class="sq-nav__link"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-controls="sq-services-popup"
+          >
+
+            <span>Services</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+
+          </button>
+
+          <!-- DESKTOP SERVICES DROPDOWN -->
+
+          <div
+            id="sq-services-popup"
+            class="sq-services-popup hidden"
+            role="menu"
+            aria-label="Services menu"
+          >
+
+            <a href="/services/" class="sq-services-popup__all" role="menuitem" data-sq-nav-link>All Services</a>
+
+            <div class="sq-services-popup__divider"></div>
+
+            <!-- DIGITAL -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-digital">
+              <span>Digital</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-digital" class="sq-services-popup__world-links">
+              <a href="/digital/website-development/" class="sq-services-popup__link" role="menuitem">Website Development</a>
+              <a href="/digital/e-commerce/" class="sq-services-popup__link" role="menuitem">E-Commerce</a>
+              <a href="/digital/custom-software/" class="sq-services-popup__link" role="menuitem">Custom Software</a>
+              <a href="/digital/ui-ux-experiences/" class="sq-services-popup__link" role="menuitem">UI/UX Experiences</a>
+              <a href="/digital/seo-digital-growth/" class="sq-services-popup__link" role="menuitem">SEO &amp; Digital Growth</a>
+              <a href="/digital/automation-integration/" class="sq-services-popup__link" role="menuitem">Automation &amp; Integration</a>
+            </div>
+
+            <!-- AI -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-ai">
+              <span>AI</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-ai" class="sq-services-popup__world-links">
+              <a href="/ai/ai-systems-models/" class="sq-services-popup__link" role="menuitem">AI Systems &amp; Models</a>
+              <a href="/ai/intelligent-automation/" class="sq-services-popup__link" role="menuitem">Intelligent Automation</a>
+              <a href="/ai/data-intelligence/" class="sq-services-popup__link" role="menuitem">Data Intelligence</a>
+              <a href="/ai/ai-integration/" class="sq-services-popup__link" role="menuitem">AI Integration</a>
+              <a href="/ai/ai-content/" class="sq-services-popup__link" role="menuitem">AI Content</a>
+              <a href="/ai/process-optimization/" class="sq-services-popup__link" role="menuitem">Process Optimization</a>
+            </div>
+
+            <!-- IMMERSIVE -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-immersive">
+              <span>Immersive</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-immersive" class="sq-services-popup__world-links">
+              <a href="/immersive/virtual-reality/" class="sq-services-popup__link" role="menuitem">Virtual Reality</a>
+              <a href="/immersive/augmented-reality/" class="sq-services-popup__link" role="menuitem">Augmented Reality</a>
+              <a href="/immersive/3d-visualization/" class="sq-services-popup__link" role="menuitem">3D Visualization</a>
+              <a href="/immersive/360-experiences/" class="sq-services-popup__link" role="menuitem">360° Experiences</a>
+              <a href="/immersive/interactive-installation/" class="sq-services-popup__link" role="menuitem">Interactive Installation</a>
+              <a href="/immersive/web-immersion/" class="sq-services-popup__link" role="menuitem">Web Immersion</a>
+              <a href="/immersive/vr-staging/" class="sq-services-popup__link" role="menuitem">VR Staging</a>
+              <a href="/immersive/furniture-scanning/" class="sq-services-popup__link" role="menuitem">Furniture Scanning</a>
+            </div>
+
+            <!-- LAB -->
+            <button type="button" class="sq-services-popup__world-btn" aria-expanded="false" aria-controls="sq-desktop-lab">
+              <span>Lab</span>
+              <span class="sq-popup-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div id="sq-desktop-lab" class="sq-services-popup__world-links">
+              <a href="/lab/ai-research/" class="sq-services-popup__link" role="menuitem">AI Research</a>
+              <a href="/lab/3d-tech/" class="sq-services-popup__link" role="menuitem">3D Technology</a>
+              <a href="/lab/no-code-platforms/" class="sq-services-popup__link" role="menuitem">No-Code Platforms</a>
+              <a href="/lab/web-performance/" class="sq-services-popup__link" role="menuitem">Web Performance</a>
+              <a href="/lab/ar-vr-innovation/" class="sq-services-popup__link" role="menuitem">AR/VR Innovation</a>
+              <a href="/lab/design-systems/" class="sq-services-popup__link" role="menuitem">Design Systems</a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- WORK -->
+        <a href="/work/" class="sq-nav__link" data-sq-nav-link>Work</a>
+
+        <!-- HOW WE WORK -->
+        <a href="/how-we-work/" class="sq-nav__link" data-sq-nav-link>How We Work</a>
+
+        <!-- ABOUT -->
+        <a href="/about/" class="sq-nav__link" data-sq-nav-link>About</a>
+
+        <!-- CONTACT -->
+        <a href="/contact/" class="sq-nav__link" data-sq-nav-link>Contact</a>
+
+        <!-- DESKTOP LANGUAGE -->
+
+        <div class="sq-nav__lang-buttons">
+
+          <button
+            id="sq-lang-en"
+            class="sq-lang-btn sq-lang-btn--active"
+            type="button"
+            aria-label="English"
+            aria-pressed="true"
+            data-lang-switch="en"
+          >
+            EN
+          </button>
+
+          <button
+            id="sq-lang-ur"
+            class="sq-lang-btn"
+            type="button"
+            aria-label="Urdu"
+            aria-pressed="false"
+            data-lang-switch="ur"
+          >
+            UR
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ======================================================
+           MOBILE MENU TOGGLE
+           ====================================================== -->
+
+      <button
+        id="sq-mobile-menu-toggle"
+        class="sq-nav__mobile-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sq-mobile-menu"
+        aria-label="Open menu"
+      >
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+
+      </button>
+
+    </div>
+
+    <!-- ========================================================
+         MOBILE NAVIGATION
+         ======================================================== -->
+
+    <div id="sq-mobile-menu" class="sq-nav__mobile" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+
+      <a href="/" class="sq-nav__mobile-link" data-sq-nav-link>Home</a>
+      <a href="/work/" class="sq-nav__mobile-link" data-sq-nav-link>Work</a>
+      <a href="/how-we-work/" class="sq-nav__mobile-link" data-sq-nav-link>How We Work</a>
+      <a href="/about/" class="sq-nav__mobile-link" data-sq-nav-link>About</a>
+      <a href="/contact/" class="sq-nav__mobile-link" data-sq-nav-link>Contact</a>
+
+      <!-- MOBILE SERVICES -->
+
+      <button id="sq-mobile-services-toggle" class="sq-nav__mobile-services-toggle" type="button" aria-expanded="false" aria-controls="sq-mobile-services">
+        <span>Services</span>
+        <span class="sq-mobile-services__toggle-icon" aria-hidden="true">+</span>
+      </button>
+
+      <div id="sq-mobile-services" class="sq-mobile-services">
+
+        <a href="/services/" class="sq-mobile-services__link" data-sq-nav-link>All Services</a>
+
+        <!-- DIGITAL -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-digital" aria-expanded="false" aria-controls="sq-mobile-digital">
+          <span>01 — Digital</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-digital" class="sq-mobile-services__world-menu">
+          <a href="/digital/website-development/" class="sq-mobile-services__world-link">Website Development</a>
+          <a href="/digital/e-commerce/" class="sq-mobile-services__world-link">E-Commerce</a>
+          <a href="/digital/custom-software/" class="sq-mobile-services__world-link">Custom Software</a>
+          <a href="/digital/ui-ux-experiences/" class="sq-mobile-services__world-link">UI/UX Experiences</a>
+          <a href="/digital/seo-digital-growth/" class="sq-mobile-services__world-link">SEO &amp; Digital Growth</a>
+          <a href="/digital/automation-integration/" class="sq-mobile-services__world-link">Automation &amp; Integration</a>
+        </div>
+
+        <!-- AI -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-ai" aria-expanded="false" aria-controls="sq-mobile-ai">
+          <span>02 — AI</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-ai" class="sq-mobile-services__world-menu">
+          <a href="/ai/ai-systems-models/" class="sq-mobile-services__world-link">AI Systems &amp; Models</a>
+          <a href="/ai/intelligent-automation/" class="sq-mobile-services__world-link">Intelligent Automation</a>
+          <a href="/ai/data-intelligence/" class="sq-mobile-services__world-link">Data Intelligence</a>
+          <a href="/ai/ai-integration/" class="sq-mobile-services__world-link">AI Integration</a>
+          <a href="/ai/ai-content/" class="sq-mobile-services__world-link">AI Content</a>
+          <a href="/ai/process-optimization/" class="sq-mobile-services__world-link">Process Optimization</a>
+        </div>
+
+        <!-- IMMERSIVE -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-immersive" aria-expanded="false" aria-controls="sq-mobile-immersive">
+          <span>03 — Immersive</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-immersive" class="sq-mobile-services__world-menu">
+          <a href="/immersive/virtual-reality/" class="sq-mobile-services__world-link">Virtual Reality</a>
+          <a href="/immersive/augmented-reality/" class="sq-mobile-services__world-link">Augmented Reality</a>
+          <a href="/immersive/3d-visualization/" class="sq-mobile-services__world-link">3D Visualization</a>
+          <a href="/immersive/360-experiences/" class="sq-mobile-services__world-link">360° Experiences</a>
+          <a href="/immersive/interactive-installation/" class="sq-mobile-services__world-link">Interactive Installation</a>
+          <a href="/immersive/web-immersion/" class="sq-mobile-services__world-link">Web Immersion</a>
+          <a href="/immersive/vr-staging/" class="sq-mobile-services__world-link">VR Staging</a>
+          <a href="/immersive/furniture-scanning/" class="sq-mobile-services__world-link">Furniture Scanning</a>
+        </div>
+
+        <!-- LAB -->
+        <button type="button" class="sq-mobile-services__world-toggle" data-world-toggle="sq-mobile-lab" aria-expanded="false" aria-controls="sq-mobile-lab">
+          <span>04 — Lab</span>
+          <span class="sq-mobile-services__world-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="sq-mobile-lab" class="sq-mobile-services__world-menu">
+          <a href="/lab/ai-research/" class="sq-mobile-services__world-link">AI Research</a>
+          <a href="/lab/3d-tech/" class="sq-mobile-services__world-link">3D Technology</a>
+          <a href="/lab/no-code-platforms/" class="sq-mobile-services__world-link">No-Code Platforms</a>
+          <a href="/lab/web-performance/" class="sq-mobile-services__world-link">Web Performance</a>
+          <a href="/lab/ar-vr-innovation/" class="sq-mobile-services__world-link">AR/VR Innovation</a>
+          <a href="/lab/design-systems/" class="sq-mobile-services__world-link">Design Systems</a>
+        </div>
+
+      </div>
+
+      <!-- MOBILE LANGUAGE -->
+
+      <div class="sq-nav__mobile-lang">
+        <button id="sq-mobile-lang-en" class="sq-lang-btn sq-lang-btn--active" type="button" aria-label="English" aria-pressed="true" data-lang-switch="en">EN</button>
+        <button id="sq-mobile-lang-ur" class="sq-lang-btn" type="button" aria-label="Urdu" aria-pressed="false" data-lang-switch="ur">UR</button>
+      </div>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+  <main id="main">
+    <article class="sq-legal">
+<h1>Cookie Policy — SQ Interactive</h1>
+<blockquote>
+<p><strong>DRAFT — not legal advice.</strong> Prepared for review by a qualified lawyer (Pakistan; and EU/UK counsel if targeting those markets) before publication. Placeholders in [BRACKETS].</p>
+</blockquote>
+<p><strong>Effective date:</strong> [EFFECTIVE DATE]</p>
+<p>This policy explains how https://sqinteractive.com uses cookies and similar technologies (local storage, session storage, scripts). See also our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+<h2>What we use</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Name / type</th>
+<th scope="col">Provider</th>
+<th scope="col">Purpose</th>
+<th scope="col">Category</th>
+<th scope="col">Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language preference (localStorage)</td>
+<td>SQ Interactive</td>
+<td>Remembers English/Urdu choice</td>
+<td>Strictly necessary / functional</td>
+<td>Until cleared</td>
+</tr>
+<tr>
+<td>Chat assistant state (sessionStorage)</td>
+<td>SQ Interactive</td>
+<td>Keeps chat assistant state across pages</td>
+<td>Functional</td>
+<td>Browser session</td>
+</tr>
+<tr>
+<td>_ga, _ga_GYP19H93BR</td>
+<td>Google Analytics 4</td>
+<td>Visitor and session statistics</td>
+<td>Analytics</td>
+<td>Up to 2 years</td>
+</tr>
+<tr>
+<td><em>hjSessionUser</em><em>, <em>hjSession</em></em>, <em>cs</em>* and similar [VERIFY in browser]</td>
+<td>Hotjar / Contentsquare (site ID 6545315)</td>
+<td>Heatmaps, behaviour and session insights</td>
+<td>Analytics</td>
+<td>Up to 1 year</td>
+</tr>
+<tr>
+<td>Cookie consent choice</td>
+<td>SQ Interactive</td>
+<td>Remembers your consent choice</td>
+<td>Strictly necessary</td>
+<td>[6–12] months</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Third-party resources without cookies we set:</strong> Google Fonts (your IP address is sent to Google), and links to WhatsApp, Facebook, Instagram, LinkedIn and YouTube (those services apply their own cookies only once you visit them).</p>
+<h2>Consent</h2>
+<p>Strictly necessary/functional storage runs without consent. <strong>Analytics cookies are only set after you click "Accept"</strong> (where required by law, e.g. for visitors in the EU/EEA, UK and Norway). You can change your choice anytime via the "Cookie settings" link in the footer, or by clearing cookies in your browser. Google also provides an opt-out add-on: <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a></p>
+<h2>Contact</h2>
+<p><a href="mailto:admin@sqinteractive.com">admin@sqinteractive.com</a></p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="sq-footer">
+    <div class="sq-container">
+      <div class="sq-footer__grid">
+        <div class="sq-footer__brand">
+          <p style="font-family:var(--sq-font-sans); font-size:var(--sq-text-base); font-weight:700; color:var(--sq-text-strong); margin-bottom:var(--sq-space-3);">SQ Interactive</p>
+          <p>We help businesses understand what they actually need, then design and build the right digital solution.</p>
+          <div class="sq-footer__contact">
+            <a href="tel:+923009452153" class="sq-footer__contact-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              +92 300 9452153
+            </a>
+            <a href="mailto:admin@sqinteractive.com" class="sq-footer__contact-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              admin@sqinteractive.com
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2 class="sq-footer__heading">Explore</h2>
+          <ul class="sq-footer__links">
+            <li><a href="../digital/"   class="sq-footer__link">Digital</a></li>
+            <li><a href="../ai/"        class="sq-footer__link">AI &amp; Automation</a></li>
+            <li><a href="../immersive/" class="sq-footer__link">Immersive</a></li>
+            <li><a href="../lab/"       class="sq-footer__link">SQ Lab</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sq-footer__heading">Company</h2>
+          <ul class="sq-footer__links">
+            <li><a href="../work/"        class="sq-footer__link">Work</a></li>
+            <li><a href="../how-we-work/" class="sq-footer__link">How We Work</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sq-footer__bottom">
+        <p class="sq-footer__copy">&copy; <span id="sq-year"></span> SQ Interactive. All rights reserved.</p>
+        <nav aria-label="Legal"><ul class="sq-footer__legal">
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/cookie-policy/">Cookie Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+        </ul></nav>
+        <div class="sq-footer__social">
+          <a href="https://www.instagram.com/sqinteractive" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--instagram" aria-label="SQ Interactive on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7m9-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/sqinteractive" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--linkedin" aria-label="SQ Interactive on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1A619NgVwh/" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--facebook" aria-label="SQ Interactive on Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@SQINTERACTIVE" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--youtube" aria-label="SQ Interactive on YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923009452153?text=Hi%20SQ%20Interactive!%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="sq-wa-sticky" aria-label="Chat on WhatsApp">
+    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="../js/unified-nav.js" defer></script>
+  <script src="../js/language.js" defer></script>
+  <script src="../js/chatbot.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+  <script>document.getElementById('sq-year').textContent = new Date().getFullYear();</script>
+  <script src="/js/consent.js" defer></script>
+</body>
+</html>

@@ -6,24 +6,33 @@
 (function () {
   'use strict';
 
-  /* ── Hotjar / ContentSquare ── */
-  (function(c,s,q,u,a,r,e){
-    c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
-    c._hjSettings={hjid:6545315};
-    r=s.getElementsByTagName('head')[0];
-    e=s.createElement('script');
-    e.async=true;
-    e.src=q+c._hjSettings.hjid+u;
-    r.appendChild(e);
-  })(window,document,'https://static.hj.contentsquare.net/uxa/','.js');
-
-  /* ContentSquare tag */
-  (function(){
-    var cs=document.createElement('script');
-    cs.async=true;
-    cs.src='https://t.contentsquare.net/uxa/c97b2acc48ee8.js';
-    document.head.appendChild(cs);
-  })();
+  /* ── Hotjar / Contentsquare — loaded ONLY after analytics consent ──
+     Consent is handled by js/consent.js (localStorage key "sq_consent_v1").
+     Nothing below runs until the visitor clicks Accept. */
+  var hjLoaded = false;
+  function loadHotjar() {
+    if (hjLoaded) return;
+    hjLoaded = true;
+    (function(c,s,q,u,a,r,e){
+      c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
+      c._hjSettings={hjid:a};
+      r=s.getElementsByTagName('head')[0];
+      e=s.createElement('script');
+      e.async=true;
+      e.src=q+c._hjSettings.hjid+u;
+      r.appendChild(e);
+    })(window,document,'https://static.hj.contentsquare.net/c/csq-','.js',6545315);
+  }
+  function analyticsGranted() {
+    try {
+      var c = JSON.parse(localStorage.getItem('sq_consent_v1') || 'null');
+      return !!(c && c.analytics === true && (Date.now() - c.ts) < 15552000000);
+    } catch (e) { return false; }
+  }
+  if (analyticsGranted()) loadHotjar();
+  window.addEventListener('sq:consent', function (e) {
+    if (e.detail && e.detail.analytics === true) loadHotjar();
+  });
 
   /* ── Core Web Vitals ── */
   function trackWebVitals() {

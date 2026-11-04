@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Consent Mode v2: defaults MUST run before gtag.js loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      var sqC = JSON.parse(localStorage.getItem('sq_consent_v1') || 'null');
+      if (sqC && sqC.analytics === true && (Date.now() - sqC.ts) < 15552000000) {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GYP19H93BR');</script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-GYP19H93BR');
+  </script>
+  <link rel="stylesheet" href="/css/consent.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You — SQ Interactive</title>
@@ -101,5 +123,15 @@
     </section>
   </main>
   <script src="/js/main.js" defer></script>
+  <div class="sq-legal-nav" style="max-width:48rem;margin:2rem auto;padding:0 1.25rem">
+        <nav aria-label="Legal"><ul class="sq-footer__legal">
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/cookie-policy/">Cookie Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+        </ul></nav>
+  </div>
+  <script src="/js/consent.js" defer></script>
 </body>
 </html>

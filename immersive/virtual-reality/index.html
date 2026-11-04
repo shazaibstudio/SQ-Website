@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Consent Mode v2: defaults MUST run before gtag.js loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    try {
+      var sqC = JSON.parse(localStorage.getItem('sq_consent_v1') || 'null');
+      if (sqC && sqC.analytics === true && (Date.now() - sqC.ts) < 15552000000) {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYP19H93BR"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GYP19H93BR');</script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-GYP19H93BR');
+  </script>
+  <link rel="stylesheet" href="/css/consent.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -701,6 +722,13 @@
       </div>
       <div class="sq-footer__bottom">
         <p class="sq-footer__copy">&copy; <span id="sq-year"></span> SQ Interactive. All rights reserved.</p>
+        <nav aria-label="Legal"><ul class="sq-footer__legal">
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/cookie-policy/">Cookie Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+        </ul></nav>
         <div class="sq-footer__social">
           <a href="https://www.instagram.com/sqinteractive_/" target="_blank" rel="noopener noreferrer" class="sq-footer__social-link sq-footer__social-link--instagram" aria-label="SQ Interactive on Instagram">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -738,5 +766,6 @@
   <script src="../../js/language.js" defer></script>
   <script src="../../js/chatbot.js" defer></script>
   <script src="../../js/analytics.js" defer></script>
+  <script src="/js/consent.js" defer></script>
 </body>
 </html>
