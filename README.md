@@ -64,8 +64,6 @@
 |------|---------|
 | `sitemap.xml` | Submitted to Google Search Console |
 | `robots.txt` | Crawler access rules |
-| `SEO-PLAN-V2.md` | Full SEO strategy & keyword plan |
-| `CHANGELOG.md` | All changes tracked here |
 | `css/tokens.css` | Design tokens (colours, spacing, type) |
 | `css/unified-nav.css` | Navigation styles |
 | `js/unified-nav.js` | Navigation behaviour |
@@ -149,14 +147,15 @@ Tracked events: `cta_click`, `whatsapp_click`, `form_start`, `form_submit`, `scr
 | `/digital/seo-digital-growth/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `/digital/automation-integration/` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 
-See `SEO-PLAN-V2.md` for the full keyword strategy and per-page action items.
 
 ---
 
 ## Excluded from Index
 
 The following directories are blocked in `robots.txt`:
-`/legacy/` · `/Portfolio/` · `/chatbot-package/` · `/v2/` · `/SQ-Tours/` · `/videos/` · `/lang/`
+`/SQ-Tours/` · `/videos/` · `/lang/`
+
+(`/legacy/`, `/Portfolio/`, `/chatbot-package/` and `/v2/` were removed from the repo; their robots.txt rules are kept until search engines drop the URLs.)
 
 ---
 
