@@ -468,6 +468,7 @@
           <button type="submit" class="sq-btn sq-btn--primary" id="sqFormSubmit">Send</button>
           <a href="mailto:admin@sqinteractive.com" class="sq-btn sq-btn--secondary">Request Demo</a>
         </div>
+        <p id="sqFormRateLimitMsg" class="sq-contact-form__rate-limit" role="status" aria-live="polite" hidden style="margin-top:1rem;color:var(--sq-text-strong);font-size:var(--sq-text-sm);line-height:1.5;"></p>
       </form>
 
       <!-- Thank You State (hidden until form submitted) -->
@@ -480,11 +481,13 @@
         <a href="/work/" class="sq-btn sq-btn--secondary" style="margin-top:1.5rem;">See Our Work</a>
       </div>
 
+      <script src="/js/form-rate-limit.js"></script>
       <script>
       (function(){
         var form = document.getElementById('sqForm');
         var btn  = document.getElementById('sqFormSubmit');
         var ty   = document.getElementById('sqFormThankyou');
+        var rlMsg = document.getElementById('sqFormRateLimitMsg');
         if (!form) return;
         function leadTrack(name, extra) {
           if (typeof window.sqTrackLead === 'function') {
@@ -493,45 +496,113 @@
             gtag('event', name, Object.assign({ event_category: 'Lead', page_path: location.pathname, form_id: 'sqForm' }, extra || {}));
           }
         }
+        function showRateLimit(message) {
+          if (!rlMsg) {
+            alert(message);
+            return;
+          }
+          rlMsg.hidden = false;
+          rlMsg.textContent = message;
+          rlMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        function clearRateLimit() {
+          if (!rlMsg) return;
+          rlMsg.hidden = true;
+          rlMsg.textContent = '';
+        }
         form.addEventListener('submit', function(e){
           e.preventDefault();
+          clearRateLimit();
           btn.textContent = 'Sending…';
           btn.disabled = true;
           var data = new FormData(form);
           var projectType = (data.get('project_type') || '').toString().slice(0, 80);
-          // Same FormSubmit URL and body as before — tracking only.
-          fetch(form.action, { method:'POST', body: data, headers:{'Accept':'application/json'} })
-            .then(function(r){ return r.ok ? r : Promise.reject(r); })
-            .then(function(){
-              leadTrack('generate_lead', {
+          var rl = window.sqFormRateLimit;
+          var gate = rl && typeof rl.check === 'function'
+            ? rl.check()
+            : Promise.resolve({ allowed: true, keyHash: null });
+          gate.then(function(status){
+            if (!status.allowed) {
+              leadTrack('form_rate_limited', {
                 form_id: 'sqForm',
-                event_label: 'sqForm',
-                project_type: projectType || undefined,
-                submission_status: 'success',
-                currency: 'PKR',
-                value: 1
+                event_label: 'rate_limited',
+                submission_status: 'rate_limited'
               });
-              leadTrack('form_submit_result', {
-                form_id: 'sqForm',
-                event_label: 'success',
-                project_type: projectType || undefined,
-                submission_status: 'success'
-              });
-              form.style.display = 'none';
-              ty.style.display = 'flex';
-              ty.scrollIntoView({ behavior:'smooth', block:'center' });
-            })
-            .catch(function(){
-              leadTrack('form_submit_result', {
-                form_id: 'sqForm',
-                event_label: 'failure',
-                project_type: projectType || undefined,
-                submission_status: 'failure'
-              });
+              showRateLimit(status.message || (rl && rl.MESSAGE) || "You've reached the submission limit, please try again shortly.");
               btn.textContent = 'Send';
               btn.disabled = false;
-              alert('Something went wrong. Please email us directly at admin@sqinteractive.com');
-            });
+              return;
+            }
+            // Count this attempt against the hashed-IP window (success or fail).
+            if (rl && status.keyHash && typeof rl.record === 'function') rl.record(status.keyHash);
+            // Same FormSubmit URL and body as before.
+            return fetch(form.action, { method:'POST', body: data, headers:{'Accept':'application/json'} })
+              .then(function(r){ return r.ok ? r : Promise.reject(r); })
+              .then(function(){
+                leadTrack('generate_lead', {
+                  form_id: 'sqForm',
+                  event_label: 'sqForm',
+                  project_type: projectType || undefined,
+                  submission_status: 'success',
+                  currency: 'PKR',
+                  value: 1
+                });
+                leadTrack('form_submit_result', {
+                  form_id: 'sqForm',
+                  event_label: 'success',
+                  project_type: projectType || undefined,
+                  submission_status: 'success'
+                });
+                form.style.display = 'none';
+                ty.style.display = 'flex';
+                ty.scrollIntoView({ behavior:'smooth', block:'center' });
+              })
+              .catch(function(){
+                leadTrack('form_submit_result', {
+                  form_id: 'sqForm',
+                  event_label: 'failure',
+                  project_type: projectType || undefined,
+                  submission_status: 'failure'
+                });
+                btn.textContent = 'Send';
+                btn.disabled = false;
+                alert('Something went wrong. Please email us directly at admin@sqinteractive.com');
+              });
+          }).catch(function(){
+            // Rate-limit helper failed — fail open so real visitors are not blocked.
+            return fetch(form.action, { method:'POST', body: data, headers:{'Accept':'application/json'} })
+              .then(function(r){ return r.ok ? r : Promise.reject(r); })
+              .then(function(){
+                leadTrack('generate_lead', {
+                  form_id: 'sqForm',
+                  event_label: 'sqForm',
+                  project_type: projectType || undefined,
+                  submission_status: 'success',
+                  currency: 'PKR',
+                  value: 1
+                });
+                leadTrack('form_submit_result', {
+                  form_id: 'sqForm',
+                  event_label: 'success',
+                  project_type: projectType || undefined,
+                  submission_status: 'success'
+                });
+                form.style.display = 'none';
+                ty.style.display = 'flex';
+                ty.scrollIntoView({ behavior:'smooth', block:'center' });
+              })
+              .catch(function(){
+                leadTrack('form_submit_result', {
+                  form_id: 'sqForm',
+                  event_label: 'failure',
+                  project_type: projectType || undefined,
+                  submission_status: 'failure'
+                });
+                btn.textContent = 'Send';
+                btn.disabled = false;
+                alert('Something went wrong. Please email us directly at admin@sqinteractive.com');
+              });
+          });
         });
       })();
       </script>
