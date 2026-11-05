@@ -140,20 +140,120 @@
     });
   }
 
+  /* ── Lead / traffic context (no PII) ──
+     First-touch UTM + referrer kept for the session so form events
+     still carry source after the visitor navigates to /contact/. */
+  var FIRST_TOUCH_KEY = 'sq_first_touch_v1';
+
+  function readUrlParams() {
+    var p = new URLSearchParams(window.location.search);
+    var refHost = '';
+    try {
+      if (document.referrer) refHost = new URL(document.referrer).hostname;
+    } catch (e) {}
+    return {
+      page_path: window.location.pathname,
+      page_location: window.location.href.split('#')[0],
+      page_title: document.title,
+      utm_source: p.get('utm_source') || undefined,
+      utm_medium: p.get('utm_medium') || undefined,
+      utm_campaign: p.get('utm_campaign') || undefined,
+      utm_content: p.get('utm_content') || undefined,
+      utm_term: p.get('utm_term') || undefined,
+      gclid: p.get('gclid') || undefined,
+      referrer_host: refHost || undefined,
+      traffic_source: p.get('utm_source') || refHost || '(direct)'
+    };
+  }
+
+  function getFirstTouch() {
+    try {
+      var raw = sessionStorage.getItem(FIRST_TOUCH_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    var ctx = readUrlParams();
+    try { sessionStorage.setItem(FIRST_TOUCH_KEY, JSON.stringify(ctx)); } catch (e) {}
+    return ctx;
+  }
+
+  function leadContext(extra) {
+    var first = getFirstTouch();
+    var now = readUrlParams();
+    var out = {
+      event_category: 'Lead',
+      page_path: now.page_path,
+      page_location: now.page_location,
+      page_title: now.page_title,
+      traffic_source: first.traffic_source || now.traffic_source,
+      utm_source: first.utm_source || now.utm_source,
+      utm_medium: first.utm_medium || now.utm_medium,
+      utm_campaign: first.utm_campaign || now.utm_campaign,
+      utm_content: first.utm_content || now.utm_content,
+      utm_term: first.utm_term || now.utm_term,
+      gclid: first.gclid || now.gclid,
+      referrer_host: first.referrer_host || now.referrer_host,
+      landing_page: first.page_path
+    };
+    if (extra) {
+      Object.keys(extra).forEach(function(k) {
+        if (extra[k] !== undefined && extra[k] !== null && extra[k] !== '') out[k] = extra[k];
+      });
+    }
+    return out;
+  }
+
+  function sendLeadEvent(name, extra) {
+    if (typeof gtag === 'undefined') return;
+    gtag('event', name, leadContext(extra));
+  }
+
+  // Used by contact form success/fail handlers (no PII).
+  window.sqTrackLead = function(name, extra) {
+    sendLeadEvent(name, extra || {});
+  };
+  window.sqLeadContext = leadContext;
+
+  /* ── Contact / form page views ── */
+  function trackContactPageView() {
+    var path = window.location.pathname.replace(/\/+$/, '') || '/';
+    var isContact = path === '/contact' || path.indexOf('/contact/') === 0;
+    var isThankYou = path === '/thank-you' || path.indexOf('/thank-you') === 0 ||
+      /thank-you\.html$/i.test(window.location.pathname);
+    if (!isContact && !isThankYou) return;
+    sendLeadEvent('contact_page_view', {
+      form_page: isThankYou ? 'thank_you' : 'contact',
+      event_label: isThankYou ? 'thank_you' : 'contact'
+    });
+  }
+
   /* ── Form tracking ── */
   function trackForms() {
     document.querySelectorAll('form').forEach(function(form, i) {
+      var formId = form.id || form.getAttribute('name') || ('form_' + (i + 1));
       var started = false;
       form.querySelectorAll('input,textarea,select').forEach(function(inp) {
         inp.addEventListener('focus', function() {
           if (!started) {
             started = true;
-            if (typeof gtag !== 'undefined') gtag('event', 'form_start', { event_category: 'Form', event_label: 'Form ' + (i+1) });
+            sendLeadEvent('form_start', {
+              form_id: formId,
+              event_label: formId
+            });
           }
         });
       });
       form.addEventListener('submit', function() {
-        if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { event_category: 'Form', event_label: 'Form ' + (i+1) });
+        var projectType = '';
+        try {
+          var sel = form.querySelector('[name="project_type"]');
+          if (sel && sel.value) projectType = String(sel.value).slice(0, 80);
+        } catch (e) {}
+        sendLeadEvent('form_submit', {
+          form_id: formId,
+          event_label: formId,
+          project_type: projectType || undefined,
+          submission_status: 'attempt'
+        });
       });
     });
   }
@@ -172,12 +272,14 @@
 
   /* ── Init ── */
   function init() {
+    getFirstTouch(); // capture landing UTMs early
     trackWebVitals();
     trackPageLoad();
     trackErrors();
     trackEngagement();
     trackCTAs();
     trackWhatsApp();
+    trackContactPageView();
     trackForms();
     trackVideos();
   }
